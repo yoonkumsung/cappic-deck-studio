@@ -631,67 +631,27 @@
           </li>`).join('');
     }
 
-    // ── Export Current Slide as PNG ──
+    // ── Export Current Slide as PNG (8K via Playwright) ──
     async function exportCurrentSlide() {
       if (!editingSlideId) return;
-      const template = await loadSlideTemplate(editingSlideId);
-      const data = slideDataCache[editingSlideId];
-      if (!template) { showToast('HTML 템플릿이 없습니다'); return; }
-
-      showToast('추출 중...');
-
-      const html = renderSlideHtml(template, data?.fields);
-
-      // Create offscreen iframe at full 1920x1080
-      const iframe = document.createElement('iframe');
-      iframe.style.cssText = 'position:fixed;top:-10000px;left:-10000px;width:1920px;height:1080px;border:none;';
-      document.body.appendChild(iframe);
-
-      const doc = iframe.contentDocument;
-      doc.open();
-      doc.write('<!DOCTYPE html><html><head>' +
-        '<link rel="stylesheet" href="styles/tokens.css">' +
-        '<link rel="stylesheet" href="styles/layout.css">' +
-        '<link rel="stylesheet" href="styles/cards.css">' +
-        '<link rel="stylesheet" href="styles/components.css">' +
-        '<link rel="stylesheet" href="styles/utilities.css">' +
-        '<style>html,body{margin:0;padding:0;width:1920px;height:1080px;overflow:hidden;background:#000;}</style>' +
-        '</head><bo' + 'dy>' + html + '</bo' + 'dy></ht' + 'ml>');
-      doc.close();
-
-      // Wait for fonts/images to load
-      await new Promise(r => setTimeout(r, 1500));
+      showToast('8K 추출 중...');
 
       try {
-        // Use html2canvas via CDN
-        if (!window.html2canvas) {
-          const script = document.createElement('script');
-          script.src = 'https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js';
-          document.head.appendChild(script);
-          await new Promise(r => script.onload = r);
-        }
+        const res = await fetch(`http://localhost:3001/capture?slide=${editingSlideId}`);
+        if (!res.ok) throw new Error(await res.text());
 
-        const canvas = await html2canvas(doc.body, {
-          width: 1920,
-          height: 1080,
-          scale: 4,  // 4x = 7680x4320 (8K)
-          useCORS: true,
-          backgroundColor: '#000000',
-          logging: false
-        });
-
-        // Download
+        const blob = await res.blob();
+        const url = URL.createObjectURL(blob);
         const link = document.createElement('a');
+        link.href = url;
         link.download = `${editingSlideId}.png`;
-        link.href = canvas.toDataURL('image/png');
         link.click();
+        URL.revokeObjectURL(url);
 
-        showToast('추출 완료');
+        showToast('8K 추출 완료');
       } catch(e) {
+        showToast('추출 서버 연결 실패 — node export/server.js 실행 필요');
         console.error(e);
-        showToast('추출 실패: ' + e.message);
-      } finally {
-        document.body.removeChild(iframe);
       }
     }
 

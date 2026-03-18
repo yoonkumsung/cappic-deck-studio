@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Slide Preview</title>
+  <link rel="stylesheet" href="styles/tokens.css">
+  <link rel="stylesheet" href="styles/layout.css">
+  <link rel="stylesheet" href="styles/cards.css">
+  <link rel="stylesheet" href="styles/components.css">
+  <link rel="stylesheet" href="styles/utilities.css">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 1920px;
+      height: 1080px;
+      overflow: hidden;
+      background: #000;
+    }
+  </style>
+</head>
+<body>
+  <div id="slideRoot"></div>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const slideId = params.get('slide');
+
+    async function render() {
+      if (!slideId) return;
+
+      // Load template
+      const tplRes = await fetch(`slides/${slideId}.html`);
+      if (!tplRes.ok) { document.body.innerHTML = '<div style="color:red;padding:40px;">Template not found: ' + slideId + '</div>'; return; }
+      let html = await tplRes.text();
+
+      // Load data
+      try {
+        const dataRes = await fetch(`slides/${slideId}.json`);
+        if (dataRes.ok) {
+          const data = await dataRes.json();
+
+          // Check localStorage for overrides
+          let overrides = {};
+          try {
+            const stored = JSON.parse(localStorage.getItem('cappic-slide-data') || '{}');
+            if (stored[slideId]) overrides = stored[slideId];
+          } catch(e) {}
+
+          data.fields.forEach(f => {
+            // Use override if available and non-empty
+            const ov = overrides.fields?.find(o => o.key === f.key);
+            const val = (ov && ov.value) ? ov.value : f.value;
+            const regex = new RegExp('\\{\\{' + f.key + '\\}\\}', 'g');
+            html = html.replace(regex, val || '');
+          });
+        }
+      } catch(e) {}
+
+      document.getElementById('slideRoot').innerHTML = html;
+    }
+
+    render();
+  </script>
+</body>
+</html>

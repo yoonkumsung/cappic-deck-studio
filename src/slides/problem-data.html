@@ -1,81 +1,73 @@
-<div class="slide" style="display:flex;align-items:center;justify-content:center;">
-  <div class="container">
+<div class="slide" style="position:relative;">
 
-    <!-- Section Header -->
-    <div style="margin-bottom:36px;">
-      <div style="font-size:18px;font-weight:600;color:var(--text-tertiary);letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;">
-        {{sectionLabel}}
+  <!-- Title (top-left fixed) -->
+  <div style="position:absolute;top:80px;left:120px;">
+    <div style="font-size:48px;font-weight:800;color:#fff;line-height:1.3;">{{title}}</div>
+  </div>
+
+  <div style="position:absolute;top:220px;left:120px;right:120px;bottom:80px;">
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;height:100%;">
+
+      <!-- Left: Photo area -->
+      <div style="border-radius:16px;background:rgba(255,255,255,0.03);overflow:hidden;display:flex;align-items:center;justify-content:center;">
+        <img src="{{photoSrc}}" style="width:100%;height:100%;object-fit:cover;" onerror="this.parentElement.innerHTML='<span style=color:rgba(255,255,255,0.1);font-size:15px;>이미지 영역</span>'">
       </div>
-      <div style="font-size:32px;font-weight:800;color:#fff;line-height:1.3;">
-        {{title}}
-      </div>
-    </div>
 
-    <!-- Stats Row -->
-    <div style="display:grid;grid-template-columns:1fr 1fr 2fr;gap:18px;">
+      <!-- Right: Data -->
+      <div style="display:flex;flex-direction:column;gap:20px;">
 
-      <!-- Stat 1: 장비 가격 -->
-      <div class="card">
-        <div style="position:relative;z-index:1;">
-          <div style="font-size:48px;font-weight:800;color:#fff;line-height:1;">
-            {{stat1Value}}<span style="font-size:22px;font-weight:600;opacity:0.6;margin-left:2px;">{{stat1Unit}}</span>
+        <!-- Stat row 1: 장비 + 촬영 비용 -->
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+          <div style="background:rgba(255,255,255,0.03);border-radius:16px;padding:28px;">
+            <div style="font-size:56px;font-weight:800;color:#fff;line-height:1;">
+              {{stat1Value}}<span style="font-size:24px;font-weight:600;opacity:0.5;margin-left:2px;">{{stat1Unit}}</span>
+            </div>
+            <div style="font-size:20px;font-weight:600;color:var(--text-secondary);margin-top:8px;">{{stat1Label}}</div>
           </div>
-          <div style="font-size:18px;font-weight:600;color:var(--text-secondary);margin-top:6px;">{{stat1Label}}</div>
-          <div style="font-size:15px;color:var(--text-tertiary);margin-top:4px;">{{stat1Sub}}</div>
-        </div>
-      </div>
-
-      <!-- Stat 2: 촬영 비용 -->
-      <div class="card">
-        <div style="position:relative;z-index:1;">
-          <div style="font-size:48px;font-weight:800;color:#fff;line-height:1;">
-            {{stat2Value}}<span style="font-size:22px;font-weight:600;opacity:0.6;margin-left:2px;">{{stat2Unit}}</span>
+          <div style="background:rgba(255,255,255,0.03);border-radius:16px;padding:28px;">
+            <div style="font-size:56px;font-weight:800;color:#fff;line-height:1;">
+              {{stat2Value}}<span style="font-size:24px;font-weight:600;opacity:0.5;margin-left:2px;">{{stat2Unit}}</span>
+            </div>
+            <div style="font-size:20px;font-weight:600;color:var(--text-secondary);margin-top:8px;">{{stat2Label}}</div>
           </div>
-          <div style="font-size:18px;font-weight:600;color:var(--text-secondary);margin-top:6px;">{{stat2Label}}</div>
-          <div style="font-size:15px;color:var(--text-tertiary);margin-top:4px;">{{stat2Sub}}</div>
         </div>
-      </div>
 
-      <!-- Gap Card -->
-      <div class="card" style="background:var(--card-accent);border-color:rgba(247,225,80,0.12);">
-        <div style="position:relative;z-index:1;display:flex;align-items:center;gap:32px;">
+        <!-- Gap highlight -->
+        <div style="background:rgba(247,225,80,0.06);border-radius:16px;padding:32px;flex:1;display:flex;align-items:center;gap:36px;">
 
-          <!-- Donut: 수요 vs 이용 -->
-          <div style="display:flex;gap:24px;align-items:center;">
+          <div style="display:flex;align-items:center;gap:24px;">
             <div style="text-align:center;">
-              <div style="font-size:40px;font-weight:800;color:#fff;line-height:1;">
-                {{stat3Value}}<span style="font-size:20px;opacity:0.6;">{{stat3Unit}}</span>
-              </div>
-              <div style="font-size:15px;color:var(--text-secondary);margin-top:4px;">{{stat3Label}}</div>
+              <div style="font-size:48px;font-weight:800;color:#fff;line-height:1;">{{stat3Value}}<span style="font-size:22px;opacity:0.5;">{{stat3Unit}}</span></div>
+              <div style="font-size:18px;color:var(--text-secondary);margin-top:6px;">{{stat3Label}}</div>
             </div>
 
-            <div style="font-size:24px;color:var(--text-tertiary);">vs</div>
+            <div style="font-size:28px;color:rgba(255,255,255,0.15);">vs</div>
 
             <div style="text-align:center;">
-              <div style="font-size:40px;font-weight:800;color:#fff;line-height:1;">
-                {{stat4Value}}<span style="font-size:20px;opacity:0.6;">{{stat4Unit}}</span>
-              </div>
-              <div style="font-size:15px;color:var(--text-secondary);margin-top:4px;">{{stat4Label}}</div>
+              <div style="font-size:48px;font-weight:800;color:#fff;line-height:1;">{{stat4Value}}<span style="font-size:22px;opacity:0.5;">{{stat4Unit}}</span></div>
+              <div style="font-size:18px;color:var(--text-secondary);margin-top:6px;">{{stat4Label}}</div>
             </div>
           </div>
 
-          <!-- Arrow + Gap -->
+          <div style="font-size:32px;color:rgba(255,255,255,0.15);">→</div>
+
           <div style="text-align:center;">
-            <div style="font-size:20px;color:var(--text-tertiary);margin-bottom:4px;">→</div>
-            <div style="font-size:48px;font-weight:800;color:var(--accent);line-height:1;">{{gapValue}}</div>
-            <div style="font-size:15px;color:var(--accent-dark);margin-top:4px;">{{gapLabel}}</div>
+            <div style="font-size:56px;font-weight:800;color:var(--accent);line-height:1;">{{gapValue}}</div>
+            <div style="font-size:18px;color:var(--accent-dark);margin-top:6px;">{{gapLabel}}</div>
           </div>
 
         </div>
+
       </div>
 
     </div>
-
-    <!-- Source -->
-    <div style="position:absolute;bottom:24px;left:40px;font-size:15px;color:var(--text-source);">
-      Source: {{source}}
-    </div>
-    <div class="slide-number" style="position:absolute;bottom:24px;right:40px;font-size:15px;font-weight:600;color:var(--text-tertiary);"></div>
 
   </div>
+
+  <!-- Source -->
+  <div style="position:absolute;bottom:40px;left:120px;font-size:15px;color:var(--text-source);">
+    Source: {{source}}
+  </div>
+
 </div>

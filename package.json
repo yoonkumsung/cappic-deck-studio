@@ -4,13 +4,16 @@
   "private": true,
   "scripts": {
     "dev": "live-server src --port=3000 --no-browser",
-    "open": "live-server src --port=3000"
+    "open": "live-server src --port=3000",
+    "export": "node export/server.js"
   },
   "devDependencies": {
     "live-server": "^1.2.2"
   },
   "dependencies": {
     "pdf-parse": "^2.4.5",
-    "pdfjs-dist": "^3.11.174"
+    "pdfjs-dist": "^3.11.174",
+    "playwright": "^1.58.2",
+    "sharp": "^0.34.5"
   }
 }

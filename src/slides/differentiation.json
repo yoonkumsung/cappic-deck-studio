@@ -1,31 +1,27 @@
 {
   "fields": [
-    { "key": "sectionLabel", "label": "섹션 라벨", "type": "text", "value": "DIFFERENTIATION" },
     { "key": "title", "label": "타이틀", "type": "text", "value": "기존 스포츠 촬영의 3가지 한계" },
 
+    { "key": "type1Img", "label": "유형 1 이미지", "type": "image", "value": "" },
     { "key": "type1Name", "label": "유형 1 이름", "type": "text", "value": "클라우드 처리형" },
-    { "key": "type1Example", "label": "유형 1 예시", "type": "text", "value": "V사 · B사 등" },
+    { "key": "type1Problem", "label": "유형 1 핵심 문제", "type": "text", "value": "비싸고 개인 안 보임" },
     { "key": "type1Price", "label": "유형 1 가격", "type": "text", "value": "280~530만원" },
-    { "key": "type1Problem", "label": "유형 1 문제", "type": "text", "value": "비싸고, 개인 모습이 안 보임" },
-    { "key": "type1Detail", "label": "유형 1 상세", "type": "text", "value": "원거리 TOP VIEW 촬영 → 넓은 범위 커버하나 왜곡 발생, 개인 식별 불가" },
 
+    { "key": "type2Img", "label": "유형 2 이미지", "type": "image", "value": "" },
     { "key": "type2Name", "label": "유형 2 이름", "type": "text", "value": "부스 내 분석형" },
-    { "key": "type2Example", "label": "유형 2 예시", "type": "text", "value": "G사 등" },
+    { "key": "type2Problem", "label": "유형 2 핵심 문제", "type": "text", "value": "실제 경기가 아님" },
     { "key": "type2Price", "label": "유형 2 가격", "type": "text", "value": "회당 20~30만원" },
-    { "key": "type2Problem", "label": "유형 2 문제", "type": "text", "value": "실제 경기가 아닌 제한된 공간" },
-    { "key": "type2Detail", "label": "유형 2 상세", "type": "text", "value": "부스 내 고정 촬영 → 특정 동작만 분석 가능, 실제 현장 적용 불가" },
 
+    { "key": "type3Img", "label": "유형 3 이미지", "type": "image", "value": "" },
     { "key": "type3Name", "label": "유형 3 이름", "type": "text", "value": "스마트폰 촬영" },
-    { "key": "type3Example", "label": "유형 3 예시", "type": "text", "value": "직접 촬영" },
+    { "key": "type3Problem", "label": "유형 3 핵심 문제", "type": "text", "value": "1명만, 편집 직접" },
     { "key": "type3Price", "label": "유형 3 가격", "type": "text", "value": "무료 (시간 비용)" },
-    { "key": "type3Problem", "label": "유형 3 문제", "type": "text", "value": "1명만 촬영, 편집은 직접" },
-    { "key": "type3Detail", "label": "유형 3 상세", "type": "text", "value": "학부모 62%가 사용 중이나 → 하이라이트·편집 수동, 개인별 콘텐츠 생성 불가" },
 
     { "key": "cappicName", "label": "CAPP!C 이름", "type": "text", "value": "CAPP!C" },
     { "key": "cappicPrice", "label": "CAPP!C 가격", "type": "text", "value": "77만원" },
-    { "key": "cappicLine1", "label": "CAPP!C 강점 1", "type": "text", "value": "경쟁 제품 대비 20% 가격" },
-    { "key": "cappicLine2", "label": "CAPP!C 강점 2", "type": "text", "value": "기둥에 붙이면 끝, 전문 인력 불필요" },
-    { "key": "cappicLine3", "label": "CAPP!C 강점 3", "type": "text", "value": "AI가 자동으로 개인별 하이라이트 생성" },
-    { "key": "cappicLine4", "label": "CAPP!C 강점 4", "type": "text", "value": "1시간 내 결과물 확인 + AI 코칭" }
+    { "key": "cappicLine1", "label": "강점 1", "type": "text", "value": "경쟁 제품 20% 가격" },
+    { "key": "cappicLine2", "label": "강점 2", "type": "text", "value": "원터치 설치" },
+    { "key": "cappicLine3", "label": "강점 3", "type": "text", "value": "자동 개인 하이라이트" },
+    { "key": "cappicLine4", "label": "강점 4", "type": "text", "value": "1시간 내 결과 + AI 코칭" }
   ]
 }
