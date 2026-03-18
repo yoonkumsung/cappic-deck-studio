@@ -101,7 +101,7 @@
     /* ── Preview ── */
     .preview-container { padding:16px 20px;border-top:1px solid rgba(255,255,255,0.06);background:#050505; }
     .preview-label { font-size:12px;font-weight:600;color:var(--text-tertiary);letter-spacing:1px;text-transform:uppercase;margin-bottom:10px; }
-    .preview-frame { border-radius:8px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,0.4);border:1px solid rgba(255,255,255,0.04); }
+    .preview-frame { border-radius:8px;overflow:hidden;box-shadow:0 0 0 2px rgba(255,255,255,0.15), 0 0 20px rgba(126,220,230,0.06);border:none; }
     .preview-frame .slide { transform-origin:top left; }
 
     /* ── Modals ── */
@@ -185,7 +185,10 @@
     <div class="panel-editor" id="editorPanel">
       <div class="editor-header">
         <div class="editor-title" id="editorTitle">슬라이드 편집</div>
-        <button class="btn btn-sm" onclick="closeEditor()">닫기 ×</button>
+        <div style="display:flex;gap:6px;">
+          <button class="btn btn-sm btn-accent" onclick="exportCurrentSlide()">PNG 추출</button>
+          <button class="btn btn-sm" onclick="closeEditor()">닫기 ×</button>
+        </div>
       </div>
       <div class="editor-tabs">
         <div class="editor-tab active" onclick="setEditorTab('form',this)">콘텐츠</div>
@@ -297,15 +300,25 @@
 
     // ── Load slide data (json) ──
     async function loadSlideData(id) {
-      if (slideDataCache[id]) return slideDataCache[id];
       try {
         const res = await fetch(`slides/${id}.json`);
         if (res.ok) {
-          const data = await res.json();
-          slideDataCache[id] = data;
-          return data;
+          const fileData = await res.json();
+          // Merge: localStorage overrides per-field, but new fields from file are added
+          if (slideDataCache[id]) {
+            const cached = slideDataCache[id];
+            fileData.fields.forEach(ff => {
+              const cf = cached.fields.find(c => c.key === ff.key);
+              if (cf) {
+                ff.value = cf.value || ff.value; // use cached if non-empty, else file default
+              }
+            });
+          }
+          slideDataCache[id] = fileData;
+          return fileData;
         }
       } catch(e) {}
+      if (slideDataCache[id]) return slideDataCache[id];
       return null;
     }
 
@@ -495,13 +508,19 @@
 
       if (!template) {
         frame.innerHTML = '';
+        frame.style.height = 'auto';
         return;
       }
 
       const html = renderSlideHtml(template, data?.fields);
-      const scale = (frame.parentElement.clientWidth - 40) / 1920;
-      frame.style.height = (1080 * scale) + 'px';
-      frame.innerHTML = `<div style="transform:scale(${scale});transform-origin:top left;width:1920px;height:1080px;background:#000;position:relative;font-family:var(--font-family);">${html}</div>`;
+      const containerWidth = frame.parentElement.clientWidth - 40;
+      const scale = containerWidth / 1920;
+      // 16:9 비율 고정
+      frame.style.width = containerWidth + 'px';
+      frame.style.height = (containerWidth * 9 / 16) + 'px';
+      frame.style.position = 'relative';
+      frame.style.overflow = 'hidden';
+      frame.innerHTML = `<div style="transform:scale(${scale});transform-origin:top left;width:1920px;height:1080px;background:#000;position:absolute;top:0;left:0;font-family:var(--font-family);">${html}</div>`;
     }
 
     // ── Slide CRUD ──
@@ -607,6 +626,73 @@
             </div>
             <div onclick="event.stopPropagation()"><button class="btn btn-sm btn-danger" onclick="deleteVersion('${v.name}')">삭제</button></div>
           </li>`).join('');
+    }
+
+    // ── Export Current Slide as PNG ──
+    async function exportCurrentSlide() {
+      if (!editingSlideId) return;
+      const template = await loadSlideTemplate(editingSlideId);
+      const data = slideDataCache[editingSlideId];
+      if (!template) { showToast('HTML 템플릿이 없습니다'); return; }
+
+      showToast('추출 중...');
+
+      const html = renderSlideHtml(template, data?.fields);
+
+      // Create offscreen iframe at full 1920x1080
+      const iframe = document.createElement('iframe');
+      iframe.style.cssText = 'position:fixed;top:-10000px;left:-10000px;width:1920px;height:1080px;border:none;';
+      document.body.appendChild(iframe);
+
+      const doc = iframe.contentDocument;
+      doc.open();
+      doc.write(`<!DOCTYPE html>
+<html><head>
+<link rel="stylesheet" href="styles/tokens.css">
+<link rel="stylesheet" href="styles/layout.css">
+<link rel="stylesheet" href="styles/cards.css">
+<link rel="stylesheet" href="styles/components.css">
+<link rel="stylesheet" href="styles/utilities.css">
+<style>
+  html,body { margin:0;padding:0;width:1920px;height:1080px;overflow:hidden;background:#000; }
+</style>
+</head><body>${html}</body></html>`);
+      doc.close();
+
+      // Wait for fonts/images to load
+      await new Promise(r => setTimeout(r, 1500));
+
+      try {
+        // Use html2canvas via CDN
+        if (!window.html2canvas) {
+          const script = document.createElement('script');
+          script.src = 'https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js';
+          document.head.appendChild(script);
+          await new Promise(r => script.onload = r);
+        }
+
+        const canvas = await html2canvas(doc.body, {
+          width: 1920,
+          height: 1080,
+          scale: 4,  // 4x = 7680x4320 (8K)
+          useCORS: true,
+          backgroundColor: '#000000',
+          logging: false
+        });
+
+        // Download
+        const link = document.createElement('a');
+        link.download = `${editingSlideId}.png`;
+        link.href = canvas.toDataURL('image/png');
+        link.click();
+
+        showToast('추출 완료');
+      } catch(e) {
+        console.error(e);
+        showToast('추출 실패: ' + e.message);
+      } finally {
+        document.body.removeChild(iframe);
+      }
     }
 
     function showToast(msg) {

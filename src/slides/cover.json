@@ -2,7 +2,11 @@
   "fields": [
     { "key": "tagline", "label": "슬로건", "type": "text", "value": "IT'S YOUR HIGHLIGHT" },
     { "key": "subtitle", "label": "서브타이틀", "type": "text", "value": "Edge AI 기반 스포츠 자동 촬영·분석 플랫폼" },
-    { "key": "identity", "label": "한 줄 정체성", "type": "text", "value": "77만원 AI 카메라, 내 아이의 하이라이트를 자동으로" },
-    { "key": "logoSrc", "label": "로고 이미지", "type": "image", "value": "assets/logo-white.png" }
+    { "key": "logoSrc", "label": "로고 이미지", "type": "image", "value": "assets/logo-white.png" },
+    { "key": "hudRes", "label": "HUD 해상도 표시", "type": "text", "value": "DUAL 4K 130°" },
+    { "key": "hudTag1", "label": "HUD 태그 1 (시안)", "type": "text", "value": "AI TRACKING" },
+    { "key": "hudTag2", "label": "HUD 태그 2 (옐로)", "type": "text", "value": "AUTO HIGHLIGHT" },
+    { "key": "hudTag3", "label": "HUD 태그 3 (흰색)", "type": "text", "value": "EDGE AI" },
+    { "key": "hudBottom", "label": "HUD 하단 우측", "type": "text", "value": "SONY IMX SENSOR × 2" }
   ]
 }
