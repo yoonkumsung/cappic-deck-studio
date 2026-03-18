@@ -1,0 +1,90 @@
+/* ============================================
+   CAPP!C Design System — Cards (Dark Theme)
+   ============================================ */
+
+/* ── Base Card ── */
+.card {
+  background: var(--card-default);
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+  border: var(--card-border);
+  padding: 28px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Gloss overlay */
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.03) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  pointer-events: none;
+  border-radius: var(--card-radius) var(--card-radius) 0 0;
+}
+
+/* ── Card Title ── */
+.card-title {
+  font-size: var(--fs-subtitle);
+  font-weight: var(--fw-subtitle);
+  color: var(--text-primary);
+  margin-bottom: 12px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Card Body ── */
+.card-body {
+  font-size: var(--fs-body);
+  font-weight: var(--fw-body);
+  color: var(--text-secondary);
+  line-height: 1.6;
+  position: relative;
+  z-index: 1;
+}
+
+.card-body strong {
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+/* ── Elevated Card (살짝 밝은 배경) ── */
+.card-elevated {
+  background: var(--card-elevated);
+}
+
+/* ── Secondary Card (30% Cyan) ── */
+.card-secondary {
+  background: var(--card-secondary);
+  border-color: rgba(126, 220, 230, 0.12);
+}
+
+.card-secondary .card-title {
+  color: var(--secondary);
+}
+
+/* ── Accent Card (10% Yellow) ── */
+.card-accent {
+  background: var(--card-accent);
+  border-color: rgba(247, 225, 80, 0.12);
+}
+
+.card-accent .card-title {
+  color: var(--accent);
+}
+
+/* ── Card Sizes ── */
+.card-compact {
+  padding: 20px;
+}
+
+.card-large {
+  padding: 36px;
+}

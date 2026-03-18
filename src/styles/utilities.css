@@ -1,0 +1,98 @@
+/* ============================================
+   CAPP!C Design System — Utilities (Dark Theme)
+   ============================================ */
+
+/* ── Badges / Tags ── */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 12px;
+  border-radius: var(--badge-radius);
+  font-size: var(--fs-source);
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.badge-default {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text-secondary);
+}
+
+.badge-secondary {
+  background: rgba(126, 220, 230, 0.12);
+  color: var(--secondary);
+}
+
+.badge-accent {
+  background: rgba(247, 225, 80, 0.15);
+  color: var(--accent);
+}
+
+/* ── Number Emphasis ── */
+.num-highlight {
+  font-size: var(--fs-stat-large);
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1;
+}
+
+.num-highlight .unit {
+  font-size: var(--fs-stat-unit);
+  font-weight: 600;
+  opacity: 0.6;
+}
+
+.num-highlight.secondary {
+  color: var(--secondary);
+}
+
+.num-highlight.accent {
+  color: var(--accent);
+}
+
+/* ── Text Utilities ── */
+.text-primary    { color: var(--text-primary); }
+.text-secondary  { color: var(--text-secondary); }
+.text-tertiary   { color: var(--text-tertiary); }
+.text-source     { color: var(--text-source); }
+.text-brand      { color: var(--secondary); }
+.text-accent     { color: var(--accent); }
+
+.font-bold { font-weight: 700; }
+.font-extrabold { font-weight: 800; }
+
+.text-sm { font-size: var(--fs-source); }
+.text-center { text-align: center; }
+.text-right  { text-align: right; }
+
+/* ── Margin / Padding ── */
+.mt-sm  { margin-top: var(--gap-small); }
+.mt     { margin-top: var(--gap); }
+.mt-lg  { margin-top: var(--gap-large); }
+.mb-sm  { margin-bottom: var(--gap-small); }
+.mb     { margin-bottom: var(--gap); }
+.mb-lg  { margin-bottom: var(--gap-large); }
+
+/* ── Divider ── */
+.divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.06);
+  margin: var(--gap) 0;
+}
+
+/* ── Slide Number ── */
+.slide-number {
+  position: absolute;
+  bottom: 24px;
+  right: 40px;
+  font-size: var(--fs-source);
+  font-weight: 600;
+  color: var(--text-tertiary);
+}
+
+/* ── Source Citation ── */
+.source {
+  font-size: var(--fs-source);
+  color: var(--text-source);
+  font-weight: 500;
+}

@@ -1,0 +1,355 @@
+/* ============================================
+   CAPP!C Design System — Components (Dark Theme)
+   60% Black/White · 30% Cyan · 10% Yellow
+   Min font: 15px · High contrast
+   ============================================ */
+
+/* ═══════════════════════════════════════════
+   1. STAT CARD
+   ═══════════════════════════════════════════ */
+.stat {
+  position: relative;
+  z-index: 1;
+}
+
+.stat-value {
+  font-size: var(--fs-stat-large);
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.stat-value .unit {
+  font-size: var(--fs-stat-unit);
+  font-weight: 600;
+  opacity: 0.6;
+  margin-left: 2px;
+}
+
+.stat-label {
+  font-size: var(--fs-body);
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 4px;
+}
+
+.stat-sub {
+  font-size: var(--fs-body);
+  font-weight: 500;
+  color: var(--text-tertiary);
+}
+
+/* Secondary card stats */
+.card-secondary .stat-value {
+  color: var(--secondary);
+}
+
+/* Accent card stats */
+.card-accent .stat-value {
+  color: var(--accent);
+}
+
+/* Stat sizes */
+.stat-value.medium {
+  font-size: var(--fs-stat-medium);
+}
+
+
+/* ═══════════════════════════════════════════
+   2. MINI TABLE
+   ═══════════════════════════════════════════ */
+.mini-table {
+  width: 100%;
+  border-collapse: collapse;
+  position: relative;
+  z-index: 1;
+}
+
+.mini-table th,
+.mini-table td {
+  padding: 12px 14px;
+  text-align: left;
+  font-size: var(--fs-body);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.mini-table th {
+  font-weight: 700;
+  color: var(--text-tertiary);
+  font-size: var(--fs-source);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.mini-table td {
+  color: var(--text-secondary);
+}
+
+.mini-table td strong {
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+.mini-table tr:last-child td {
+  border-bottom: none;
+}
+
+
+/* ═══════════════════════════════════════════
+   3. FLOW DIAGRAM
+   ═══════════════════════════════════════════ */
+.flow {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.flow-block {
+  background: var(--card-elevated);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 12px;
+  padding: 18px 20px;
+  text-align: center;
+  flex: 1;
+}
+
+.flow-block-title {
+  font-size: var(--fs-body);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.flow-block-sub {
+  font-size: var(--fs-source);
+  color: var(--text-tertiary);
+}
+
+.flow-block.highlight {
+  background: var(--secondary-dark);
+  border-color: var(--secondary);
+}
+
+.flow-block.highlight .flow-block-title,
+.flow-block.highlight .flow-block-sub {
+  color: #000000;
+}
+
+.flow-block.dark {
+  background: var(--text-primary);
+  border-color: transparent;
+}
+
+.flow-block.dark .flow-block-title,
+.flow-block.dark .flow-block-sub {
+  color: #000000;
+}
+
+.flow-arrow {
+  width: 32px;
+  min-width: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-tertiary);
+}
+
+.flow-arrow svg {
+  width: 24px;
+  height: 24px;
+}
+
+
+/* ═══════════════════════════════════════════
+   4. CHECKLIST
+   ═══════════════════════════════════════════ */
+.checklist {
+  list-style: none;
+  position: relative;
+  z-index: 1;
+}
+
+.checklist li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 10px 0;
+  font-size: var(--fs-body);
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.checklist li strong {
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+.check-icon {
+  width: 22px;
+  height: 22px;
+  min-width: 22px;
+  margin-top: 2px;
+  color: var(--secondary);
+}
+
+
+/* ═══════════════════════════════════════════
+   5. TIMELINE
+   ═══════════════════════════════════════════ */
+.timeline {
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+  z-index: 1;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 16px;
+  left: 14px;
+  right: 14px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--secondary), var(--secondary-dark));
+}
+
+.timeline-node {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+.timeline-dot {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--secondary);
+  border: 3px solid var(--bg-slide);
+  box-shadow: 0 0 0 2px var(--secondary);
+  margin-bottom: 14px;
+  position: relative;
+  z-index: 1;
+}
+
+.timeline-dot.active {
+  background: var(--secondary-dark);
+  box-shadow: 0 0 0 2px var(--secondary-dark),
+              0 0 12px rgba(126, 220, 230, 0.3);
+}
+
+.timeline-dot.milestone {
+  background: var(--accent);
+  border-color: var(--bg-slide);
+  box-shadow: 0 0 0 2px var(--accent-dark),
+              0 0 12px rgba(247, 225, 80, 0.3);
+}
+
+.timeline-dot.future {
+  background: var(--bg-slide);
+  border-color: var(--secondary);
+}
+
+.timeline-label {
+  font-size: var(--fs-body);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.timeline-desc {
+  font-size: var(--fs-source);
+  color: var(--text-tertiary);
+  max-width: 150px;
+}
+
+
+/* ═══════════════════════════════════════════
+   6. DONUT CHART (SVG)
+   ═══════════════════════════════════════════ */
+.donut-chart {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.donut-chart svg {
+  transform: rotate(-90deg);
+}
+
+.donut-chart circle {
+  fill: none;
+  stroke-width: 8;
+  stroke-linecap: round;
+}
+
+.donut-chart .donut-bg {
+  stroke: rgba(255, 255, 255, 0.08);
+}
+
+.donut-chart .donut-fill {
+  stroke: var(--secondary);
+  transition: stroke-dasharray 0.6s ease;
+}
+
+.donut-chart .donut-fill.accent {
+  stroke: var(--accent);
+}
+
+.donut-center {
+  position: absolute;
+  text-align: center;
+}
+
+.donut-center .stat-value {
+  font-size: var(--fs-subtitle);
+}
+
+
+/* ═══════════════════════════════════════════
+   7. FLYWHEEL (SVG)
+   ═══════════════════════════════════════════ */
+.flywheel {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flywheel svg {
+  overflow: visible;
+}
+
+.flywheel-arc {
+  fill: none;
+  stroke-width: 3;
+  stroke: var(--secondary);
+  marker-mid: url(#arrowhead);
+}
+
+.flywheel-label {
+  font-size: var(--fs-source);
+  font-weight: 700;
+  fill: var(--text-primary);
+  text-anchor: middle;
+}
+
+
+/* ═══════════════════════════════════════════
+   8. SEMANTIC DATA INDICATORS (극소량)
+   ═══════════════════════════════════════════ */
+.data-up {
+  color: var(--semantic-up);
+  font-weight: 700;
+}
+
+.data-down {
+  color: var(--semantic-down);
+  font-weight: 700;
+}

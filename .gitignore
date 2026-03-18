@@ -1,0 +1,16 @@
+node_modules/
+output/
+temp_pages/
+*.log
+.DS_Store
+Thumbs.db
+moai-adk/
+nul
+poppler.zip
+
+# Large image files (logo originals)
+260316_CAPP!C_CI_RGB_WH_NOBG.png
+260316_CAPP!C_CI_RGB_BK_NOBG.png
+
+# PDF base (too large for git)
+base.pdf

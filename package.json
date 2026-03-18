@@ -1,0 +1,16 @@
+{
+  "name": "ir-pitch-deck-maker",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "live-server src --port=3000 --no-browser",
+    "open": "live-server src --port=3000"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  },
+  "dependencies": {
+    "pdf-parse": "^2.4.5",
+    "pdfjs-dist": "^3.11.174"
+  }
+}

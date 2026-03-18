@@ -1,0 +1,108 @@
+/* ============================================
+   CAPP!C Design System — Design Tokens
+   Dark Theme · 60-30-10 · High Readability
+   ============================================ */
+
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css');
+
+:root {
+  /* ══ 60-30-10 Color System ══ */
+
+  /* ── 60% Main: Black + White ── */
+  --main-black:        #000000;
+  --main-dark:         #0A0A0A;
+  --main-dark-mid:     #141414;
+  --main-dark-light:   #1E1E1E;
+
+  /* ── Text on Dark (고대비 — 잘 보이게) ── */
+  --text-primary:      #FFFFFF;
+  --text-secondary:    #E0E0E0;
+  --text-tertiary:     #B0B0B0;
+  --text-source:       #888888;
+
+  /* ── 30% Secondary: Cyan ── */
+  --secondary:         #7EDCE6;
+  --secondary-dark:    #5BC4D0;
+  --secondary-light:   rgba(126, 220, 230, 0.12);
+
+  /* ── 10% Accent: Yellow ── */
+  --accent:            #F7E150;
+  --accent-dark:       #E5D040;
+  --accent-light:      rgba(247, 225, 80, 0.12);
+
+  /* ── Semantic (극소량, 데이터 증감 표시용) ── */
+  --semantic-up:       #7AE85A;
+  --semantic-down:     #FF4D6A;
+
+  /* ── Backgrounds ── */
+  --bg-slide:          #000000;
+  --bg-card:           #141414;
+  --bg-card-elevated:  #1E1E1E;
+
+  /* ── Card Backgrounds ── */
+  --card-default:      linear-gradient(165deg, #161616, #101010);
+  --card-elevated:     linear-gradient(165deg, #1E1E1E, #161616);
+  --card-secondary:    linear-gradient(165deg, rgba(126,220,230,0.10), rgba(126,220,230,0.05));
+  --card-accent:       linear-gradient(165deg, rgba(247,225,80,0.10), rgba(247,225,80,0.05));
+
+  /* ── Card Properties ── */
+  --card-radius:       18px;
+  --card-shadow:       0 2px 8px rgba(0,0,0,0.3),
+                       0 6px 16px rgba(0,0,0,0.2),
+                       inset 0 1px 0 rgba(255,255,255,0.05);
+  --card-border:       1px solid rgba(255,255,255,0.06);
+
+  /* ── Typography ── */
+  --font-family:       'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont,
+                       system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo',
+                       'Noto Sans KR', 'Malgun Gothic', 'Apple Color Emoji', 'Segoe UI Emoji',
+                       'Segoe UI Symbol', sans-serif;
+
+  /* 폰트 크기: 4단계만 (최소 15px) */
+  --fs-title:          32px;
+  --fs-subtitle:       24px;
+  --fs-body:           18px;
+  --fs-source:         15px;    /* 최소 — 출처 표기용 */
+
+  --fw-title:          800;
+  --fw-subtitle:       700;
+  --fw-body:           500;
+
+  --ls-label:          2px;
+
+  /* 숫자 강조 */
+  --fs-stat-large:     48px;
+  --fs-stat-medium:    40px;
+  --fs-stat-unit:      22px;
+
+  /* ── Layout ── */
+  --container-width:   1280px;
+  --container-padding: 40px;
+  --gap:               18px;
+  --gap-small:         12px;
+  --gap-large:         24px;
+
+  /* ── Badge ── */
+  --badge-radius:      6px;
+}
+
+/* ── Global Reset ── */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: var(--font-family);
+  font-size: var(--fs-body);
+  font-weight: var(--fw-body);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  background: var(--bg-slide);
+}
