@@ -1,0 +1,156 @@
+/* ============================================
+   CAPP!C Slide Grid System
+   모든 슬라이드는 이 클래스를 사용해서 레이아웃한다.
+   인라인 style로 위치/크기를 지정하지 않는다.
+   ============================================ */
+
+/* ── Slide Base ── */
+.slide {
+  width: var(--slide-w);
+  height: var(--slide-h);
+  background: var(--main-black);
+  position: relative;
+  overflow: hidden;
+}
+
+/* ── Title (모든 슬라이드 공통, 좌측 상단 고정) ── */
+.slide-title {
+  position: absolute;
+  top: var(--slide-pad-top);
+  left: var(--slide-pad-side);
+  right: var(--slide-pad-side);
+  font-size: var(--fs-display);
+  font-weight: var(--fw-display);
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+
+/* ── Content Area (타이틀 아래 전체 영역) ── */
+.slide-content {
+  position: absolute;
+  top: var(--slide-content-top);
+  left: var(--slide-pad-side);
+  right: var(--slide-pad-side);
+  bottom: var(--slide-pad-bottom);
+}
+
+/* ── Grid Columns ── */
+.sg-cols-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--slide-gap); height: 100%; }
+.sg-cols-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--slide-gap); height: 100%; }
+.sg-cols-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--slide-gap); height: 100%; }
+.sg-cols-1-2 { display: grid; grid-template-columns: 1fr 2fr; gap: var(--slide-gap); height: 100%; }
+.sg-cols-2-1 { display: grid; grid-template-columns: 2fr 1fr; gap: var(--slide-gap); height: 100%; }
+
+/* ── Grid Rows ── */
+.sg-rows-2 { display: grid; grid-template-rows: repeat(2, 1fr); gap: var(--slide-gap); height: 100%; }
+.sg-rows-auto-1fr { display: grid; grid-template-rows: auto 1fr; gap: var(--slide-gap); height: 100%; }
+
+/* ── Card Column (사진 위 + 데이터 아래) ── */
+.sg-card-col {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.sg-card-col .sg-photo {
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  background: rgba(255,255,255,0.03);
+  flex-shrink: 0;
+}
+
+.sg-card-col .sg-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sg-card-col .sg-data {
+  padding: var(--card-pad);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Data Item (라벨 + 값 쌍) ── */
+.sg-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-xs);
+}
+
+.sg-item-label {
+  font-size: var(--fs-caption);
+  font-weight: var(--fw-body);
+  color: var(--text-tertiary);
+}
+
+.sg-item-value {
+  font-size: var(--fs-body);
+  font-weight: var(--fw-heading);
+  color: var(--text-secondary);
+}
+
+/* Accent card의 값은 흰색 */
+.card-accent .sg-item-value {
+  color: var(--text-primary);
+}
+
+/* ── Data List (아이템 세로 나열, 균등 배분) ── */
+.sg-data-list {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+/* ── Stat (큰 숫자 + 라벨) ── */
+.sg-stat-value {
+  font-size: var(--fs-display);
+  font-weight: var(--fw-display);
+  color: var(--text-primary);
+  line-height: 1;
+}
+
+.sg-stat-unit {
+  font-size: var(--fs-heading);
+  font-weight: var(--fw-body);
+  opacity: 0.6;
+  margin-left: 2px;
+}
+
+.sg-stat-label {
+  font-size: var(--fs-caption);
+  font-weight: var(--fw-body);
+  color: var(--text-secondary);
+  margin-top: var(--sp-xs);
+}
+
+/* ── Source (좌하단 고정) ── */
+.slide-source {
+  position: absolute;
+  bottom: var(--sp-lg);
+  left: var(--slide-pad-side);
+  font-size: var(--fs-source);
+  color: #888888;
+}
+
+/* ── Photo placeholder ── */
+.sg-photo-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.03);
+  border-radius: var(--card-radius);
+  overflow: hidden;
+}
+
+.sg-photo-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

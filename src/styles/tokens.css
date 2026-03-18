@@ -1,6 +1,6 @@
 /* ============================================
    CAPP!C Design System — Design Tokens
-   Dark Theme · 60-30-10 · High Readability
+   Dark Theme · 60-30-10 · 8px Grid
    ============================================ */
 
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css');
@@ -8,82 +8,75 @@
 :root {
   /* ══ 60-30-10 Color System ══ */
 
-  /* ── 60% Main: Black + White ── */
   --main-black:        #000000;
   --main-dark:         #0A0A0A;
   --main-dark-mid:     #141414;
   --main-dark-light:   #1E1E1E;
 
-  /* ── Text on Dark (고대비 — 잘 보이게) ── */
   --text-primary:      #FFFFFF;
   --text-secondary:    #E0E0E0;
   --text-tertiary:     #B0B0B0;
-  --text-source:       #888888;
 
-  /* ── 30% Secondary: Cyan ── */
   --secondary:         #7EDCE6;
   --secondary-dark:    #5BC4D0;
   --secondary-light:   rgba(126, 220, 230, 0.12);
 
-  /* ── 10% Accent: Yellow ── */
   --accent:            #F7E150;
   --accent-dark:       #E5D040;
   --accent-light:      rgba(247, 225, 80, 0.12);
 
-  /* ── Semantic (극소량, 데이터 증감 표시용) ── */
   --semantic-up:       #7AE85A;
   --semantic-down:     #FF4D6A;
 
-  /* ── Backgrounds ── */
-  --bg-slide:          #000000;
-  --bg-card:           #141414;
-  --bg-card-elevated:  #1E1E1E;
+  /* ══ Typography Scale (4단계만, 최소 18px) ══
+     출처 표기만 예외적으로 15px 허용
+     그 외 모든 텍스트는 반드시 이 4단계 중 하나 사용 */
 
-  /* ── Card Backgrounds ── */
+  --fs-display:        48px;   /* 슬라이드 타이틀, 큰 숫자 */
+  --fs-heading:        28px;   /* 카드 제목, 비교표 헤더 */
+  --fs-body:           22px;   /* 본문, 비교표 데이터, 키워드 */
+  --fs-caption:        18px;   /* 보조 텍스트, 항목 라벨 */
+  --fs-source:         15px;   /* 출처 표기 전용 — 이 외 사용 금지 */
+
+  --fw-display:        800;
+  --fw-heading:        700;
+  --fw-body:           600;
+
+  --font-family:       'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont,
+                       system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo',
+                       'Noto Sans KR', 'Malgun Gothic', sans-serif;
+
+  /* ══ Spacing Scale (8px 배수, 5단계만) ══
+     모든 padding, margin, gap은 반드시 이 중 하나 사용 */
+
+  --sp-xs:             8px;
+  --sp-sm:             16px;
+  --sp-md:             24px;
+  --sp-lg:             32px;
+  --sp-xl:             48px;
+
+  /* ══ Slide Layout (고정값) ══ */
+
+  --slide-w:           1920px;
+  --slide-h:           1080px;
+  --slide-pad-top:     80px;   /* 슬라이드 상단 → 타이틀 */
+  --slide-pad-side:    120px;  /* 슬라이드 좌우 여백 */
+  --slide-pad-bottom:  80px;   /* 슬라이드 하단 여백 */
+  --slide-content-top: 200px;  /* 타이틀 아래 → 콘텐츠 시작 (타이틀 높이 + 간격) */
+  --slide-gap:         24px;   /* 슬라이드 내 카드/요소 간격 (통일) */
+
+  /* ══ Card ══ */
+
   --card-default:      linear-gradient(165deg, #161616, #101010);
   --card-elevated:     linear-gradient(165deg, #1E1E1E, #161616);
   --card-secondary:    linear-gradient(165deg, rgba(126,220,230,0.10), rgba(126,220,230,0.05));
   --card-accent:       linear-gradient(165deg, rgba(247,225,80,0.10), rgba(247,225,80,0.05));
-
-  /* ── Card Properties ── */
-  --card-radius:       18px;
+  --card-radius:       16px;
   --card-shadow:       0 2px 8px rgba(0,0,0,0.3),
                        0 6px 16px rgba(0,0,0,0.2),
                        inset 0 1px 0 rgba(255,255,255,0.05);
   --card-border:       1px solid rgba(255,255,255,0.06);
-
-  /* ── Typography ── */
-  --font-family:       'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont,
-                       system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo',
-                       'Noto Sans KR', 'Malgun Gothic', 'Apple Color Emoji', 'Segoe UI Emoji',
-                       'Segoe UI Symbol', sans-serif;
-
-  /* 폰트 크기: 4단계만 (최소 15px) */
-  --fs-title:          32px;
-  --fs-subtitle:       24px;
-  --fs-body:           18px;
-  --fs-source:         15px;    /* 최소 — 출처 표기용 */
-
-  --fw-title:          800;
-  --fw-subtitle:       700;
-  --fw-body:           500;
-
-  --ls-label:          2px;
-
-  /* 숫자 강조 */
-  --fs-stat-large:     48px;
-  --fs-stat-medium:    40px;
-  --fs-stat-unit:      22px;
-
-  /* ── Layout ── */
-  --container-width:   1280px;
-  --container-padding: 40px;
-  --gap:               18px;
-  --gap-small:         12px;
-  --gap-large:         24px;
-
-  /* ── Badge ── */
-  --badge-radius:      6px;
+  --card-pad:          var(--sp-lg);  /* 카드 내부 padding: 32px 통일 */
 }
 
 /* ── Global Reset ── */
@@ -104,5 +97,5 @@ html {
 }
 
 body {
-  background: var(--bg-slide);
+  background: var(--main-black);
 }
