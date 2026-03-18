@@ -399,6 +399,9 @@
       document.getElementById('editorPanel').classList.add('open');
       editorTab = 'form';
       document.querySelectorAll('.editor-tab').forEach((t,i) => t.classList.toggle('active', i===0));
+      // Pre-load template and data
+      await loadSlideTemplate(id);
+      await loadSlideData(id);
       await renderEditorBody();
       render();
     }
@@ -646,17 +649,14 @@
 
       const doc = iframe.contentDocument;
       doc.open();
-      doc.write(`<!DOCTYPE html>
-<html><head>
-<link rel="stylesheet" href="styles/tokens.css">
-<link rel="stylesheet" href="styles/layout.css">
-<link rel="stylesheet" href="styles/cards.css">
-<link rel="stylesheet" href="styles/components.css">
-<link rel="stylesheet" href="styles/utilities.css">
-<style>
-  html,body { margin:0;padding:0;width:1920px;height:1080px;overflow:hidden;background:#000; }
-</style>
-</head><body>${html}</body></html>`);
+      doc.write('<!DOCTYPE html><html><head>' +
+        '<link rel="stylesheet" href="styles/tokens.css">' +
+        '<link rel="stylesheet" href="styles/layout.css">' +
+        '<link rel="stylesheet" href="styles/cards.css">' +
+        '<link rel="stylesheet" href="styles/components.css">' +
+        '<link rel="stylesheet" href="styles/utilities.css">' +
+        '<style>html,body{margin:0;padding:0;width:1920px;height:1080px;overflow:hidden;background:#000;}</style>' +
+        '</head><bo' + 'dy>' + html + '</bo' + 'dy></ht' + 'ml>');
       doc.close();
 
       // Wait for fonts/images to load
