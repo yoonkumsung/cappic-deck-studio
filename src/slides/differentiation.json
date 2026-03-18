@@ -1,27 +1,14 @@
 {
   "fields": [
     { "key": "title", "label": "타이틀", "type": "text", "value": "기존 스포츠 촬영의 3가지 한계" },
-
     { "key": "type1Img", "label": "유형 1 이미지", "type": "image", "value": "" },
     { "key": "type1Name", "label": "유형 1 이름", "type": "text", "value": "클라우드 처리형" },
     { "key": "type1Problem", "label": "유형 1 핵심 문제", "type": "text", "value": "비싸고 개인 안 보임" },
-    { "key": "type1Price", "label": "유형 1 가격", "type": "text", "value": "280~530만원" },
-
     { "key": "type2Img", "label": "유형 2 이미지", "type": "image", "value": "" },
     { "key": "type2Name", "label": "유형 2 이름", "type": "text", "value": "부스 내 분석형" },
     { "key": "type2Problem", "label": "유형 2 핵심 문제", "type": "text", "value": "실제 경기가 아님" },
-    { "key": "type2Price", "label": "유형 2 가격", "type": "text", "value": "회당 20~30만원" },
-
     { "key": "type3Img", "label": "유형 3 이미지", "type": "image", "value": "" },
     { "key": "type3Name", "label": "유형 3 이름", "type": "text", "value": "스마트폰 촬영" },
-    { "key": "type3Problem", "label": "유형 3 핵심 문제", "type": "text", "value": "1명만, 편집 직접" },
-    { "key": "type3Price", "label": "유형 3 가격", "type": "text", "value": "무료 (시간 비용)" },
-
-    { "key": "cappicName", "label": "CAPP!C 이름", "type": "text", "value": "CAPP!C" },
-    { "key": "cappicPrice", "label": "CAPP!C 가격", "type": "text", "value": "77만원" },
-    { "key": "cappicLine1", "label": "강점 1", "type": "text", "value": "경쟁 제품 20% 가격" },
-    { "key": "cappicLine2", "label": "강점 2", "type": "text", "value": "원터치 설치" },
-    { "key": "cappicLine3", "label": "강점 3", "type": "text", "value": "자동 개인 하이라이트" },
-    { "key": "cappicLine4", "label": "강점 4", "type": "text", "value": "1시간 내 결과 + AI 코칭" }
+    { "key": "type3Problem", "label": "유형 3 핵심 문제", "type": "text", "value": "1명만, 편집 직접" }
   ]
 }
