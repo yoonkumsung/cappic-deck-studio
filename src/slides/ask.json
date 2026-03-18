@@ -1,0 +1,15 @@
+{
+  "fields": [
+    { "key": "title", "label": "타이틀", "type": "text", "value": "투자 요청" },
+    { "key": "askAmount", "label": "투자 금액", "type": "text", "value": "5" },
+    { "key": "askUnit", "label": "투자 단위", "type": "text", "value": "억원" },
+    { "key": "askLabel", "label": "투자 라벨", "type": "text", "value": "Seed 라운드" },
+    { "key": "askTarget", "label": "목표 밸류", "type": "text", "value": "Pre-money 30억 목표" },
+    { "key": "use1Pct", "label": "용도 1 비율", "type": "text", "value": "50%" },
+    { "key": "use1Name", "label": "용도 1 이름", "type": "text", "value": "양산 및 금형" },
+    { "key": "use2Pct", "label": "용도 2 비율", "type": "text", "value": "30%" },
+    { "key": "use2Name", "label": "용도 2 이름", "type": "text", "value": "AI·SW 개발" },
+    { "key": "use3Pct", "label": "용도 3 비율", "type": "text", "value": "20%" },
+    { "key": "use3Name", "label": "용도 3 이름", "type": "text", "value": "마케팅·운영" }
+  ]
+}

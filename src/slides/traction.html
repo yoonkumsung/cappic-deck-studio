@@ -1,0 +1,42 @@
+<div class="slide">
+  <div class="slide-title">{{title}}</div>
+
+  <div class="slide-content sg-cols-2">
+
+    <!-- Left: 2x2 Stat Grid -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:var(--slide-gap);height:100%;">
+      <div class="card card-accent" style="display:flex;align-items:flex-end;">
+        <div style="position:relative;z-index:1;">
+          <div class="sg-stat-value">{{stat1Value}}<span class="sg-stat-unit">{{stat1Unit}}</span></div>
+          <div class="sg-stat-label">{{stat1Label}}</div>
+        </div>
+      </div>
+      <div class="card" style="display:flex;align-items:flex-end;">
+        <div style="position:relative;z-index:1;">
+          <div class="sg-stat-value">{{stat2Value}}<span class="sg-stat-unit">{{stat2Unit}}</span></div>
+          <div class="sg-stat-label">{{stat2Label}}</div>
+        </div>
+      </div>
+      <div class="card" style="display:flex;align-items:flex-end;">
+        <div style="position:relative;z-index:1;">
+          <div class="sg-stat-value">{{stat3Value}}<span class="sg-stat-unit">{{stat3Unit}}</span></div>
+          <div class="sg-stat-label">{{stat3Label}}</div>
+        </div>
+      </div>
+      <div class="card" style="display:flex;align-items:flex-end;">
+        <div style="position:relative;z-index:1;">
+          <div class="sg-stat-value">{{stat4Value}}<span class="sg-stat-unit">{{stat4Unit}}</span></div>
+          <div class="sg-stat-label">{{stat4Label}}</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: Photo -->
+    <div class="sg-photo-placeholder">
+      <img src="{{tractionImg}}" onerror="this.style.display='none'">
+    </div>
+
+  </div>
+
+  <div class="slide-source">Source: {{source}}</div>
+</div>

@@ -1,0 +1,14 @@
+{
+  "fields": [
+    { "key": "title", "label": "타이틀", "type": "text", "value": "이렇게 사용합니다" },
+    { "key": "step1Num", "label": "스텝 1 번호", "type": "text", "value": "01" },
+    { "key": "step1Name", "label": "스텝 1 이름", "type": "text", "value": "설치" },
+    { "key": "step1Desc", "label": "스텝 1 설명", "type": "text", "value": "기둥에 붙이면 끝" },
+    { "key": "step2Num", "label": "스텝 2 번호", "type": "text", "value": "02" },
+    { "key": "step2Name", "label": "스텝 2 이름", "type": "text", "value": "촬영" },
+    { "key": "step2Desc", "label": "스텝 2 설명", "type": "text", "value": "AI 자동 촬영·편집" },
+    { "key": "step3Num", "label": "스텝 3 번호", "type": "text", "value": "03" },
+    { "key": "step3Name", "label": "스텝 3 이름", "type": "text", "value": "확인" },
+    { "key": "step3Desc", "label": "스텝 3 설명", "type": "text", "value": "1시간 내 개인 하이라이트" }
+  ]
+}

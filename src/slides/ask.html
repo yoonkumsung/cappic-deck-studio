@@ -1,0 +1,37 @@
+<div class="slide">
+  <div class="slide-title">{{title}}</div>
+
+  <div class="slide-content sg-cols-2">
+
+    <!-- Left: Big Ask Amount -->
+    <div class="card card-accent" style="display:flex;flex-direction:column;justify-content:center;">
+      <div style="position:relative;z-index:1;">
+        <div class="sg-stat-value">{{askAmount}}<span class="sg-stat-unit">{{askUnit}}</span></div>
+        <div class="sg-stat-label">{{askLabel}}</div>
+        <div style="font-size:var(--fs-caption);font-weight:var(--fw-body);color:var(--text-tertiary);margin-top:var(--sp-md);">{{askTarget}}</div>
+      </div>
+    </div>
+
+    <!-- Right: Usage Breakdown -->
+    <div class="card" style="display:flex;flex-direction:column;">
+      <div style="position:relative;z-index:1;flex:1;display:flex;flex-direction:column;">
+        <div class="sg-card-title">자금 용도</div>
+        <div class="sg-data-list">
+          <div class="sg-item">
+            <div class="sg-item-label">{{use1Name}}</div>
+            <div class="sg-item-value">{{use1Pct}}</div>
+          </div>
+          <div class="sg-item">
+            <div class="sg-item-label">{{use2Name}}</div>
+            <div class="sg-item-value">{{use2Pct}}</div>
+          </div>
+          <div class="sg-item">
+            <div class="sg-item-label">{{use3Name}}</div>
+            <div class="sg-item-value">{{use3Pct}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

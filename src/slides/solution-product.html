@@ -1,0 +1,36 @@
+<div class="slide">
+  <div class="slide-title">{{title}}</div>
+
+  <div class="slide-content sg-cols-2">
+
+    <!-- Left: Product Photo -->
+    <div class="sg-photo-placeholder">
+      <img src="{{productImg}}" onerror="this.style.display='none'">
+    </div>
+
+    <!-- Right: Key Specs -->
+    <div class="card" style="display:flex;flex-direction:column;">
+      <div style="position:relative;z-index:1;flex:1;display:flex;flex-direction:column;">
+        <div class="sg-data-list">
+          <div class="sg-item">
+            <div class="sg-item-label">{{spec1Label}}</div>
+            <div class="sg-item-value">{{spec1Value}}</div>
+          </div>
+          <div class="sg-item">
+            <div class="sg-item-label">{{spec2Label}}</div>
+            <div class="sg-item-value">{{spec2Value}}</div>
+          </div>
+          <div class="sg-item">
+            <div class="sg-item-label">{{spec3Label}}</div>
+            <div class="sg-item-value">{{spec3Value}}</div>
+          </div>
+          <div class="sg-item">
+            <div class="sg-item-label">{{spec4Label}}</div>
+            <div class="sg-item-value">{{spec4Value}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,63 @@
+<div class="slide">
+  <div class="slide-title">{{title}}</div>
+
+  <div class="slide-content sg-cols-2">
+
+    <!-- Left: B2C + B2B stacked -->
+    <div style="display:grid;grid-template-rows:1fr 1fr;gap:var(--slide-gap);height:100%;">
+      <div class="card card-accent" style="display:flex;flex-direction:column;justify-content:center;">
+        <div style="position:relative;z-index:1;">
+          <div class="sg-card-title">{{b2cName}}</div>
+          <div class="sg-stat-value">{{b2cPrice}}</div>
+          <div class="sg-stat-label">{{b2cDesc}}</div>
+        </div>
+      </div>
+      <div class="card" style="display:flex;flex-direction:column;justify-content:center;">
+        <div style="position:relative;z-index:1;">
+          <div class="sg-card-title">{{b2bName}}</div>
+          <div class="sg-stat-value">{{b2bPrice}}</div>
+          <div class="sg-stat-label">{{b2bDesc}}</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: Subscription + Metrics stacked -->
+    <div style="display:grid;grid-template-rows:1fr 1fr;gap:var(--slide-gap);height:100%;">
+      <div class="card" style="display:flex;flex-direction:column;justify-content:center;">
+        <div style="position:relative;z-index:1;">
+          <div class="sg-card-title">구독 플랜</div>
+          <div class="sg-data-list">
+            <div class="sg-item">
+              <div class="sg-item-label">{{subName1}}</div>
+              <div class="sg-item-value">{{subPrice1}}</div>
+            </div>
+            <div class="sg-item">
+              <div class="sg-item-label">{{subName2}}</div>
+              <div class="sg-item-value">{{subPrice2}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card card-secondary" style="display:flex;flex-direction:column;justify-content:center;">
+        <div style="position:relative;z-index:1;">
+          <div class="sg-card-title">핵심 지표</div>
+          <div class="sg-data-list">
+            <div class="sg-item">
+              <div class="sg-item-label">MRR</div>
+              <div class="sg-item-value">{{metricMRR}}</div>
+            </div>
+            <div class="sg-item">
+              <div class="sg-item-label">ARR</div>
+              <div class="sg-item-value">{{metricARR}}</div>
+            </div>
+            <div class="sg-item">
+              <div class="sg-item-label">매출 목표</div>
+              <div class="sg-item-value">{{metricRevenue}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

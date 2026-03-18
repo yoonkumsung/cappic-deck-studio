@@ -74,6 +74,18 @@
   z-index: 1;
 }
 
+/* ── Card Column Title ── */
+.sg-card-title {
+  font-size: var(--fs-heading);
+  font-weight: var(--fw-heading);
+  color: var(--text-primary);
+  margin-bottom: var(--sp-sm);
+}
+
+.card-accent .sg-card-title {
+  color: var(--accent);
+}
+
 /* ── Data Item (라벨 + 값 쌍) ── */
 .sg-item {
   display: flex;

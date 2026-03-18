@@ -1,0 +1,18 @@
+{
+  "fields": [
+    { "key": "title", "label": "타이틀", "type": "text", "value": "비즈니스 모델" },
+    { "key": "b2cName", "label": "B2C 이름", "type": "text", "value": "B2C 디바이스" },
+    { "key": "b2cPrice", "label": "B2C 가격", "type": "text", "value": "77만원" },
+    { "key": "b2cDesc", "label": "B2C 설명", "type": "text", "value": "개인 학부모 직접 구매" },
+    { "key": "b2bName", "label": "B2B 이름", "type": "text", "value": "B2B 클럽 에디션" },
+    { "key": "b2bPrice", "label": "B2B 가격", "type": "text", "value": "120만원" },
+    { "key": "b2bDesc", "label": "B2B 설명", "type": "text", "value": "축구교실·클럽 단체 도입" },
+    { "key": "subName1", "label": "구독 1 이름", "type": "text", "value": "베이직" },
+    { "key": "subPrice1", "label": "구독 1 가격", "type": "text", "value": "월 9,900원" },
+    { "key": "subName2", "label": "구독 2 이름", "type": "text", "value": "프리미엄" },
+    { "key": "subPrice2", "label": "구독 2 가격", "type": "text", "value": "월 19,900원" },
+    { "key": "metricMRR", "label": "MRR", "type": "text", "value": "목표 5,000만원" },
+    { "key": "metricARR", "label": "ARR", "type": "text", "value": "목표 6억원" },
+    { "key": "metricRevenue", "label": "매출 목표", "type": "text", "value": "2027년 30억원" }
+  ]
+}

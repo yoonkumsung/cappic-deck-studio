@@ -1,0 +1,17 @@
+{
+  "fields": [
+    { "key": "title", "label": "타이틀", "type": "text", "value": "핵심 팀" },
+    { "key": "member1Img", "label": "멤버 1 사진", "type": "image", "value": "" },
+    { "key": "member1Name", "label": "멤버 1 이름", "type": "text", "value": "" },
+    { "key": "member1Role", "label": "멤버 1 역할", "type": "text", "value": "" },
+    { "key": "member1Credential", "label": "멤버 1 이력", "type": "text", "value": "" },
+    { "key": "member2Img", "label": "멤버 2 사진", "type": "image", "value": "" },
+    { "key": "member2Name", "label": "멤버 2 이름", "type": "text", "value": "" },
+    { "key": "member2Role", "label": "멤버 2 역할", "type": "text", "value": "" },
+    { "key": "member2Credential", "label": "멤버 2 이력", "type": "text", "value": "" },
+    { "key": "member3Img", "label": "멤버 3 사진", "type": "image", "value": "" },
+    { "key": "member3Name", "label": "멤버 3 이름", "type": "text", "value": "" },
+    { "key": "member3Role", "label": "멤버 3 역할", "type": "text", "value": "" },
+    { "key": "member3Credential", "label": "멤버 3 이력", "type": "text", "value": "" }
+  ]
+}
