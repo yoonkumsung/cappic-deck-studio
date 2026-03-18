@@ -1,0 +1,8 @@
+{
+  "fields": [
+    { "key": "tagline", "label": "슬로건", "type": "text", "value": "IT'S YOUR HIGHLIGHT" },
+    { "key": "subtitle", "label": "서브타이틀", "type": "text", "value": "Edge AI 기반 스포츠 자동 촬영·분석 플랫폼" },
+    { "key": "identity", "label": "한 줄 정체성", "type": "text", "value": "77만원 AI 카메라, 내 아이의 하이라이트를 자동으로" },
+    { "key": "logoSrc", "label": "로고 이미지", "type": "image", "value": "" }
+  ]
+}
