@@ -3,7 +3,7 @@
 
   <div class="slide-content sg-cols-2">
 
-    <!-- Left: B2C + B2B stacked -->
+    <!-- Left: HW Revenue (B2C + B2B stacked) -->
     <div style="display:grid;grid-template-rows:1fr 1fr;gap:var(--slide-gap);height:100%;">
       <div class="card card-accent" style="display:flex;flex-direction:column;justify-content:center;">
         <div style="position:relative;z-index:1;">
@@ -21,11 +21,11 @@
       </div>
     </div>
 
-    <!-- Right: Subscription + Metrics stacked -->
+    <!-- Right: SW Subscription + Key Metrics stacked -->
     <div style="display:grid;grid-template-rows:1fr 1fr;gap:var(--slide-gap);height:100%;">
       <div class="card" style="display:flex;flex-direction:column;justify-content:center;">
         <div style="position:relative;z-index:1;">
-          <div class="sg-card-title">구독 플랜</div>
+          <div class="sg-card-title">{{subTitle}}</div>
           <div class="sg-data-list">
             <div class="sg-item">
               <div class="sg-item-label">{{subName1}}</div>
@@ -40,7 +40,7 @@
       </div>
       <div class="card card-secondary" style="display:flex;flex-direction:column;justify-content:center;">
         <div style="position:relative;z-index:1;">
-          <div class="sg-card-title">핵심 지표</div>
+          <div class="sg-card-title">{{metricsTitle}}</div>
           <div class="sg-data-list">
             <div class="sg-item">
               <div class="sg-item-label">MRR</div>
@@ -51,7 +51,7 @@
               <div class="sg-item-value">{{metricARR}}</div>
             </div>
             <div class="sg-item">
-              <div class="sg-item-label">매출 목표</div>
+              <div class="sg-item-label">{{metricRevenueLabel}}</div>
               <div class="sg-item-value">{{metricRevenue}}</div>
             </div>
           </div>

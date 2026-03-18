@@ -1,0 +1,55 @@
+<div class="slide">
+  <div class="slide-title">{{title}}</div>
+
+  <div class="slide-content sg-cols-2">
+
+    <!-- Left: Concentric circles (TAM > SAM > SOM) -->
+    <div style="display:flex;align-items:center;justify-content:center;position:relative;">
+      <!-- TAM outer circle -->
+      <div style="width:420px;height:420px;border-radius:50%;border:2px solid rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:center;position:relative;">
+        <div style="position:absolute;top:var(--sp-sm);left:50%;transform:translateX(-50%);text-align:center;">
+          <div style="font-size:var(--fs-caption);font-weight:var(--fw-body);color:var(--text-tertiary);">{{tamLabel}}</div>
+          <div style="font-size:var(--fs-heading);font-weight:var(--fw-heading);color:var(--text-secondary);">{{tamValue}}</div>
+        </div>
+        <!-- SAM middle circle -->
+        <div style="width:280px;height:280px;border-radius:50%;border:2px solid rgba(126,220,230,0.3);background:rgba(126,220,230,0.05);display:flex;align-items:center;justify-content:center;position:relative;">
+          <div style="position:absolute;top:var(--sp-sm);left:50%;transform:translateX(-50%);text-align:center;">
+            <div style="font-size:var(--fs-caption);font-weight:var(--fw-body);color:var(--text-tertiary);">{{samLabel}}</div>
+            <div style="font-size:var(--fs-heading);font-weight:var(--fw-heading);color:var(--secondary);">{{samValue}}</div>
+          </div>
+          <!-- SOM inner circle -->
+          <div style="width:140px;height:140px;border-radius:50%;border:2px solid rgba(247,225,80,0.5);background:rgba(247,225,80,0.08);display:flex;align-items:center;justify-content:center;">
+            <div style="text-align:center;">
+              <div style="font-size:var(--fs-caption);font-weight:var(--fw-body);color:var(--text-tertiary);">{{somLabel}}</div>
+              <div style="font-size:var(--fs-heading);font-weight:var(--fw-heading);color:var(--accent);">{{somValue}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: Expansion details -->
+    <div class="card" style="display:flex;flex-direction:column;justify-content:center;">
+      <div style="position:relative;z-index:1;">
+        <div class="sg-card-title">{{expansionTitle}}</div>
+        <div class="sg-data-list">
+          <div class="sg-item">
+            <div class="sg-item-label">{{exp1Label}}</div>
+            <div class="sg-item-value">{{exp1Value}}</div>
+          </div>
+          <div class="sg-item">
+            <div class="sg-item-label">{{exp2Label}}</div>
+            <div class="sg-item-value">{{exp2Value}}</div>
+          </div>
+          <div class="sg-item">
+            <div class="sg-item-label">{{exp3Label}}</div>
+            <div class="sg-item-value">{{exp3Value}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="slide-source">{{source}}</div>
+</div>

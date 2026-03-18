@@ -1,0 +1,21 @@
+{
+  "fields": [
+    { "key": "title", "label": "타이틀", "type": "text", "value": "성장 전략" },
+    { "key": "year1Name", "label": "연도 1", "type": "text", "value": "2026" },
+    { "key": "year1Label", "label": "연도 1 단계", "type": "text", "value": "제품 출시" },
+    { "key": "year1Milestone", "label": "연도 1 마일스톤", "type": "text", "value": "양산 · B2C 론칭" },
+    { "key": "year1Revenue", "label": "연도 1 매출", "type": "text", "value": "12억" },
+    { "key": "year2Name", "label": "연도 2", "type": "text", "value": "2027" },
+    { "key": "year2Label", "label": "연도 2 단계", "type": "text", "value": "B2B 확대" },
+    { "key": "year2Milestone", "label": "연도 2 마일스톤", "type": "text", "value": "클럽 에디션 · 구독 확대" },
+    { "key": "year2Revenue", "label": "연도 2 매출", "type": "text", "value": "30억" },
+    { "key": "year3Name", "label": "연도 3", "type": "text", "value": "2028" },
+    { "key": "year3Label", "label": "연도 3 단계", "type": "text", "value": "다종목" },
+    { "key": "year3Milestone", "label": "연도 3 마일스톤", "type": "text", "value": "야구·농구 확장" },
+    { "key": "year3Revenue", "label": "연도 3 매출", "type": "text", "value": "80억" },
+    { "key": "year4Name", "label": "연도 4", "type": "text", "value": "2029" },
+    { "key": "year4Label", "label": "연도 4 단계", "type": "text", "value": "글로벌" },
+    { "key": "year4Milestone", "label": "연도 4 마일스톤", "type": "text", "value": "동남아·북미 진출" },
+    { "key": "year4Revenue", "label": "연도 4 매출", "type": "text", "value": "200억" }
+  ]
+}

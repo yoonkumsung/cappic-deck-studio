@@ -3,7 +3,7 @@
     { "key": "title", "label": "타이틀", "type": "text", "value": "검증된 수요" },
     { "key": "stat1Value", "label": "수치 1", "type": "text", "value": "97" },
     { "key": "stat1Unit", "label": "수치 1 단위", "type": "text", "value": "%" },
-    { "key": "stat1Label", "label": "수치 1 라벨", "type": "text", "value": "촬영 수요 설문" },
+    { "key": "stat1Label", "label": "수치 1 라벨", "type": "text", "value": "촬영 수요" },
     { "key": "stat2Value", "label": "수치 2", "type": "text", "value": "87" },
     { "key": "stat2Unit", "label": "수치 2 단위", "type": "text", "value": "%" },
     { "key": "stat2Label", "label": "수치 2 라벨", "type": "text", "value": "시제품 만족도" },
@@ -13,7 +13,6 @@
     { "key": "stat4Value", "label": "수치 4", "type": "text", "value": "10" },
     { "key": "stat4Unit", "label": "수치 4 단위", "type": "text", "value": "개소" },
     { "key": "stat4Label", "label": "수치 4 라벨", "type": "text", "value": "LOI 확보" },
-    { "key": "tractionImg", "label": "트랙션 이미지", "type": "image", "value": "" },
     { "key": "source", "label": "출처", "type": "text", "value": "유소년 축구교실 학부모 100명 대면 조사, 2025.02" }
   ]
 }

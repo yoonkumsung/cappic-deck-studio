@@ -1,55 +1,28 @@
 <div class="slide">
   <div class="slide-title">{{title}}</div>
 
-  <div class="slide-content sg-cols-2">
+  <div class="slide-content" style="display:flex;align-items:flex-end;justify-content:center;gap:var(--sp-xl);">
 
-    <!-- Left: Photo -->
-    <div class="sg-photo-placeholder">
-      <img src="{{photoSrc}}" onerror="this.style.display='none'">
+    <!-- Staircase: numbers rise left to right like Nomot style -->
+    <!-- Stat 1: lowest position -->
+    <div style="display:flex;flex-direction:column;align-items:center;text-align:center;flex:1;">
+      <div class="sg-stat-value" style="color:var(--secondary);line-height:1;">{{stat1Value}}</div>
+      <div class="sg-stat-label" style="margin-top:var(--sp-sm);">{{stat1Label}}</div>
     </div>
 
-    <!-- Right: Data -->
-    <div class="sg-rows-2">
+    <!-- Stat 2: middle position (lifted up) -->
+    <div style="display:flex;flex-direction:column;align-items:center;text-align:center;flex:1;margin-bottom:var(--sp-xl);">
+      <div class="sg-stat-value" style="color:var(--text-primary);line-height:1;">{{stat2Value}}</div>
+      <div class="sg-stat-label" style="margin-top:var(--sp-sm);">{{stat2Label}}</div>
+    </div>
 
-      <!-- Top: 2 stat cards -->
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--slide-gap);">
-        <div class="card" style="display:flex;align-items:flex-end;">
-          <div style="position:relative;z-index:1;">
-            <div class="sg-stat-value">{{stat1Value}}<span class="sg-stat-unit">{{stat1Unit}}</span></div>
-            <div class="sg-stat-label">{{stat1Label}}</div>
-          </div>
-        </div>
-        <div class="card" style="display:flex;align-items:flex-end;">
-          <div style="position:relative;z-index:1;">
-            <div class="sg-stat-value">{{stat2Value}}<span class="sg-stat-unit">{{stat2Unit}}</span></div>
-            <div class="sg-stat-label">{{stat2Label}}</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Bottom: Gap highlight -->
-      <div class="card card-accent" style="display:flex;align-items:center;">
-        <div style="position:relative;z-index:1;display:flex;align-items:center;gap:var(--sp-xl);width:100%;">
-          <div style="text-align:center;">
-            <div class="sg-stat-value">{{stat3Value}}<span class="sg-stat-unit">{{stat3Unit}}</span></div>
-            <div class="sg-stat-label">{{stat3Label}}</div>
-          </div>
-          <div style="font-size:var(--fs-heading);color:var(--text-secondary);">vs</div>
-          <div style="text-align:center;">
-            <div class="sg-stat-value">{{stat4Value}}<span class="sg-stat-unit">{{stat4Unit}}</span></div>
-            <div class="sg-stat-label">{{stat4Label}}</div>
-          </div>
-          <div style="font-size:var(--fs-heading);color:var(--text-secondary);">→</div>
-          <div style="text-align:center;">
-            <div class="sg-stat-value" style="color:var(--accent);">{{gapValue}}</div>
-            <div class="sg-stat-label">{{gapLabel}}</div>
-          </div>
-        </div>
-      </div>
-
+    <!-- Stat 3: highest position (accent, biggest impact) -->
+    <div style="display:flex;flex-direction:column;align-items:center;text-align:center;flex:1.2;margin-bottom:calc(var(--sp-xl) * 3);">
+      <div class="sg-stat-value" style="color:var(--accent);line-height:1;">{{stat3Value}}</div>
+      <div class="sg-stat-label" style="margin-top:var(--sp-sm);">{{stat3Label}}</div>
     </div>
 
   </div>
 
-  <div class="slide-source">Source: {{source}}</div>
+  <div class="slide-source">{{source}}</div>
 </div>
