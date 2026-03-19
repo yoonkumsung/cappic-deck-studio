@@ -7,13 +7,13 @@
     { "key": "samValue", "label": "SAM 값", "type": "text", "value": "1.3조원" },
     { "key": "somLabel", "label": "SOM 라벨", "type": "text", "value": "SOM" },
     { "key": "somValue", "label": "SOM 값", "type": "text", "value": "8억원" },
-    { "key": "expansionTitle", "label": "확장 방향 제목", "type": "text", "value": "확장 방향" },
-    { "key": "exp1Label", "label": "확장 1 라벨", "type": "text", "value": "1단계" },
-    { "key": "exp1Value", "label": "확장 1 값", "type": "text", "value": "유소년 축구 (국내)" },
-    { "key": "exp2Label", "label": "확장 2 라벨", "type": "text", "value": "2단계" },
-    { "key": "exp2Value", "label": "확장 2 값", "type": "text", "value": "다종목 확대 (야구·농구)" },
-    { "key": "exp3Label", "label": "확장 3 라벨", "type": "text", "value": "3단계" },
-    { "key": "exp3Value", "label": "확장 3 값", "type": "text", "value": "글로벌 (동남아·북미)" },
-    { "key": "source", "label": "출처", "type": "text", "value": "글로벌 스포츠테크 시장 보고서, 2024" }
+    { "key": "expansionTitle", "label": "확장 방향 제목", "type": "text", "value": "시장 정의" },
+    { "key": "exp1Label", "label": "TAM 설명 라벨", "type": "text", "value": "TAM · 글로벌 스포츠테크" },
+    { "key": "exp1Value", "label": "TAM 설명 값", "type": "text", "value": "CAGR 23.1%" },
+    { "key": "exp2Label", "label": "SAM 설명 라벨", "type": "text", "value": "SAM · 국내 아마추어+유소년" },
+    { "key": "exp2Value", "label": "SAM 설명 값", "type": "text", "value": "1조 3천억원" },
+    { "key": "exp3Label", "label": "SOM 설명 라벨", "type": "text", "value": "SOM · 대전·세종·수도권" },
+    { "key": "exp3Value", "label": "SOM 설명 값", "type": "text", "value": "축구교실 100개소 + 동호인" },
+    { "key": "source", "label": "출처", "type": "text", "value": "글로벌 스포츠테크 시장 보고서, 2024 · CAGR 23.1%" }
   ]
 }

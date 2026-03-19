@@ -1,21 +1,19 @@
 {
   "fields": [
     { "key": "title", "label": "타이틀", "type": "text", "value": "성장 전략" },
-    { "key": "year1Name", "label": "연도 1", "type": "text", "value": "2026" },
-    { "key": "year1Label", "label": "연도 1 단계", "type": "text", "value": "제품 출시" },
-    { "key": "year1Milestone", "label": "연도 1 마일스톤", "type": "text", "value": "양산 · B2C 론칭" },
-    { "key": "year1Revenue", "label": "연도 1 매출", "type": "text", "value": "12억" },
-    { "key": "year2Name", "label": "연도 2", "type": "text", "value": "2027" },
-    { "key": "year2Label", "label": "연도 2 단계", "type": "text", "value": "B2B 확대" },
-    { "key": "year2Milestone", "label": "연도 2 마일스톤", "type": "text", "value": "클럽 에디션 · 구독 확대" },
-    { "key": "year2Revenue", "label": "연도 2 매출", "type": "text", "value": "30억" },
-    { "key": "year3Name", "label": "연도 3", "type": "text", "value": "2028" },
-    { "key": "year3Label", "label": "연도 3 단계", "type": "text", "value": "다종목" },
-    { "key": "year3Milestone", "label": "연도 3 마일스톤", "type": "text", "value": "야구·농구 확장" },
-    { "key": "year3Revenue", "label": "연도 3 매출", "type": "text", "value": "80억" },
-    { "key": "year4Name", "label": "연도 4", "type": "text", "value": "2029" },
-    { "key": "year4Label", "label": "연도 4 단계", "type": "text", "value": "글로벌" },
-    { "key": "year4Milestone", "label": "연도 4 마일스톤", "type": "text", "value": "동남아·북미 진출" },
-    { "key": "year4Revenue", "label": "연도 4 매출", "type": "text", "value": "200억" }
+    { "key": "flywheelCenter", "label": "플라이휠 중앙", "type": "text", "value": "B2B2C\n플라이휠" },
+    { "key": "fw1", "label": "플라이휠 1 (상단)", "type": "text", "value": "B2B 설치" },
+    { "key": "fw2", "label": "플라이휠 2 (우측)", "type": "text", "value": "학부모 SNS 공유" },
+    { "key": "fw3", "label": "플라이휠 3 (하단)", "type": "text", "value": "데이터 축적" },
+    { "key": "fw4", "label": "플라이휠 4 (좌측)", "type": "text", "value": "지역 확산" },
+    { "key": "timelineTitle", "label": "타임라인 제목", "type": "text", "value": "2026 마일스톤" },
+    { "key": "t1Label", "label": "타임라인 1 라벨", "type": "text", "value": "26.05" },
+    { "key": "t1Value", "label": "타임라인 1 값", "type": "text", "value": "대전·세종 파일럿 5개소" },
+    { "key": "t2Label", "label": "타임라인 2 라벨", "type": "text", "value": "26.08" },
+    { "key": "t2Value", "label": "타임라인 2 값", "type": "text", "value": "수도권 LOI 20개소 전환" },
+    { "key": "t3Label", "label": "타임라인 3 라벨", "type": "text", "value": "26.10" },
+    { "key": "t3Value", "label": "타임라인 3 값", "type": "text", "value": "B2B 50개소 + 자사몰 오픈" },
+    { "key": "t4Label", "label": "타임라인 4 라벨", "type": "text", "value": "26.12" },
+    { "key": "t4Value", "label": "타임라인 4 값", "type": "text", "value": "연말 안정화, MRR 660만원" }
   ]
 }

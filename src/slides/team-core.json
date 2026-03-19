@@ -1,20 +1,20 @@
 {
   "fields": [
     { "key": "title", "label": "타이틀", "type": "text", "value": "핵심 팀" },
-    { "key": "member1Img", "label": "멤버 1 사진", "type": "image", "value": "" },
-    { "key": "member1Name", "label": "멤버 1 이름", "type": "text", "value": "" },
-    { "key": "member1Role", "label": "멤버 1 역할", "type": "text", "value": "CEO" },
-    { "key": "member1Cred1", "label": "멤버 1 이력 1", "type": "text", "value": "" },
-    { "key": "member1Cred2", "label": "멤버 1 이력 2", "type": "text", "value": "" },
-    { "key": "member2Img", "label": "멤버 2 사진", "type": "image", "value": "" },
-    { "key": "member2Name", "label": "멤버 2 이름", "type": "text", "value": "" },
-    { "key": "member2Role", "label": "멤버 2 역할", "type": "text", "value": "CTO" },
-    { "key": "member2Cred1", "label": "멤버 2 이력 1", "type": "text", "value": "" },
-    { "key": "member2Cred2", "label": "멤버 2 이력 2", "type": "text", "value": "" },
-    { "key": "member3Img", "label": "멤버 3 사진", "type": "image", "value": "" },
-    { "key": "member3Name", "label": "멤버 3 이름", "type": "text", "value": "" },
-    { "key": "member3Role", "label": "멤버 3 역할", "type": "text", "value": "CPO" },
-    { "key": "member3Cred1", "label": "멤버 3 이력 1", "type": "text", "value": "" },
-    { "key": "member3Cred2", "label": "멤버 3 이력 2", "type": "text", "value": "" }
+    { "key": "member1Img", "label": "CEO 사진", "type": "image", "value": "" },
+    { "key": "member1Name", "label": "CEO 이름", "type": "text", "value": "금성윤" },
+    { "key": "member1Role", "label": "CEO 역할", "type": "text", "value": "CEO · 제품·사업화" },
+    { "key": "member1Cred1", "label": "CEO 이력 1", "type": "text", "value": "전) 국회 산자중기위 비서관" },
+    { "key": "member1Cred2", "label": "CEO 이력 2", "type": "text", "value": "전) NH농협 제장" },
+    { "key": "member2Img", "label": "CCO 사진", "type": "image", "value": "" },
+    { "key": "member2Name", "label": "CCO 이름", "type": "text", "value": "김동훈" },
+    { "key": "member2Role", "label": "CCO 역할", "type": "text", "value": "CCO · 영업·스포츠네트워크" },
+    { "key": "member2Cred1", "label": "CCO 이력 1", "type": "text", "value": "전) K2리그 프로선수, SBS 출연" },
+    { "key": "member2Cred2", "label": "CCO 이력 2", "type": "text", "value": "SNS 팔로워 3만" },
+    { "key": "member3Img", "label": "CTO 사진", "type": "image", "value": "" },
+    { "key": "member3Name", "label": "CTO 이름", "type": "text", "value": "김민혁" },
+    { "key": "member3Role", "label": "CTO 역할", "type": "text", "value": "CTO · 개발·데이터" },
+    { "key": "member3Cred1", "label": "CTO 이력 1", "type": "text", "value": "전) 삼성전자 비스포크 앱" },
+    { "key": "member3Cred2", "label": "CTO 이력 2", "type": "text", "value": "중전공 주관 데이터 엔지니어" }
   ]
 }

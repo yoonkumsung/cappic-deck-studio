@@ -3,13 +3,13 @@
     { "key": "title", "label": "타이틀", "type": "text", "value": "CAPP!C PRO" },
     { "key": "photoSrc", "label": "제품 이미지", "type": "image", "value": "" },
     { "key": "cardTitle", "label": "카드 제목", "type": "text", "value": "핵심 사양" },
-    { "key": "spec1Label", "label": "스펙 1 라벨", "type": "text", "value": "카메라" },
-    { "key": "spec1Value", "label": "스펙 1 값", "type": "text", "value": "Dual 4K · 130° 광각" },
-    { "key": "spec2Label", "label": "스펙 2 라벨", "type": "text", "value": "AI 프로세서" },
-    { "key": "spec2Value", "label": "스펙 2 값", "type": "text", "value": "Edge NPU · 실시간 트래킹" },
-    { "key": "spec3Label", "label": "스펙 3 라벨", "type": "text", "value": "하이라이트" },
-    { "key": "spec3Value", "label": "스펙 3 값", "type": "text", "value": "개인별 AI 편집 자동 생성" },
-    { "key": "spec4Label", "label": "스펙 4 라벨", "type": "text", "value": "설치" },
-    { "key": "spec4Value", "label": "스펙 4 값", "type": "text", "value": "원터치 · 5분 이내" }
+    { "key": "spec1Label", "label": "스펙 1 라벨", "type": "text", "value": "듀얼 4K 광각" },
+    { "key": "spec1Value", "label": "스펙 1 값", "type": "text", "value": "SONY IMX × 2, 80° 타일 렌즈 (130° 커버리지)" },
+    { "key": "spec2Label", "label": "스펙 2 라벨", "type": "text", "value": "서보모터 자동 프레이밍" },
+    { "key": "spec2Value", "label": "스펙 2 값", "type": "text", "value": "180° 커버리지" },
+    { "key": "spec3Label", "label": "스펙 3 라벨", "type": "text", "value": "온디바이스 AI" },
+    { "key": "spec3Value", "label": "스펙 3 값", "type": "text", "value": "RK3588 6TOPS NPU" },
+    { "key": "spec4Label", "label": "스펙 4 라벨", "type": "text", "value": "원터치 설치" },
+    { "key": "spec4Value", "label": "스펙 4 값", "type": "text", "value": "자석 마운트 5분 이내, 10,000mAh" }
   ]
 }

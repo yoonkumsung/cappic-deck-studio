@@ -1,0 +1,21 @@
+{
+  "fields": [
+    { "key": "title", "label": "타이틀", "type": "text", "value": "검증 증거" },
+    { "key": "partnerTitle", "label": "파트너 카드 제목", "type": "text", "value": "파트너십" },
+    { "key": "loiLabel", "label": "LOI 라벨", "type": "text", "value": "LOI 확보" },
+    { "key": "loiValue", "label": "LOI 값", "type": "text", "value": "10개소" },
+    { "key": "mouLabel", "label": "MOU 라벨", "type": "text", "value": "MOU 체결" },
+    { "key": "mouValue", "label": "MOU 값", "type": "text", "value": "4건" },
+    { "key": "mouDetailLabel", "label": "MOU 상세 라벨", "type": "text", "value": "파트너" },
+    { "key": "mouDetailValue", "label": "MOU 상세 값", "type": "text", "value": "STC Networks, Camera HaoZhou, 경희대" },
+    { "key": "partnerPhoto", "label": "파트너십 증거 사진", "type": "image", "value": "" },
+    { "key": "ipTitle", "label": "IP/수상 카드 제목", "type": "text", "value": "지적재산 · 수상" },
+    { "key": "patentLabel", "label": "특허 라벨", "type": "text", "value": "특허" },
+    { "key": "patentValue", "label": "특허 값", "type": "text", "value": "출원 완료 (객체 중심 계층적 시계열 모델)" },
+    { "key": "awardsLabel", "label": "수상 라벨", "type": "text", "value": "수상 실적" },
+    { "key": "awardsValue", "label": "수상 값", "type": "text", "value": "6건" },
+    { "key": "awardsDetailLabel", "label": "수상 상세 라벨", "type": "text", "value": "주요 수상" },
+    { "key": "awardsDetailValue", "label": "수상 상세 값", "type": "text", "value": "K리그 DACON 장려상, 스타트업 플래닛 1위, LBS 챌린지 선정" },
+    { "key": "awardsPhoto", "label": "수상 증거 사진", "type": "image", "value": "" }
+  ]
+}

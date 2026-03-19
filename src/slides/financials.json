@@ -1,0 +1,25 @@
+{
+  "fields": [
+    { "key": "title", "label": "타이틀", "type": "text", "value": "재무 계획" },
+    { "key": "budgetTitle", "label": "예산 카드 제목", "type": "text", "value": "사업비 1억원 배분" },
+    { "key": "bud1Name", "label": "항목 1 이름", "type": "text", "value": "제조·생산" },
+    { "key": "bud1Pct", "label": "항목 1 비율", "type": "text", "value": "35% (3,500만)" },
+    { "key": "bud2Name", "label": "항목 2 이름", "type": "text", "value": "인건비" },
+    { "key": "bud2Pct", "label": "항목 2 비율", "type": "text", "value": "35% (3,500만)" },
+    { "key": "bud3Name", "label": "항목 3 이름", "type": "text", "value": "마케팅" },
+    { "key": "bud3Pct", "label": "항목 3 비율", "type": "text", "value": "15% (1,500만)" },
+    { "key": "bud4Name", "label": "항목 4 이름", "type": "text", "value": "인증·IP" },
+    { "key": "bud4Pct", "label": "항목 4 비율", "type": "text", "value": "8% (850만)" },
+    { "key": "bud5Name", "label": "항목 5 이름", "type": "text", "value": "운영" },
+    { "key": "bud5Pct", "label": "항목 5 비율", "type": "text", "value": "7% (650만)" },
+    { "key": "metricsTitle", "label": "재무 지표 제목", "type": "text", "value": "26년 재무 전망" },
+    { "key": "met1Label", "label": "지표 1 라벨", "type": "text", "value": "연간 유입" },
+    { "key": "met1Value", "label": "지표 1 값", "type": "text", "value": "9.69억원" },
+    { "key": "met2Label", "label": "지표 2 라벨", "type": "text", "value": "연간 유출" },
+    { "key": "met2Value", "label": "지표 2 값", "type": "text", "value": "7.21억원" },
+    { "key": "met3Label", "label": "지표 3 라벨", "type": "text", "value": "연말 현금" },
+    { "key": "met3Value", "label": "지표 3 값", "type": "text", "value": "2.48억원" },
+    { "key": "met4Label", "label": "지표 4 라벨", "type": "text", "value": "레버리지" },
+    { "key": "met4Value", "label": "지표 4 값", "type": "text", "value": "11.9x" }
+  ]
+}

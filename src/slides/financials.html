@@ -1,0 +1,91 @@
+<div class="slide">
+  <div class="slide-title">{{title}}</div>
+
+  <div class="slide-content sg-cols-2">
+
+    <!-- Left: Budget breakdown (donut concept with bars) -->
+    <div class="card" style="display:flex;flex-direction:column;justify-content:center;">
+      <div style="position:relative;z-index:1;">
+        <div class="sg-card-title">{{budgetTitle}}</div>
+        <div class="sg-data-list">
+          <!-- Item 1 -->
+          <div class="sg-item">
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <div class="sg-item-label">{{bud1Name}}</div>
+              <div class="sg-item-value" style="color:var(--accent);">{{bud1Pct}}</div>
+            </div>
+            <div style="width:100%;height:var(--sp-xs);background:rgba(255,255,255,0.06);border-radius:var(--sp-xs);overflow:hidden;margin-top:var(--sp-xs);">
+              <div style="width:35%;height:100%;background:var(--accent);border-radius:var(--sp-xs);"></div>
+            </div>
+          </div>
+          <!-- Item 2 -->
+          <div class="sg-item">
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <div class="sg-item-label">{{bud2Name}}</div>
+              <div class="sg-item-value" style="color:var(--secondary);">{{bud2Pct}}</div>
+            </div>
+            <div style="width:100%;height:var(--sp-xs);background:rgba(255,255,255,0.06);border-radius:var(--sp-xs);overflow:hidden;margin-top:var(--sp-xs);">
+              <div style="width:35%;height:100%;background:var(--secondary);border-radius:var(--sp-xs);"></div>
+            </div>
+          </div>
+          <!-- Item 3 -->
+          <div class="sg-item">
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <div class="sg-item-label">{{bud3Name}}</div>
+              <div class="sg-item-value">{{bud3Pct}}</div>
+            </div>
+            <div style="width:100%;height:var(--sp-xs);background:rgba(255,255,255,0.06);border-radius:var(--sp-xs);overflow:hidden;margin-top:var(--sp-xs);">
+              <div style="width:15%;height:100%;background:var(--text-secondary);border-radius:var(--sp-xs);"></div>
+            </div>
+          </div>
+          <!-- Item 4 -->
+          <div class="sg-item">
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <div class="sg-item-label">{{bud4Name}}</div>
+              <div class="sg-item-value">{{bud4Pct}}</div>
+            </div>
+            <div style="width:100%;height:var(--sp-xs);background:rgba(255,255,255,0.06);border-radius:var(--sp-xs);overflow:hidden;margin-top:var(--sp-xs);">
+              <div style="width:8%;height:100%;background:var(--text-tertiary);border-radius:var(--sp-xs);"></div>
+            </div>
+          </div>
+          <!-- Item 5 -->
+          <div class="sg-item">
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <div class="sg-item-label">{{bud5Name}}</div>
+              <div class="sg-item-value">{{bud5Pct}}</div>
+            </div>
+            <div style="width:100%;height:var(--sp-xs);background:rgba(255,255,255,0.06);border-radius:var(--sp-xs);overflow:hidden;margin-top:var(--sp-xs);">
+              <div style="width:7%;height:100%;background:var(--text-tertiary);border-radius:var(--sp-xs);"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: Key financial metrics -->
+    <div class="card card-accent" style="display:flex;flex-direction:column;justify-content:center;">
+      <div style="position:relative;z-index:1;">
+        <div class="sg-card-title">{{metricsTitle}}</div>
+        <div class="sg-data-list">
+          <div class="sg-item">
+            <div class="sg-item-label">{{met1Label}}</div>
+            <div class="sg-item-value">{{met1Value}}</div>
+          </div>
+          <div class="sg-item">
+            <div class="sg-item-label">{{met2Label}}</div>
+            <div class="sg-item-value">{{met2Value}}</div>
+          </div>
+          <div class="sg-item">
+            <div class="sg-item-label">{{met3Label}}</div>
+            <div class="sg-item-value">{{met3Value}}</div>
+          </div>
+          <div class="sg-item">
+            <div class="sg-item-label">{{met4Label}}</div>
+            <div class="sg-item-value">{{met4Value}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

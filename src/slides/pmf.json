@@ -1,0 +1,26 @@
+{
+  "fields": [
+    { "key": "title", "label": "타이틀", "type": "text", "value": "PMF 검증 7단계" },
+    { "key": "s1Name", "label": "1단계 이름", "type": "text", "value": "시장 기회" },
+    { "key": "s1Evidence", "label": "1단계 근거", "type": "text", "value": "글로벌 스포츠테크 52조원, CAGR 23.1%" },
+    { "key": "s1Result", "label": "1단계 결과", "type": "text", "value": "시장 공백 확인" },
+    { "key": "s2Name", "label": "2단계 이름", "type": "text", "value": "수요 정량화" },
+    { "key": "s2Evidence", "label": "2단계 근거", "type": "text", "value": "학부모 100명 조사: 수요 97% vs 이용 18%" },
+    { "key": "s2Result", "label": "2단계 결과", "type": "text", "value": "현장 수요 확인" },
+    { "key": "s3Name", "label": "3단계 이름", "type": "text", "value": "공급 부족" },
+    { "key": "s3Evidence", "label": "3단계 근거", "type": "text", "value": "기존 솔루션 불만족: 가격 93%, 지연 78%" },
+    { "key": "s3Result", "label": "3단계 결과", "type": "text", "value": "수요 검증" },
+    { "key": "s4Name", "label": "4단계 이름", "type": "text", "value": "솔루션 검증" },
+    { "key": "s4Evidence", "label": "4단계 근거", "type": "text", "value": "3-way MVP 비교테스트 포착률·만족도 1위" },
+    { "key": "s4Result", "label": "4단계 결과", "type": "text", "value": "우위 확인" },
+    { "key": "s5Name", "label": "5단계 이름", "type": "text", "value": "행동 데이터" },
+    { "key": "s5Evidence", "label": "5단계 근거", "type": "text", "value": "블라인드 테스트 긍정 87%, SNS 공유 80%" },
+    { "key": "s5Result", "label": "5단계 결과", "type": "text", "value": "실사용 검증" },
+    { "key": "s6Name", "label": "6단계 이름", "type": "text", "value": "구매 의사" },
+    { "key": "s6Evidence", "label": "6단계 근거", "type": "text", "value": "LOI 10개소, MOU 4건 확보" },
+    { "key": "s6Result", "label": "6단계 결과", "type": "text", "value": "사전 확보" },
+    { "key": "s7Name", "label": "7단계 이름", "type": "text", "value": "실행 역량" },
+    { "key": "s7Evidence", "label": "7단계 근거", "type": "text", "value": "특허 출원, 수상 6건, 팀 구성 완료" },
+    { "key": "s7Result", "label": "7단계 결과", "type": "text", "value": "린스타트업" }
+  ]
+}

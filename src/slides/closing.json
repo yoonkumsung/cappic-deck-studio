@@ -1,6 +1,6 @@
 {
   "fields": [
-    { "key": "vision", "label": "비전 메시지", "type": "text", "value": "모든 아이의 경기를 기록하다" },
+    { "key": "vision", "label": "비전 메시지", "type": "text", "value": "모든 운동장에 AI를,\n모든 아이에게 하이라이트를" },
     { "key": "subtitle", "label": "서브타이틀", "type": "text", "value": "CAPP!C — Edge AI Sports Camera" }
   ]
 }

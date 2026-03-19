@@ -1,60 +1,62 @@
 <div class="slide">
   <div class="slide-title">{{title}}</div>
 
-  <div class="slide-content sg-cols-2">
+  <div class="slide-content" style="display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr auto;gap:var(--slide-gap);height:100%;">
 
-    <!-- Left: HW Revenue (B2C + B2B stacked) -->
-    <div style="display:grid;grid-template-rows:1fr 1fr;gap:var(--slide-gap);height:100%;">
-      <div class="card card-accent" style="display:flex;flex-direction:column;justify-content:center;">
-        <div style="position:relative;z-index:1;">
-          <div class="sg-card-title">{{b2cName}}</div>
-          <div class="sg-stat-value">{{b2cPrice}}</div>
-          <div class="sg-stat-label">{{b2cDesc}}</div>
-        </div>
-      </div>
-      <div class="card" style="display:flex;flex-direction:column;justify-content:center;">
-        <div style="position:relative;z-index:1;">
-          <div class="sg-card-title">{{b2bName}}</div>
-          <div class="sg-stat-value">{{b2bPrice}}</div>
-          <div class="sg-stat-label">{{b2bDesc}}</div>
+    <!-- Top-left: B2C -->
+    <div class="card card-accent" style="display:flex;flex-direction:column;justify-content:center;">
+      <div style="position:relative;z-index:1;">
+        <div class="sg-card-title">{{b2cName}}</div>
+        <div class="sg-stat-value" style="line-height:1;">{{b2cPrice}}</div>
+        <div class="sg-data-list" style="margin-top:var(--sp-sm);">
+          <div class="sg-item">
+            <div class="sg-item-label">{{b2cSubLabel}}</div>
+            <div class="sg-item-value">{{b2cSubValue}}</div>
+          </div>
+          <div class="sg-item">
+            <div class="sg-item-label">{{b2cLtvLabel}}</div>
+            <div class="sg-item-value">{{b2cLtvValue}}</div>
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- Right: SW Subscription + Key Metrics stacked -->
-    <div style="display:grid;grid-template-rows:1fr 1fr;gap:var(--slide-gap);height:100%;">
-      <div class="card" style="display:flex;flex-direction:column;justify-content:center;">
-        <div style="position:relative;z-index:1;">
-          <div class="sg-card-title">{{subTitle}}</div>
-          <div class="sg-data-list">
-            <div class="sg-item">
-              <div class="sg-item-label">{{subName1}}</div>
-              <div class="sg-item-value">{{subPrice1}}</div>
-            </div>
-            <div class="sg-item">
-              <div class="sg-item-label">{{subName2}}</div>
-              <div class="sg-item-value">{{subPrice2}}</div>
-            </div>
+    <!-- Top-right: B2B -->
+    <div class="card" style="display:flex;flex-direction:column;justify-content:center;">
+      <div style="position:relative;z-index:1;">
+        <div class="sg-card-title">{{b2bName}}</div>
+        <div class="sg-stat-value" style="line-height:1;">{{b2bPrice}}</div>
+        <div class="sg-data-list" style="margin-top:var(--sp-sm);">
+          <div class="sg-item">
+            <div class="sg-item-label">{{b2bSubLabel}}</div>
+            <div class="sg-item-value">{{b2bSubValue}}</div>
+          </div>
+          <div class="sg-item">
+            <div class="sg-item-label">{{b2bLtvLabel}}</div>
+            <div class="sg-item-value">{{b2bLtvValue}}</div>
           </div>
         </div>
       </div>
-      <div class="card card-secondary" style="display:flex;flex-direction:column;justify-content:center;">
-        <div style="position:relative;z-index:1;">
-          <div class="sg-card-title">{{metricsTitle}}</div>
-          <div class="sg-data-list">
-            <div class="sg-item">
-              <div class="sg-item-label">MRR</div>
-              <div class="sg-item-value">{{metricMRR}}</div>
-            </div>
-            <div class="sg-item">
-              <div class="sg-item-label">ARR</div>
-              <div class="sg-item-value">{{metricARR}}</div>
-            </div>
-            <div class="sg-item">
-              <div class="sg-item-label">{{metricRevenueLabel}}</div>
-              <div class="sg-item-value">{{metricRevenue}}</div>
-            </div>
-          </div>
+    </div>
+
+    <!-- Bottom: Metrics spanning full width -->
+    <div class="card card-secondary" style="grid-column:1/-1;display:flex;align-items:center;">
+      <div style="position:relative;z-index:1;display:flex;justify-content:space-around;width:100%;">
+        <div style="text-align:center;">
+          <div class="sg-stat-label">MRR</div>
+          <div style="font-size:var(--fs-heading);font-weight:var(--fw-heading);color:var(--secondary);">{{metricMRR}}</div>
+        </div>
+        <div style="text-align:center;">
+          <div class="sg-stat-label">ARR</div>
+          <div style="font-size:var(--fs-heading);font-weight:var(--fw-heading);color:var(--secondary);">{{metricARR}}</div>
+        </div>
+        <div style="text-align:center;">
+          <div class="sg-stat-label">{{metricRevenueLabel}}</div>
+          <div style="font-size:var(--fs-heading);font-weight:var(--fw-heading);color:var(--secondary);">{{metricRevenue}}</div>
+        </div>
+        <div style="text-align:center;">
+          <div class="sg-stat-label">GM</div>
+          <div style="font-size:var(--fs-heading);font-weight:var(--fw-heading);color:var(--secondary);">{{metricGM}}</div>
         </div>
       </div>
     </div>

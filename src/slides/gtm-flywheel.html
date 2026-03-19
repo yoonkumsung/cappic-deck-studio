@@ -1,46 +1,67 @@
 <div class="slide">
   <div class="slide-title">{{title}}</div>
 
-  <div class="slide-content sg-cols-4">
+  <div class="slide-content sg-cols-2">
 
-    <!-- Year 1 -->
-    <div style="display:flex;flex-direction:column;justify-content:flex-end;height:100%;gap:var(--sp-sm);">
-      <div style="font-size:var(--fs-heading);font-weight:var(--fw-heading);color:var(--text-primary);text-align:center;">{{year1Label}}</div>
-      <div style="font-size:var(--fs-body);font-weight:var(--fw-body);color:var(--text-secondary);text-align:center;">{{year1Milestone}}</div>
-      <div style="background:var(--accent);border-radius:var(--sp-xs);height:80px;display:flex;align-items:center;justify-content:center;">
-        <span style="font-size:var(--fs-heading);font-weight:var(--fw-heading);color:#000000;">{{year1Revenue}}</span>
+    <!-- Left: Flywheel diagram -->
+    <div style="display:flex;align-items:center;justify-content:center;position:relative;">
+      <div style="width:420px;height:420px;border-radius:50%;border:2px solid rgba(126,220,230,0.2);position:relative;display:flex;align-items:center;justify-content:center;">
+
+        <!-- Center label -->
+        <div style="text-align:center;z-index:1;">
+          <div style="font-size:var(--fs-heading);font-weight:var(--fw-heading);color:var(--accent);">{{flywheelCenter}}</div>
+        </div>
+
+        <!-- Top -->
+        <div style="position:absolute;top:-var(--sp-sm);left:50%;transform:translateX(-50%);text-align:center;">
+          <div style="font-size:var(--fs-body);font-weight:var(--fw-heading);color:var(--text-primary);">{{fw1}}</div>
+        </div>
+        <!-- Right -->
+        <div style="position:absolute;top:50%;right:-var(--sp-xl);transform:translateY(-50%);text-align:center;">
+          <div style="font-size:var(--fs-body);font-weight:var(--fw-heading);color:var(--secondary);">{{fw2}}</div>
+        </div>
+        <!-- Bottom -->
+        <div style="position:absolute;bottom:-var(--sp-sm);left:50%;transform:translateX(-50%);text-align:center;">
+          <div style="font-size:var(--fs-body);font-weight:var(--fw-heading);color:var(--text-primary);">{{fw3}}</div>
+        </div>
+        <!-- Left -->
+        <div style="position:absolute;top:50%;left:-var(--sp-xl);transform:translateY(-50%);text-align:center;">
+          <div style="font-size:var(--fs-body);font-weight:var(--fw-heading);color:var(--secondary);">{{fw4}}</div>
+        </div>
+
+        <!-- Rotation arrows (SVG) -->
+        <svg style="position:absolute;inset:0;width:100%;height:100%;" viewBox="0 0 420 420">
+          <path d="M 210 30 A 180 180 0 0 1 390 210" fill="none" stroke="rgba(126,220,230,0.3)" stroke-width="2" stroke-dasharray="8 4" />
+          <path d="M 390 210 A 180 180 0 0 1 210 390" fill="none" stroke="rgba(126,220,230,0.3)" stroke-width="2" stroke-dasharray="8 4" />
+          <path d="M 210 390 A 180 180 0 0 1 30 210" fill="none" stroke="rgba(126,220,230,0.3)" stroke-width="2" stroke-dasharray="8 4" />
+          <path d="M 30 210 A 180 180 0 0 1 210 30" fill="none" stroke="rgba(126,220,230,0.3)" stroke-width="2" stroke-dasharray="8 4" />
+        </svg>
       </div>
-      <div style="font-size:var(--fs-display);font-weight:var(--fw-display);color:var(--accent);text-align:center;line-height:1;">{{year1Name}}</div>
     </div>
 
-    <!-- Year 2 -->
-    <div style="display:flex;flex-direction:column;justify-content:flex-end;height:100%;gap:var(--sp-sm);">
-      <div style="font-size:var(--fs-heading);font-weight:var(--fw-heading);color:var(--text-primary);text-align:center;">{{year2Label}}</div>
-      <div style="font-size:var(--fs-body);font-weight:var(--fw-body);color:var(--text-secondary);text-align:center;">{{year2Milestone}}</div>
-      <div style="background:var(--secondary);border-radius:var(--sp-xs);height:160px;display:flex;align-items:center;justify-content:center;">
-        <span style="font-size:var(--fs-heading);font-weight:var(--fw-heading);color:#000000;">{{year2Revenue}}</span>
+    <!-- Right: Timeline milestones -->
+    <div class="card" style="display:flex;flex-direction:column;justify-content:center;">
+      <div style="position:relative;z-index:1;">
+        <div class="sg-card-title">{{timelineTitle}}</div>
+        <div class="sg-data-list">
+          <div class="sg-item">
+            <div class="sg-item-label">{{t1Label}}</div>
+            <div class="sg-item-value" style="color:var(--accent);">{{t1Value}}</div>
+          </div>
+          <div class="sg-item">
+            <div class="sg-item-label">{{t2Label}}</div>
+            <div class="sg-item-value">{{t2Value}}</div>
+          </div>
+          <div class="sg-item">
+            <div class="sg-item-label">{{t3Label}}</div>
+            <div class="sg-item-value">{{t3Value}}</div>
+          </div>
+          <div class="sg-item">
+            <div class="sg-item-label">{{t4Label}}</div>
+            <div class="sg-item-value" style="color:var(--secondary);">{{t4Value}}</div>
+          </div>
+        </div>
       </div>
-      <div style="font-size:var(--fs-display);font-weight:var(--fw-display);color:var(--secondary);text-align:center;line-height:1;">{{year2Name}}</div>
-    </div>
-
-    <!-- Year 3 -->
-    <div style="display:flex;flex-direction:column;justify-content:flex-end;height:100%;gap:var(--sp-sm);">
-      <div style="font-size:var(--fs-heading);font-weight:var(--fw-heading);color:var(--text-primary);text-align:center;">{{year3Label}}</div>
-      <div style="font-size:var(--fs-body);font-weight:var(--fw-body);color:var(--text-secondary);text-align:center;">{{year3Milestone}}</div>
-      <div style="background:var(--secondary);border-radius:var(--sp-xs);height:280px;display:flex;align-items:center;justify-content:center;">
-        <span style="font-size:var(--fs-heading);font-weight:var(--fw-heading);color:#000000;">{{year3Revenue}}</span>
-      </div>
-      <div style="font-size:var(--fs-display);font-weight:var(--fw-display);color:var(--text-primary);text-align:center;line-height:1;">{{year3Name}}</div>
-    </div>
-
-    <!-- Year 4 -->
-    <div style="display:flex;flex-direction:column;justify-content:flex-end;height:100%;gap:var(--sp-sm);">
-      <div style="font-size:var(--fs-heading);font-weight:var(--fw-heading);color:var(--text-primary);text-align:center;">{{year4Label}}</div>
-      <div style="font-size:var(--fs-body);font-weight:var(--fw-body);color:var(--text-secondary);text-align:center;">{{year4Milestone}}</div>
-      <div style="background:var(--accent);border-radius:var(--sp-xs);height:420px;display:flex;align-items:center;justify-content:center;">
-        <span style="font-size:var(--fs-heading);font-weight:var(--fw-heading);color:#000000;">{{year4Revenue}}</span>
-      </div>
-      <div style="font-size:var(--fs-display);font-weight:var(--fw-display);color:var(--accent);text-align:center;line-height:1;">{{year4Name}}</div>
     </div>
 
   </div>

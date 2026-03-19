@@ -1,21 +1,22 @@
 {
   "fields": [
     { "key": "title", "label": "타이틀", "type": "text", "value": "비즈니스 모델" },
-    { "key": "b2cName", "label": "B2C 이름", "type": "text", "value": "B2C 디바이스" },
+    { "key": "b2cName", "label": "B2C 이름", "type": "text", "value": "B2C · CAPP!C PRO" },
     { "key": "b2cPrice", "label": "B2C 가격", "type": "text", "value": "77만원" },
-    { "key": "b2cDesc", "label": "B2C 설명", "type": "text", "value": "개인 학부모 직접 구매" },
-    { "key": "b2bName", "label": "B2B 이름", "type": "text", "value": "B2B 클럽 에디션" },
-    { "key": "b2bPrice", "label": "B2B 가격", "type": "text", "value": "120만원" },
-    { "key": "b2bDesc", "label": "B2B 설명", "type": "text", "value": "축구교실·클럽 단체 도입" },
-    { "key": "subTitle", "label": "구독 카드 제목", "type": "text", "value": "SW 구독" },
-    { "key": "subName1", "label": "구독 1 이름", "type": "text", "value": "베이직" },
-    { "key": "subPrice1", "label": "구독 1 가격", "type": "text", "value": "월 3,900~9,900원" },
-    { "key": "subName2", "label": "구독 2 이름", "type": "text", "value": "프리미엄" },
-    { "key": "subPrice2", "label": "구독 2 가격", "type": "text", "value": "월 19,900~39,000원" },
-    { "key": "metricsTitle", "label": "지표 카드 제목", "type": "text", "value": "핵심 지표" },
-    { "key": "metricMRR", "label": "MRR", "type": "text", "value": "목표 5,000만원" },
-    { "key": "metricARR", "label": "ARR", "type": "text", "value": "목표 6억원" },
-    { "key": "metricRevenueLabel", "label": "매출 목표 라벨", "type": "text", "value": "26년 매출" },
-    { "key": "metricRevenue", "label": "매출 목표", "type": "text", "value": "12억원" }
+    { "key": "b2cSubLabel", "label": "B2C 구독 라벨", "type": "text", "value": "패밀리 멤버십" },
+    { "key": "b2cSubValue", "label": "B2C 구독 값", "type": "text", "value": "월 3,900원" },
+    { "key": "b2cLtvLabel", "label": "B2C LTV 라벨", "type": "text", "value": "2년 LTV" },
+    { "key": "b2cLtvValue", "label": "B2C LTV 값", "type": "text", "value": "86.4만원" },
+    { "key": "b2bName", "label": "B2B 이름", "type": "text", "value": "B2B · 클럽 에디션" },
+    { "key": "b2bPrice", "label": "B2B 가격", "type": "text", "value": "177만원" },
+    { "key": "b2bSubLabel", "label": "B2B 구독 라벨", "type": "text", "value": "월 구독 + 팀멤버십" },
+    { "key": "b2bSubValue", "label": "B2B 구독 값", "type": "text", "value": "월 129,000원 + 39,000원" },
+    { "key": "b2bLtvLabel", "label": "B2B LTV 라벨", "type": "text", "value": "2년 LTV" },
+    { "key": "b2bLtvValue", "label": "B2B LTV 값", "type": "text", "value": "487만원" },
+    { "key": "metricMRR", "label": "MRR", "type": "text", "value": "660만원" },
+    { "key": "metricARR", "label": "ARR", "type": "text", "value": "7,920만원" },
+    { "key": "metricRevenueLabel", "label": "매출 라벨", "type": "text", "value": "26년 매출" },
+    { "key": "metricRevenue", "label": "매출", "type": "text", "value": "7.2억원" },
+    { "key": "metricGM", "label": "GM", "type": "text", "value": "37.9%" }
   ]
 }

@@ -1,0 +1,70 @@
+<div class="slide">
+  <div class="slide-title">{{title}}</div>
+
+  <div class="slide-content" style="display:grid;grid-template-rows:auto 1fr;gap:var(--slide-gap);height:100%;">
+
+    <!-- Top: Hiring plan summary -->
+    <div class="card card-accent" style="display:flex;align-items:center;justify-content:center;gap:var(--sp-xl);">
+      <div style="position:relative;z-index:1;display:flex;align-items:center;gap:var(--sp-xl);flex-wrap:wrap;justify-content:center;">
+        <div style="font-size:var(--fs-heading);font-weight:var(--fw-heading);color:var(--accent);">{{hiringPlan}}</div>
+        <div style="display:flex;gap:var(--sp-sm);flex-wrap:wrap;">
+          <span style="font-size:var(--fs-caption);font-weight:var(--fw-body);color:var(--text-primary);background:rgba(247,225,80,0.15);border:1px solid rgba(247,225,80,0.3);border-radius:var(--sp-xs);padding:var(--sp-xs) var(--sp-sm);">{{role1}}</span>
+          <span style="font-size:var(--fs-caption);font-weight:var(--fw-body);color:var(--text-primary);background:rgba(247,225,80,0.15);border:1px solid rgba(247,225,80,0.3);border-radius:var(--sp-xs);padding:var(--sp-xs) var(--sp-sm);">{{role2}}</span>
+          <span style="font-size:var(--fs-caption);font-weight:var(--fw-body);color:var(--text-primary);background:rgba(247,225,80,0.15);border:1px solid rgba(247,225,80,0.3);border-radius:var(--sp-xs);padding:var(--sp-xs) var(--sp-sm);">{{role3}}</span>
+          <span style="font-size:var(--fs-caption);font-weight:var(--fw-body);color:var(--text-primary);background:rgba(247,225,80,0.15);border:1px solid rgba(247,225,80,0.3);border-radius:var(--sp-xs);padding:var(--sp-xs) var(--sp-sm);">{{role4}}</span>
+          <span style="font-size:var(--fs-caption);font-weight:var(--fw-body);color:var(--text-primary);background:rgba(247,225,80,0.15);border:1px solid rgba(247,225,80,0.3);border-radius:var(--sp-xs);padding:var(--sp-xs) var(--sp-sm);">{{role5}}</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom: 4 incoming members -->
+    <div class="sg-cols-4" style="height:100%;">
+
+      <div class="card" style="display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;">
+        <div style="position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:var(--sp-sm);">
+          <div style="width:100px;height:100px;border-radius:50%;overflow:hidden;background:rgba(255,255,255,0.03);">
+            <img src="{{new1Img}}" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'">
+          </div>
+          <div style="font-size:var(--fs-heading);font-weight:var(--fw-heading);color:var(--text-primary);">{{new1Name}}</div>
+          <div style="font-size:var(--fs-caption);font-weight:var(--fw-body);color:var(--secondary);background:var(--secondary-light);border-radius:var(--sp-xs);padding:var(--sp-xs) var(--sp-sm);">{{new1Role}}</div>
+          <div style="font-size:var(--fs-caption);font-weight:var(--fw-body);color:var(--text-secondary);">{{new1Cred}}</div>
+        </div>
+      </div>
+
+      <div class="card" style="display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;">
+        <div style="position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:var(--sp-sm);">
+          <div style="width:100px;height:100px;border-radius:50%;overflow:hidden;background:rgba(255,255,255,0.03);">
+            <img src="{{new2Img}}" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'">
+          </div>
+          <div style="font-size:var(--fs-heading);font-weight:var(--fw-heading);color:var(--text-primary);">{{new2Name}}</div>
+          <div style="font-size:var(--fs-caption);font-weight:var(--fw-body);color:var(--secondary);background:var(--secondary-light);border-radius:var(--sp-xs);padding:var(--sp-xs) var(--sp-sm);">{{new2Role}}</div>
+          <div style="font-size:var(--fs-caption);font-weight:var(--fw-body);color:var(--text-secondary);">{{new2Cred}}</div>
+        </div>
+      </div>
+
+      <div class="card" style="display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;">
+        <div style="position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:var(--sp-sm);">
+          <div style="width:100px;height:100px;border-radius:50%;overflow:hidden;background:rgba(255,255,255,0.03);">
+            <img src="{{new3Img}}" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'">
+          </div>
+          <div style="font-size:var(--fs-heading);font-weight:var(--fw-heading);color:var(--text-primary);">{{new3Name}}</div>
+          <div style="font-size:var(--fs-caption);font-weight:var(--fw-body);color:var(--secondary);background:var(--secondary-light);border-radius:var(--sp-xs);padding:var(--sp-xs) var(--sp-sm);">{{new3Role}}</div>
+          <div style="font-size:var(--fs-caption);font-weight:var(--fw-body);color:var(--text-secondary);">{{new3Cred}}</div>
+        </div>
+      </div>
+
+      <div class="card" style="display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;">
+        <div style="position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:var(--sp-sm);">
+          <div style="width:100px;height:100px;border-radius:50%;overflow:hidden;background:rgba(255,255,255,0.03);">
+            <img src="{{new4Img}}" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'">
+          </div>
+          <div style="font-size:var(--fs-heading);font-weight:var(--fw-heading);color:var(--text-primary);">{{new4Name}}</div>
+          <div style="font-size:var(--fs-caption);font-weight:var(--fw-body);color:var(--secondary);background:var(--secondary-light);border-radius:var(--sp-xs);padding:var(--sp-xs) var(--sp-sm);">{{new4Role}}</div>
+          <div style="font-size:var(--fs-caption);font-weight:var(--fw-body);color:var(--text-secondary);">{{new4Cred}}</div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
