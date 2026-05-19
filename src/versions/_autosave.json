@@ -1,0 +1,25 @@
+{
+  "id": "_autosave",
+  "savedAt": "2026-05-18T13:04:08.606Z",
+  "config": {
+    "selected": [
+      "cover",
+      "competition-detail",
+      "pmf-1",
+      "pmf-2",
+      "pmf-3",
+      "pmf-4",
+      "pmf-5",
+      "pmf-6",
+      "pmf-7",
+      "business-model",
+      "market-som",
+      "ulsan-policy-fit",
+      "ulsan-market"
+    ],
+    "theme": "dark",
+    "ratio": "16:9",
+    "tokenOverrides": {},
+    "slideStyles": {}
+  }
+}

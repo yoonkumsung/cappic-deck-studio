@@ -1,0 +1,52 @@
+<div class="page-a4">
+  <div class="page-title">{{title}}</div>
+  <div class="page-content pg-cols-1">
+
+    <div class="card" style="padding:var(--sp-md);">
+      <div class="pg-heading" style="color:var(--secondary);">문제</div>
+      <div class="pg-body">{{problem}}</div>
+    </div>
+
+    <div class="card card-accent" style="padding:var(--sp-md);">
+      <div class="pg-heading" style="color:var(--accent);">솔루션</div>
+      <div class="pg-body" style="color:var(--text-primary);">{{solution}}</div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:var(--a4-gap);">
+      <div class="card" style="padding:var(--sp-sm);text-align:center;">
+        <div class="pg-stat-value" style="font-size:24px;color:var(--secondary);">{{stat1_value}}</div>
+        <div class="pg-stat-label">{{stat1_label}}</div>
+      </div>
+      <div class="card" style="padding:var(--sp-sm);text-align:center;">
+        <div class="pg-stat-value" style="font-size:24px;color:var(--secondary);">{{stat2_value}}</div>
+        <div class="pg-stat-label">{{stat2_label}}</div>
+      </div>
+      <div class="card" style="padding:var(--sp-sm);text-align:center;">
+        <div class="pg-stat-value" style="font-size:24px;color:var(--secondary);">{{stat3_value}}</div>
+        <div class="pg-stat-label">{{stat3_label}}</div>
+      </div>
+      <div class="card" style="padding:var(--sp-sm);text-align:center;">
+        <div class="pg-stat-value" style="font-size:24px;color:var(--secondary);">{{stat4_value}}</div>
+        <div class="pg-stat-label">{{stat4_label}}</div>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--a4-gap);">
+      <div class="card" style="padding:var(--sp-md);">
+        <div class="pg-heading">시장 기회</div>
+        <div class="pg-body">{{market}}</div>
+      </div>
+      <div class="card" style="padding:var(--sp-md);">
+        <div class="pg-heading">비즈니스 모델</div>
+        <div class="pg-body">{{bm}}</div>
+      </div>
+    </div>
+
+    <div class="card" style="padding:var(--sp-md);">
+      <div class="pg-heading">팀</div>
+      <div class="pg-body">{{team}}</div>
+    </div>
+
+  </div>
+  <div class="page-number">1</div>
+</div>

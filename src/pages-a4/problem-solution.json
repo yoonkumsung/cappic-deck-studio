@@ -1,0 +1,26 @@
+{
+  "fields": [
+    { "key": "title", "label": "제목", "value": "문제 정의 및 솔루션", "type": "text" },
+    { "key": "problem_desc", "label": "문제 설명", "value": "유소년·아마추어 스포츠 현장에서 경기 촬영·분석은 고가 클라우드 서비스(월 수십만원~수백만원)에 의존하거나, 학부모 개인 스마트폰 수동 촬영에 그치고 있습니다. 기존 솔루션은 비용, 지연, 개인정보 위험이라는 3중 장벽을 해결하지 못합니다.", "type": "textarea" },
+    { "key": "cloud1_label", "label": "클라우드 한계 1", "value": "비용", "type": "text" },
+    { "key": "cloud1_value", "label": "클라우드 한계 1 값", "value": "GPU 서버 비용 높음", "type": "text" },
+    { "key": "cloud2_label", "label": "클라우드 한계 2", "value": "지연", "type": "text" },
+    { "key": "cloud2_value", "label": "클라우드 한계 2 값", "value": "영상 업로드·처리 지연 발생", "type": "text" },
+    { "key": "cloud3_label", "label": "클라우드 한계 3", "value": "개인정보", "type": "text" },
+    { "key": "cloud3_value", "label": "클라우드 한계 3 값", "value": "아동 영상 외부 전송 위험", "type": "text" },
+    { "key": "edge1_label", "label": "Edge AI 1", "value": "실시간 처리", "type": "text" },
+    { "key": "edge1_value", "label": "Edge AI 1 값", "value": "온디바이스 NPU로 즉시 분석", "type": "text" },
+    { "key": "edge2_label", "label": "Edge AI 2", "value": "저비용", "type": "text" },
+    { "key": "edge2_value", "label": "Edge AI 2 값", "value": "서버 비용 제로, COGS 498K", "type": "text" },
+    { "key": "edge3_label", "label": "Edge AI 3", "value": "개인정보 안전", "type": "text" },
+    { "key": "edge3_value", "label": "Edge AI 3 값", "value": "영상이 디바이스를 떠나지 않음", "type": "text" },
+    { "key": "spec1_label", "label": "사양 1", "value": "듀얼 4K 광각", "type": "text" },
+    { "key": "spec1_value", "label": "사양 1 값", "value": "SONY IMX × 2, 130° 커버리지", "type": "text" },
+    { "key": "spec2_label", "label": "사양 2", "value": "자동 프레이밍", "type": "text" },
+    { "key": "spec2_value", "label": "사양 2 값", "value": "서보모터 180° 커버리지", "type": "text" },
+    { "key": "spec3_label", "label": "사양 3", "value": "온디바이스 AI", "type": "text" },
+    { "key": "spec3_value", "label": "사양 3 값", "value": "RK3588 6TOPS NPU", "type": "text" },
+    { "key": "spec4_label", "label": "사양 4", "value": "원터치 설치", "type": "text" },
+    { "key": "spec4_value", "label": "사양 4 값", "value": "자석 마운트 5분, 10,000mAh", "type": "text" }
+  ]
+}

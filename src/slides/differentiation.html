@@ -1,15 +1,15 @@
 <div class="slide">
   <div class="slide-title">{{title}}</div>
 
-  <div class="slide-content sg-cols-4">
+  <div class="slide-content sg-cols-4" style="overflow:hidden;">
 
-    <!-- Competitor 1 -->
-    <div class="card card-photo sg-card-col">
-      <div class="sg-photo">
-        <img src="{{type1Img}}" onerror="this.style.display='none'">
+    <!-- Column 1 -->
+    <div class="card card-photo sg-card-col" style="min-height:0;overflow:hidden;">
+      <div style="aspect-ratio:16/9;overflow:hidden;background:rgba(255,255,255,0.03);">
+        <img src="{{type1ImgScreen}}" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'">
       </div>
       <div class="sg-data">
-        <div class="sg-card-title">{{col1Name}}</div>
+        <div style="font-size:var(--fs-heading);font-weight:var(--fw-heading);color:var(--text-primary);margin-bottom:var(--sp-xs);">{{col1Name}}</div>
         <div class="sg-data-list">
           <div class="sg-item">
             <div class="sg-item-label">{{row1Label}}</div>
@@ -27,13 +27,13 @@
       </div>
     </div>
 
-    <!-- Competitor 2 -->
-    <div class="card card-photo sg-card-col">
-      <div class="sg-photo">
-        <img src="{{type2Img}}" onerror="this.style.display='none'">
+    <!-- Column 2 -->
+    <div class="card card-photo sg-card-col" style="min-height:0;overflow:hidden;">
+      <div style="aspect-ratio:16/9;overflow:hidden;background:rgba(255,255,255,0.03);">
+        <img src="{{type2ImgScreen}}" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'">
       </div>
       <div class="sg-data">
-        <div class="sg-card-title">{{col2Name}}</div>
+        <div style="font-size:var(--fs-heading);font-weight:var(--fw-heading);color:var(--text-primary);margin-bottom:var(--sp-xs);">{{col2Name}}</div>
         <div class="sg-data-list">
           <div class="sg-item">
             <div class="sg-item-label">{{row1Label}}</div>
@@ -51,13 +51,13 @@
       </div>
     </div>
 
-    <!-- Competitor 3 -->
-    <div class="card card-photo sg-card-col">
-      <div class="sg-photo">
-        <img src="{{type3Img}}" onerror="this.style.display='none'">
+    <!-- Column 3 -->
+    <div class="card card-photo sg-card-col" style="min-height:0;overflow:hidden;">
+      <div style="aspect-ratio:16/9;overflow:hidden;background:rgba(255,255,255,0.03);">
+        <img src="{{type3ImgScreen}}" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'">
       </div>
       <div class="sg-data">
-        <div class="sg-card-title">{{col3Name}}</div>
+        <div style="font-size:var(--fs-heading);font-weight:var(--fw-heading);color:var(--text-primary);margin-bottom:var(--sp-xs);">{{col3Name}}</div>
         <div class="sg-data-list">
           <div class="sg-item">
             <div class="sg-item-label">{{row1Label}}</div>
@@ -75,25 +75,25 @@
       </div>
     </div>
 
-    <!-- CAPP!C (accent) -->
-    <div class="card card-accent card-photo sg-card-col">
-      <div class="sg-photo">
-        <img src="{{cappicImg}}" onerror="this.style.display='none'">
+    <!-- Column 4: CAPP!C -->
+    <div class="card card-accent card-photo sg-card-col" style="min-height:0;overflow:hidden;">
+      <div style="aspect-ratio:16/9;overflow:hidden;background:rgba(247,225,80,0.05);">
+        <img src="{{cappicImgScreen}}" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'">
       </div>
       <div class="sg-data">
-        <div class="sg-card-title">{{col4Name}}</div>
+        <div style="font-size:var(--fs-heading);font-weight:var(--fw-heading);color:var(--accent);margin-bottom:var(--sp-xs);">{{col4Name}}</div>
         <div class="sg-data-list">
           <div class="sg-item">
             <div class="sg-item-label">{{row1Label}}</div>
-            <div class="sg-item-value">{{r1c4}}</div>
+            <div style="font-size:var(--fs-body);font-weight:var(--fw-heading);color:var(--text-primary);">{{r1c4}}</div>
           </div>
           <div class="sg-item">
             <div class="sg-item-label">{{row2Label}}</div>
-            <div class="sg-item-value">{{r2c4}}</div>
+            <div style="font-size:var(--fs-body);font-weight:var(--fw-heading);color:var(--text-primary);">{{r2c4}}</div>
           </div>
           <div class="sg-item">
             <div class="sg-item-label">{{row3Label}}</div>
-            <div class="sg-item-value">{{r3c4}}</div>
+            <div style="font-size:var(--fs-body);font-weight:var(--fw-heading);color:var(--text-primary);">{{r3c4}}</div>
           </div>
         </div>
       </div>

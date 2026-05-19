@@ -1,0 +1,6 @@
+{
+  "fields": [
+    { "key": "title", "label": "타이틀", "type": "text", "value": "울산 시장 분석" },
+    { "key": "source", "label": "출처", "type": "text", "value": "울산광역시 사회조사 2023년, 울산연구원 분석, 문화체육관광부 e-나라지표, 울산시체육회" }
+  ]
+}

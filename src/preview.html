@@ -8,15 +8,12 @@
   <link rel="stylesheet" href="styles/cards.css">
   <link rel="stylesheet" href="styles/components.css">
   <link rel="stylesheet" href="styles/utilities.css">
-<link rel="stylesheet" href="styles/slide-grid.css">
+  <link rel="stylesheet" href="styles/slide-grid.css">
   <style>
     html, body {
       margin: 0;
       padding: 0;
-      width: 1920px;
-      height: 1080px;
       overflow: hidden;
-      background: #000;
     }
   </style>
 </head>
@@ -25,39 +22,168 @@
   <script>
     const params = new URLSearchParams(window.location.search);
     const slideId = params.get('slide');
+    const theme = params.get('theme') || 'dark';
+    const ratio = params.get('ratio') || '16:9';
 
+    // ── Ratio → viewport dimensions ──
+    const RATIOS = {
+      '16:9': { w: 1920, h: 1080 },
+      '3:4':  { w: 1080, h: 1440 },
+      '4:3':  { w: 1440, h: 1080 },
+      '1:1':  { w: 1080, h: 1080 },
+    };
+
+    const dim = RATIOS[ratio] || RATIOS['16:9'];
+
+    // Set viewport size
+    document.documentElement.style.width = dim.w + 'px';
+    document.documentElement.style.height = dim.h + 'px';
+    document.body.style.width = dim.w + 'px';
+    document.body.style.height = dim.h + 'px';
+
+    // Set data-ratio attribute for CSS targeting
+    document.documentElement.setAttribute('data-ratio', ratio);
+
+    // ── Light theme tokens ──
+    const LIGHT_THEME = {
+      // 배경: 흰색 계열
+      '--main-black':'#FFFFFF','--main-dark':'#F5F5F5','--main-dark-mid':'#EEEEEE','--main-dark-light':'#E5E5E5',
+      // 텍스트: 검정 계열 (다크모드 흰색 → 라이트모드 검정)
+      '--text-primary':'#111111','--text-secondary':'#333333','--text-tertiary':'#888888',
+      // 시안: 더 진하게 (흰 배경에서 가독성)
+      '--secondary':'#0A7A88','--secondary-dark':'#066570',
+      // 노란색: 훨씬 진하게 (흰 배경에서 가독성 — 다크 골드)
+      '--accent':'#CC6600','--accent-dark':'#A85500',
+      // 시맨틱: 진하게
+      '--semantic-up':'#1A7A10','--semantic-down':'#C01030',
+      // 카드: 밝은 회색 배경 (흰 배경과 구분)
+      '--card-default':'linear-gradient(165deg, #F8F8F8 0%, #F2F2F2 50%, #EEEEEE 100%)',
+      '--card-elevated':'linear-gradient(165deg, #FFFFFF 0%, #F8F8F8 50%, #F5F5F5 100%)',
+      '--card-secondary':'linear-gradient(165deg, rgba(10,122,136,0.10) 0%, rgba(10,122,136,0.05) 50%, rgba(10,122,136,0.02) 100%)',
+      '--card-accent':'linear-gradient(165deg, rgba(204,102,0,0.10) 0%, rgba(204,102,0,0.05) 50%, rgba(204,102,0,0.02) 100%)',
+      '--card-shadow':'0 1px 4px rgba(0,0,0,0.06), 0 4px 12px rgba(0,0,0,0.04)',
+      '--card-border':'1px solid rgba(0,0,0,0.10)',
+    };
+
+    // ── Apply theme ──
+    function applyTheme() {
+      document.documentElement.setAttribute('data-theme', theme);
+      if (theme === 'light') {
+        Object.entries(LIGHT_THEME).forEach(([k,v]) => document.documentElement.style.setProperty(k,v));
+        document.body.style.background = '#FFFFFF';
+      } else {
+        document.body.style.background = '#000';
+      }
+    }
+
+    // ── Apply ratio overrides ──
+    function applyRatio() {
+      const r = document.documentElement;
+      if (ratio === '3:4') {
+        r.style.setProperty('--slide-w', '1080px');
+        r.style.setProperty('--slide-h', '1440px');
+        r.style.setProperty('--slide-pad-side', '80px');
+        r.style.setProperty('--slide-pad-top', '64px');
+        r.style.setProperty('--slide-pad-bottom', '64px');
+        r.style.setProperty('--slide-content-top', '160px');
+      } else if (ratio === '4:3') {
+        r.style.setProperty('--slide-w', '1440px');
+        r.style.setProperty('--slide-h', '1080px');
+        r.style.setProperty('--slide-pad-side', '100px');
+      } else if (ratio === '1:1') {
+        r.style.setProperty('--slide-w', '1080px');
+        r.style.setProperty('--slide-h', '1080px');
+        r.style.setProperty('--slide-pad-side', '80px');
+        r.style.setProperty('--slide-content-top', '160px');
+      }
+      // 16:9 uses defaults from tokens.css
+    }
+
+    // ── Apply token overrides from URL (passed as base64 JSON) ──
+    function applyTokenOverrides() {
+      const overrides = params.get('tokens');
+      if (!overrides) return;
+      try {
+        const pxTokens = ['--fs-display','--fs-heading','--fs-body','--fs-caption','--fs-source',
+                          '--sp-xs','--sp-sm','--sp-md','--sp-lg','--sp-xl','--card-radius'];
+        const tokens = JSON.parse(atob(overrides));
+        Object.entries(tokens).forEach(([k,v]) => {
+          document.documentElement.style.setProperty(k, pxTokens.includes(k) ? v+'px' : v);
+        });
+      } catch(e) {}
+    }
+
+    applyTheme();
+    applyRatio();
+    applyTokenOverrides();
+
+    // ── Load ratio-specific CSS if needed ──
+    if (ratio !== '16:9') {
+      const link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = 'styles/slide-ratio-34.css';
+      document.head.appendChild(link);
+    }
+
+    // ── Render slide ──
     async function render() {
       if (!slideId) return;
 
-      // Load template
-      const tplRes = await fetch(`slides/${slideId}.html`);
-      if (!tplRes.ok) { document.body.innerHTML = '<div style="color:red;padding:40px;">Template not found: ' + slideId + '</div>'; return; }
-      let html = await tplRes.text();
+      // Try ratio-specific template first, fallback to default
+      let html = null;
+      const ratioSuffix = ratio === '3:4' ? '-34' : ratio === '4:3' ? '-43' : ratio === '1:1' ? '-11' : '';
 
-      // Load data
+      if (ratioSuffix) {
+        try {
+          const altRes = await fetch(`slides/${slideId}${ratioSuffix}.html`);
+          if (altRes.ok) html = await altRes.text();
+        } catch(e) {}
+      }
+
+      if (!html) {
+        const tplRes = await fetch(`slides/${slideId}.html`);
+        if (!tplRes.ok) {
+          document.body.innerHTML = '<div style="color:red;padding:40px;">Template not found: ' + slideId + '</div>';
+          return;
+        }
+        html = await tplRes.text();
+      }
+
+      // Load data and replace placeholders
       try {
         const dataRes = await fetch(`slides/${slideId}.json`);
         if (dataRes.ok) {
           const data = await dataRes.json();
-
-          // Check localStorage for overrides
-          let overrides = {};
-          try {
-            const stored = JSON.parse(localStorage.getItem('cappic-slide-data') || '{}');
-            if (stored[slideId]) overrides = stored[slideId];
-          } catch(e) {}
-
           data.fields.forEach(f => {
-            // Use override if available and non-empty
-            const ov = overrides.fields?.find(o => o.key === f.key);
-            const val = (ov && ov.value) ? ov.value : f.value;
             const regex = new RegExp('\\{\\{' + f.key + '\\}\\}', 'g');
-            html = html.replace(regex, val || '');
+            html = html.replace(regex, f.value || '');
           });
         }
       } catch(e) {}
 
       document.getElementById('slideRoot').innerHTML = html;
+
+      // Apply per-slide styles from JSON _styles field
+      try {
+        const dataRes2 = await fetch(`slides/${slideId}.json`);
+        if (dataRes2.ok) {
+          const jsonData = await dataRes2.json();
+          if (jsonData._styles) {
+            const root = document.getElementById('slideRoot').firstElementChild;
+            if (root) {
+              Object.entries(jsonData._styles).forEach(([k, v]) => {
+                if (k.startsWith('--') && k !== '--title-align') {
+                  root.style.setProperty(k, v);
+                }
+              });
+              if (jsonData._styles['--title-align'] === 'center') {
+                const title = root.querySelector('.slide-title');
+                if (title) title.classList.add('center');
+              }
+            }
+          }
+        }
+      } catch(e) {}
     }
 
     render();

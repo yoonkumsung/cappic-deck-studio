@@ -1,22 +1,29 @@
 {
   "fields": [
-    { "key": "title", "label": "타이틀", "type": "text", "value": "비즈니스 모델" },
-    { "key": "b2cName", "label": "B2C 이름", "type": "text", "value": "B2C · CAPP!C PRO" },
-    { "key": "b2cPrice", "label": "B2C 가격", "type": "text", "value": "77만원" },
-    { "key": "b2cSubLabel", "label": "B2C 구독 라벨", "type": "text", "value": "패밀리 멤버십" },
-    { "key": "b2cSubValue", "label": "B2C 구독 값", "type": "text", "value": "월 3,900원" },
-    { "key": "b2cLtvLabel", "label": "B2C LTV 라벨", "type": "text", "value": "2년 LTV" },
-    { "key": "b2cLtvValue", "label": "B2C LTV 값", "type": "text", "value": "86.4만원" },
-    { "key": "b2bName", "label": "B2B 이름", "type": "text", "value": "B2B · 클럽 에디션" },
-    { "key": "b2bPrice", "label": "B2B 가격", "type": "text", "value": "177만원" },
-    { "key": "b2bSubLabel", "label": "B2B 구독 라벨", "type": "text", "value": "월 구독 + 팀멤버십" },
-    { "key": "b2bSubValue", "label": "B2B 구독 값", "type": "text", "value": "월 129,000원 + 39,000원" },
-    { "key": "b2bLtvLabel", "label": "B2B LTV 라벨", "type": "text", "value": "2년 LTV" },
-    { "key": "b2bLtvValue", "label": "B2B LTV 값", "type": "text", "value": "487만원" },
-    { "key": "metricMRR", "label": "MRR", "type": "text", "value": "660만원" },
-    { "key": "metricARR", "label": "ARR", "type": "text", "value": "7,920만원" },
-    { "key": "metricRevenueLabel", "label": "매출 라벨", "type": "text", "value": "26년 매출" },
-    { "key": "metricRevenue", "label": "매출", "type": "text", "value": "7.2억원" },
-    { "key": "metricGM", "label": "GM", "type": "text", "value": "37.9%" }
+    { "key": "title", "label": "타이틀", "type": "text", "value": "Business Model" },
+
+    { "key": "b2cPrice", "label": "B2C HW 가격", "type": "text", "value": "150" },
+    { "key": "b2bBasicPrice", "label": "B2B 베이직 HW", "type": "text", "value": "120" },
+    { "key": "b2bPremiumPrice", "label": "B2B 프리미엄 HW", "type": "text", "value": "199" },
+    { "key": "b2bPlatinumPrice", "label": "B2B 플래티넘 HW", "type": "text", "value": "388" },
+
+    { "key": "subFamilyPrice", "label": "패밀리 구독", "type": "text", "value": "3,900원" },
+    { "key": "subTeamPrice", "label": "팀 구독", "type": "text", "value": "39,000원" },
+    { "key": "subBasicPrice", "label": "B2B 베이직 구독", "type": "text", "value": "59,000원" },
+    { "key": "subPremiumPrice", "label": "B2B 프리미엄 구독", "type": "text", "value": "89,000원" },
+    { "key": "subPlatinumPrice", "label": "B2B 플래티넘 구독", "type": "text", "value": "128,000원" },
+
+    { "key": "ltvFamily", "label": "패밀리 2년 LTV", "type": "text", "value": "159" },
+    { "key": "ltvTeam", "label": "팀 2년 LTV", "type": "text", "value": "244" },
+    { "key": "ltvBasic", "label": "베이직 2년 LTV", "type": "text", "value": "241" },
+    { "key": "ltvPremium", "label": "프리미엄 2년 LTV", "type": "text", "value": "391" },
+    { "key": "ltvPlatinum", "label": "플래티넘 2년 LTV", "type": "text", "value": "647" },
+
+    { "key": "metricHW", "label": "HW 매출", "type": "text", "value": "6.6억원" },
+    { "key": "metricHWSub", "label": "HW 매출 보조", "type": "text", "value": "B2C 300대 · B2B 200대" },
+    { "key": "metricARR", "label": "SW ARR", "type": "text", "value": "1.3억원" },
+    { "key": "metricARRSub", "label": "ARR 보조", "type": "text", "value": "구독 전환율 B2C 30% · B2B 100% 기준" },
+    { "key": "metricRevenue", "label": "총매출", "type": "text", "value": "7.9억원" },
+    { "key": "metricRevenueSub", "label": "총매출 보조", "type": "text", "value": "HW 6.6억 + SW ARR 1.3억" }
   ]
 }

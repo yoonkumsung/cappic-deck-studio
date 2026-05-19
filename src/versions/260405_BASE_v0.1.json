@@ -1,0 +1,20 @@
+{
+  "id": "260405_BASE_v0.1",
+  "createdAt": "2026-04-05T11:18:17.092Z",
+  "updatedAt": "2026-05-17T13:30:00.000Z",
+  "config": {
+    "selected": [
+      "cover",
+      "competition-detail",
+      "pmf",
+      "business-model",
+      "market-som",
+      "ulsan-policy-fit",
+      "ulsan-market"
+    ],
+    "theme": "dark",
+    "ratio": "16:9",
+    "tokenOverrides": {},
+    "slideStyles": {}
+  }
+}

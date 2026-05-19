@@ -1,34 +1,12 @@
 {
   "fields": [
-    { "key": "title", "label": "타이틀", "type": "text", "value": "CAPP!C는 어떻게 다른가" },
-
-    { "key": "col1Name", "label": "열 1 이름", "type": "text", "value": "클라우드형" },
-    { "key": "col2Name", "label": "열 2 이름", "type": "text", "value": "부스 분석형" },
-    { "key": "col3Name", "label": "열 3 이름", "type": "text", "value": "스마트폰" },
-    { "key": "col4Name", "label": "CAPP!C", "type": "text", "value": "CAPP!C" },
-
-    { "key": "row1Label", "label": "항목 1", "type": "text", "value": "가격" },
-    { "key": "r1c1", "label": "열1 값", "type": "text", "value": "280~530만" },
-    { "key": "r1c2", "label": "열2 값", "type": "text", "value": "회당 20~30만" },
-    { "key": "r1c3", "label": "열3 값", "type": "text", "value": "무료" },
-    { "key": "r1c4", "label": "CAPP!C 값", "type": "text", "value": "77만원" },
-
-    { "key": "row2Label", "label": "항목 2", "type": "text", "value": "개인 영상" },
-    { "key": "r2c1", "label": "열1 값", "type": "text", "value": "✕" },
-    { "key": "r2c2", "label": "열2 값", "type": "text", "value": "✕" },
-    { "key": "r2c3", "label": "열3 값", "type": "text", "value": "△ 수동" },
-    { "key": "r2c4", "label": "CAPP!C 값", "type": "text", "value": "◎ AI 자동" },
-
-    { "key": "row3Label", "label": "항목 3", "type": "text", "value": "설치" },
-    { "key": "r3c1", "label": "열1 값", "type": "text", "value": "전문가 필요" },
-    { "key": "r3c2", "label": "열2 값", "type": "text", "value": "공사 필요" },
-    { "key": "r3c3", "label": "열3 값", "type": "text", "value": "삼각대" },
-    { "key": "r3c4", "label": "CAPP!C 값", "type": "text", "value": "자석 원터치" },
-
-    { "key": "row4Label", "label": "항목 4", "type": "text", "value": "결과물" },
-    { "key": "r4c1", "label": "열1 값", "type": "text", "value": "전체 영상만" },
-    { "key": "r4c2", "label": "열2 값", "type": "text", "value": "동작 분석만" },
-    { "key": "r4c3", "label": "열3 값", "type": "text", "value": "원본만" },
-    { "key": "r4c4", "label": "CAPP!C 값", "type": "text", "value": "하이라이트+코칭" }
+    { "key": "title", "label": "타이틀", "type": "text", "value": "경쟁사 비교" },
+    { "key": "imgCappic", "label": "CAPP!C 이미지", "type": "image", "value": "" },
+    { "key": "imgVeo", "label": "Veo 이미지", "type": "image", "value": "" },
+    { "key": "imgPixellot", "label": "Pixellot 이미지", "type": "image", "value": "" },
+    { "key": "imgSoloshot", "label": "Soloshot 이미지", "type": "image", "value": "" },
+    { "key": "imgXbotgo", "label": "XbotGo 이미지", "type": "image", "value": "" },
+    { "key": "imgChampnote", "label": "ChampNote 이미지", "type": "image", "value": "" },
+    { "key": "imgGalloping", "label": "Galloping 이미지", "type": "image", "value": "" }
   ]
 }

@@ -1,6 +1,6 @@
 {
   "fields": [
-    { "key": "title", "label": "타이틀", "type": "text", "value": "성장 전략" },
+    { "key": "title", "label": "타이틀", "type": "text", "value": "시장 진입 전략" },
     { "key": "flywheelCenter", "label": "플라이휠 중앙", "type": "text", "value": "B2B2C\n플라이휠" },
     { "key": "fw1", "label": "플라이휠 1 (상단)", "type": "text", "value": "B2B 설치" },
     { "key": "fw2", "label": "플라이휠 2 (우측)", "type": "text", "value": "학부모 SNS 공유" },
@@ -8,12 +8,12 @@
     { "key": "fw4", "label": "플라이휠 4 (좌측)", "type": "text", "value": "지역 확산" },
     { "key": "timelineTitle", "label": "타임라인 제목", "type": "text", "value": "2026 마일스톤" },
     { "key": "t1Label", "label": "타임라인 1 라벨", "type": "text", "value": "26.05" },
-    { "key": "t1Value", "label": "타임라인 1 값", "type": "text", "value": "대전·세종 파일럿 5개소" },
+    { "key": "t1Value", "label": "타임라인 1 값", "type": "text", "value": "용인·수원 파일럿 5개소 (CCO 네트워크)" },
     { "key": "t2Label", "label": "타임라인 2 라벨", "type": "text", "value": "26.08" },
-    { "key": "t2Value", "label": "타임라인 2 값", "type": "text", "value": "수도권 LOI 20개소 전환" },
+    { "key": "t2Value", "label": "타임라인 2 값", "type": "text", "value": "수도권 LOI 20개소 전환, B2B 50개소" },
     { "key": "t3Label", "label": "타임라인 3 라벨", "type": "text", "value": "26.10" },
-    { "key": "t3Value", "label": "타임라인 3 값", "type": "text", "value": "B2B 50개소 + 자사몰 오픈" },
+    { "key": "t3Value", "label": "타임라인 3 값", "type": "text", "value": "자사몰 오픈, B2C 펀딩 2차 (300대)" },
     { "key": "t4Label", "label": "타임라인 4 라벨", "type": "text", "value": "26.12" },
-    { "key": "t4Value", "label": "타임라인 4 값", "type": "text", "value": "연말 안정화, MRR 660만원" }
+    { "key": "t4Value", "label": "타임라인 4 값", "type": "text", "value": "연말 안정화, MRR 660만원, 전국 확장 준비" }
   ]
 }

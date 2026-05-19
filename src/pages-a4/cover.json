@@ -1,0 +1,9 @@
+{
+  "fields": [
+    { "key": "title", "label": "사업명", "value": "CAPP!C — AI 스포츠 자동 촬영·분석 플랫폼", "type": "text" },
+    { "key": "subtitle", "label": "서브타이틀", "value": "Edge AI 기반 유소년·아마추어 스포츠 하이라이트 자동 생성", "type": "text" },
+    { "key": "company", "label": "회사명", "value": "주식회사 캐픽", "type": "text" },
+    { "key": "date", "label": "작성일", "value": "2026년 4월", "type": "text" },
+    { "key": "contact", "label": "연락처", "value": "CEO 금성윤 | cappic.team@gmail.com", "type": "text" }
+  ]
+}

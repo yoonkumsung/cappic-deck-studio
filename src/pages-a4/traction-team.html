@@ -1,0 +1,50 @@
+<div class="page-a4">
+  <div class="page-title">{{title}}</div>
+  <div class="page-content pg-cols-1">
+
+    <div class="pg-heading">시장 검증 데이터</div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:var(--a4-gap);margin-bottom:var(--sp-sm);">
+      <div class="card" style="padding:var(--sp-sm);text-align:center;">
+        <div class="pg-stat-value" style="font-size:24px;color:var(--secondary);">{{stat1}}</div>
+        <div class="pg-stat-label">{{stat1_label}}</div>
+      </div>
+      <div class="card" style="padding:var(--sp-sm);text-align:center;">
+        <div class="pg-stat-value" style="font-size:24px;color:var(--secondary);">{{stat2}}</div>
+        <div class="pg-stat-label">{{stat2_label}}</div>
+      </div>
+      <div class="card" style="padding:var(--sp-sm);text-align:center;">
+        <div class="pg-stat-value" style="font-size:24px;color:var(--secondary);">{{stat3}}</div>
+        <div class="pg-stat-label">{{stat3_label}}</div>
+      </div>
+      <div class="card card-accent" style="padding:var(--sp-sm);text-align:center;">
+        <div class="pg-stat-value" style="font-size:24px;color:var(--accent);">{{stat4}}</div>
+        <div class="pg-stat-label">{{stat4_label}}</div>
+      </div>
+    </div>
+    <div class="pg-body" style="margin-bottom:var(--sp-sm);">{{validation_desc}}</div>
+
+    <hr class="pg-divider">
+
+    <div class="pg-heading">핵심 팀</div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:var(--a4-gap);">
+      <div class="card" style="padding:var(--sp-md);">
+        <div class="pg-card-title" style="color:var(--secondary);">{{member1_role}}</div>
+        <div style="font-size:var(--a4-fs-body);font-weight:700;color:var(--text-primary);margin-bottom:8px;">{{member1_name}}</div>
+        <div class="pg-body">{{member1_desc}}</div>
+      </div>
+      <div class="card" style="padding:var(--sp-md);">
+        <div class="pg-card-title" style="color:var(--secondary);">{{member2_role}}</div>
+        <div style="font-size:var(--a4-fs-body);font-weight:700;color:var(--text-primary);margin-bottom:8px;">{{member2_name}}</div>
+        <div class="pg-body">{{member2_desc}}</div>
+      </div>
+      <div class="card" style="padding:var(--sp-md);">
+        <div class="pg-card-title" style="color:var(--secondary);">{{member3_role}}</div>
+        <div style="font-size:var(--a4-fs-body);font-weight:700;color:var(--text-primary);margin-bottom:8px;">{{member3_name}}</div>
+        <div class="pg-body">{{member3_desc}}</div>
+      </div>
+    </div>
+
+  </div>
+  <div class="page-source">{{source}}</div>
+  <div class="page-number">4</div>
+</div>

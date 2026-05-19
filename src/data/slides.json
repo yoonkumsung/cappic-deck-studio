@@ -2,188 +2,98 @@
   "slides": [
     {
       "id": "cover",
-      "title": "커버",
+      "title": "(공용) 커버",
       "subtitle": "한 줄 정체성 + 로고",
-      "priority": "상",
-      "category": "opening",
+      "category": "cover",
       "description": "77만원 AI 카메라, 내 아이의 하이라이트를 자동으로 — CAPP!C"
     },
     {
-      "id": "problem-emotion",
-      "title": "문제 — 감성",
-      "subtitle": "개인 에피소드",
-      "priority": "하",
-      "category": "problem",
-      "description": "저는 운동을 못합니다. 천번 돌려 봤습니다."
-    },
-    {
-      "id": "problem-market",
-      "title": "문제 — 시장 증거",
-      "subtitle": "아마추어 스포츠 콘텐츠 수요 폭발",
-      "priority": "하",
-      "category": "problem",
-      "description": "프로 경기보다 조회수 높은 아마추어 경기들 + 주먹구구식 스포츠 교육"
-    },
-    {
-      "id": "problem-data",
-      "title": "문제 — 정량 증거",
-      "subtitle": "촬영비 55만/회, 수요 97% vs 이용 18%",
-      "priority": "상",
-      "category": "problem",
-      "description": "전문 장비 1대 350만원, 촬영 1회 55만원. 학부모 100명 조사: 수요 97% vs 이용 18% → 79%p 갭"
-    },
-    {
-      "id": "mechanism",
-      "title": "메커니즘",
-      "subtitle": "왜 Edge AI인가",
-      "priority": "중",
-      "category": "solution",
-      "description": "클라우드는 비싸고 느림. 온디바이스 6TOPS NPU → 실시간 처리, 저가, 개인정보 안전"
-    },
-    {
-      "id": "solution-product",
-      "title": "솔루션 — 제품",
-      "subtitle": "CAPP!C PRO 실물 + 핵심 스펙",
-      "priority": "상",
-      "category": "solution",
-      "description": "듀얼 4K 광각, 서보모터 자동 프레이밍, NPU 온디바이스 추론, COGS 498K / 정가 770K / GM 37.9%"
-    },
-    {
-      "id": "solution-flow",
-      "title": "솔루션 — 사용 흐름",
-      "subtitle": "STEP 1→2→3",
-      "priority": "중",
-      "category": "solution",
-      "description": "STEP1 기둥에 붙이면 끝 → STEP2 AI 자동 촬영·하이라이트 → STEP3 개인별 콘텐츠+AI 코칭"
-    },
-    {
-      "id": "tech-pipeline",
-      "title": "기술 파이프라인",
-      "subtitle": "Access → Automation → Intelligence → Delivery → Expansion",
-      "priority": "하",
-      "category": "solution",
-      "description": "객체추적 AI → 하이라이트 생성 AI → 자세분석 AI → 데이터 파이프라인 → 클라우드/앱"
-    },
-    {
-      "id": "differentiation",
-      "title": "차별성",
-      "subtitle": "기존 3가지 실패 → CAPP!C 해결",
-      "priority": "상",
-      "category": "solution",
-      "description": "클라우드형(비싸고 개인 안 보임) / 부스 내 분석형(실제 경기 아님) / 스마트폰(수동) → CAPP!C: 20% 가격에 자동 개인 하이라이트"
-    },
-    {
       "id": "competition-detail",
-      "title": "경쟁사 상세 비교",
+      "title": "(공용) 경쟁사 상세 비교",
       "subtitle": "핵심 3개 항목만 비교",
-      "priority": "하",
-      "category": "solution",
+      "category": "competition",
       "description": "가격 / 개인 하이라이트 유무 / 설치 난이도 기준 비교표"
     },
-    {
-      "id": "traction",
-      "title": "트랙션/검증",
-      "subtitle": "PSF → MVP → 블라인드 → SNS → LOI 인과 체인",
-      "priority": "상",
-      "category": "traction",
-      "description": "학부모 100명 수요 97% → 3-way 테스트 만족도 1위 → 블라인드 87% 긍정 → SNS 80% 자발 공유 → LOI 10개소"
-    },
-    {
-      "id": "pmf",
-      "title": "PMF 검증 7단계",
-      "subtitle": "시장공백 → 수요정량화 → 공급부족 → 솔루션검증 → 행동데이터 → 구매의사 → 실행역량",
-      "priority": "중",
-      "category": "traction",
-      "description": "7단계 PMF 파이프라인으로 체계적 검증 완료. 데이터 기반 빠른 의사결정과 피보팅"
-    },
-    {
-      "id": "validation-evidence",
-      "title": "검증 증거",
-      "subtitle": "LOI / MOU / 특허 / 수상",
-      "priority": "하",
-      "category": "traction",
-      "description": "LOI 10개소, MOU 4건(STC Networks/HaoZhou/경희대), 특허 출원 완료, 수상 6건"
-    },
+    { "id": "pmf-1", "title": "(공용) PMF ① 시장 기회", "subtitle": "TAM 88조 · AI 통합 솔루션 부재", "category": "validation", "description": "" },
+    { "id": "pmf-2", "title": "(공용) PMF ② 현장 수요", "subtitle": "코치 1인 월 240~600 세션", "category": "validation", "description": "" },
+    { "id": "pmf-3", "title": "(공용) PMF ③ 수요 검증", "subtitle": "학부모 100명 설문 → 97%", "category": "validation", "description": "" },
+    { "id": "pmf-4", "title": "(공용) PMF ④ 솔루션 검증", "subtitle": "3-way 비교 만족도 1위", "category": "validation", "description": "" },
+    { "id": "pmf-5", "title": "(공용) PMF ⑤ 실사용 검증", "subtitle": "블라인드 긍정 87%", "category": "validation", "description": "" },
+    { "id": "pmf-6", "title": "(공용) PMF ⑥ 구매 의사", "subtitle": "B2B LOI 10개 구장", "category": "validation", "description": "" },
+    { "id": "pmf-7", "title": "(공용) PMF ⑦ 실행 역량", "subtitle": "3회 MVP 반복 · 린스타트업", "category": "validation", "description": "" },
     {
       "id": "business-model",
-      "title": "비즈니스 모델",
-      "subtitle": "HW 판매 + SW 구독 → LTV / MRR / ARR",
-      "priority": "상",
-      "category": "business",
+      "title": "(공용) Business Model",
+      "subtitle": "HW 판매로 고객 획득 · SW 구독으로 반복 수익 창출",
+      "category": "bm",
       "description": "B2C PRO 77만 + B2B 클럽에디션 177만 / 팀멤버십 39,000원·패밀리 3,900원/월 → 26년 매출 7.2억, MRR 660만, ARR 7,920만"
     },
     {
       "id": "market-som",
-      "title": "시장 규모 + SOM 산식",
+      "title": "(공용) 시장 분석 및 Scale-up 전략",
       "subtitle": "TAM → SAM → SOM 바텀업",
-      "priority": "중",
-      "category": "business",
+      "category": "market",
       "description": "TAM 52조(글로벌 스포츠테크) → SAM 1.3조(국내 아마추어+유소년) → SOM 8억(대전·세종·수도권 축구교실+동호인)"
     },
     {
-      "id": "gtm-flywheel",
-      "title": "GTM + 플라이휠",
-      "subtitle": "B2B2C 플라이휠 + 지역 확장 전략",
-      "priority": "중",
-      "category": "business",
-      "description": "B2B 설치 → 학부모 SNS 공유 → 같은 지역 다른 교실 문의 → LOI 전환. 대전·세종 파일럿 → 수도권 → 전국"
+      "id": "ulsan-policy-fit",
+      "title": "(울산) 울산 정책 정합성",
+      "subtitle": "울산시 정책 방향 + 지역 연계",
+      "category": "regional-ulsan",
+      "description": "울산시 시설 활용·운영 전환 과제 직결, AI·빅데이터 특화산업 연계, 청년 고용 창출, UNIST 산학협력"
     },
     {
-      "id": "global",
-      "title": "해외 진출",
-      "subtitle": "일본 → 동남아 → 북미 → 유럽",
-      "priority": "하",
-      "category": "business",
-      "description": "일본 2027 Q1 / 동남아 2027 Q3 / 북미 2028 Q1 / 유럽 2028 Q3. 마쿠아케 펀딩 + CES 참가"
-    },
-    {
-      "id": "financials",
-      "title": "재무 계획",
-      "subtitle": "자금 조달 + 월별 추진 계획",
-      "priority": "하",
-      "category": "business",
-      "description": "26년 유입 9.69억 / 유출 7.21억 / 연말 현금 2.48억 / 레버리지 11.9x"
-    },
-    {
-      "id": "team-core",
-      "title": "팀",
-      "subtitle": "CEO / CCO / CTO + 핵심 역량",
-      "priority": "중",
-      "category": "team",
-      "description": "기획→개발→영업 전 과정 직접 실행. CEO 금성윤(제품·사업화), CCO 김동훈(사업기획·스포츠네트워크), CTO 김민혁(데이터·백엔드)"
-    },
-    {
-      "id": "team-expansion",
-      "title": "팀 확장 계획",
-      "subtitle": "5명 추가 채용 → 총 8명",
-      "priority": "하",
-      "category": "team",
-      "description": "PM, 백엔드, 마케터, R&D(CV), 해외영업 채용 예정. 합류 예정 멤버 4명(Data Scientist/Engineer/Analyst/Marketer)"
-    },
-    {
-      "id": "ask",
-      "title": "Ask + 투자금 용도",
-      "subtitle": "Seed 5,000만원 + 용도 + 리스크",
-      "priority": "상",
-      "category": "closing",
-      "description": "Seed 5,000만원(최대 1억). 일본진출 40% / 운영버퍼 40% / R&D 20%. 타겟: 스포츠테크·딥테크 AC"
-    },
-    {
-      "id": "closing",
-      "title": "비전 클로징",
-      "subtitle": "비전 한 줄",
-      "priority": "상",
-      "category": "closing",
-      "description": "모든 운동장에 AI를, 모든 아이에게 하이라이트를"
+      "id": "ulsan-market",
+      "title": "(울산) 울산 시장 분석",
+      "subtitle": "규모 · 특성 · 경쟁 · 전망",
+      "category": "regional-ulsan",
+      "description": "울산 타겟 시설 60~70개소, 유소년 클럽 30~40팀, 동호인 80~120팀, 26년 SOM 1.6억원, 구조적 미스매치 22.8%p"
     }
   ],
   "categories": {
-    "opening": { "label": "오프닝", "color": "#7EDCE6" },
-    "problem": { "label": "문제", "color": "#FF4D6A" },
-    "solution": { "label": "솔루션", "color": "#7EDCE6" },
-    "traction": { "label": "트랙션", "color": "#7AE85A" },
-    "business": { "label": "비즈니스", "color": "#F7E150" },
-    "team": { "label": "팀", "color": "#E0E0E0" },
-    "closing": { "label": "클로징", "color": "#F7E150" }
+    "cover": {
+      "label": "커버",
+      "color": "#FFFFFF"
+    },
+    "problem": {
+      "label": "문제",
+      "color": "#FF4D6A"
+    },
+    "solution": {
+      "label": "솔루션",
+      "color": "#7EDCE6"
+    },
+    "validation": {
+      "label": "검증",
+      "color": "#7AE85A"
+    },
+    "bm": {
+      "label": "BM",
+      "color": "#F7E150"
+    },
+    "competition": {
+      "label": "경쟁사",
+      "color": "#FF8C42"
+    },
+    "market": {
+      "label": "시장분석",
+      "color": "#90E0EF"
+    },
+    "team": {
+      "label": "팀",
+      "color": "#E0E0E0"
+    },
+    "regional-ulsan": {
+      "label": "지역(울산)",
+      "color": "#7EDCE6"
+    },
+    "regional-daejeon": {
+      "label": "지역(대전)",
+      "color": "#A5D6A7"
+    },
+    "regional-capital": {
+      "label": "지역(수도권)",
+      "color": "#CE93D8"
+    }
   }
 }

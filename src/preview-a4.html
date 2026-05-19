@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>A4 Page Preview</title>
+  <link rel="stylesheet" href="styles/tokens.css">
+  <link rel="stylesheet" href="styles/layout.css">
+  <link rel="stylesheet" href="styles/cards.css">
+  <link rel="stylesheet" href="styles/components.css">
+  <link rel="stylesheet" href="styles/utilities.css">
+  <link rel="stylesheet" href="styles/page-grid-a4.css">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 794px;
+      height: 1123px;
+      overflow: hidden;
+      background: #000;
+    }
+  </style>
+</head>
+<body>
+  <div id="pageRoot"></div>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const pageId = params.get('page');
+
+    // A4 사업계획서는 항상 라이트 테마
+    function applyLightTheme() {
+      const LIGHT = {
+        '--main-black':'#FFFFFF','--main-dark':'#F8F8F8','--main-dark-mid':'#F0F0F0','--main-dark-light':'#E8E8E8',
+        '--text-primary':'#111111','--text-secondary':'#333333','--text-tertiary':'#666666',
+        '--secondary':'#0A8A96','--secondary-dark':'#077580','--accent':'#C4A800','--accent-dark':'#A89000',
+        '--semantic-up':'#2D8C1F','--semantic-down':'#D42040',
+        '--card-default':'linear-gradient(165deg, #FFFFFF, #F5F5F5)',
+        '--card-elevated':'linear-gradient(165deg, #F8F8F8, #F0F0F0)',
+        '--card-secondary':'linear-gradient(165deg, rgba(10,138,150,0.08), rgba(10,138,150,0.04))',
+        '--card-accent':'linear-gradient(165deg, rgba(196,168,0,0.08), rgba(196,168,0,0.04))',
+        '--card-shadow':'0 2px 8px rgba(0,0,0,0.06), 0 6px 16px rgba(0,0,0,0.04), inset 0 1px 0 rgba(255,255,255,0.5)',
+        '--card-border':'1px solid rgba(0,0,0,0.08)',
+      };
+      Object.entries(LIGHT).forEach(([k,v]) => document.documentElement.style.setProperty(k,v));
+      document.body.style.background = '#FFFFFF';
+    }
+    applyLightTheme();
+
+    async function render() {
+      if (!pageId) return;
+      const tplRes = await fetch(`pages-a4/${pageId}.html`);
+      if (!tplRes.ok) { document.body.innerHTML = '<div style="color:red;padding:40px;">Template not found: ' + pageId + '</div>'; return; }
+      let html = await tplRes.text();
+      try {
+        const dataRes = await fetch(`pages-a4/${pageId}.json`);
+        if (dataRes.ok) {
+          const data = await dataRes.json();
+          data.fields.forEach(f => {
+            const regex = new RegExp('\\{\\{' + f.key + '\\}\\}', 'g');
+            html = html.replace(regex, f.value || '');
+          });
+        }
+      } catch(e) {}
+      document.getElementById('pageRoot').innerHTML = html;
+    }
+    render();
+  </script>
+</body>
+</html>

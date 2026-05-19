@@ -1,90 +1,74 @@
 <div class="slide">
   <div class="slide-title">{{title}}</div>
 
-  <div class="slide-content" style="display:flex;flex-direction:column;justify-content:space-between;height:100%;">
+  <div class="slide-content" style="display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-md);">
 
-    <!-- Stage 1 -->
-    <div style="display:flex;align-items:center;gap:var(--sp-md);">
-      <div style="width:48px;height:48px;border-radius:50%;background:var(--accent-light);border:2px solid var(--accent);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-        <div style="font-size:var(--fs-body);font-weight:var(--fw-heading);color:var(--accent);">1</div>
+    <!-- 좌측: 7단계 리스트 -->
+    <div style="display:grid;grid-template-rows:auto repeat(7, 1fr);gap:0;">
+
+      <!-- Header -->
+      <div style="display:grid;grid-template-columns:40px 1fr 100px;gap:var(--sp-xs);align-items:center;padding-bottom:var(--sp-sm);border-bottom:2px solid rgba(255,255,255,0.1);">
+        <div></div>
+        <div style="font-size:var(--fs-caption);font-weight:var(--fw-heading);color:var(--text-tertiary);">검증 단계</div>
+        <div style="font-size:var(--fs-caption);font-weight:var(--fw-heading);color:var(--text-tertiary);text-align:center;">결과</div>
       </div>
-      <div style="flex:1;">
-        <div style="font-size:var(--fs-body);font-weight:var(--fw-heading);color:var(--text-primary);">{{s1Name}}</div>
+
+      <!-- Stage 1 -->
+      <div style="display:grid;grid-template-columns:40px 1fr 100px;gap:var(--sp-xs);align-items:center;border-bottom:1px solid rgba(255,255,255,0.04);">
+        <div style="width:32px;height:32px;border-radius:50%;border:2px solid var(--text-tertiary);display:flex;align-items:center;justify-content:center;font-size:var(--fs-caption);font-weight:var(--fw-heading);color:var(--text-tertiary);">1</div>
+        <div><span style="font-size:var(--fs-caption);font-weight:var(--fw-heading);color:var(--text-primary);">{{s1Name}}</span> <span style="margin-left:var(--sp-sm);font-size:var(--fs-caption);color:var(--text-tertiary);">{{s1Evidence}}</span></div>
+        <div style="font-size:var(--fs-caption);font-weight:var(--fw-heading);color:var(--text-primary);text-align:center;">{{s1Result}}</div>
       </div>
-      <div style="flex:1;font-size:var(--fs-caption);font-weight:var(--fw-body);color:var(--text-secondary);">{{s1Evidence}}</div>
-      <div style="font-size:var(--fs-caption);font-weight:var(--fw-body);color:var(--accent);">{{s1Result}}</div>
+
+      <!-- Stage 2 -->
+      <div style="display:grid;grid-template-columns:40px 1fr 100px;gap:var(--sp-xs);align-items:center;border-bottom:1px solid rgba(255,255,255,0.04);">
+        <div style="width:32px;height:32px;border-radius:50%;border:2px solid var(--text-tertiary);display:flex;align-items:center;justify-content:center;font-size:var(--fs-caption);font-weight:var(--fw-heading);color:var(--text-tertiary);">2</div>
+        <div><span style="font-size:var(--fs-caption);font-weight:var(--fw-heading);color:var(--text-primary);">{{s2Name}}</span> <span style="margin-left:var(--sp-sm);font-size:var(--fs-caption);color:var(--text-tertiary);">{{s2Evidence}}</span></div>
+        <div style="font-size:var(--fs-caption);font-weight:var(--fw-heading);color:var(--text-primary);text-align:center;">{{s2Result}}</div>
+      </div>
+
+      <!-- Stage 3 -->
+      <div style="display:grid;grid-template-columns:40px 1fr 100px;gap:var(--sp-xs);align-items:center;border-bottom:1px solid rgba(255,255,255,0.04);background:rgba(247,225,80,0.02);">
+        <div style="width:32px;height:32px;border-radius:50%;border:2px solid var(--accent);display:flex;align-items:center;justify-content:center;font-size:var(--fs-caption);font-weight:var(--fw-heading);color:var(--accent);">3</div>
+        <div><span style="font-size:var(--fs-caption);font-weight:var(--fw-heading);color:var(--text-primary);">{{s3Name}}</span> <span style="margin-left:var(--sp-sm);font-size:var(--fs-caption);color:var(--text-tertiary);">{{s3Evidence}}</span></div>
+        <div style="font-size:var(--fs-caption);font-weight:var(--fw-heading);color:var(--accent);text-align:center;">{{s3Result}}</div>
+      </div>
+
+      <!-- Stage 4 -->
+      <div style="display:grid;grid-template-columns:40px 1fr 100px;gap:var(--sp-xs);align-items:center;border-bottom:1px solid rgba(255,255,255,0.04);background:rgba(247,225,80,0.02);">
+        <div style="width:32px;height:32px;border-radius:50%;border:2px solid var(--accent);display:flex;align-items:center;justify-content:center;font-size:var(--fs-caption);font-weight:var(--fw-heading);color:var(--accent);">4</div>
+        <div><span style="font-size:var(--fs-caption);font-weight:var(--fw-heading);color:var(--text-primary);">{{s4Name}}</span> <span style="margin-left:var(--sp-sm);font-size:var(--fs-caption);color:var(--text-tertiary);">{{s4Evidence}}</span></div>
+        <div style="font-size:var(--fs-caption);font-weight:var(--fw-heading);color:var(--accent);text-align:center;">{{s4Result}}</div>
+      </div>
+
+      <!-- Stage 5 -->
+      <div style="display:grid;grid-template-columns:40px 1fr 100px;gap:var(--sp-xs);align-items:center;border-bottom:1px solid rgba(255,255,255,0.04);background:rgba(247,225,80,0.02);">
+        <div style="width:32px;height:32px;border-radius:50%;border:2px solid var(--accent);display:flex;align-items:center;justify-content:center;font-size:var(--fs-caption);font-weight:var(--fw-heading);color:var(--accent);">5</div>
+        <div><span style="font-size:var(--fs-caption);font-weight:var(--fw-heading);color:var(--text-primary);">{{s5Name}}</span> <span style="margin-left:var(--sp-sm);font-size:var(--fs-caption);color:var(--text-tertiary);">{{s5Evidence}}</span></div>
+        <div style="font-size:var(--fs-caption);font-weight:var(--fw-heading);color:var(--accent);text-align:center;">{{s5Result}}</div>
+      </div>
+
+      <!-- Stage 6 -->
+      <div style="display:grid;grid-template-columns:40px 1fr 100px;gap:var(--sp-xs);align-items:center;border-bottom:1px solid rgba(255,255,255,0.04);background:rgba(126,220,230,0.02);">
+        <div style="width:32px;height:32px;border-radius:50%;border:2px solid var(--secondary);display:flex;align-items:center;justify-content:center;font-size:var(--fs-caption);font-weight:var(--fw-heading);color:var(--secondary);">6</div>
+        <div><span style="font-size:var(--fs-caption);font-weight:var(--fw-heading);color:var(--text-primary);">{{s6Name}}</span> <span style="margin-left:var(--sp-sm);font-size:var(--fs-caption);color:var(--text-tertiary);">{{s6Evidence}}</span></div>
+        <div style="font-size:var(--fs-caption);font-weight:var(--fw-heading);color:var(--secondary);text-align:center;">{{s6Result}}</div>
+      </div>
+
+      <!-- Stage 7 -->
+      <div style="display:grid;grid-template-columns:40px 1fr 100px;gap:var(--sp-xs);align-items:center;background:rgba(126,220,230,0.02);">
+        <div style="width:32px;height:32px;border-radius:50%;border:2px solid var(--secondary);background:rgba(126,220,230,0.1);display:flex;align-items:center;justify-content:center;font-size:var(--fs-caption);font-weight:var(--fw-heading);color:var(--secondary);">7</div>
+        <div><span style="font-size:var(--fs-caption);font-weight:var(--fw-heading);color:var(--text-primary);">{{s7Name}}</span> <span style="margin-left:var(--sp-sm);font-size:var(--fs-caption);color:var(--text-tertiary);">{{s7Evidence}}</span></div>
+        <div style="font-size:var(--fs-caption);font-weight:var(--fw-heading);color:var(--secondary);text-align:center;">{{s7Result}}</div>
+      </div>
+
     </div>
 
-    <!-- Stage 2 -->
-    <div style="display:flex;align-items:center;gap:var(--sp-md);">
-      <div style="width:48px;height:48px;border-radius:50%;background:var(--accent-light);border:2px solid var(--accent);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-        <div style="font-size:var(--fs-body);font-weight:var(--fw-heading);color:var(--accent);">2</div>
+    <!-- 우측: 박스 -->
+    <div class="card" style="display:flex;align-items:center;justify-content:center;">
+      <div style="position:relative;z-index:1;text-align:center;">
+        <div style="font-size:var(--fs-body);color:var(--text-tertiary);">{{boxContent}}</div>
       </div>
-      <div style="flex:1;">
-        <div style="font-size:var(--fs-body);font-weight:var(--fw-heading);color:var(--text-primary);">{{s2Name}}</div>
-      </div>
-      <div style="flex:1;font-size:var(--fs-caption);font-weight:var(--fw-body);color:var(--text-secondary);">{{s2Evidence}}</div>
-      <div style="font-size:var(--fs-caption);font-weight:var(--fw-body);color:var(--accent);">{{s2Result}}</div>
-    </div>
-
-    <!-- Stage 3 -->
-    <div style="display:flex;align-items:center;gap:var(--sp-md);">
-      <div style="width:48px;height:48px;border-radius:50%;background:var(--accent-light);border:2px solid var(--accent);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-        <div style="font-size:var(--fs-body);font-weight:var(--fw-heading);color:var(--accent);">3</div>
-      </div>
-      <div style="flex:1;">
-        <div style="font-size:var(--fs-body);font-weight:var(--fw-heading);color:var(--text-primary);">{{s3Name}}</div>
-      </div>
-      <div style="flex:1;font-size:var(--fs-caption);font-weight:var(--fw-body);color:var(--text-secondary);">{{s3Evidence}}</div>
-      <div style="font-size:var(--fs-caption);font-weight:var(--fw-body);color:var(--accent);">{{s3Result}}</div>
-    </div>
-
-    <!-- Stage 4 -->
-    <div style="display:flex;align-items:center;gap:var(--sp-md);">
-      <div style="width:48px;height:48px;border-radius:50%;background:var(--secondary-light);border:2px solid var(--secondary);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-        <div style="font-size:var(--fs-body);font-weight:var(--fw-heading);color:var(--secondary);">4</div>
-      </div>
-      <div style="flex:1;">
-        <div style="font-size:var(--fs-body);font-weight:var(--fw-heading);color:var(--text-primary);">{{s4Name}}</div>
-      </div>
-      <div style="flex:1;font-size:var(--fs-caption);font-weight:var(--fw-body);color:var(--text-secondary);">{{s4Evidence}}</div>
-      <div style="font-size:var(--fs-caption);font-weight:var(--fw-body);color:var(--secondary);">{{s4Result}}</div>
-    </div>
-
-    <!-- Stage 5 -->
-    <div style="display:flex;align-items:center;gap:var(--sp-md);">
-      <div style="width:48px;height:48px;border-radius:50%;background:var(--secondary-light);border:2px solid var(--secondary);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-        <div style="font-size:var(--fs-body);font-weight:var(--fw-heading);color:var(--secondary);">5</div>
-      </div>
-      <div style="flex:1;">
-        <div style="font-size:var(--fs-body);font-weight:var(--fw-heading);color:var(--text-primary);">{{s5Name}}</div>
-      </div>
-      <div style="flex:1;font-size:var(--fs-caption);font-weight:var(--fw-body);color:var(--text-secondary);">{{s5Evidence}}</div>
-      <div style="font-size:var(--fs-caption);font-weight:var(--fw-body);color:var(--secondary);">{{s5Result}}</div>
-    </div>
-
-    <!-- Stage 6 -->
-    <div style="display:flex;align-items:center;gap:var(--sp-md);">
-      <div style="width:48px;height:48px;border-radius:50%;background:var(--secondary-light);border:2px solid var(--secondary);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-        <div style="font-size:var(--fs-body);font-weight:var(--fw-heading);color:var(--secondary);">6</div>
-      </div>
-      <div style="flex:1;">
-        <div style="font-size:var(--fs-body);font-weight:var(--fw-heading);color:var(--text-primary);">{{s6Name}}</div>
-      </div>
-      <div style="flex:1;font-size:var(--fs-caption);font-weight:var(--fw-body);color:var(--text-secondary);">{{s6Evidence}}</div>
-      <div style="font-size:var(--fs-caption);font-weight:var(--fw-body);color:var(--secondary);">{{s6Result}}</div>
-    </div>
-
-    <!-- Stage 7 -->
-    <div style="display:flex;align-items:center;gap:var(--sp-md);">
-      <div style="width:48px;height:48px;border-radius:50%;background:var(--accent-light);border:2px solid var(--accent);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-        <div style="font-size:var(--fs-body);font-weight:var(--fw-heading);color:var(--accent);">7</div>
-      </div>
-      <div style="flex:1;">
-        <div style="font-size:var(--fs-body);font-weight:var(--fw-heading);color:var(--text-primary);">{{s7Name}}</div>
-      </div>
-      <div style="flex:1;font-size:var(--fs-caption);font-weight:var(--fw-body);color:var(--text-secondary);">{{s7Evidence}}</div>
-      <div style="font-size:var(--fs-caption);font-weight:var(--fw-body);color:var(--accent);">{{s7Result}}</div>
     </div>
 
   </div>

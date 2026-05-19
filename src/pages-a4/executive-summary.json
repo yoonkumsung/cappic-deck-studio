@@ -1,0 +1,18 @@
+{
+  "fields": [
+    { "key": "title", "label": "제목", "value": "사업 개요", "type": "text" },
+    { "key": "problem", "label": "문제", "value": "유소년·아마추어 스포츠 촬영 시장은 고가 클라우드(월 수십만원), 개인정보 위험, 수동 촬영의 3중 장벽으로 98%가 기록되지 못하고 있습니다.", "type": "textarea" },
+    { "key": "solution", "label": "솔루션", "value": "CAPP!C PRO는 77만원 Edge AI 카메라로, 설치 5분 만에 자동 촬영·하이라이트 생성·개인별 콘텐츠 제공. 서버 비용 제로, 개인정보 안전.", "type": "textarea" },
+    { "key": "stat1_value", "label": "핵심 지표 1 값", "value": "97%", "type": "text" },
+    { "key": "stat1_label", "label": "핵심 지표 1 라벨", "value": "촬영 수요", "type": "text" },
+    { "key": "stat2_value", "label": "핵심 지표 2 값", "value": "87%", "type": "text" },
+    { "key": "stat2_label", "label": "핵심 지표 2 라벨", "value": "시제품 만족도", "type": "text" },
+    { "key": "stat3_value", "label": "핵심 지표 3 값", "value": "7.2억", "type": "text" },
+    { "key": "stat3_label", "label": "핵심 지표 3 라벨", "value": "26년 매출 목표", "type": "text" },
+    { "key": "stat4_value", "label": "핵심 지표 4 값", "value": "10개소", "type": "text" },
+    { "key": "stat4_label", "label": "핵심 지표 4 라벨", "value": "LOI 확보", "type": "text" },
+    { "key": "market", "label": "시장 기회", "value": "글로벌 스포츠테크 TAM 52조 → 국내 아마추어·유소년 SAM 1.3조 → 초기 SOM 8억(대전·세종·수도권 축구교실+동호인)", "type": "textarea" },
+    { "key": "bm", "label": "비즈니스 모델", "value": "HW 판매(B2C 77만, B2B 177만)로 고객 획득 + SW 구독(팀 3.9만/월, 패밀리 3,900원/월)으로 반복 수익. MRR 660만, ARR 7,920만원 목표", "type": "textarea" },
+    { "key": "team", "label": "팀", "value": "CEO 금성윤(제품·사업화) · CCO 김동훈(사업기획·스포츠네트워크) · CTO 김민혁(데이터·백엔드). 기획→개발→영업 전 과정 직접 실행.", "type": "textarea" }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "fields": [
+    { "key": "title", "label": "제목", "value": "비즈니스 모델", "type": "text" },
+    { "key": "desc", "label": "설명", "value": "HW 판매로 고객을 획득하고, SW 구독으로 반복 수익을 창출하는 이중 수익 구조입니다.", "type": "textarea" },
+    { "key": "b2c_name", "label": "B2C 제품명", "value": "CAPP!C PRO", "type": "text" },
+    { "key": "b2c_price", "label": "B2C 가격", "value": "77만원 (일시불)", "type": "text" },
+    { "key": "b2c_ltv", "label": "B2C LTV", "value": "86.4만원", "type": "text" },
+    { "key": "b2b_name", "label": "B2B 제품명", "value": "클럽 에디션", "type": "text" },
+    { "key": "b2b_price", "label": "B2B 가격", "value": "177만원 + 월 129,000원", "type": "text" },
+    { "key": "b2b_ltv", "label": "B2B LTV", "value": "487만원", "type": "text" },
+    { "key": "team_price", "label": "팀 멤버십 월 구독료", "value": "39,000원/월", "type": "text" },
+    { "key": "team_ltv", "label": "팀 멤버십 LTV", "value": "170.6만원", "type": "text" },
+    { "key": "family_price", "label": "패밀리 멤버십 월 구독료", "value": "3,900원/월", "type": "text" },
+    { "key": "family_ltv", "label": "패밀리 멤버십 LTV", "value": "86.4만원", "type": "text" },
+    { "key": "mrr", "label": "MRR", "value": "660만원", "type": "text" },
+    { "key": "arr", "label": "ARR", "value": "7,920만원", "type": "text" },
+    { "key": "revenue", "label": "총 매출", "value": "7.2억원", "type": "text" }
+  ]
+}

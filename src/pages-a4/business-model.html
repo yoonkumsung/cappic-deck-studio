@@ -1,0 +1,51 @@
+<div class="page-a4">
+  <div class="page-title">{{title}}</div>
+  <div class="page-content pg-cols-1">
+
+    <div class="pg-body" style="margin-bottom:var(--sp-sm);">{{desc}}</div>
+
+    <div class="pg-heading">제품 라인업</div>
+    <table class="pg-table">
+      <thead>
+        <tr><th>구분</th><th>제품</th><th>가격</th><th>2년 LTV</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>B2C</td><td>{{b2c_name}}</td><td>{{b2c_price}}</td><td>{{b2c_ltv}}</td></tr>
+        <tr><td>B2B</td><td>{{b2b_name}}</td><td>{{b2b_price}}</td><td>{{b2b_ltv}}</td></tr>
+      </tbody>
+    </table>
+
+    <hr class="pg-divider">
+
+    <div class="pg-heading">구독 수익</div>
+    <table class="pg-table">
+      <thead>
+        <tr><th>멤버십</th><th>월 구독료</th><th>2년 LTV</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>팀 멤버십</td><td>{{team_price}}</td><td>{{team_ltv}}</td></tr>
+        <tr><td>패밀리 멤버십</td><td>{{family_price}}</td><td>{{family_ltv}}</td></tr>
+      </tbody>
+    </table>
+
+    <hr class="pg-divider">
+
+    <div class="pg-heading">핵심 재무 지표 (2026년)</div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:var(--a4-gap);">
+      <div class="card" style="padding:var(--sp-sm);text-align:center;">
+        <div class="pg-stat-value" style="font-size:24px;color:var(--secondary);">{{mrr}}</div>
+        <div class="pg-stat-label">MRR</div>
+      </div>
+      <div class="card" style="padding:var(--sp-sm);text-align:center;">
+        <div class="pg-stat-value" style="font-size:24px;color:var(--secondary);">{{arr}}</div>
+        <div class="pg-stat-label">ARR</div>
+      </div>
+      <div class="card card-accent" style="padding:var(--sp-sm);text-align:center;">
+        <div class="pg-stat-value" style="font-size:24px;color:var(--accent);">{{revenue}}</div>
+        <div class="pg-stat-label">총 매출</div>
+      </div>
+    </div>
+
+  </div>
+  <div class="page-number">3</div>
+</div>

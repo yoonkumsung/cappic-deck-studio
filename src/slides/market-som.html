@@ -1,55 +1,106 @@
-<div class="slide">
+<div class="slide" style="position:relative;">
   <div class="slide-title">{{title}}</div>
 
-  <div class="slide-content sg-cols-2">
+  <!-- ═══ CIRCLES (20% bigger: TAM 336, SAM 204, SOM 102) ═══ -->
+  <div style="position:absolute;top:225px;left:100px;width:336px;height:336px;">
 
-    <!-- Left: Concentric circles (TAM > SAM > SOM) -->
-    <div style="display:flex;align-items:center;justify-content:center;position:relative;">
-      <!-- TAM outer circle -->
-      <div style="width:420px;height:420px;border-radius:50%;border:2px solid rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:center;position:relative;">
-        <div style="position:absolute;top:var(--sp-sm);left:50%;transform:translateX(-50%);text-align:center;">
-          <div style="font-size:var(--fs-caption);font-weight:var(--fw-body);color:var(--text-tertiary);">{{tamLabel}}</div>
-          <div style="font-size:var(--fs-heading);font-weight:var(--fw-heading);color:var(--text-secondary);">{{tamValue}}</div>
-        </div>
-        <!-- SAM middle circle -->
-        <div style="width:280px;height:280px;border-radius:50%;border:2px solid rgba(126,220,230,0.3);background:rgba(126,220,230,0.05);display:flex;align-items:center;justify-content:center;position:relative;">
-          <div style="position:absolute;top:var(--sp-sm);left:50%;transform:translateX(-50%);text-align:center;">
-            <div style="font-size:var(--fs-caption);font-weight:var(--fw-body);color:var(--text-tertiary);">{{samLabel}}</div>
-            <div style="font-size:var(--fs-heading);font-weight:var(--fw-heading);color:var(--secondary);">{{samValue}}</div>
-          </div>
-          <!-- SOM inner circle -->
-          <div style="width:140px;height:140px;border-radius:50%;border:2px solid rgba(247,225,80,0.5);background:rgba(247,225,80,0.08);display:flex;align-items:center;justify-content:center;">
-            <div style="text-align:center;">
-              <div style="font-size:var(--fs-caption);font-weight:var(--fw-body);color:var(--text-tertiary);">{{somLabel}}</div>
-              <div style="font-size:var(--fs-heading);font-weight:var(--fw-heading);color:var(--accent);">{{somValue}}</div>
-            </div>
-          </div>
-        </div>
-      </div>
+    <!-- TAM: 336×336 at (0,0), center=(168,168), r=168 -->
+    <div style="width:336px;height:336px;border-radius:50%;border:3px solid rgba(255,255,255,0.6);position:absolute;top:0;left:0;"></div>
+    <!-- TAM text: shifted right+down -->
+    <div style="position:absolute;top:24px;left:190px;transform:translateX(-50%);text-align:center;white-space:nowrap;">
+      <div style="font-size:20px;color:var(--text-secondary);font-weight:800;letter-spacing:3px;">TAM</div>
+      <div style="font-size:38px;font-weight:800;color:var(--text-primary);">{{tamValue}}</div>
     </div>
 
-    <!-- Right: Expansion details -->
-    <div class="card" style="display:flex;flex-direction:column;justify-content:center;">
-      <div style="position:relative;z-index:1;">
-        <div class="sg-card-title">{{expansionTitle}}</div>
-        <div class="sg-data-list">
-          <div class="sg-item">
-            <div class="sg-item-label">{{exp1Label}}</div>
-            <div class="sg-item-value">{{exp1Value}}</div>
-          </div>
-          <div class="sg-item">
-            <div class="sg-item-label">{{exp2Label}}</div>
-            <div class="sg-item-value">{{exp2Value}}</div>
-          </div>
-          <div class="sg-item">
-            <div class="sg-item-label">{{exp3Label}}</div>
-            <div class="sg-item-value">{{exp3Value}}</div>
-          </div>
-        </div>
-      </div>
+    <!-- SAM: 204×204 at (12,102), center=(114,204), r=102 -->
+    <div style="width:204px;height:204px;border-radius:50%;border:4px solid rgba(126,220,230,0.55);background:rgba(126,220,230,0.04);position:absolute;top:102px;left:12px;"></div>
+    <!-- SAM text: shifted right+down -->
+    <div style="position:absolute;top:132px;left:130px;transform:translateX(-50%);text-align:center;white-space:nowrap;">
+      <div style="font-size:16px;color:var(--secondary);font-weight:800;letter-spacing:3px;">SAM</div>
+      <div style="font-size:28px;font-weight:800;color:var(--secondary);">{{samValue}}</div>
     </div>
 
+    <!-- SOM: 102×102, center=(78,240), dist from SAM center=sqrt(36²+36²)=50.9 < 51(102-51) ✓ -->
+    <div style="width:102px;height:102px;border-radius:50%;border:4px solid var(--accent);background:rgba(247,225,80,0.1);position:absolute;top:189px;left:27px;display:flex;align-items:center;justify-content:center;">
+      <div style="text-align:center;line-height:1.15;">
+        <div style="font-size:14px;color:var(--accent);font-weight:800;letter-spacing:2px;">SOM</div>
+        <div style="font-size:22px;font-weight:800;color:var(--accent);">{{somValue}}</div>
+      </div>
+    </div>
   </div>
 
-  <div class="slide-source">{{source}}</div>
+  <!-- ═══ CALLOUT LINES (X starts past TAM right: 100+336+20=456) ═══ -->
+  <!-- TAM line -->
+  <div style="position:absolute;top:260px;left:456px;display:flex;align-items:center;gap:16px;">
+    <div style="width:80px;height:2.5px;background:rgba(255,255,255,0.6);flex-shrink:0;"></div>
+    <div>
+      <div style="font-size:22px;color:var(--text-secondary);font-weight:400;">{{tamSub}}</div>
+      <div style="font-size:16px;color:var(--text-tertiary);font-weight:400;margin-top:2px;">{{tamSubDetail}}</div>
+    </div>
+  </div>
+  <!-- SAM line -->
+  <div style="position:absolute;top:340px;left:471px;display:flex;align-items:center;gap:16px;">
+    <div style="width:65px;height:2.5px;background:var(--secondary);opacity:0.5;flex-shrink:0;"></div>
+    <div>
+      <div style="font-size:22px;color:var(--text-secondary);font-weight:400;">{{samSub}}</div>
+      <div style="font-size:16px;color:var(--text-tertiary);font-weight:400;margin-top:2px;">{{samSubDetail}}</div>
+    </div>
+  </div>
+  <!-- SOM line -->
+  <div style="position:absolute;top:420px;left:486px;display:flex;align-items:center;gap:16px;">
+    <div style="width:50px;height:2.5px;background:var(--accent);opacity:0.6;flex-shrink:0;"></div>
+    <div>
+      <div style="font-size:22px;color:var(--text-secondary);font-weight:400;">{{somSub}}</div>
+      <div style="font-size:16px;color:var(--text-tertiary);font-weight:400;margin-top:2px;">{{somSubDetail}}</div>
+    </div>
+  </div>
+
+  <!-- ═══ BAR CHART (bottom:130 = 130px from slide bottom) ═══ -->
+  <!-- 2026: x:140, w:280 -->
+  <div style="position:absolute;bottom:130px;left:440px;width:280px;text-align:center;">
+    <div style="font-size:24px;font-weight:800;color:var(--accent);margin-bottom:14px;">{{bar1Value}}</div>
+    <div style="height:30px;border-radius:6px 6px 0 0;background:linear-gradient(180deg, var(--accent), rgba(247,225,80,0.2));"></div>
+    <div style="font-size:22px;font-weight:700;color:var(--accent);margin-top:6px;">{{bar1Year}}</div>
+  </div>
+
+  <!-- 2027: x:440, w:300 -->
+  <div style="position:absolute;bottom:130px;left:740px;width:300px;text-align:center;">
+    <div style="font-size:26px;font-weight:800;color:var(--text-primary);margin-bottom:14px;">{{bar2Value}}+</div>
+    <div style="height:130px;border-radius:6px 6px 0 0;background:linear-gradient(180deg, rgba(126,220,230,0.5), rgba(126,220,230,0.12));padding:14px;box-sizing:border-box;text-align:left;overflow:hidden;">
+      <div style="font-size:16px;color:var(--text-primary);line-height:1.5;font-weight:400;">HW 3,000대: <b>23억원+</b><br>SW구독 2만명: <b>18억원+</b><br>B2B+B2G 100건: <b>6억원+</b><br>일본·글로벌 B2C: <b>3억원+</b></div>
+    </div>
+    <div style="font-size:22px;color:var(--text-primary);margin-top:6px;">{{bar2Year}}</div>
+  </div>
+
+  <!-- 2028: x:760, w:340 -->
+  <div style="position:absolute;bottom:130px;left:1060px;width:340px;text-align:center;">
+    <div style="font-size:36px;font-weight:800;color:var(--text-primary);margin-bottom:14px;">{{bar3Value}}+</div>
+    <div style="height:260px;border-radius:6px 6px 0 0;background:linear-gradient(180deg, rgba(126,220,230,0.55), rgba(126,220,230,0.15));padding:16px;box-sizing:border-box;text-align:left;overflow:hidden;">
+      <div style="font-size:18px;color:var(--text-primary);line-height:1.5;font-weight:400;">HW 8,000대: <b>56억원+</b><br>SW구독 8만명: <b>50억원+</b><br>B2B 500건: <b>52억원+</b><br>B2G 공공시설 600건: <b>20억원+</b><br>MALL·커머스: <b>12억원+</b><br>중계·광고: <b>10억원+</b></div>
+    </div>
+    <div style="font-size:22px;color:var(--text-primary);margin-top:6px;">{{bar3Year}}</div>
+  </div>
+
+  <!-- 2029: x:1120, w:380 -->
+  <div style="position:absolute;bottom:130px;left:1420px;width:380px;text-align:center;">
+    <div style="font-size:44px;font-weight:800;color:var(--secondary);line-height:1;margin-bottom:14px;">{{bar4Value}}+</div>
+    <div style="height:520px;border-radius:6px 6px 0 0;background:linear-gradient(180deg, rgba(126,220,230,0.7), rgba(126,220,230,0.25));padding:18px 16px;box-sizing:border-box;text-align:left;overflow:hidden;">
+      <div style="font-size:20px;color:#fff;line-height:1.5;font-weight:400;text-shadow:0 1px 3px rgba(0,0,0,0.3);">HW 2만대: <b>140억원+</b><br>SW구독 25만명: <b>105억원+</b><br>B2B 1,200건: <b>85억원+</b><br>B2G 공공시설 1,500건: <b>45억원+</b><br>MALL·커머스: <b>50억원+</b><br>크리에이터·광고: <b>35억원+</b><br>자사 브랜드: <b>40억원+</b></div>
+    </div>
+    <div style="font-size:22px;font-weight:700;color:var(--secondary);margin-top:6px;">{{bar4Year}}</div>
+  </div>
+
+  <!-- ═══ 26 SCHEDULE STRIP (bottom:72) ═══ -->
+  <div style="position:absolute;bottom:72px;left:120px;right:120px;display:flex;gap:10px;padding:6px 16px;background:rgba(247,225,80,0.03);border-top:1px solid rgba(247,225,80,0.08);">
+    <span style="font-size:18px;font-weight:700;color:var(--accent);">26년</span>
+    <span style="font-size:18px;color:var(--text-tertiary);">
+      <span style="color:var(--text-secondary);">4월</span> 와디즈 1차 100대 →
+      <span style="color:var(--text-secondary);">3~5월</span> B2B 20사 →
+      <span style="color:var(--text-secondary);">7월</span> 와디즈 2차 300대 →
+      <span style="color:var(--text-secondary);">8월~</span> 자사몰 B2C 월50대+ →
+      <span style="color:var(--text-secondary);">12월</span> HW: 800대+ / SW구독: 5천명+ / B2B·B2G: 50건+
+    </span>
+  </div>
+
+  <div class="slide-source" style="left:136px;">{{source}}</div>
 </div>

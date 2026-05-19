@@ -23,6 +23,7 @@
   font-weight: var(--fw-display);
   color: var(--text-primary);
   line-height: 1.3;
+  text-align: center;
 }
 
 /* ── Content Area (타이틀 아래 전체 영역) ── */
@@ -32,6 +33,8 @@
   left: var(--slide-pad-side);
   right: var(--slide-pad-side);
   bottom: var(--slide-pad-bottom);
+  max-height: calc(var(--slide-h) - var(--slide-content-top) - var(--slide-pad-bottom));
+  overflow: hidden;
 }
 
 /* ── Grid Columns ── */

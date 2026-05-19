@@ -1,19 +1,122 @@
 {
   "fields": [
-    { "key": "title", "label": "타이틀", "type": "text", "value": "시장 규모" },
-    { "key": "tamLabel", "label": "TAM 라벨", "type": "text", "value": "TAM" },
-    { "key": "tamValue", "label": "TAM 값", "type": "text", "value": "52조원" },
-    { "key": "samLabel", "label": "SAM 라벨", "type": "text", "value": "SAM" },
-    { "key": "samValue", "label": "SAM 값", "type": "text", "value": "1.3조원" },
-    { "key": "somLabel", "label": "SOM 라벨", "type": "text", "value": "SOM" },
-    { "key": "somValue", "label": "SOM 값", "type": "text", "value": "8억원" },
-    { "key": "expansionTitle", "label": "확장 방향 제목", "type": "text", "value": "시장 정의" },
-    { "key": "exp1Label", "label": "TAM 설명 라벨", "type": "text", "value": "TAM · 글로벌 스포츠테크" },
-    { "key": "exp1Value", "label": "TAM 설명 값", "type": "text", "value": "CAGR 23.1%" },
-    { "key": "exp2Label", "label": "SAM 설명 라벨", "type": "text", "value": "SAM · 국내 아마추어+유소년" },
-    { "key": "exp2Value", "label": "SAM 설명 값", "type": "text", "value": "1조 3천억원" },
-    { "key": "exp3Label", "label": "SOM 설명 라벨", "type": "text", "value": "SOM · 대전·세종·수도권" },
-    { "key": "exp3Value", "label": "SOM 설명 값", "type": "text", "value": "축구교실 100개소 + 동호인" },
-    { "key": "source", "label": "출처", "type": "text", "value": "글로벌 스포츠테크 시장 보고서, 2024 · CAGR 23.1%" }
-  ]
+    {
+      "key": "title",
+      "label": "타이틀",
+      "type": "text",
+      "value": "시장 분석 및 Scale-up 전략"
+    },
+    {
+      "key": "tamValue",
+      "label": "TAM 값",
+      "type": "text",
+      "value": "52조원"
+    },
+    {
+      "key": "samValue",
+      "label": "SAM 값",
+      "type": "text",
+      "value": "1.3조원"
+    },
+    {
+      "key": "somValue",
+      "label": "SOM 값",
+      "type": "text",
+      "value": "8억원"
+    },
+    {
+      "key": "tamSub",
+      "label": "TAM 메인",
+      "type": "text",
+      "value": "글로벌 스포츠테크 시장 52조원 (CAGR 23%)"
+    },
+    {
+      "key": "tamSubDetail",
+      "label": "TAM 서브",
+      "type": "text",
+      "value": "+ 유소년 시장 85조원 + 스트리밍 시장 42조원"
+    },
+    {
+      "key": "samSub",
+      "label": "SAM 메인",
+      "type": "text",
+      "value": "국내 생활체육 시장 8천억원 + 유소년 교육 시장 5천억원"
+    },
+    {
+      "key": "samSubDetail",
+      "label": "SAM 서브",
+      "type": "text",
+      "value": "* 생활체육 참여율 49.5%"
+    },
+    {
+      "key": "somSub",
+      "label": "SOM 메인",
+      "type": "text",
+      "value": "울산·부산·경남 체육시설 100개소 + 생활체육 동호인 5천명"
+    },
+    {
+      "key": "somSubDetail",
+      "label": "SOM 서브",
+      "type": "text",
+      "value": "* 축구·농구·야구·테니스 4개 종목 우선"
+    },
+    {
+      "key": "bar1Value",
+      "label": "26년 매출",
+      "type": "text",
+      "value": "~10억원"
+    },
+    {
+      "key": "bar1Year",
+      "label": "26년",
+      "type": "text",
+      "value": "2026"
+    },
+    {
+      "key": "bar2Value",
+      "label": "27년 매출",
+      "type": "text",
+      "value": "50억원"
+    },
+    {
+      "key": "bar2Year",
+      "label": "27년",
+      "type": "text",
+      "value": "2027"
+    },
+    {
+      "key": "bar3Value",
+      "label": "28년 매출",
+      "type": "text",
+      "value": "200억원"
+    },
+    {
+      "key": "bar3Year",
+      "label": "28년",
+      "type": "text",
+      "value": "2028"
+    },
+    {
+      "key": "bar4Value",
+      "label": "29년 매출",
+      "type": "text",
+      "value": "500억원"
+    },
+    {
+      "key": "bar4Year",
+      "label": "29년",
+      "type": "text",
+      "value": "2029"
+    },
+    {
+      "key": "source",
+      "label": "출처",
+      "type": "text",
+      "value": "출처: IMARC Group, SNS Insider, 통계청 (24년)"
+    }
+  ],
+  "_styles": {
+    "--title-align": "center",
+    "--fs-display": "48px"
+  }
 }

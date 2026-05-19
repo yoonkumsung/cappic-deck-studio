@@ -3,670 +3,753 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CAPP!C Pitch Deck Manager</title>
+  <title>CAPP!C Pitch Deck Viewer</title>
   <link rel="stylesheet" href="styles/tokens.css">
-  <link rel="stylesheet" href="styles/layout.css">
-  <link rel="stylesheet" href="styles/cards.css">
-  <link rel="stylesheet" href="styles/components.css">
-  <link rel="stylesheet" href="styles/utilities.css">
-  <link rel="stylesheet" href="styles/slide-grid.css">
   <style>
-    body { background:#000;color:#fff;margin:0;padding:0;min-height:100vh;overflow-x:hidden; }
+    /* ── Reset ── */
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+    body { background:#0A0A0A; color:#fff; font-family:var(--font-family); min-height:100vh; overflow:hidden; }
 
     /* ── Header ── */
-    .header { display:flex;align-items:center;justify-content:space-between;padding:14px 28px;border-bottom:1px solid rgba(255,255,255,0.06);position:sticky;top:0;background:rgba(0,0,0,0.92);backdrop-filter:blur(20px);z-index:100; }
-    .header-left { display:flex;align-items:center;gap:14px; }
-    .logo { font-size:20px;font-weight:800;letter-spacing:-0.5px; }
-    .logo span { color:var(--secondary); }
-    .hdiv { width:1px;height:18px;background:rgba(255,255,255,0.1); }
-    .version-name { font-size:14px;color:var(--text-tertiary);cursor:pointer;padding:4px 12px;border-radius:6px;border:1px solid rgba(255,255,255,0.08); }
-    .version-name:hover { border-color:var(--secondary);color:var(--secondary); }
-    .header-actions { display:flex;gap:6px; }
+    .header {
+      display:flex; align-items:center; justify-content:space-between;
+      padding:10px 20px; border-bottom:1px solid rgba(255,255,255,0.06);
+      background:#0A0A0A; height:48px;
+    }
+    .header-left { display:flex; align-items:center; gap:12px; }
+    .logo { font-size:16px; font-weight:800; letter-spacing:-0.5px; }
+    .hdiv { width:1px; height:16px; background:rgba(255,255,255,0.1); }
 
-    /* ── Buttons ── */
-    .btn { padding:7px 14px;border-radius:8px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.06);color:#fff;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit;transition:all 0.15s; }
-    .btn:hover { background:rgba(255,255,255,0.12);border-color:rgba(255,255,255,0.2); }
-    .btn-primary { background:var(--secondary);color:#000;border-color:var(--secondary); }
-    .btn-primary:hover { background:var(--secondary-dark); }
-    .btn-accent { background:var(--accent);color:#000;border-color:var(--accent); }
-    .btn-accent:hover { background:var(--accent-dark); }
-    .btn-sm { padding:4px 10px;font-size:12px; }
-    .btn-danger { color:#FF4D6A;border-color:rgba(255,77,106,0.3); }
-    .btn-danger:hover { background:rgba(255,77,106,0.1); }
+    /* ── Version Selector ── */
+    .version-btn {
+      font-size:13px; color:#B0B0B0; cursor:pointer; padding:4px 10px;
+      border-radius:6px; border:1px solid rgba(255,255,255,0.08);
+      background:transparent; font-family:inherit; font-weight:600;
+    }
+    .version-btn:hover { border-color:var(--secondary); color:var(--secondary); }
 
-    /* ── Toolbar ── */
-    .toolbar { display:flex;align-items:center;justify-content:space-between;padding:10px 28px;border-bottom:1px solid rgba(255,255,255,0.04); }
-    .filters { display:flex;gap:5px; }
-    .filter-btn { padding:5px 12px;border-radius:20px;border:1px solid rgba(255,255,255,0.08);background:transparent;color:var(--text-tertiary);font-size:13px;font-weight:600;cursor:pointer;font-family:inherit;transition:all 0.15s; }
-    .filter-btn:hover { border-color:rgba(255,255,255,0.2);color:#fff; }
-    .filter-btn.active { background:rgba(255,255,255,0.1);color:#fff;border-color:rgba(255,255,255,0.2); }
-    .filter-btn.priority-high.active { background:rgba(247,225,80,0.15);color:var(--accent);border-color:var(--accent); }
-    .filter-btn.priority-mid.active { background:rgba(126,220,230,0.15);color:var(--secondary);border-color:var(--secondary); }
-    .slide-count { font-size:14px;color:var(--text-tertiary); }
-    .slide-count strong { color:var(--secondary);font-weight:700; }
+    /* ── Mode Toggles ── */
+    .header-right { display:flex; align-items:center; gap:8px; }
+    .toggle-group {
+      display:flex; gap:1px; background:rgba(255,255,255,0.04);
+      border-radius:6px; padding:2px;
+    }
+    .toggle-btn {
+      padding:4px 10px; border-radius:4px; font-size:11px; font-weight:700;
+      color:#888; cursor:pointer; border:none; background:transparent;
+      font-family:inherit; transition:all 0.15s;
+    }
+    .toggle-btn:hover { color:#ccc; }
+    .toggle-btn.active { background:var(--secondary); color:#000; }
+    .toggle-label { font-size:10px; color:#666; font-weight:600; letter-spacing:0.5px; margin-right:4px; }
 
     /* ── Main Layout ── */
-    .main { display:flex;height:calc(100vh - 95px); }
-    .panel-grid { flex:1;overflow-y:auto;padding:20px 24px; }
-    .panel-editor { width:0;overflow:hidden;transition:width 0.3s;border-left:1px solid rgba(255,255,255,0.06);background:#0a0a0a;display:flex;flex-direction:column; }
-    .panel-editor.open { width:55%; }
+    .main { display:flex; height:calc(100vh - 48px); }
 
-    /* ── Slide Grid ── */
-    .slide-grid { display:grid;grid-template-columns:repeat(auto-fill, minmax(280px, 1fr));gap:14px; }
+    /* ── Slide List Panel ── */
+    .panel-list {
+      width:240px; min-width:240px; overflow-y:auto; padding:8px;
+      border-right:1px solid rgba(255,255,255,0.06);
+    }
+    .panel-list::-webkit-scrollbar { width:4px; }
+    .panel-list::-webkit-scrollbar-thumb { background:rgba(255,255,255,0.1); border-radius:2px; }
+
+    /* ── Filters ── */
+    .filters { display:flex; flex-wrap:wrap; gap:3px; margin-bottom:8px; padding:4px 0; }
+    .filter-btn {
+      padding:3px 8px; border-radius:12px; border:1px solid rgba(255,255,255,0.06);
+      background:transparent; color:#888; font-size:10px; font-weight:600;
+      cursor:pointer; font-family:inherit;
+    }
+    .filter-btn:hover { border-color:rgba(255,255,255,0.15); color:#ccc; }
+    .filter-btn.active { background:rgba(255,255,255,0.1); color:#fff; border-color:rgba(255,255,255,0.15); }
 
     /* ── Slide Card ── */
-    .slide-card { background:linear-gradient(165deg,#161616,#101010);border:1px solid rgba(255,255,255,0.06);border-radius:12px;padding:16px;cursor:pointer;transition:all 0.2s;position:relative;user-select:none; }
-    .slide-card:hover { border-color:rgba(255,255,255,0.15);transform:translateY(-1px);box-shadow:0 6px 20px rgba(0,0,0,0.3); }
-    .slide-card.selected { border-color:var(--secondary);box-shadow:0 0 0 1px var(--secondary); }
-    .slide-card.selected .card-select { background:var(--secondary);border-color:var(--secondary);color:#000; }
-    .slide-card.editing { border-color:var(--accent);box-shadow:0 0 0 1px var(--accent); }
-    .card-top { display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:10px; }
-    .card-badges { display:flex;gap:5px; }
-    .card-badge { padding:2px 7px;border-radius:4px;font-size:11px;font-weight:700; }
-    .priority-badge-high { background:rgba(247,225,80,0.15);color:var(--accent); }
-    .priority-badge-mid { background:rgba(126,220,230,0.12);color:var(--secondary); }
-    .priority-badge-low { background:rgba(255,255,255,0.06);color:var(--text-tertiary); }
-    .card-badge.cat { background:rgba(255,255,255,0.06);color:var(--text-tertiary); }
-    .card-btns { display:flex;gap:4px; }
-    .card-select { width:22px;height:22px;border-radius:5px;border:2px solid rgba(255,255,255,0.15);background:transparent;display:flex;align-items:center;justify-content:center;font-size:12px;transition:all 0.15s; }
-    .card-edit-btn { width:22px;height:22px;border-radius:5px;border:1px solid rgba(255,255,255,0.1);background:transparent;color:var(--text-tertiary);display:flex;align-items:center;justify-content:center;font-size:11px;cursor:pointer;transition:all 0.15s; }
-    .card-edit-btn:hover { border-color:var(--accent);color:var(--accent); }
-    .card-title { font-size:16px;font-weight:700;color:#fff;margin-bottom:3px; }
-    .card-subtitle { font-size:13px;color:var(--text-tertiary);margin-bottom:8px; }
-    .card-desc { font-size:13px;color:var(--text-secondary);line-height:1.4; }
-    .card-order { position:absolute;bottom:10px;right:14px;font-size:24px;font-weight:800;color:rgba(255,255,255,0.04); }
-    .slide-card.selected .card-order { color:rgba(126,220,230,0.15); }
+    .slide-card {
+      padding:8px 10px; border-radius:6px; cursor:pointer;
+      border:1px solid transparent; margin-bottom:2px;
+      transition:all 0.1s; display:flex; align-items:center; gap:8px;
+    }
+    .slide-card:hover { background:rgba(255,255,255,0.03); }
+    .slide-card.active { border-color:var(--secondary); background:rgba(126,220,230,0.04); }
+    .card-num { font-size:11px; font-weight:800; color:#444; min-width:20px; font-variant-numeric:tabular-nums; }
+    .slide-card.active .card-num { color:var(--secondary); }
+    .card-info { flex:1; min-width:0; }
+    .card-title { font-size:12px; font-weight:700; color:#E0E0E0; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+    .card-cat {
+      font-size:9px; font-weight:700; padding:1px 5px; border-radius:3px;
+      background:rgba(255,255,255,0.06); color:#888; flex-shrink:0;
+    }
 
-    /* ── Add Slide Card ── */
-    .add-card { border:2px dashed rgba(255,255,255,0.08);background:transparent;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;min-height:140px;cursor:pointer;border-radius:12px;transition:all 0.2s; }
-    .add-card:hover { border-color:var(--secondary);background:rgba(126,220,230,0.03); }
-    .add-card-icon { font-size:28px;color:var(--text-tertiary); }
-    .add-card-label { font-size:14px;color:var(--text-tertiary);font-weight:600; }
+    /* ── Preview Panel ── */
+    .panel-preview {
+      flex:1; display:flex; flex-direction:column; padding:12px 16px;
+      overflow:hidden;
+    }
+    .preview-frame {
+      flex:1; border-radius:4px; overflow:hidden;
+      box-shadow:0 4px 20px rgba(0,0,0,0.4);
+      border:1px solid rgba(255,255,255,0.1);
+      position:relative; background:#2a2a2a;
+    }
+    .preview-frame iframe {
+      position:absolute; top:0; left:0;
+      transform-origin:top left; border:none;
+    }
 
-    /* ── Editor Panel ── */
-    .editor-header { padding:16px 20px;border-bottom:1px solid rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:space-between; }
-    .editor-title { font-size:16px;font-weight:700; }
-    .editor-tabs { display:flex;gap:0;border-bottom:1px solid rgba(255,255,255,0.06); }
-    .editor-tab { padding:10px 20px;font-size:14px;font-weight:600;color:var(--text-tertiary);cursor:pointer;border-bottom:2px solid transparent;transition:all 0.15s; }
-    .editor-tab:hover { color:#fff; }
-    .editor-tab.active { color:var(--secondary);border-bottom-color:var(--secondary); }
-    .editor-body { flex:1;overflow-y:auto;padding:20px; }
+    /* ── Controls Bar ── */
+    .controls {
+      display:flex; align-items:center; justify-content:space-between;
+      padding:8px 0; flex-shrink:0;
+    }
+    .controls-nav { display:flex; align-items:center; gap:8px; }
+    .nav-btn {
+      padding:4px 12px; border-radius:6px; border:1px solid rgba(255,255,255,0.08);
+      background:transparent; color:#B0B0B0; font-size:12px; font-weight:600;
+      cursor:pointer; font-family:inherit;
+    }
+    .nav-btn:hover { border-color:var(--secondary); color:var(--secondary); }
+    .nav-btn:disabled { opacity:0.3; cursor:default; }
+    .nav-counter { font-size:13px; font-weight:700; color:#888; min-width:50px; text-align:center; }
 
-    /* ── Form Fields ── */
-    .form-group { margin-bottom:16px; }
-    .form-label { font-size:13px;font-weight:600;color:var(--text-tertiary);margin-bottom:6px;display:block; }
-    .form-input { width:100%;padding:10px 14px;border-radius:8px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.04);color:#fff;font-size:15px;font-family:inherit;box-sizing:border-box; }
-    .form-input:focus { outline:none;border-color:var(--secondary); }
-    .form-textarea { resize:vertical;min-height:80px; }
+    .controls-actions { display:flex; align-items:center; gap:6px; }
+    .btn {
+      padding:5px 12px; border-radius:6px; border:1px solid rgba(255,255,255,0.08);
+      background:rgba(255,255,255,0.04); color:#E0E0E0; font-size:11px; font-weight:700;
+      cursor:pointer; font-family:inherit;
+    }
+    .btn:hover { background:rgba(255,255,255,0.08); border-color:rgba(255,255,255,0.15); }
+    .btn-primary { background:var(--secondary); color:#000; border-color:var(--secondary); }
+    .btn-primary:hover { background:var(--secondary-dark); }
 
-    /* ── Preview ── */
-    .preview-container { padding:16px 20px;border-top:1px solid rgba(255,255,255,0.06);background:#050505; }
-    .preview-label { font-size:12px;font-weight:600;color:var(--text-tertiary);letter-spacing:1px;text-transform:uppercase;margin-bottom:10px; }
-    .preview-frame { border-radius:8px;overflow:hidden;box-shadow:0 0 0 2px rgba(255,255,255,0.15), 0 0 20px rgba(126,220,230,0.06);border:none; }
-    .preview-frame .slide { transform-origin:top left; }
+    /* ── Status Bar ── */
+    .status-bar {
+      display:flex; align-items:center; justify-content:space-between;
+      padding:6px 0; border-top:1px solid rgba(255,255,255,0.04);
+      font-size:10px; color:#555; flex-shrink:0;
+    }
+    .status-dot { width:6px; height:6px; border-radius:50%; background:#444; margin-right:6px; display:inline-block; }
+    .status-dot.saved { background:var(--semantic-up); }
+    .status-dot.saving { background:var(--accent); }
 
-    /* ── Modals ── */
-    .modal-overlay { position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);display:none;align-items:center;justify-content:center;z-index:200; }
+    /* ── Modal ── */
+    .modal-overlay {
+      position:fixed; inset:0; background:rgba(0,0,0,0.7); backdrop-filter:blur(8px);
+      display:none; align-items:center; justify-content:center; z-index:200;
+    }
     .modal-overlay.open { display:flex; }
-    .modal { background:#1a1a1a;border:1px solid rgba(255,255,255,0.1);border-radius:16px;padding:24px;width:480px;max-height:80vh;overflow-y:auto; }
-    .modal h2 { font-size:18px;font-weight:700;margin-bottom:16px; }
-    .modal-input { width:100%;padding:10px 14px;border-radius:8px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.06);color:#fff;font-size:15px;font-family:inherit;margin-bottom:12px;box-sizing:border-box; }
-    .modal-input:focus { outline:none;border-color:var(--secondary); }
-    .version-list { list-style:none;margin-bottom:12px; }
-    .version-item { display:flex;align-items:center;justify-content:space-between;padding:10px 12px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);margin-bottom:6px;cursor:pointer;transition:all 0.15s; }
+    .modal {
+      background:#1a1a1a; border:1px solid rgba(255,255,255,0.1);
+      border-radius:12px; padding:20px; width:420px; max-height:70vh; overflow-y:auto;
+    }
+    .modal h2 { font-size:15px; font-weight:700; margin-bottom:12px; }
+    .modal-input {
+      width:100%; padding:8px 12px; border-radius:6px;
+      border:1px solid rgba(255,255,255,0.1); background:rgba(255,255,255,0.06);
+      color:#fff; font-size:13px; font-family:inherit; margin-bottom:10px; box-sizing:border-box;
+    }
+    .modal-input:focus { outline:none; border-color:var(--secondary); }
+    .version-list { list-style:none; margin-bottom:10px; }
+    .version-item {
+      display:flex; align-items:center; justify-content:space-between;
+      padding:8px 10px; border-radius:6px; border:1px solid rgba(255,255,255,0.04);
+      margin-bottom:4px; cursor:pointer;
+    }
     .version-item:hover { background:rgba(255,255,255,0.04); }
-    .version-item-name { font-weight:600;font-size:15px; }
-    .version-item-meta { font-size:12px;color:var(--text-tertiary); }
-    .modal-actions { display:flex;gap:8px;justify-content:flex-end; }
-
-    /* ── Add Slide Modal ── */
-    .template-grid { display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-bottom:16px; }
-    .template-option { padding:14px;border-radius:8px;border:1px solid rgba(255,255,255,0.08);cursor:pointer;transition:all 0.15s; }
-    .template-option:hover { border-color:var(--secondary);background:rgba(126,220,230,0.04); }
-    .template-option.selected { border-color:var(--secondary);background:rgba(126,220,230,0.08); }
-    .template-option-title { font-size:14px;font-weight:700;margin-bottom:4px; }
-    .template-option-desc { font-size:12px;color:var(--text-tertiary); }
+    .version-item.current { border-color:var(--secondary); }
+    .version-item-name { font-weight:600; font-size:13px; }
+    .version-item-meta { font-size:10px; color:#666; }
+    .version-item-actions { display:flex; gap:4px; }
+    .version-item-btn {
+      padding:3px 8px; border-radius:4px; border:1px solid rgba(255,255,255,0.06);
+      background:transparent; color:#888; font-size:10px; font-weight:600;
+      cursor:pointer; font-family:inherit;
+    }
+    .version-item-btn:hover { color:#fff; border-color:rgba(255,255,255,0.2); }
+    .version-item-btn.delete:hover { color:#FF4D6A; border-color:rgba(255,77,106,0.3); }
+    .modal-actions { display:flex; gap:6px; justify-content:flex-end; margin-top:10px; }
 
     /* ── Toast ── */
-    .toast { position:fixed;bottom:28px;left:50%;transform:translateX(-50%) translateY(100px);background:var(--secondary);color:#000;padding:10px 22px;border-radius:10px;font-weight:700;font-size:14px;transition:transform 0.3s;z-index:300; }
+    .toast {
+      position:fixed; bottom:20px; left:50%; transform:translateX(-50%) translateY(80px);
+      background:var(--secondary); color:#000; padding:8px 18px; border-radius:8px;
+      font-weight:700; font-size:12px; transition:transform 0.3s; z-index:300;
+    }
     .toast.show { transform:translateX(-50%) translateY(0); }
-
-    /* priority select */
-    .form-select { padding:8px 12px;border-radius:8px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.04);color:#fff;font-size:14px;font-family:inherit; }
-    .form-select:focus { outline:none;border-color:var(--secondary); }
-    .form-select option { background:#1a1a1a; }
   </style>
 </head>
 <body>
 
-  <!-- Header -->
+  <!-- ══ Header ══ -->
   <div class="header">
     <div class="header-left">
-      <div class="logo">CAPP<span>!</span>C Deck</div>
+      <div class="logo">CAPP!C</div>
       <div class="hdiv"></div>
-      <div class="version-name" id="currentVersion" onclick="openVersionModal()">버전 선택...</div>
+      <button class="version-btn" id="versionBtn" onclick="openVersionModal()">v—</button>
     </div>
-    <div class="header-actions">
-      <button class="btn" onclick="selectAll()">전체 선택</button>
-      <button class="btn" onclick="deselectAll()">전체 해제</button>
-      <button class="btn" onclick="selectByPriority('상')">상</button>
-      <button class="btn" onclick="selectByPriority('상,중')">상+중</button>
-      <button class="btn btn-primary" onclick="openVersionModal()">버전 관리</button>
-    </div>
-  </div>
-
-  <!-- Toolbar -->
-  <div class="toolbar">
-    <div class="filters">
-      <button class="filter-btn active" onclick="setFilter('all',this)">전체</button>
-      <button class="filter-btn priority-high" onclick="setFilter('상',this)">상</button>
-      <button class="filter-btn priority-mid" onclick="setFilter('중',this)">중</button>
-      <button class="filter-btn priority-low" onclick="setFilter('하',this)">하</button>
-      <div class="hdiv" style="margin:0 6px;"></div>
-      <button class="filter-btn" onclick="setFilter('cat-problem',this)">문제</button>
-      <button class="filter-btn" onclick="setFilter('cat-solution',this)">솔루션</button>
-      <button class="filter-btn" onclick="setFilter('cat-traction',this)">트랙션</button>
-      <button class="filter-btn" onclick="setFilter('cat-business',this)">비즈니스</button>
-      <button class="filter-btn" onclick="setFilter('cat-team',this)">팀</button>
-    </div>
-    <div class="slide-count">
-      선택 <strong id="selectedCount">0</strong> / <span id="totalCount">0</span>장
-      · 예상 <strong id="estimatedTime">0</strong>분
+    <div class="header-right">
+      <span class="toggle-label">비율</span>
+      <div class="toggle-group" id="ratioToggle">
+        <button class="toggle-btn active" data-ratio="16:9">16:9</button>
+        <button class="toggle-btn" data-ratio="3:4">3:4</button>
+        <button class="toggle-btn" data-ratio="4:3">4:3</button>
+        <button class="toggle-btn" data-ratio="1:1">1:1</button>
+      </div>
+      <div class="hdiv"></div>
+      <span class="toggle-label">테마</span>
+      <div class="toggle-group" id="themeToggle">
+        <button class="toggle-btn active" data-theme="dark">Dark</button>
+        <button class="toggle-btn" data-theme="light">Light</button>
+      </div>
     </div>
   </div>
 
-  <!-- Main -->
+  <!-- ══ Main ══ -->
   <div class="main">
-    <!-- Left: Grid -->
-    <div class="panel-grid">
-      <div class="slide-grid" id="slideGrid"></div>
+    <!-- Slide List -->
+    <div class="panel-list" id="panelList">
+      <div class="filters" id="filters"></div>
+      <div id="slideList"></div>
     </div>
 
-    <!-- Right: Editor -->
-    <div class="panel-editor" id="editorPanel">
-      <div class="editor-header">
-        <div class="editor-title" id="editorTitle">슬라이드 편집</div>
-        <div style="display:flex;gap:6px;">
-          <button class="btn btn-sm btn-accent" onclick="exportCurrentSlide()">PNG 추출</button>
-          <button class="btn btn-sm" onclick="closeEditor()">닫기 ×</button>
+    <!-- Preview -->
+    <div class="panel-preview">
+      <div class="preview-frame" id="previewFrame">
+        <iframe id="previewIframe"></iframe>
+      </div>
+      <div class="controls">
+        <div class="controls-nav">
+          <button class="nav-btn" id="prevBtn" onclick="navPrev()">◀</button>
+          <span class="nav-counter" id="navCounter">—</span>
+          <button class="nav-btn" id="nextBtn" onclick="navNext()">▶</button>
+        </div>
+        <div class="controls-actions">
+          <button class="btn" onclick="exportPNG()">PNG</button>
+          <button class="btn btn-primary" onclick="exportAll()">전체 내보내기</button>
         </div>
       </div>
-      <div class="editor-tabs">
-        <div class="editor-tab active" onclick="setEditorTab('form',this)">콘텐츠</div>
-        <div class="editor-tab" onclick="setEditorTab('meta',this)">설정</div>
-      </div>
-      <div class="editor-body" id="editorBody"></div>
-      <div class="preview-container">
-        <div class="preview-label">미리보기</div>
-        <div class="preview-frame" id="previewFrame"></div>
+      <div class="status-bar">
+        <div><span class="status-dot" id="statusDot"></span><span id="statusText">준비됨</span></div>
+        <div id="statusVersion">—</div>
       </div>
     </div>
   </div>
 
-  <!-- Version Modal -->
+  <!-- ══ Version Modal ══ -->
   <div class="modal-overlay" id="versionModal">
     <div class="modal">
       <h2>버전 관리</h2>
-      <div style="margin-bottom:16px;">
-        <div style="font-size:13px;color:var(--text-tertiary);margin-bottom:6px;">현재 선택을 새 버전으로 저장</div>
-        <div style="display:flex;gap:8px;">
-          <input type="text" class="modal-input" id="newVersionName" placeholder="버전 이름 (예: VC 시리즈A용)" style="margin-bottom:0;flex:1;">
+      <ul class="version-list" id="versionList"></ul>
+      <div style="border-top:1px solid rgba(255,255,255,0.06); padding-top:10px; margin-top:6px;">
+        <div style="font-size:11px; color:#888; margin-bottom:6px; font-weight:600;">새 버전 저장</div>
+        <input class="modal-input" id="newVersionName" placeholder="YYMMDD_이름 (예: 260517_시리즈A)">
+        <div class="modal-actions">
+          <button class="btn" onclick="closeVersionModal()">닫기</button>
           <button class="btn btn-primary" onclick="saveVersion()">저장</button>
         </div>
       </div>
-      <div style="font-size:13px;color:var(--text-tertiary);margin-bottom:6px;">저장된 버전</div>
-      <ul class="version-list" id="versionList"></ul>
-      <div class="modal-actions"><button class="btn" onclick="closeVersionModal()">닫기</button></div>
     </div>
   </div>
 
-  <!-- Add Slide Modal -->
-  <div class="modal-overlay" id="addSlideModal">
-    <div class="modal">
-      <h2>슬라이드 추가</h2>
-      <div class="form-group">
-        <label class="form-label">슬라이드 ID (영문, 하이픈)</label>
-        <input type="text" class="modal-input" id="newSlideId" placeholder="예: solution-demo" style="margin-bottom:0;">
-      </div>
-      <div class="form-group">
-        <label class="form-label">제목</label>
-        <input type="text" class="modal-input" id="newSlideTitle" placeholder="예: 솔루션 데모" style="margin-bottom:0;">
-      </div>
-      <div class="form-group">
-        <label class="form-label">서브타이틀</label>
-        <input type="text" class="modal-input" id="newSlideSub" placeholder="예: 실제 작동 영상" style="margin-bottom:0;">
-      </div>
-      <div class="form-group">
-        <label class="form-label">카테고리</label>
-        <select class="form-select" id="newSlideCat" style="width:100%;">
-          <option value="opening">오프닝</option>
-          <option value="problem">문제</option>
-          <option value="solution" selected>솔루션</option>
-          <option value="traction">트랙션</option>
-          <option value="business">비즈니스</option>
-          <option value="team">팀</option>
-          <option value="closing">클로징</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label class="form-label">중요도</label>
-        <select class="form-select" id="newSlidePriority" style="width:100%;">
-          <option value="상">상</option>
-          <option value="중" selected>중</option>
-          <option value="하">하</option>
-        </select>
-      </div>
-      <div class="modal-actions">
-        <button class="btn" onclick="closeAddSlideModal()">취소</button>
-        <button class="btn btn-primary" onclick="addSlide()">추가</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- Toast -->
+  <!-- ══ Toast ══ -->
   <div class="toast" id="toast"></div>
 
   <script>
+    // ══════════════════════════════════════
+    //  STATE
+    // ══════════════════════════════════════
     let slidesData = null;
-    let slideDataCache = {};  // id -> {fields, values}
-    let slideTemplateCache = {};  // id -> html template string
-    let selectedSlides = new Set();
+    let currentSlideIndex = 0;
+    let currentRatio = '16:9';
+    let currentTheme = 'dark';
     let currentFilter = 'all';
-    let editingSlideId = null;
-    let editorTab = 'form';
-    const STORAGE_KEY = 'cappic-deck-versions';
-    const CURRENT_KEY = 'cappic-deck-current';
-    const DATA_KEY = 'cappic-slide-data';
+    let currentVersionId = null;
+    let versions = [];
+    let autosaveTimer = null;
+    let lastAutosaveTime = null;
+    let filteredSlides = [];
 
-    // ── Init ──
+    const API = 'http://localhost:3001';
+
+    // ══════════════════════════════════════
+    //  INIT
+    // ══════════════════════════════════════
     async function init() {
+      // Load slides registry
       const res = await fetch('data/slides.json');
       slidesData = await res.json();
 
-      // Load saved slide data overrides
-      const savedData = localStorage.getItem(DATA_KEY);
-      if (savedData) slideDataCache = JSON.parse(savedData);
+      // Load versions & restore state
+      await loadVersions();
 
-      // Load last session
-      const saved = localStorage.getItem(CURRENT_KEY);
-      if (saved) {
-        const parsed = JSON.parse(saved);
-        selectedSlides = new Set(parsed.selected || []);
-        document.getElementById('currentVersion').textContent = parsed.name || '버전 선택...';
+      // Build filters
+      renderFilters();
+
+      // Render slide list
+      applyFilter();
+
+      // Setup mode toggles
+      setupToggles();
+
+      // Start autosave
+      startAutosave();
+
+      // Keyboard navigation
+      document.addEventListener('keydown', onKeydown);
+
+      // Window resize → rescale preview
+      window.addEventListener('resize', rescalePreview);
+    }
+
+    // ══════════════════════════════════════
+    //  VERSIONS
+    // ══════════════════════════════════════
+    async function loadVersions() {
+      try {
+        const res = await fetch(`${API}/versions`);
+        if (res.ok) {
+          const data = await res.json();
+          versions = data.versions || [];
+          currentVersionId = data.current;
+
+          // Apply current version config
+          if (currentVersionId) {
+            const v = versions.find(v => v.id === currentVersionId);
+            if (v && v.config) {
+              currentTheme = v.config.theme || 'dark';
+              currentRatio = v.config.ratio || '16:9';
+            }
+          }
+
+          updateVersionUI();
+        }
+      } catch(e) {
+        console.warn('Version server not available, using defaults');
       }
 
-      document.getElementById('totalCount').textContent = slidesData.slides.length;
-      render();
-    }
-
-    // ── Load slide data (json) ──
-    async function loadSlideData(id) {
+      // Try autosave recovery
       try {
-        const res = await fetch(`slides/${id}.json`);
+        const res = await fetch(`${API}/autosave`);
         if (res.ok) {
-          const fileData = await res.json();
-          // Merge: localStorage overrides per-field, but new fields from file are added
-          if (slideDataCache[id]) {
-            const cached = slideDataCache[id];
-            fileData.fields.forEach(ff => {
-              const cf = cached.fields.find(c => c.key === ff.key);
-              if (cf) {
-                ff.value = cf.value || ff.value; // use cached if non-empty, else file default
-              }
-            });
+          const auto = await res.json();
+          if (auto && auto.savedAt) {
+            lastAutosaveTime = new Date(auto.savedAt);
           }
-          slideDataCache[id] = fileData;
-          return fileData;
         }
       } catch(e) {}
-      if (slideDataCache[id]) return slideDataCache[id];
-      return null;
     }
 
-    // ── Load slide template (html) ──
-    async function loadSlideTemplate(id) {
-      if (slideTemplateCache[id]) return slideTemplateCache[id];
+    async function saveVersion() {
+      const nameInput = document.getElementById('newVersionName');
+      let name = nameInput.value.trim();
+      if (!name) {
+        // Auto-generate: YYMMDD_버전
+        const now = new Date();
+        const yy = String(now.getFullYear()).slice(2);
+        const mm = String(now.getMonth()+1).padStart(2,'0');
+        const dd = String(now.getDate()).padStart(2,'0');
+        name = `${yy}${mm}${dd}_v${versions.length+1}`;
+      }
+
+      const config = buildConfig();
+
       try {
-        const res = await fetch(`slides/${id}.html`);
-        if (res.ok) {
-          const html = await res.text();
-          slideTemplateCache[id] = html;
-          return html;
-        }
-      } catch(e) {}
-      return null;
-    }
-
-    // ── Render slide with data ──
-    function renderSlideHtml(template, fields) {
-      let html = template;
-      if (fields) {
-        fields.forEach(f => {
-          const regex = new RegExp('\\{\\{' + f.key + '\\}\\}', 'g');
-          html = html.replace(regex, f.value || '');
+        const res = await fetch(`${API}/save-version`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ id: name, config })
         });
+        if (res.ok) {
+          const result = await res.json();
+          await loadVersions();
+          currentVersionId = name;
+          updateVersionUI();
+          nameInput.value = '';
+          closeVersionModal();
+          showToast(`버전 "${name}" 저장됨`);
+        }
+      } catch(e) {
+        showToast('저장 실패 — 서버 확인');
       }
-      return html;
     }
 
-    // ── Render Grid ──
-    function render() {
-      const grid = document.getElementById('slideGrid');
-      const filtered = slidesData.slides.filter(s => {
-        if (currentFilter === 'all') return true;
-        if (['상','중','하'].includes(currentFilter)) return s.priority === currentFilter;
-        if (currentFilter.startsWith('cat-')) return s.category === currentFilter.replace('cat-','');
-        return true;
+    async function loadVersion(id) {
+      const v = versions.find(v => v.id === id);
+      if (!v) return;
+
+      currentVersionId = id;
+      if (v.config) {
+        currentTheme = v.config.theme || 'dark';
+        currentRatio = v.config.ratio || '16:9';
+        updateToggleUI();
+      }
+
+      updateVersionUI();
+      updatePreview();
+      closeVersionModal();
+      showToast(`"${id}" 로드됨`);
+
+      // Update server
+      try {
+        await fetch(`${API}/save-version`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ id, config: v.config })
+        });
+      } catch(e) {}
+    }
+
+    async function deleteVersion(id) {
+      if (!confirm(`"${id}" 버전을 삭제할까요?`)) return;
+      try {
+        await fetch(`${API}/delete-version?id=${encodeURIComponent(id)}`, { method: 'DELETE' });
+        await loadVersions();
+        renderVersionList();
+        showToast(`"${id}" 삭제됨`);
+      } catch(e) {
+        showToast('삭제 실패');
+      }
+    }
+
+    function buildConfig() {
+      return {
+        selected: slidesData.slides.map(s => s.id),
+        theme: currentTheme,
+        ratio: currentRatio,
+        tokenOverrides: {},
+        slideStyles: {}
+      };
+    }
+
+    function updateVersionUI() {
+      document.getElementById('versionBtn').textContent = currentVersionId ? `v:${currentVersionId}` : 'v—';
+      document.getElementById('statusVersion').textContent = currentVersionId || '—';
+    }
+
+    // ══════════════════════════════════════
+    //  AUTOSAVE
+    // ══════════════════════════════════════
+    function startAutosave() {
+      autosaveTimer = setInterval(doAutosave, 30000);
+    }
+
+    async function doAutosave() {
+      const config = buildConfig();
+      try {
+        const res = await fetch(`${API}/autosave`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ config })
+        });
+        if (res.ok) {
+          lastAutosaveTime = new Date();
+          updateStatusBar('saved');
+        }
+      } catch(e) {
+        updateStatusBar('error');
+      }
+    }
+
+    function updateStatusBar(state) {
+      const dot = document.getElementById('statusDot');
+      const text = document.getElementById('statusText');
+      if (state === 'saved') {
+        dot.className = 'status-dot saved';
+        text.textContent = `자동저장됨 ${formatTime(lastAutosaveTime)}`;
+      } else if (state === 'saving') {
+        dot.className = 'status-dot saving';
+        text.textContent = '저장 중...';
+      } else {
+        dot.className = 'status-dot';
+        text.textContent = '서버 미연결';
+      }
+    }
+
+    function formatTime(date) {
+      if (!date) return '';
+      const h = String(date.getHours()).padStart(2,'0');
+      const m = String(date.getMinutes()).padStart(2,'0');
+      const s = String(date.getSeconds()).padStart(2,'0');
+      return `${h}:${m}:${s}`;
+    }
+
+    // ══════════════════════════════════════
+    //  FILTERS & SLIDE LIST
+    // ══════════════════════════════════════
+    function renderFilters() {
+      const cats = slidesData.categories;
+      let html = `<button class="filter-btn active" onclick="setFilter('all',this)">전체</button>`;
+      Object.entries(cats).forEach(([key, cat]) => {
+        html += `<button class="filter-btn" onclick="setFilter('${key}',this)">${cat.label}</button>`;
       });
-
-      grid.innerHTML = filtered.map(slide => {
-        const sel = selectedSlides.has(slide.id);
-        const ord = sel ? [...selectedSlides].indexOf(slide.id) + 1 : '';
-        const cat = slidesData.categories[slide.category];
-        const pc = slide.priority === '상' ? 'priority-badge-high' : slide.priority === '중' ? 'priority-badge-mid' : 'priority-badge-low';
-        const editing = editingSlideId === slide.id;
-
-        return `
-          <div class="slide-card ${sel?'selected':''} ${editing?'editing':''}" data-id="${slide.id}">
-            <div class="card-top">
-              <div class="card-badges">
-                <span class="card-badge ${pc}">${slide.priority}</span>
-                <span class="card-badge cat" style="color:${cat.color}">${cat.label}</span>
-              </div>
-              <div class="card-btns">
-                <div class="card-edit-btn" onclick="event.stopPropagation();openEditor('${slide.id}')" title="편집">&#9998;</div>
-                <div class="card-select" onclick="event.stopPropagation();toggleSlide('${slide.id}')">${sel?'✓':''}</div>
-              </div>
-            </div>
-            <div class="card-title" onclick="openEditor('${slide.id}')">${slide.title}</div>
-            <div class="card-subtitle">${slide.subtitle}</div>
-            <div class="card-desc">${slide.description}</div>
-            ${ord ? `<div class="card-order">${String(ord).padStart(2,'0')}</div>` : ''}
-          </div>`;
-      }).join('') + `
-        <div class="add-card" onclick="openAddSlideModal()">
-          <div class="add-card-icon">+</div>
-          <div class="add-card-label">슬라이드 추가</div>
-        </div>`;
-
-      updateCounts();
+      document.getElementById('filters').innerHTML = html;
     }
 
-    // ── Editor ──
-    async function openEditor(id) {
-      editingSlideId = id;
-      const slide = slidesData.slides.find(s => s.id === id);
-      document.getElementById('editorTitle').textContent = slide.title;
-      document.getElementById('editorPanel').classList.add('open');
-      editorTab = 'form';
-      document.querySelectorAll('.editor-tab').forEach((t,i) => t.classList.toggle('active', i===0));
-      // Pre-load template and data
-      await loadSlideTemplate(id);
-      await loadSlideData(id);
-      await renderEditorBody();
-      render();
-    }
-
-    function closeEditor() {
-      editingSlideId = null;
-      document.getElementById('editorPanel').classList.remove('open');
-      render();
-    }
-
-    function setEditorTab(tab, el) {
-      editorTab = tab;
-      document.querySelectorAll('.editor-tab').forEach(t => t.classList.remove('active'));
-      el.classList.add('active');
-      renderEditorBody();
-    }
-
-    async function renderEditorBody() {
-      const body = document.getElementById('editorBody');
-      const slide = slidesData.slides.find(s => s.id === editingSlideId);
-      if (!slide) return;
-
-      if (editorTab === 'meta') {
-        // Meta editor: title, subtitle, description, priority, category
-        body.innerHTML = `
-          <div class="form-group">
-            <label class="form-label">제목</label>
-            <input class="form-input" value="${slide.title}" onchange="updateSlideMeta('title',this.value)">
-          </div>
-          <div class="form-group">
-            <label class="form-label">서브타이틀</label>
-            <input class="form-input" value="${slide.subtitle}" onchange="updateSlideMeta('subtitle',this.value)">
-          </div>
-          <div class="form-group">
-            <label class="form-label">설명</label>
-            <textarea class="form-input form-textarea" onchange="updateSlideMeta('description',this.value)">${slide.description}</textarea>
-          </div>
-          <div class="form-group">
-            <label class="form-label">중요도</label>
-            <select class="form-select" onchange="updateSlideMeta('priority',this.value)">
-              <option value="상" ${slide.priority==='상'?'selected':''}>상</option>
-              <option value="중" ${slide.priority==='중'?'selected':''}>중</option>
-              <option value="하" ${slide.priority==='하'?'selected':''}>하</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label class="form-label">카테고리</label>
-            <select class="form-select" onchange="updateSlideMeta('category',this.value)">
-              ${Object.entries(slidesData.categories).map(([k,v]) =>
-                `<option value="${k}" ${slide.category===k?'selected':''}>${v.label}</option>`
-              ).join('')}
-            </select>
-          </div>
-          <div class="form-group">
-            <button class="btn btn-danger" onclick="deleteSlide('${slide.id}')">이 슬라이드 삭제</button>
-          </div>`;
-        return;
-      }
-
-      // Content form
-      const data = await loadSlideData(editingSlideId);
-      if (!data || !data.fields) {
-        body.innerHTML = `
-          <div style="color:var(--text-tertiary);padding:20px;text-align:center;">
-            <div style="font-size:32px;margin-bottom:12px;">📝</div>
-            <div style="font-size:15px;margin-bottom:8px;">이 슬라이드의 HTML 템플릿이 아직 없습니다</div>
-            <div style="font-size:13px;color:var(--text-source);">Claude Code에서 slides/${editingSlideId}.html과 slides/${editingSlideId}.json을 만들어주세요</div>
-          </div>`;
-        document.getElementById('previewFrame').innerHTML = '';
-        return;
-      }
-
-      body.innerHTML = data.fields.map(f => `
-        <div class="form-group">
-          <label class="form-label">${f.label}</label>
-          ${f.type === 'textarea'
-            ? `<textarea class="form-input form-textarea" data-key="${f.key}" oninput="updateField('${f.key}',this.value)">${f.value||''}</textarea>`
-            : `<input class="form-input" type="text" data-key="${f.key}" value="${f.value||''}" oninput="updateField('${f.key}',this.value)">`
-          }
-        </div>`).join('');
-
-      updatePreview();
-    }
-
-    function updateField(key, value) {
-      const data = slideDataCache[editingSlideId];
-      if (!data) return;
-      const field = data.fields.find(f => f.key === key);
-      if (field) field.value = value;
-      localStorage.setItem(DATA_KEY, JSON.stringify(slideDataCache));
-      updatePreview();
-    }
-
-    function updateSlideMeta(prop, value) {
-      const slide = slidesData.slides.find(s => s.id === editingSlideId);
-      if (slide) {
-        slide[prop] = value;
-        document.getElementById('editorTitle').textContent = slide.title;
-        render();
-      }
-    }
-
-    async function updatePreview() {
-      const template = await loadSlideTemplate(editingSlideId);
-      const data = slideDataCache[editingSlideId];
-      const frame = document.getElementById('previewFrame');
-
-      if (!template) {
-        frame.innerHTML = '';
-        frame.style.height = 'auto';
-        return;
-      }
-
-      const html = renderSlideHtml(template, data?.fields);
-      const containerWidth = frame.parentElement.clientWidth - 40;
-      const scale = containerWidth / 1920;
-      // 16:9 비율 고정
-      frame.style.width = containerWidth + 'px';
-      frame.style.height = (containerWidth * 9 / 16) + 'px';
-      frame.style.position = 'relative';
-      frame.style.overflow = 'hidden';
-      frame.innerHTML = `<div style="transform:scale(${scale});transform-origin:top left;width:1920px;height:1080px;background:#000;position:absolute;top:0;left:0;font-family:var(--font-family);">${html}</div>`;
-    }
-
-    // ── Slide CRUD ──
-    function toggleSlide(id) {
-      selectedSlides.has(id) ? selectedSlides.delete(id) : selectedSlides.add(id);
-      render(); saveCurrent();
-    }
-    function selectAll() { slidesData.slides.forEach(s => selectedSlides.add(s.id)); render(); saveCurrent(); }
-    function deselectAll() { selectedSlides.clear(); render(); saveCurrent(); }
-    function selectByPriority(p) {
-      selectedSlides.clear();
-      p.split(',').forEach(pr => slidesData.slides.forEach(s => { if(s.priority===pr) selectedSlides.add(s.id); }));
-      render(); saveCurrent();
-    }
-
-    function addSlide() {
-      const id = document.getElementById('newSlideId').value.trim();
-      const title = document.getElementById('newSlideTitle').value.trim();
-      const sub = document.getElementById('newSlideSub').value.trim();
-      const cat = document.getElementById('newSlideCat').value;
-      const priority = document.getElementById('newSlidePriority').value;
-      if (!id || !title) { showToast('ID와 제목을 입력하세요'); return; }
-      if (slidesData.slides.find(s => s.id === id)) { showToast('이미 존재하는 ID입니다'); return; }
-
-      slidesData.slides.push({ id, title, subtitle: sub || '', priority, category: cat, description: '' });
-      document.getElementById('totalCount').textContent = slidesData.slides.length;
-      closeAddSlideModal();
-      render();
-      showToast(`"${title}" 슬라이드 추가됨`);
-    }
-
-    function deleteSlide(id) {
-      if (!confirm('이 슬라이드를 삭제할까요?')) return;
-      slidesData.slides = slidesData.slides.filter(s => s.id !== id);
-      selectedSlides.delete(id);
-      document.getElementById('totalCount').textContent = slidesData.slides.length;
-      closeEditor();
-      render();
-      showToast('슬라이드 삭제됨');
-    }
-
-    // ── Filter ──
     function setFilter(f, el) {
       currentFilter = f;
       document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-      el.classList.add('active');
-      render();
+      if (el) el.classList.add('active');
+      applyFilter();
     }
 
-    // ── Counts ──
-    function updateCounts() {
-      const c = selectedSlides.size;
-      document.getElementById('selectedCount').textContent = c;
-      document.getElementById('estimatedTime').textContent = Math.round(c * 40 / 60);
+    function applyFilter() {
+      if (currentFilter === 'all') {
+        filteredSlides = [...slidesData.slides];
+      } else {
+        filteredSlides = slidesData.slides.filter(s => s.category === currentFilter);
+      }
+      renderSlideList();
+      if (filteredSlides.length > 0) {
+        currentSlideIndex = 0;
+        selectSlide(0);
+      }
     }
 
-    // ── Versions ──
-    function getVersions() { return JSON.parse(localStorage.getItem(STORAGE_KEY)||'[]'); }
-    function saveVersion() {
-      const name = document.getElementById('newVersionName').value.trim();
-      if (!name) return;
-      const versions = getVersions();
-      const i = versions.findIndex(v => v.name===name);
-      const entry = { name, selected:[...selectedSlides], createdAt:new Date().toISOString(), slideCount:selectedSlides.size };
-      i >= 0 ? versions[i]=entry : versions.push(entry);
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(versions));
-      document.getElementById('newVersionName').value = '';
-      document.getElementById('currentVersion').textContent = name;
-      saveCurrent(name); renderVersionList(); showToast(`"${name}" 저장 완료`);
-    }
-    function loadVersion(name) {
-      const v = getVersions().find(v => v.name===name);
-      if (!v) return;
-      selectedSlides = new Set(v.selected);
-      document.getElementById('currentVersion').textContent = name;
-      saveCurrent(name); closeVersionModal(); render(); showToast(`"${name}" 불러옴`);
-    }
-    function deleteVersion(name) {
-      if (!confirm(`"${name}" 삭제?`)) return;
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(getVersions().filter(v => v.name!==name)));
-      renderVersionList(); showToast(`삭제됨`);
-    }
-    function saveCurrent(name) {
-      localStorage.setItem(CURRENT_KEY, JSON.stringify({ name: name||document.getElementById('currentVersion').textContent, selected:[...selectedSlides] }));
-    }
-
-    // ── Modals ──
-    function openVersionModal() { document.getElementById('versionModal').classList.add('open'); renderVersionList(); }
-    function closeVersionModal() { document.getElementById('versionModal').classList.remove('open'); }
-    function openAddSlideModal() { document.getElementById('addSlideModal').classList.add('open'); }
-    function closeAddSlideModal() { document.getElementById('addSlideModal').classList.remove('open'); }
-
-    function renderVersionList() {
-      const versions = getVersions();
-      const list = document.getElementById('versionList');
-      list.innerHTML = versions.length === 0
-        ? '<div style="color:var(--text-tertiary);font-size:13px;padding:10px;">저장된 버전이 없습니다</div>'
-        : versions.map(v => `
-          <li class="version-item" onclick="loadVersion('${v.name}')">
-            <div>
-              <div class="version-item-name">${v.name}</div>
-              <div class="version-item-meta">${v.slideCount}장 · ${new Date(v.createdAt).toLocaleDateString('ko-KR')}</div>
+    function renderSlideList() {
+      const cats = slidesData.categories;
+      let html = '';
+      filteredSlides.forEach((s, i) => {
+        const isActive = i === currentSlideIndex;
+        const allIdx = slidesData.slides.indexOf(s) + 1;
+        const catColor = cats[s.category]?.color || '#888';
+        html += `
+          <div class="slide-card ${isActive ? 'active' : ''}" data-index="${i}" onclick="selectSlide(${i})">
+            <span class="card-num">${String(allIdx).padStart(2,'0')}</span>
+            <div class="card-info">
+              <div class="card-title">${s.title}</div>
             </div>
-            <div onclick="event.stopPropagation()"><button class="btn btn-sm btn-danger" onclick="deleteVersion('${v.name}')">삭제</button></div>
-          </li>`).join('');
+            <span class="card-cat" style="color:${catColor};border:1px solid ${catColor}33">${cats[s.category]?.label || s.category}</span>
+          </div>`;
+      });
+      document.getElementById('slideList').innerHTML = html;
     }
 
-    // ── Export Current Slide as PNG (8K via Playwright) ──
-    async function exportCurrentSlide() {
-      if (!editingSlideId) return;
-      showToast('8K 추출 중...');
+    // ══════════════════════════════════════
+    //  PREVIEW
+    // ══════════════════════════════════════
+    function selectSlide(index) {
+      currentSlideIndex = index;
+      // Highlight in list
+      document.querySelectorAll('.slide-card').forEach((c, i) => {
+        c.classList.toggle('active', i === index);
+      });
+      updatePreview();
+      updateNavCounter();
 
+      // Scroll into view
+      const card = document.querySelector(`.slide-card[data-index="${index}"]`);
+      if (card) card.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+    }
+
+    function updatePreview() {
+      if (!filteredSlides.length) return;
+      const slide = filteredSlides[currentSlideIndex];
+      if (!slide) return;
+
+      const iframe = document.getElementById('previewIframe');
+      const url = `preview.html?slide=${slide.id}&theme=${currentTheme}&ratio=${encodeURIComponent(currentRatio)}`;
+      iframe.src = url;
+
+      // Wait for iframe load then rescale
+      iframe.onload = () => rescalePreview();
+    }
+
+    function rescalePreview() {
+      const frame = document.getElementById('previewFrame');
+      const iframe = document.getElementById('previewIframe');
+      if (!frame || !iframe) return;
+
+      const RATIOS = {
+        '16:9': { w: 1920, h: 1080 },
+        '3:4':  { w: 1080, h: 1440 },
+        '4:3':  { w: 1440, h: 1080 },
+        '1:1':  { w: 1080, h: 1080 },
+      };
+      const dim = RATIOS[currentRatio] || RATIOS['16:9'];
+
+      iframe.style.width = dim.w + 'px';
+      iframe.style.height = dim.h + 'px';
+
+      const containerW = frame.clientWidth;
+      const containerH = frame.clientHeight;
+      const scaleW = containerW / dim.w;
+      const scaleH = containerH / dim.h;
+      const scale = Math.min(scaleW, scaleH);
+
+      iframe.style.transform = `scale(${scale})`;
+
+      // Center the iframe
+      const scaledW = dim.w * scale;
+      const scaledH = dim.h * scale;
+      iframe.style.left = ((containerW - scaledW) / 2) + 'px';
+      iframe.style.top = ((containerH - scaledH) / 2) + 'px';
+    }
+
+    function updateNavCounter() {
+      const total = filteredSlides.length;
+      const current = currentSlideIndex + 1;
+      document.getElementById('navCounter').textContent = `${current} / ${total}`;
+      document.getElementById('prevBtn').disabled = currentSlideIndex === 0;
+      document.getElementById('nextBtn').disabled = currentSlideIndex >= total - 1;
+    }
+
+    // ══════════════════════════════════════
+    //  NAVIGATION
+    // ══════════════════════════════════════
+    function navPrev() {
+      if (currentSlideIndex > 0) selectSlide(currentSlideIndex - 1);
+    }
+
+    function navNext() {
+      if (currentSlideIndex < filteredSlides.length - 1) selectSlide(currentSlideIndex + 1);
+    }
+
+    function onKeydown(e) {
+      // Don't capture when typing in input
+      if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+      if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') { e.preventDefault(); navPrev(); }
+      if (e.key === 'ArrowRight' || e.key === 'ArrowDown') { e.preventDefault(); navNext(); }
+      if (e.key === 'Escape') closeVersionModal();
+    }
+
+    // ══════════════════════════════════════
+    //  MODE TOGGLES
+    // ══════════════════════════════════════
+    function setupToggles() {
+      // Ratio
+      document.querySelectorAll('#ratioToggle .toggle-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          currentRatio = btn.dataset.ratio;
+          updateToggleUI();
+          updatePreview();
+        });
+      });
+
+      // Theme
+      document.querySelectorAll('#themeToggle .toggle-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          currentTheme = btn.dataset.theme;
+          updateToggleUI();
+          updatePreview();
+        });
+      });
+
+      updateToggleUI();
+    }
+
+    function updateToggleUI() {
+      document.querySelectorAll('#ratioToggle .toggle-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.ratio === currentRatio);
+      });
+      document.querySelectorAll('#themeToggle .toggle-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.theme === currentTheme);
+      });
+    }
+
+    // ══════════════════════════════════════
+    //  EXPORT
+    // ══════════════════════════════════════
+    async function exportPNG() {
+      if (!filteredSlides.length) return;
+      const slide = filteredSlides[currentSlideIndex];
+      showToast('PNG 추출 중...');
       try {
-        const res = await fetch(`http://localhost:3001/capture?slide=${editingSlideId}`);
+        const res = await fetch(`${API}/capture?slide=${slide.id}&theme=${currentTheme}&ratio=${encodeURIComponent(currentRatio)}`);
         if (!res.ok) throw new Error(await res.text());
-
         const blob = await res.blob();
         const url = URL.createObjectURL(blob);
         const link = document.createElement('a');
         link.href = url;
-        link.download = `${editingSlideId}.png`;
+        link.download = `${slide.id}_${currentRatio.replace(':','x')}_${currentTheme}.png`;
         link.click();
         URL.revokeObjectURL(url);
-
-        showToast('8K 추출 완료');
+        showToast('PNG 추출 완료');
       } catch(e) {
-        showToast('추출 서버 연결 실패 — node export/server.js 실행 필요');
-        console.error(e);
+        showToast('추출 실패 — export 서버 확인');
       }
     }
 
-    function showToast(msg) {
-      const t = document.getElementById('toast');
-      t.textContent = msg; t.classList.add('show');
-      setTimeout(() => t.classList.remove('show'), 2000);
+    async function exportAll() {
+      if (!currentVersionId) {
+        showToast('먼저 버전을 저장하세요');
+        return;
+      }
+      showToast('전체 덱 추출 중... (시간 소요)');
+      try {
+        const res = await fetch(`${API}/capture-all?version=${encodeURIComponent(currentVersionId)}&theme=${currentTheme}&ratio=${encodeURIComponent(currentRatio)}`);
+        if (!res.ok) throw new Error(await res.text());
+        const result = await res.json();
+        showToast(`${result.count}장 추출 완료 → output/`);
+      } catch(e) {
+        showToast('전체 추출 실패 — export 서버 확인');
+      }
     }
 
-    document.addEventListener('keydown', e => {
-      if (e.key === 'Escape') { closeVersionModal(); closeAddSlideModal(); }
-    });
-    document.querySelectorAll('.modal-overlay').forEach(m => m.addEventListener('click', e => { if(e.target===e.currentTarget) { closeVersionModal(); closeAddSlideModal(); }}));
+    // ══════════════════════════════════════
+    //  VERSION MODAL
+    // ══════════════════════════════════════
+    function openVersionModal() {
+      document.getElementById('versionModal').classList.add('open');
+      renderVersionList();
+      // Default name suggestion
+      const now = new Date();
+      const yy = String(now.getFullYear()).slice(2);
+      const mm = String(now.getMonth()+1).padStart(2,'0');
+      const dd = String(now.getDate()).padStart(2,'0');
+      document.getElementById('newVersionName').placeholder = `${yy}${mm}${dd}_이름`;
+    }
 
+    function closeVersionModal() {
+      document.getElementById('versionModal').classList.remove('open');
+    }
+
+    function renderVersionList() {
+      const list = document.getElementById('versionList');
+      if (!versions.length) {
+        list.innerHTML = '<li style="color:#666;font-size:12px;padding:8px;">저장된 버전 없음</li>';
+        return;
+      }
+
+      let html = '';
+      versions.forEach(v => {
+        const isCurrent = v.id === currentVersionId;
+        const date = new Date(v.updatedAt || v.createdAt);
+        const dateStr = `${date.getFullYear()}.${String(date.getMonth()+1).padStart(2,'0')}.${String(date.getDate()).padStart(2,'0')}`;
+        const slideCount = v.config?.selected?.length || 0;
+        html += `
+          <li class="version-item ${isCurrent ? 'current' : ''}" onclick="loadVersion('${v.id}')">
+            <div>
+              <div class="version-item-name">${v.id}</div>
+              <div class="version-item-meta">${dateStr} · ${slideCount}장 · ${v.config?.ratio || '16:9'} · ${v.config?.theme || 'dark'}</div>
+            </div>
+            <div class="version-item-actions" onclick="event.stopPropagation()">
+              <button class="version-item-btn delete" onclick="deleteVersion('${v.id}')">삭제</button>
+            </div>
+          </li>`;
+      });
+      list.innerHTML = html;
+    }
+
+    // Close modal on backdrop click
+    document.getElementById('versionModal').addEventListener('click', (e) => {
+      if (e.target === e.currentTarget) closeVersionModal();
+    });
+
+    // ══════════════════════════════════════
+    //  TOAST
+    // ══════════════════════════════════════
+    let toastTimer = null;
+    function showToast(msg) {
+      const el = document.getElementById('toast');
+      el.textContent = msg;
+      el.classList.add('show');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => el.classList.remove('show'), 2500);
+    }
+
+    // ══════════════════════════════════════
+    //  BOOT
+    // ══════════════════════════════════════
     init();
   </script>
 </body>

@@ -1,0 +1,156 @@
+<style>
+  .upf-row { display: flex; gap: 20px; margin-bottom: 20px; }
+  .upf-card {
+    border-radius: 16px; padding: 24px;
+    position: relative; overflow: hidden;
+    background: linear-gradient(165deg, #1C1C1E, #141414);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.4), 0 6px 16px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.06);
+  }
+  .upf-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 50%;
+    border-radius: 16px 16px 0 0;
+    background: linear-gradient(180deg, rgba(255,255,255,0.04), transparent);
+    pointer-events: none; z-index: 1;
+  }
+  .upf-card > * { position: relative; z-index: 2; }
+  .upf-card.dark { background: linear-gradient(165deg, #1D1D1F, #2C2C2E); }
+  .upf-card.dark::before { background: linear-gradient(180deg, rgba(255,255,255,0.06), transparent); }
+  .upf-card.teal { background: linear-gradient(165deg, #0A1F1E, #0D1716); }
+  .upf-card.amber { background: linear-gradient(165deg, #1A1800, #1C1A0A); }
+  .upf-card.blue { background: linear-gradient(165deg, #0A1520, #0D1A24); }
+
+  .upf-card-header { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+  .upf-card-icon {
+    width: 40px; height: 40px; border-radius: 10px;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+  .upf-card-title { font-size: var(--fs-caption); font-weight: 800; color: #ffffff; margin-bottom: 8px; line-height: 1.4; }
+  .upf-card-desc { font-size: var(--fs-caption); font-weight: 500; color: #ffffff; line-height: 1.8; }
+  .upf-card-desc strong { font-weight: 700; color: #ffffff; }
+  .upf-card.dark .upf-card-desc { color: rgba(255,255,255,0.85); }
+  .upf-card.dark .upf-card-desc strong { color: #7EDCE6; }
+
+  .upf-bonus-badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: var(--fs-caption); font-weight: 700;
+    padding: 5px 12px; border-radius: 8px;
+    background: #F7E150; color: #000;
+    margin-top: 10px;
+  }
+
+  .upf-timeline-bar {
+    display: flex; align-items: center; gap: 0;
+    padding: 14px 20px; border-radius: 12px;
+    background: linear-gradient(165deg, #1C1C1E, #141414);
+    margin-top: 14px;
+  }
+  .upf-tl-node { flex: 1; text-align: center; }
+  .upf-tl-node-date { font-size: var(--fs-caption); font-weight: 700; color: var(--secondary); margin-bottom: 3px; }
+  .upf-tl-node-text { font-size: var(--fs-caption); font-weight: 600; color: #ffffff; line-height: 1.4; }
+  .upf-tl-arrow { font-size: var(--fs-caption); color: #AEAEB2; flex-shrink: 0; padding: 0 4px; }
+</style>
+
+<div class="slide">
+  <div class="slide-title">{{title}}</div>
+
+  <div class="slide-content" style="display:flex;flex-direction:column;gap:0;">
+
+    <!-- Row 1: 정책 정합성 + 지역 특화 산업 -->
+    <div class="upf-row">
+      <div class="upf-card teal" style="flex:1.2;">
+        <div class="upf-card-header">
+          <div class="upf-card-icon" style="background:var(--secondary);">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div class="upf-card-title">{{card1Title}}</div>
+        </div>
+        <div class="upf-card-desc">
+          울산시 핵심 과제: <strong>"시설 확충 → 활용·운영 중심으로 전환"</strong>.<br>
+          시설 양·면적은 이미 최상위 → 추가 건설보다 <strong>이용률·만족도를 높이는 SW 솔루션</strong>이 필요.<br>
+          울산연구원도 <strong>"민간 체육시설·스포츠 스타트업과의 연계"</strong>를 정책 제언으로 명시.
+        </div>
+      </div>
+
+      <div class="upf-card amber" style="flex:0.8;">
+        <div class="upf-card-header">
+          <div class="upf-card-icon" style="background:#F7E150;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <div class="upf-card-title">{{card2Title}}</div>
+        </div>
+        <div class="upf-card-desc">
+          AI·빅데이터 분야 신산업으로 울산 <strong>산업 다변화</strong>에 기여.<br>
+          온디바이스 AI, 딥러닝, NPU 최적화 기술 보유.
+        </div>
+        <div class="upf-bonus-badge">
+          <span>+2점 가점</span> AI·빅데이터·로봇·미래모빌리티
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 2: 고용 창출 + UNIST/부울경 -->
+    <div class="upf-row">
+      <div class="upf-card" style="flex:1;">
+        <div class="upf-card-header">
+          <div class="upf-card-icon" style="background:#2196F3;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="22" y1="11" x2="16" y2="11"/></svg>
+          </div>
+          <div class="upf-card-title">{{card3Title}}</div>
+        </div>
+        <div class="upf-card-desc">
+          울산 지역 청년 <strong>2명 우선 채용</strong> (R&D 컴퓨터비전 1명, 영업/CS 1명).<br>
+          26년 6월 채용 목표.<br>
+          청년 인구 유출 사유 2위 "문화·여가 부족" → <strong>AI/스포츠테크 일자리가 청년 정주 여건 개선</strong>에 기여.
+        </div>
+      </div>
+
+      <div class="upf-card blue" style="flex:1;">
+        <div class="upf-card-header">
+          <div class="upf-card-icon" style="background:#1565C0;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+          </div>
+          <div class="upf-card-title">{{card4Title}}</div>
+        </div>
+        <div class="upf-card-desc">
+          <strong>UNIST</strong> 과학·AI 인재 적극 채용 및 산학 협력 추진.<br>
+          <strong>부울경 피지컬 AI 테스트베드</strong> 적극 활용 — 실증 환경 확보.<br>
+          <strong>오픈이노베이션</strong> 프로그램 참여로 지역 기업·대학과 공동 R&D.
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 3: 사업화 추진 계획 타임라인 -->
+    <div class="upf-card dark">
+      <div class="upf-card-title" style="color:#ffffff;margin-bottom:14px;">{{timelineTitle}}</div>
+      <div class="upf-timeline-bar">
+        <div class="upf-tl-node">
+          <div class="upf-tl-node-date">{{tl1Date}}</div>
+          <div class="upf-tl-node-text">{{tl1Text}}</div>
+        </div>
+        <div class="upf-tl-arrow">→</div>
+        <div class="upf-tl-node">
+          <div class="upf-tl-node-date">{{tl2Date}}</div>
+          <div class="upf-tl-node-text">{{tl2Text}}</div>
+        </div>
+        <div class="upf-tl-arrow">→</div>
+        <div class="upf-tl-node">
+          <div class="upf-tl-node-date">{{tl3Date}}</div>
+          <div class="upf-tl-node-text">{{tl3Text}}</div>
+        </div>
+        <div class="upf-tl-arrow">→</div>
+        <div class="upf-tl-node">
+          <div class="upf-tl-node-date">{{tl4Date}}</div>
+          <div class="upf-tl-node-text">{{tl4Text}}</div>
+        </div>
+        <div class="upf-tl-arrow">→</div>
+        <div class="upf-tl-node">
+          <div class="upf-tl-node-date">{{tl5Date}}</div>
+          <div class="upf-tl-node-text">{{tl5Text}}</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="slide-source">{{source}}</div>
+</div>

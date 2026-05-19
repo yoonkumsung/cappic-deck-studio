@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "live-server src --port=3000 --no-browser",
-    "open": "live-server src --port=3000",
+    "dev": "live-server src --port=3000 --no-browser --ignore=slides,data,versions",
+    "open": "live-server src --port=3000 --ignore=slides,data,versions",
     "export": "node export/server.js"
   },
   "devDependencies": {

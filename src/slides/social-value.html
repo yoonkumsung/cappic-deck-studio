@@ -1,0 +1,198 @@
+<style>
+  .sv-row { display: flex; gap: 20px; margin-bottom: 20px; }
+
+  .sv-card {
+    border-radius: 16px; padding: 24px;
+    position: relative; overflow: hidden;
+    background: linear-gradient(165deg, #1C1C1E, #141414);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.4), 0 6px 16px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.06);
+  }
+  .sv-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 50%;
+    border-radius: 16px 16px 0 0;
+    background: linear-gradient(180deg, rgba(255,255,255,0.04), transparent);
+    pointer-events: none; z-index: 1;
+  }
+  .sv-card > * { position: relative; z-index: 2; }
+  .sv-card.dark { background: linear-gradient(165deg, #1D1D1F, #2C2C2E); }
+  .sv-card.dark::before { background: linear-gradient(180deg, rgba(255,255,255,0.06), transparent); }
+  .sv-card.teal { background: linear-gradient(165deg, #0A1F1E, #0D1716); }
+
+  .sv-card-header { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+  .sv-card-icon {
+    width: 40px; height: 40px; border-radius: 10px;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+  .sv-card-title { font-size: var(--fs-caption); font-weight: 800; color: #ffffff; margin-bottom: 8px; line-height: 1.4; }
+  .sv-card-desc { font-size: var(--fs-caption); font-weight: 500; color: #ffffff; line-height: 1.8; }
+  .sv-card-desc strong { font-weight: 700; color: #ffffff; }
+  .sv-card.dark .sv-card-desc { color: rgba(255,255,255,0.85); }
+  .sv-card.dark .sv-card-desc strong { color: var(--secondary); }
+
+  /* 3 민주화 카드 */
+  .sv-demo-row { display: flex; gap: 16px; margin-bottom: 20px; }
+  .sv-demo-card {
+    flex: 1; border-radius: 14px; padding: 22px;
+    position: relative; overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.06);
+  }
+  .sv-demo-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 50%;
+    border-radius: 14px 14px 0 0;
+    background: linear-gradient(180deg, rgba(255,255,255,0.04), transparent);
+    pointer-events: none; z-index: 1;
+  }
+  .sv-demo-card > * { position: relative; z-index: 2; }
+  .sv-demo-card.env { background: linear-gradient(165deg, #0A1A0C, #0D170E); }
+  .sv-demo-card.soc { background: linear-gradient(165deg, #0A1520, #0D1A24); }
+  .sv-demo-card.gov { background: linear-gradient(165deg, #1A0F1E, #150D18); }
+
+  .sv-demo-header { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+  .sv-demo-badge {
+    width: 32px; height: 32px; border-radius: 8px;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+  .sv-demo-card.env .sv-demo-badge { background: #4CAF50; }
+  .sv-demo-card.soc .sv-demo-badge { background: #2196F3; }
+  .sv-demo-card.gov .sv-demo-badge { background: #9C27B0; }
+  .sv-demo-title { font-size: var(--fs-caption); font-weight: 800; color: #ffffff; }
+  .sv-demo-desc { font-size: var(--fs-caption); font-weight: 500; color: #ffffff; line-height: 1.8; }
+  .sv-demo-desc strong { font-weight: 700; color: #ffffff; }
+
+  /* 선순환 플로우 */
+  .sv-cycle-flow {
+    display: flex; align-items: center; gap: 0;
+    padding: 14px 16px; border-radius: 10px;
+    background: rgba(126,220,230,0.1); margin-top: 14px;
+  }
+  .sv-cycle-node { flex: 1; text-align: center; font-size: var(--fs-caption); font-weight: 700; color: var(--secondary); }
+  .sv-cycle-node span { display: block; font-size: var(--fs-source); font-weight: 500; color: #ffffff; margin-top: 2px; }
+  .sv-cycle-arrow { font-size: var(--fs-caption); color: #AEAEB2; flex-shrink: 0; padding: 0 4px; }
+
+  .sv-stat-inline {
+    display: flex; align-items: center; gap: 16px;
+    margin-top: 14px; padding: 14px 20px; border-radius: 10px;
+    background: rgba(255,255,255,0.1);
+  }
+  .sv-stat-num { font-size: var(--fs-heading); font-weight: 800; color: var(--secondary); flex-shrink: 0; }
+  .sv-stat-num .u { font-size: var(--fs-caption); font-weight: 600; color: rgba(255,255,255,0.7); }
+  .sv-stat-text { font-size: var(--fs-caption); font-weight: 500; color: rgba(255,255,255,0.8); line-height: 1.6; }
+</style>
+
+<div class="slide">
+  <div class="slide-title">{{title}}</div>
+
+  <div class="slide-content" style="display:flex;flex-direction:column;gap:0;">
+
+    <!-- Row 1: 3 민주화 카드 -->
+    <div class="sv-demo-row">
+      <div class="sv-demo-card env">
+        <div class="sv-demo-header">
+          <div class="sv-demo-badge">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+            </svg>
+          </div>
+          <div class="sv-demo-title">기록의 민주화</div>
+        </div>
+        <div class="sv-demo-desc">
+          프로급 촬영·분석을 경쟁 제품 대비 <strong>20% 비용</strong>으로 제공.<br>
+          울산 북구·울주군 등 외곽지역 주민도 동일한 서비스 이용 가능.
+        </div>
+      </div>
+
+      <div class="sv-demo-card soc">
+        <div class="sv-demo-header">
+          <div class="sv-demo-badge">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+          </div>
+          <div class="sv-demo-title">교육의 민주화</div>
+        </div>
+        <div class="sv-demo-desc">
+          AI 자세 분석·자연어 코칭으로<br>
+          <strong>표준화된 교육 환경</strong> 제공.<br>
+          소득·지역·인맥 무관.<br>
+          유소년 부상 방지에 기여.
+        </div>
+      </div>
+
+      <div class="sv-demo-card gov">
+        <div class="sv-demo-header">
+          <div class="sv-demo-badge">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+          </div>
+          <div class="sv-demo-title">기회의 민주화</div>
+        </div>
+        <div class="sv-demo-desc">
+          객관적 데이터 기반 <strong>공정한 선수 평가</strong>.<br>
+          AI 코칭 리포트로 교육 투명성 제고.<br>
+          부동의자 자동 모자이크/삭제 기능.
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 2: 울산 정책 연결 + 범국가 시사점 -->
+    <div class="sv-row">
+      <div class="sv-card teal" style="flex:1;">
+        <div class="sv-card-header">
+          <div class="sv-card-icon" style="background:var(--secondary);">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+            </svg>
+          </div>
+          <div class="sv-card-title">울산 체육 정책 과제와 직결</div>
+        </div>
+        <div class="sv-card-desc">
+          <strong>"유소년→학교→실업→동호인"</strong> 선순환 구조 과제에 대해,<br>
+          CAPP!C이 각 단계에서 경기 기록·분석 데이터 공유.<br>
+          <strong>선수 발굴·육성·평가의 객관적 근거</strong>를 제공.
+        </div>
+        <div class="sv-cycle-flow">
+          <div class="sv-cycle-node">유소년<span>기록 시작</span></div>
+          <div class="sv-cycle-arrow">→</div>
+          <div class="sv-cycle-node">학교운동부<span>데이터 축적</span></div>
+          <div class="sv-cycle-arrow">→</div>
+          <div class="sv-cycle-node">실업·프로<span>객관적 평가</span></div>
+          <div class="sv-cycle-arrow">→</div>
+          <div class="sv-cycle-node">동호인<span>참여 확산</span></div>
+          <div class="sv-cycle-arrow">→</div>
+          <div class="sv-cycle-node" style="color:#fff;font-weight:800;">선순환<span style="color:var(--secondary);">CAPP!C 데이터 연결</span></div>
+        </div>
+      </div>
+
+      <div class="sv-card dark" style="flex:1;">
+        <div class="sv-card-header">
+          <div class="sv-card-icon" style="background:rgba(255,255,255,0.1);">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--secondary)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+            </svg>
+          </div>
+          <div class="sv-card-title" style="color:#ffffff;">범국가적 시사점</div>
+        </div>
+        <div class="sv-card-desc">
+          전국 생활체육 참여율 코로나19 이전 수준 미회복.<br>
+          청소년·노년층 참여율 하락 추세.<br>
+          스포츠 데이터 기반 생활 체육 동기 부여<br>
+          + 유소년 교육 품질 향상 전국적으로 필요.
+        </div>
+        <div class="sv-stat-inline">
+          <div class="sv-stat-num">61.2<span class="u">%</span></div>
+          <div class="sv-stat-text">
+            전국 생활체육 참여율 (2022년).<br>
+            울산 실증 모델로<br>
+            <strong style="color:var(--secondary);">타 지역 확산의 표준화 제시.</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="slide-source">{{source}}</div>
+</div>

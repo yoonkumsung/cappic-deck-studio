@@ -1,0 +1,24 @@
+{
+  "fields": [
+    { "key": "title", "label": "제목", "value": "검증 및 팀", "type": "text" },
+    { "key": "stat1", "label": "검증 지표 1", "value": "97%", "type": "text" },
+    { "key": "stat1_label", "label": "검증 지표 1 라벨", "value": "촬영 수요", "type": "text" },
+    { "key": "stat2", "label": "검증 지표 2", "value": "87%", "type": "text" },
+    { "key": "stat2_label", "label": "검증 지표 2 라벨", "value": "시제품 만족도", "type": "text" },
+    { "key": "stat3", "label": "검증 지표 3", "value": "80%", "type": "text" },
+    { "key": "stat3_label", "label": "검증 지표 3 라벨", "value": "SNS 공유 의향", "type": "text" },
+    { "key": "stat4", "label": "검증 지표 4", "value": "10개소", "type": "text" },
+    { "key": "stat4_label", "label": "검증 지표 4 라벨", "value": "LOI 확보", "type": "text" },
+    { "key": "validation_desc", "label": "검증 설명", "value": "유소년 축구교실 학부모 100명 대면 조사(2025.02) → 3-way 테스트 만족도 1위 → 블라인드 87% 긍정 → SNS 80% 자발 공유 → LOI 10개소 확보. 체계적 7단계 PMF 검증 완료.", "type": "textarea" },
+    { "key": "member1_role", "label": "팀원 1 직책", "value": "CEO", "type": "text" },
+    { "key": "member1_name", "label": "팀원 1 이름", "value": "금성윤", "type": "text" },
+    { "key": "member1_desc", "label": "팀원 1 설명", "value": "제품 기획·사업화. 전체 프로세스 설계 및 실행", "type": "textarea" },
+    { "key": "member2_role", "label": "팀원 2 직책", "value": "CCO", "type": "text" },
+    { "key": "member2_name", "label": "팀원 2 이름", "value": "김동훈", "type": "text" },
+    { "key": "member2_desc", "label": "팀원 2 설명", "value": "사업기획·스포츠 네트워크. B2B 채널 구축", "type": "textarea" },
+    { "key": "member3_role", "label": "팀원 3 직책", "value": "CTO", "type": "text" },
+    { "key": "member3_name", "label": "팀원 3 이름", "value": "김민혁", "type": "text" },
+    { "key": "member3_desc", "label": "팀원 3 설명", "value": "데이터·백엔드. AI 파이프라인 설계 및 구현", "type": "textarea" },
+    { "key": "source", "label": "출처", "value": "유소년 축구교실 학부모 100명 대면 조사, 2025.02", "type": "text" }
+  ]
+}

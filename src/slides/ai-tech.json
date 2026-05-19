@@ -1,0 +1,5 @@
+{
+  "fields": [
+    { "key": "title", "label": "타이틀", "type": "text", "value": "AI 기술 적용 및 데이터 확보 방안" }
+  ]
+}
