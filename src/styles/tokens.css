@@ -28,15 +28,15 @@
   --semantic-up:       #7AE85A;
   --semantic-down:     #FF4D6A;
 
-  /* ══ Typography Scale (4단계만, 최소 18px) ══
-     출처 표기만 예외적으로 15px 허용
-     그 외 모든 텍스트는 반드시 이 4단계 중 하나 사용 */
+  /* ══ Typography Scale (6단계) ══
+     모든 텍스트는 반드시 이 6단계 중 하나 사용 */
 
   --fs-display:        48px;   /* 슬라이드 타이틀, 큰 숫자 */
+  --fs-stat:           36px;   /* 강조 숫자, 스텝 라벨 */
   --fs-heading:        28px;   /* 카드 제목, 비교표 헤더 */
   --fs-body:           22px;   /* 본문, 비교표 데이터, 키워드 */
-  --fs-caption:        18px;   /* 보조 텍스트, 항목 라벨 */
-  --fs-source:         15px;   /* 출처 표기 전용 — 이 외 사용 금지 */
+  --fs-caption:        16px;   /* 보조 텍스트, 항목 라벨 */
+  --fs-source:         13px;   /* 출처 표기, HUD 메타 전용 */
 
   --fw-display:        800;
   --fw-heading:        700;
@@ -64,6 +64,19 @@
   --slide-pad-bottom:  80px;   /* 슬라이드 하단 여백 */
   --slide-content-top: 200px;  /* 타이틀 아래 → 콘텐츠 시작 (타이틀 높이 + 간격) */
   --slide-gap:         24px;   /* 슬라이드 내 카드/요소 간격 (통일) */
+
+  /* ══ Legacy Layout Aliases (layout.css / components.css 호환) ══ */
+
+  --bg-slide:          var(--main-black);
+  --text-source:       #888888;
+  --gap:               var(--sp-md);        /* 24px */
+  --gap-small:         var(--sp-sm);        /* 16px */
+  --gap-large:         var(--sp-lg);        /* 32px */
+  --container-width:   1680px;
+  --container-padding: var(--slide-pad-side);
+  --badge-radius:      8px;
+  --ls-label:          1.5px;
+  --fw-title:          var(--fw-display);
 
   /* ══ Card ══ */
 

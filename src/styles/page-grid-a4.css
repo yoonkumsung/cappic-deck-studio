@@ -23,12 +23,13 @@
   --a4-content-top: 110px;
   --a4-gap: 16px;
 
-  /* A4 Typography (피치덱보다 축소) */
+  /* A4 Typography (피치덱보다 축소, 6단계) */
   --a4-fs-display: 32px;
+  --a4-fs-stat: 24px;
   --a4-fs-heading: 20px;
   --a4-fs-body: 14px;
-  --a4-fs-caption: 12px;
-  --a4-fs-source: 10px;
+  --a4-fs-caption: 11px;
+  --a4-fs-source: 9px;
 }
 
 /* ── Page Title ── */

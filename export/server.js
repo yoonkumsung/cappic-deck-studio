@@ -14,9 +14,7 @@ if (!fs.existsSync(versionsDir)) fs.mkdirSync(versionsDir, { recursive: true });
 // ── Ratio → viewport mapping ──
 const VIEWPORTS = {
   '16:9': { width: 1920, height: 1080 },
-  '3:4':  { width: 1080, height: 1440 },
-  '4:3':  { width: 1440, height: 1080 },
-  '1:1':  { width: 1080, height: 1080 },
+  '3:2':  { width: 1620, height: 1080 },
 };
 
 function readJSON(filePath) {

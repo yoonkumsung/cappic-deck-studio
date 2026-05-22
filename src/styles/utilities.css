@@ -30,14 +30,14 @@
 
 /* ── Number Emphasis ── */
 .num-highlight {
-  font-size: var(--fs-stat-large);
+  font-size: var(--fs-stat);
   font-weight: 800;
   color: var(--text-primary);
   line-height: 1;
 }
 
 .num-highlight .unit {
-  font-size: var(--fs-stat-unit);
+  font-size: var(--fs-heading);
   font-weight: 600;
   opacity: 0.6;
 }

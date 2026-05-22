@@ -1,4 +1,4 @@
-# IR Pitch Deck Maker - Design Rules
+# CAPP!C Deck Studio — Design Rules
 
 ## 이 문서는 절대 규칙이다. 예외 없이 모든 슬라이드에 적용한다.
 
@@ -24,7 +24,7 @@
 
 ---
 
-## 1-1. 라이트모드 색상 변환 규칙
+## 2. 라이트모드 색상 변환 규칙
 
 | 다크모드 | 라이트모드 | 규칙 |
 |---------|----------|------|
@@ -36,8 +36,6 @@
 | --accent #F7E150 | #CC6600 | 밝은 노랑 → 번트 오렌지 (흰 배경 가독성) |
 | --semantic-up #7AE85A | #1A7A10 | 연두 → 진한 초록 |
 | --semantic-down #FF4D6A | #C01030 | 분홍 → 진한 빨강 |
-| 카드 배경 (dark gradient) | 밝은 회색 gradient | 배경과 구분되는 밝은 회색 |
-| rgba(255,255,255,0.xx) 테두리 | rgba(0,0,0,0.xx) 테두리 | 투명도 유지, 색상만 반전 |
 
 **핵심 원칙:**
 - 흰 배경에서 가독성 확보를 위해 accent/secondary 색상은 더 진하게
@@ -48,22 +46,34 @@
 
 ---
 
-## 2. Typography (4단계 + 출처)
+## 3. Typography (6단계)
 
 | 토큰 | 크기 | 용도 | 비고 |
 |------|------|------|------|
 | --fs-display | 48px | 슬라이드 타이틀, 큰 숫자 | font-weight: 800 |
+| --fs-stat | 36px | 강조 숫자, 스텝 라벨 | font-weight: 800 |
 | --fs-heading | 28px | 카드 제목, 비교표 헤더 | font-weight: 700 |
 | --fs-body | 22px | 본문, 비교 데이터, 키워드 | font-weight: 600 |
-| --fs-caption | 18px | 항목 라벨, 보조 텍스트 | font-weight: 600 |
-| --fs-source | 15px | 출처 표기 전용 | **이 외 절대 사용 금지** |
+| --fs-caption | 16px | 항목 라벨, 보조 텍스트 | font-weight: 600 |
+| --fs-source | 13px | 출처 표기, HUD 메타 전용 | **이 외 절대 사용 금지** |
 
-**규칙: 이 5가지 외의 font-size를 인라인으로 지정하지 않는다.**
-**규칙: 13px, 14px, 16px 같은 크기는 존재하지 않는다.**
+**규칙: 이 6가지 외의 font-size를 인라인으로 지정하지 않는다.**
+**규칙: 14px, 15px, 18px, 20px 같은 크기는 존재하지 않는다.**
+
+### A4 Typography (피치덱 축소 비율)
+
+| 토큰 | 크기 |
+|------|------|
+| --a4-fs-display | 32px |
+| --a4-fs-stat | 24px |
+| --a4-fs-heading | 20px |
+| --a4-fs-body | 14px |
+| --a4-fs-caption | 11px |
+| --a4-fs-source | 9px |
 
 ---
 
-## 3. Spacing (8px 배수, 5단계만)
+## 4. Spacing (8px 배수, 5단계만)
 
 | 토큰 | 값 | 용도 |
 |------|-----|------|
@@ -78,7 +88,18 @@
 
 ---
 
-## 4. Slide Layout (고정값)
+## 5. 슬라이드 비율
+
+| 비율 | 해상도 | 용도 |
+|------|--------|------|
+| 16:9 | 1920×1080 | 피치덱 기본 (프레젠테이션) |
+| 3:2 | 1620×1080 | A4 사업계획서용 |
+
+**이 2가지 외의 비율은 존재하지 않는다.**
+
+---
+
+## 6. Slide Layout (고정값, 16:9 기준)
 
 ```
 ┌──────────────────────────────────────────┐
@@ -105,7 +126,7 @@
 
 ---
 
-## 5. 카드
+## 7. 카드
 
 - `.card` 클래스 필수 (gradient + shadow + gloss overlay)
 - 내부 padding: 32px (var(--card-pad)) — 변경 금지
@@ -114,18 +135,17 @@
 
 ---
 
-
-## 6. 비교/데이터 표시
+## 8. 비교/데이터 표시
 
 - 비교 항목은 `.sg-item` (라벨 + 값 쌍)으로 통일
-- 라벨: var(--fs-caption) 18px / var(--text-tertiary)
+- 라벨: var(--fs-caption) 16px / var(--text-tertiary)
 - 값: var(--fs-body) 22px / var(--text-secondary) (accent 카드에서는 var(--text-primary))
 - 여러 항목 세로 나열: `.sg-data-list` (justify-content: space-evenly)
-- 큰 숫자: `.sg-stat-value` 48px + `.sg-stat-unit` 28px + `.sg-stat-label` 18px
+- 큰 숫자: `.sg-stat-value` 48px + `.sg-stat-unit` 28px + `.sg-stat-label` 16px
 
 ---
 
-## 7. 슬라이드 작성 절차
+## 9. 슬라이드 작성 절차
 
 1. `.slide` > `.slide-title` + `.slide-content.sg-cols-N` 구조로 시작
 2. 카드는 `.card` (또는 `.card.card-accent`, `.card.card-photo`)
@@ -138,7 +158,7 @@
 
 ---
 
-## 8. 오버플로우 금지
+## 10. 오버플로우 금지
 
 - 슬라이드(1920×1080) 내부의 모든 카드, 텍스트, 이미지는 슬라이드 경계를 절대 벗어나지 않는다
 - `.slide-content` 영역(top:200px, left:120px, right:120px, bottom:80px) 안에 모든 콘텐츠가 들어와야 한다
@@ -148,7 +168,7 @@
 
 ---
 
-## 9. 텍스트 원칙
+## 11. 텍스트 원칙
 
 - 키워드 식으로 크게, 문장형 금지
 - 출처 없는 숫자 절대 사용 금지
@@ -156,63 +176,60 @@
 
 ---
 
-## 9. 슬라이드 템플릿 구조
+## 12. 템플릿 구조
 
-- HTML 템플릿: src/slides/{id}.html
-- 데이터 JSON: src/slides/{id}.json
+- HTML 템플릿: `src/slides/{id}.html`
+- 데이터 JSON: `src/slides/{id}.json`
+- A4 페이지: `src/pages-a4/{id}.html` + `src/pages-a4/{id}.json`
 - {{key}} 치환 방식
 - 폼 입력으로 콘텐츠 수정
 - 레이아웃 변경은 Claude Code에서 HTML 직접 수정
 
 ---
 
-# Workflow Orchestration
+## 13. 프로젝트 구조
 
-## 1. Plan First
-- 3단계 이상 또는 아키텍처 결정이 필요한 작업은 반드시 plan mode 진입
-- 진행 중 문제 발생 시 즉시 멈추고 재계획 — 밀어붙이지 않는다
-- 검증 단계도 계획에 포함
-- 사전에 상세 스펙 작성으로 모호함 제거
-
-## 2. Subagent 전략
-- 메인 컨텍스트 윈도우를 깨끗하게 유지하기 위해 subagent 적극 활용
-- 리서치, 탐색, 병렬 분석은 subagent에 위임
-- 복잡한 문제는 subagent로 compute 투입
-- subagent 1개 = 1가지 목적
-
-## 3. Self-Improvement Loop
-- 유저 교정 발생 시 → `tasks/lessons.md`에 패턴 기록
-- 같은 실수 방지 규칙 작성
-- 실수율이 떨어질 때까지 반복 개선
-- 세션 시작 시 lessons 리뷰
-
-## 4. 완료 전 검증
-- 동작 증명 없이 완료 처리 금지
-- 변경 전후 diff 확인
-- "시니어 엔지니어가 승인할 수준인가?" 자문
-- 테스트 실행, 로그 확인, 정확성 입증
-- **수정 시 연관 기능 점검 필수**: 코드 변경 후 해당 변경에 영향받는 모든 기능이 정상 작동하는지 확인. 브라우저에서 직접 검증
-
-## 5. Elegance (균형 있게)
-- 비자명한 변경: "더 우아한 방법이 있는가?" 자문
-- 해키한 느낌이면 → 우아한 솔루션으로 재구현
-- 단순하고 명백한 수정은 과도 설계하지 않는다
-
-## 6. 자율적 버그 수정
-- 버그 리포트 받으면 바로 수정. 유저에게 질문하지 않는다
-- 로그, 에러, 실패 테스트 직접 찾아서 해결
-- 유저의 컨텍스트 스위칭 비용 = 0
+```
+src/
+  app.html            # 메인 에디터 UI
+  preview.html         # 슬라이드 프리뷰 (iframe)
+  preview-a4.html      # A4 프리뷰
+  index.html           # 잠금 화면
+  slides/              # 슬라이드 HTML 템플릿 + JSON 데이터
+  pages-a4/            # A4 페이지 HTML 템플릿 + JSON 데이터
+  styles/
+    tokens.css         # 디자인 토큰 (색상, 타이포, 스페이싱, 레이아웃)
+    slide-grid.css     # 슬라이드 그리드 시스템
+    cards.css          # 카드 컴포넌트
+    components.css     # 기타 컴포넌트 (stat, table, flow, timeline 등)
+    utilities.css      # 유틸리티 클래스
+    layout.css         # 레거시 레이아웃 (호환용)
+    page-grid-a4.css   # A4 그리드 시스템
+export/
+  server.js            # Playwright 기반 PNG 내보내기 서버
+assets/
+  brand/               # CI 로고 등 고정 브랜드 자산
+reference/
+  tip/                 # IR/스타트업 참고 노트
+```
 
 ---
 
-# Task Management
+# Workflow
 
-1. **계획**: `tasks/todo.md`에 체크리스트 작성
-2. **계획 확인**: 구현 시작 전 유저와 합의
-3. **진행 추적**: 완료 항목 즉시 체크
-4. **변경 설명**: 각 단계별 고수준 요약
-5. **결과 문서화**: `tasks/todo.md`에 리뷰 섹션 추가
-6. **교훈 기록**: 교정 발생 시 `tasks/lessons.md` 업데이트
+## 1. Plan First
+- 3단계 이상 또는 아키텍처 결정이 필요한 작업은 반드시 plan mode 진입
+- 진행 중 문제 발생 시 즉시 멈추고 재계획
+- 검증 단계도 계획에 포함
+
+## 2. 완료 전 검증
+- 동작 증명 없이 완료 처리 금지
+- 변경 전후 diff 확인
+- **수정 시 연관 기능 점검 필수**: 브라우저에서 직접 검증
+
+## 3. 자율적 버그 수정
+- 버그 리포트 받으면 바로 수정. 유저에게 질문하지 않는다
+- 로그, 에러, 실패 테스트 직접 찾아서 해결
 
 ---
 

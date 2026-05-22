@@ -13,7 +13,7 @@
 }
 
 .stat-value {
-  font-size: var(--fs-stat-large);
+  font-size: var(--fs-stat);
   font-weight: 800;
   color: var(--text-primary);
   line-height: 1;
@@ -21,7 +21,7 @@
 }
 
 .stat-value .unit {
-  font-size: var(--fs-stat-unit);
+  font-size: var(--fs-heading);
   font-weight: 600;
   opacity: 0.6;
   margin-left: 2px;
@@ -52,7 +52,7 @@
 
 /* Stat sizes */
 .stat-value.medium {
-  font-size: var(--fs-stat-medium);
+  font-size: var(--fs-stat);
 }
 
 
@@ -308,7 +308,7 @@
 }
 
 .donut-center .stat-value {
-  font-size: var(--fs-subtitle);
+  font-size: var(--fs-stat);
 }
 
 

@@ -220,9 +220,7 @@
       <span class="toggle-label">비율</span>
       <div class="toggle-group" id="ratioToggle">
         <button class="toggle-btn active" data-ratio="16:9">16:9</button>
-        <button class="toggle-btn" data-ratio="3:4">3:4</button>
-        <button class="toggle-btn" data-ratio="4:3">4:3</button>
-        <button class="toggle-btn" data-ratio="1:1">1:1</button>
+        <button class="toggle-btn" data-ratio="3:2">3:2</button>
       </div>
       <div class="hdiv"></div>
       <span class="toggle-label">테마</span>
@@ -597,9 +595,7 @@
 
       const RATIOS = {
         '16:9': { w: 1920, h: 1080 },
-        '3:4':  { w: 1080, h: 1440 },
-        '4:3':  { w: 1440, h: 1080 },
-        '1:1':  { w: 1080, h: 1080 },
+        '3:2':  { w: 1620, h: 1080 },
       };
       const dim = RATIOS[currentRatio] || RATIOS['16:9'];
 

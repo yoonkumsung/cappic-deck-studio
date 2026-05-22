@@ -36,7 +36,7 @@
 }
 
 .section-title {
-  font-size: var(--fs-title);
+  font-size: var(--fs-display);
   font-weight: var(--fw-title);
   color: var(--text-primary);
   line-height: 1.3;
