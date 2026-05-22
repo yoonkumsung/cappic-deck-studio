@@ -1,6 +1,6 @@
 {
   "fields": [
-    { "key": "title", "label": "타이틀", "type": "text", "value": "경쟁사 비교" },
+    { "key": "title", "label": "타이틀", "type": "text", "value": "Competitive Analysis" },
     { "key": "imgCappic", "label": "CAPP!C 이미지", "type": "image", "value": "" },
     { "key": "imgVeo", "label": "Veo 이미지", "type": "image", "value": "" },
     { "key": "imgPixellot", "label": "Pixellot 이미지", "type": "image", "value": "" },

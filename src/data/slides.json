@@ -11,6 +11,7 @@
     { "id": "pmf-7", "title": "PMF ⑦ 실행 역량", "subtitle": "3회 MVP 반복 · 린스타트업", "tags": ["IR", "GOV"] },
     { "id": "business-model", "title": "Business Model", "subtitle": "HW 판매 + SW 구독 반복 수익", "tags": ["IR", "GOV"] },
     { "id": "market-som", "title": "시장 분석 및 Scale-up", "subtitle": "TAM → SAM → SOM 바텀업", "tags": ["IR", "GOV"] },
+    { "id": "financials", "title": "재무 계획", "subtitle": "사업비 배분 + 매출 계획", "tags": ["IR", "GOV"] },
     { "id": "ulsan-policy-fit", "title": "울산 정책 정합성", "subtitle": "울산시 정책 방향 + 지역 연계", "tags": ["IR", "GOV"] },
     { "id": "ulsan-market", "title": "울산 시장 분석", "subtitle": "규모 · 특성 · 경쟁 · 전망", "tags": ["IR", "GOV"] }
   ],

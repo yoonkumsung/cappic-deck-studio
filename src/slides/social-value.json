@@ -1,6 +1,0 @@
-{
-  "fields": [
-    { "key": "title", "label": "타이틀", "type": "text", "value": "사회적 가치 — 스포츠 격차 해소" },
-    { "key": "source", "label": "출처", "type": "text", "value": "울산시체육회 정책 방향, 문화체육관광부 국민생활체육조사 2022년" }
-  ]
-}

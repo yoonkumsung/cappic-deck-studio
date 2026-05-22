@@ -1,6 +1,6 @@
 {
   "fields": [
-    { "key": "title", "label": "타이틀", "type": "text", "value": "재무 계획" },
+    { "key": "title", "label": "타이틀", "type": "text", "value": "Financial Plan" },
     { "key": "budgetTitle", "label": "예산 카드 제목", "type": "text", "value": "사업비 1억원 배분" },
     { "key": "bud1Name", "label": "항목 1 이름", "type": "text", "value": "제조·생산" },
     { "key": "bud1Pct", "label": "항목 1 비율", "type": "text", "value": "35% (3,500만)" },
