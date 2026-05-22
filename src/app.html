@@ -176,9 +176,39 @@
       font-weight:700; font-size:12px; transition:transform 0.3s; z-index:300;
     }
     .toast.show { transform:translateX(-50%) translateY(0); }
+
+    /* ── Lock Screen ── */
+    .lock-overlay {
+      position:fixed; inset:0; background:#0A0A0A; z-index:9999;
+      display:flex; align-items:center; justify-content:center; flex-direction:column; gap:24px;
+    }
+    .lock-overlay.hidden { display:none; }
+    .lock-title { font-size:24px; font-weight:800; letter-spacing:-0.5px; color:#fff; }
+    .lock-sub { font-size:13px; color:#666; font-weight:600; }
+    .lock-input {
+      width:200px; padding:10px 16px; border-radius:8px; border:1px solid rgba(255,255,255,0.1);
+      background:rgba(255,255,255,0.06); color:#fff; font-size:16px; font-family:inherit;
+      text-align:center; letter-spacing:8px; font-weight:700;
+    }
+    .lock-input:focus { outline:none; border-color:var(--secondary); }
+    .lock-input.error { border-color:#FF4D6A; animation:shake 0.3s; }
+    @keyframes shake {
+      0%,100% { transform:translateX(0); }
+      25% { transform:translateX(-6px); }
+      75% { transform:translateX(6px); }
+    }
+    .lock-error { font-size:12px; color:#FF4D6A; font-weight:600; height:16px; }
   </style>
 </head>
 <body>
+
+  <!-- ══ Lock Screen ══ -->
+  <div class="lock-overlay" id="lockScreen">
+    <div class="lock-title">CAPP!C</div>
+    <div class="lock-sub">Pitch Deck Viewer</div>
+    <input class="lock-input" id="lockInput" type="password" maxlength="4" placeholder="····" autofocus>
+    <div class="lock-error" id="lockError"></div>
+  </div>
 
   <!-- ══ Header ══ -->
   <div class="header">
@@ -758,9 +788,49 @@
     }
 
     // ══════════════════════════════════════
+    //  LOCK SCREEN
+    // ══════════════════════════════════════
+    async function hashPass(str) {
+      const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(str));
+      return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2,'0')).join('');
+    }
+
+    function checkUnlocked() {
+      return sessionStorage.getItem('deck_unlocked') === 'true';
+    }
+
+    async function tryUnlock(pin) {
+      const h = await hashPass(pin);
+      // SHA-256 of "5450"
+      if (h === 'c54bea44135df61e37bdca547a01c223ff648ddf790677cafe9d30a484cac7c8') {
+        sessionStorage.setItem('deck_unlocked', 'true');
+        document.getElementById('lockScreen').classList.add('hidden');
+        init();
+      } else {
+        const input = document.getElementById('lockInput');
+        input.classList.add('error');
+        document.getElementById('lockError').textContent = '잘못된 비밀번호';
+        input.value = '';
+        setTimeout(() => input.classList.remove('error'), 400);
+      }
+    }
+
+    document.getElementById('lockInput').addEventListener('input', (e) => {
+      document.getElementById('lockError').textContent = '';
+      if (e.target.value.length === 4) tryUnlock(e.target.value);
+    });
+
+    document.getElementById('lockInput').addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' && e.target.value.length > 0) tryUnlock(e.target.value);
+    });
+
+    // ══════════════════════════════════════
     //  BOOT
     // ══════════════════════════════════════
-    init();
+    if (checkUnlocked()) {
+      document.getElementById('lockScreen').classList.add('hidden');
+      init();
+    }
   </script>
 </body>
 </html>
