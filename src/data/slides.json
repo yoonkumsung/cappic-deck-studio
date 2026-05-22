@@ -1,99 +1,21 @@
 {
   "slides": [
-    {
-      "id": "cover",
-      "title": "(공용) 커버",
-      "subtitle": "한 줄 정체성 + 로고",
-      "category": "cover",
-      "description": "77만원 AI 카메라, 내 아이의 하이라이트를 자동으로 — CAPP!C"
-    },
-    {
-      "id": "competition-detail",
-      "title": "(공용) 경쟁사 상세 비교",
-      "subtitle": "핵심 3개 항목만 비교",
-      "category": "competition",
-      "description": "가격 / 개인 하이라이트 유무 / 설치 난이도 기준 비교표"
-    },
-    { "id": "pmf-1", "title": "(공용) PMF ① 시장 기회", "subtitle": "TAM 88조 · AI 통합 솔루션 부재", "category": "validation", "description": "" },
-    { "id": "pmf-2", "title": "(공용) PMF ② 현장 수요", "subtitle": "코치 1인 월 240~600 세션", "category": "validation", "description": "" },
-    { "id": "pmf-3", "title": "(공용) PMF ③ 수요 검증", "subtitle": "학부모 100명 설문 → 97%", "category": "validation", "description": "" },
-    { "id": "pmf-4", "title": "(공용) PMF ④ 솔루션 검증", "subtitle": "3-way 비교 만족도 1위", "category": "validation", "description": "" },
-    { "id": "pmf-5", "title": "(공용) PMF ⑤ 실사용 검증", "subtitle": "블라인드 긍정 87%", "category": "validation", "description": "" },
-    { "id": "pmf-6", "title": "(공용) PMF ⑥ 구매 의사", "subtitle": "B2B LOI 10개 구장", "category": "validation", "description": "" },
-    { "id": "pmf-7", "title": "(공용) PMF ⑦ 실행 역량", "subtitle": "3회 MVP 반복 · 린스타트업", "category": "validation", "description": "" },
-    {
-      "id": "business-model",
-      "title": "(공용) Business Model",
-      "subtitle": "HW 판매로 고객 획득 · SW 구독으로 반복 수익 창출",
-      "category": "bm",
-      "description": "B2C PRO 77만 + B2B 클럽에디션 177만 / 팀멤버십 39,000원·패밀리 3,900원/월 → 26년 매출 7.2억, MRR 660만, ARR 7,920만"
-    },
-    {
-      "id": "market-som",
-      "title": "(공용) 시장 분석 및 Scale-up 전략",
-      "subtitle": "TAM → SAM → SOM 바텀업",
-      "category": "market",
-      "description": "TAM 52조(글로벌 스포츠테크) → SAM 1.3조(국내 아마추어+유소년) → SOM 8억(대전·세종·수도권 축구교실+동호인)"
-    },
-    {
-      "id": "ulsan-policy-fit",
-      "title": "(울산) 울산 정책 정합성",
-      "subtitle": "울산시 정책 방향 + 지역 연계",
-      "category": "regional-ulsan",
-      "description": "울산시 시설 활용·운영 전환 과제 직결, AI·빅데이터 특화산업 연계, 청년 고용 창출, UNIST 산학협력"
-    },
-    {
-      "id": "ulsan-market",
-      "title": "(울산) 울산 시장 분석",
-      "subtitle": "규모 · 특성 · 경쟁 · 전망",
-      "category": "regional-ulsan",
-      "description": "울산 타겟 시설 60~70개소, 유소년 클럽 30~40팀, 동호인 80~120팀, 26년 SOM 1.6억원, 구조적 미스매치 22.8%p"
-    }
+    { "id": "cover", "title": "커버", "subtitle": "한 줄 정체성 + 로고", "tags": ["IR", "GOV"] },
+    { "id": "competition-detail", "title": "경쟁사 상세 비교", "subtitle": "핵심 3개 항목만 비교", "tags": ["IR", "GOV"] },
+    { "id": "pmf-1", "title": "PMF ① 시장 기회", "subtitle": "TAM 88조 · AI 통합 솔루션 부재", "tags": ["IR", "GOV"] },
+    { "id": "pmf-2", "title": "PMF ② 현장 수요", "subtitle": "코치 1인 월 240~600 세션", "tags": ["IR", "GOV"] },
+    { "id": "pmf-3", "title": "PMF ③ 수요 검증", "subtitle": "학부모 100명 설문 → 97%", "tags": ["IR", "GOV"] },
+    { "id": "pmf-4", "title": "PMF ④ 솔루션 검증", "subtitle": "3-way 비교 만족도 1위", "tags": ["IR", "GOV"] },
+    { "id": "pmf-5", "title": "PMF ⑤ 실사용 검증", "subtitle": "블라인드 긍정 87%", "tags": ["IR", "GOV"] },
+    { "id": "pmf-6", "title": "PMF ⑥ 구매 의사", "subtitle": "B2B LOI 10개 구장", "tags": ["IR", "GOV"] },
+    { "id": "pmf-7", "title": "PMF ⑦ 실행 역량", "subtitle": "3회 MVP 반복 · 린스타트업", "tags": ["IR", "GOV"] },
+    { "id": "business-model", "title": "Business Model", "subtitle": "HW 판매 + SW 구독 반복 수익", "tags": ["IR", "GOV"] },
+    { "id": "market-som", "title": "시장 분석 및 Scale-up", "subtitle": "TAM → SAM → SOM 바텀업", "tags": ["IR", "GOV"] },
+    { "id": "ulsan-policy-fit", "title": "울산 정책 정합성", "subtitle": "울산시 정책 방향 + 지역 연계", "tags": ["IR", "GOV"] },
+    { "id": "ulsan-market", "title": "울산 시장 분석", "subtitle": "규모 · 특성 · 경쟁 · 전망", "tags": ["IR", "GOV"] }
   ],
-  "categories": {
-    "cover": {
-      "label": "커버",
-      "color": "#FFFFFF"
-    },
-    "problem": {
-      "label": "문제",
-      "color": "#FF4D6A"
-    },
-    "solution": {
-      "label": "솔루션",
-      "color": "#7EDCE6"
-    },
-    "validation": {
-      "label": "검증",
-      "color": "#7AE85A"
-    },
-    "bm": {
-      "label": "BM",
-      "color": "#F7E150"
-    },
-    "competition": {
-      "label": "경쟁사",
-      "color": "#FF8C42"
-    },
-    "market": {
-      "label": "시장분석",
-      "color": "#90E0EF"
-    },
-    "team": {
-      "label": "팀",
-      "color": "#E0E0E0"
-    },
-    "regional-ulsan": {
-      "label": "지역(울산)",
-      "color": "#7EDCE6"
-    },
-    "regional-daejeon": {
-      "label": "지역(대전)",
-      "color": "#A5D6A7"
-    },
-    "regional-capital": {
-      "label": "지역(수도권)",
-      "color": "#CE93D8"
-    }
+  "tags": {
+    "IR": { "label": "IR", "color": "#7EDCE6" },
+    "GOV": { "label": "GOV", "color": "#F7E150" }
   }
 }

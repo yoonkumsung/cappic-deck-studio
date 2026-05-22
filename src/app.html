@@ -57,8 +57,8 @@
     /* ── Filters ── */
     .filters { display:flex; flex-wrap:wrap; gap:3px; margin-bottom:8px; padding:4px 0; }
     .filter-btn {
-      padding:3px 8px; border-radius:12px; border:1px solid rgba(255,255,255,0.06);
-      background:transparent; color:#888; font-size:10px; font-weight:600;
+      padding:4px 10px; border-radius:12px; border:1px solid rgba(255,255,255,0.06);
+      background:transparent; color:#888; font-size:11px; font-weight:600;
       cursor:pointer; font-family:inherit;
     }
     .filter-btn:hover { border-color:rgba(255,255,255,0.15); color:#ccc; }
@@ -72,13 +72,14 @@
     }
     .slide-card:hover { background:rgba(255,255,255,0.03); }
     .slide-card.active { border-color:var(--secondary); background:rgba(126,220,230,0.04); }
-    .card-num { font-size:11px; font-weight:800; color:#444; min-width:20px; font-variant-numeric:tabular-nums; }
+    .card-num { font-size:12px; font-weight:800; color:#444; min-width:20px; font-variant-numeric:tabular-nums; }
     .slide-card.active .card-num { color:var(--secondary); }
     .card-info { flex:1; min-width:0; }
-    .card-title { font-size:12px; font-weight:700; color:#E0E0E0; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
-    .card-cat {
+    .card-title { font-size:13px; font-weight:700; color:#E0E0E0; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+    .card-tags { display:flex; gap:3px; flex-shrink:0; }
+    .card-tag {
       font-size:9px; font-weight:700; padding:1px 5px; border-radius:3px;
-      background:rgba(255,255,255,0.06); color:#888; flex-shrink:0;
+      background:rgba(255,255,255,0.06); flex-shrink:0;
     }
 
     /* ── Preview Panel ── */
@@ -537,10 +538,10 @@
     //  FILTERS & SLIDE LIST
     // ══════════════════════════════════════
     function renderFilters() {
-      const cats = slidesData.categories;
+      const tags = slidesData.tags;
       let html = `<button class="filter-btn active" onclick="setFilter('all',this)">전체</button>`;
-      Object.entries(cats).forEach(([key, cat]) => {
-        html += `<button class="filter-btn" onclick="setFilter('${key}',this)">${cat.label}</button>`;
+      Object.entries(tags).forEach(([key, tag]) => {
+        html += `<button class="filter-btn" onclick="setFilter('${key}',this)">${tag.label}</button>`;
       });
       document.getElementById('filters').innerHTML = html;
     }
@@ -556,7 +557,7 @@
       if (currentFilter === 'all') {
         filteredSlides = [...slidesData.slides];
       } else {
-        filteredSlides = slidesData.slides.filter(s => s.category === currentFilter);
+        filteredSlides = slidesData.slides.filter(s => s.tags && s.tags.includes(currentFilter));
       }
       renderSlideList();
       if (filteredSlides.length > 0) {
@@ -566,19 +567,23 @@
     }
 
     function renderSlideList() {
-      const cats = slidesData.categories;
+      const tags = slidesData.tags;
       let html = '';
       filteredSlides.forEach((s, i) => {
         const isActive = i === currentSlideIndex;
         const allIdx = slidesData.slides.indexOf(s) + 1;
-        const catColor = cats[s.category]?.color || '#888';
+        const tagHtml = (s.tags || []).map(t => {
+          const tag = tags[t];
+          if (!tag) return '';
+          return `<span class="card-tag" style="color:${esc(tag.color)};border:1px solid ${esc(tag.color)}33">${esc(tag.label)}</span>`;
+        }).join('');
         html += `
           <div class="slide-card ${isActive ? 'active' : ''}" data-index="${i}" onclick="selectSlide(${i})">
             <span class="card-num">${String(allIdx).padStart(2,'0')}</span>
             <div class="card-info">
               <div class="card-title">${esc(s.title)}</div>
             </div>
-            <span class="card-cat" style="color:${esc(catColor)};border:1px solid ${esc(catColor)}33">${esc(cats[s.category]?.label || s.category)}</span>
+            <div class="card-tags">${tagHtml}</div>
           </div>`;
       });
       document.getElementById('slideList').innerHTML = html;
