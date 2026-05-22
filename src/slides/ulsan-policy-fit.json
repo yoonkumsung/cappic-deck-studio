@@ -1,6 +1,6 @@
 {
   "fields": [
-    { "key": "title", "label": "타이틀", "type": "text", "value": "Policy Fit — Ulsan" },
+    { "key": "title", "label": "타이틀", "type": "text", "value": "Policy Fit - Ulsan" },
     { "key": "card1Title", "label": "정책 카드 제목", "type": "text", "value": "울산시 정책 과제와 직결" },
     { "key": "card2Title", "label": "산업 카드 제목", "type": "text", "value": "지역 특화 산업 연계" },
     { "key": "card3Title", "label": "고용 카드 제목", "type": "text", "value": "울산 지역 고용 창출" },
