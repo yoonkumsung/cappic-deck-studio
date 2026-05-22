@@ -22,11 +22,9 @@
   <script>
     // Block direct access (only allow from iframe or localhost)
     if (window.top === window.self && !location.hostname.match(/^(localhost|127\.0\.0\.1)$/)) {
-      if (sessionStorage.getItem('deck_unlocked') !== 'true') {
-        document.body.innerHTML = '';
-        window.location.href = 'app.html';
-        throw new Error('unauthorized');
-      }
+      document.body.innerHTML = '';
+      window.location.href = 'app.html';
+      throw new Error('unauthorized');
     }
 
     const params = new URLSearchParams(window.location.search);

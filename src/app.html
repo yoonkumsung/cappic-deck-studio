@@ -198,6 +198,20 @@
       75% { transform:translateX(6px); }
     }
     .lock-error { font-size:12px; color:#FF4D6A; font-weight:600; height:16px; }
+
+    /* ── Loading Spinner ── */
+    .lock-spinner {
+      display:none; width:32px; height:32px;
+      border:3px solid rgba(255,255,255,0.1);
+      border-top-color:var(--secondary);
+      border-radius:50%;
+      animation:spin 0.8s linear infinite;
+    }
+    .lock-overlay.loading .lock-input,
+    .lock-overlay.loading .lock-error,
+    .lock-overlay.loading .lock-sub { display:none; }
+    .lock-overlay.loading .lock-spinner { display:block; }
+    @keyframes spin { to { transform:rotate(360deg); } }
   </style>
 </head>
 <body>
@@ -205,8 +219,10 @@
   <!-- ══ Lock Screen ══ -->
   <div class="lock-overlay" id="lockScreen">
     <div class="lock-title">CAPP!C Deck Studio</div>
+    <div class="lock-sub">비밀번호를 입력하세요</div>
     <input class="lock-input" id="lockInput" type="password" maxlength="4" placeholder="····" autofocus>
     <div class="lock-error" id="lockError"></div>
+    <div class="lock-spinner"></div>
   </div>
 
   <!-- ══ Header ══ -->
@@ -333,6 +349,16 @@
 
       // Window resize → rescale preview
       window.addEventListener('resize', rescalePreview);
+
+      // Wait for first slide preview to load
+      await new Promise(resolve => {
+        const iframe = document.getElementById('previewIframe');
+        if (!iframe.src || iframe.src === 'about:blank') return resolve();
+        const onLoad = () => { iframe.removeEventListener('load', onLoad); resolve(); };
+        iframe.addEventListener('load', onLoad);
+        // Timeout fallback
+        setTimeout(resolve, 3000);
+      });
     }
 
     // ══════════════════════════════════════
@@ -791,16 +817,16 @@
     }
 
     function checkUnlocked() {
-      return sessionStorage.getItem('deck_unlocked') === 'true';
+      return false; // 항상 비밀번호 입력 요구
     }
 
     async function tryUnlock(pin) {
       const h = await hashPass(pin);
       // SHA-256 of "5450"
       if (h === 'c54bea44135df61e37bdca547a01c223ff648ddf790677cafe9d30a484cac7c8') {
-        sessionStorage.setItem('deck_unlocked', 'true');
+        document.getElementById('lockScreen').classList.add('loading');
+        await init();
         document.getElementById('lockScreen').classList.add('hidden');
-        init();
       } else {
         const input = document.getElementById('lockInput');
         input.classList.add('error');
@@ -823,8 +849,10 @@
     //  BOOT
     // ══════════════════════════════════════
     if (checkUnlocked()) {
-      document.getElementById('lockScreen').classList.add('hidden');
-      init();
+      document.getElementById('lockScreen').classList.add('loading');
+      init().then(() => {
+        document.getElementById('lockScreen').classList.add('hidden');
+      });
     }
   </script>
 </body>
