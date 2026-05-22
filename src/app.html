@@ -271,6 +271,13 @@
 
     const API = 'http://localhost:3001';
 
+    // ── HTML escape helper ──
+    function esc(str) {
+      const d = document.createElement('div');
+      d.textContent = str;
+      return d.innerHTML;
+    }
+
     // ══════════════════════════════════════
     //  INIT
     // ══════════════════════════════════════
@@ -516,9 +523,9 @@
           <div class="slide-card ${isActive ? 'active' : ''}" data-index="${i}" onclick="selectSlide(${i})">
             <span class="card-num">${String(allIdx).padStart(2,'0')}</span>
             <div class="card-info">
-              <div class="card-title">${s.title}</div>
+              <div class="card-title">${esc(s.title)}</div>
             </div>
-            <span class="card-cat" style="color:${catColor};border:1px solid ${catColor}33">${cats[s.category]?.label || s.category}</span>
+            <span class="card-cat" style="color:${esc(catColor)};border:1px solid ${esc(catColor)}33">${esc(cats[s.category]?.label || s.category)}</span>
           </div>`;
       });
       document.getElementById('slideList').innerHTML = html;
@@ -716,14 +723,17 @@
         const date = new Date(v.updatedAt || v.createdAt);
         const dateStr = `${date.getFullYear()}.${String(date.getMonth()+1).padStart(2,'0')}.${String(date.getDate()).padStart(2,'0')}`;
         const slideCount = v.config?.selected?.length || 0;
+        const safeId = esc(v.id);
+        const safeRatio = esc(v.config?.ratio || '16:9');
+        const safeTheme = esc(v.config?.theme || 'dark');
         html += `
-          <li class="version-item ${isCurrent ? 'current' : ''}" onclick="loadVersion('${v.id}')">
+          <li class="version-item ${isCurrent ? 'current' : ''}" onclick="loadVersion('${safeId}')">
             <div>
-              <div class="version-item-name">${v.id}</div>
-              <div class="version-item-meta">${dateStr} · ${slideCount}장 · ${v.config?.ratio || '16:9'} · ${v.config?.theme || 'dark'}</div>
+              <div class="version-item-name">${safeId}</div>
+              <div class="version-item-meta">${esc(dateStr)} · ${slideCount}장 · ${safeRatio} · ${safeTheme}</div>
             </div>
             <div class="version-item-actions" onclick="event.stopPropagation()">
-              <button class="version-item-btn delete" onclick="deleteVersion('${v.id}')">삭제</button>
+              <button class="version-item-btn delete" onclick="deleteVersion('${safeId}')">삭제</button>
             </div>
           </li>`;
       });

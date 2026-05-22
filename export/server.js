@@ -205,37 +205,44 @@ const server = http.createServer(async (req, res) => {
       return;
     }
 
-    const viewport = VIEWPORTS[ratio] || VIEWPORTS['16:9'];
+    // Validate parameters
+    const VALID_THEMES = ['dark', 'light'];
+    const safeTheme = VALID_THEMES.includes(theme) ? theme : 'dark';
+    const safeRatio = VIEWPORTS[ratio] ? ratio : '16:9';
+    const viewport = VIEWPORTS[safeRatio];
+    const safeSlideId = slideId.replace(/[^a-zA-Z0-9_-]/g, '');
 
+    let browser = null;
     try {
-      const browser = await chromium.launch();
+      browser = await chromium.launch();
       const page = await browser.newPage({
         viewport,
         deviceScaleFactor: 4
       });
 
-      const previewUrl = `http://127.0.0.1:3000/preview.html?slide=${slideId}&theme=${theme}&ratio=${encodeURIComponent(ratio)}`;
-      await page.goto(previewUrl, { waitUntil: 'networkidle' });
+      const previewUrl = `http://127.0.0.1:3000/preview.html?slide=${safeSlideId}&theme=${safeTheme}&ratio=${encodeURIComponent(safeRatio)}`;
+      await page.goto(previewUrl, { waitUntil: 'networkidle', timeout: 15000 });
       await page.waitForTimeout(2000);
 
-      const ratioTag = ratio.replace(':', 'x');
-      const exportSubDir = path.join(outputDir, `${ratioTag}_${theme}`);
+      const ratioTag = safeRatio.replace(':', 'x');
+      const exportSubDir = path.join(outputDir, `${ratioTag}_${safeTheme}`);
       if (!fs.existsSync(exportSubDir)) fs.mkdirSync(exportSubDir, { recursive: true });
 
-      const outputPath = path.join(exportSubDir, `${slideId}.png`);
+      const outputPath = path.join(exportSubDir, `${safeSlideId}.png`);
       await page.screenshot({ path: outputPath, type: 'png' });
-      await browser.close();
 
       const file = fs.readFileSync(outputPath);
       res.writeHead(200, {
         'Content-Type': 'image/png',
-        'Content-Disposition': `attachment; filename="${slideId}_${ratioTag}_${theme}.png"`,
+        'Content-Disposition': `attachment; filename="${safeSlideId}_${ratioTag}_${safeTheme}.png"`,
         'Content-Length': file.length
       });
       res.end(file);
     } catch (e) {
       res.writeHead(500);
       res.end('Export failed: ' + e.message);
+    } finally {
+      if (browser) await browser.close().catch(() => {});
     }
     return;
   }
@@ -252,7 +259,6 @@ const server = http.createServer(async (req, res) => {
       return;
     }
 
-    const viewport = VIEWPORTS[ratio] || VIEWPORTS['16:9'];
     const safeId = sanitizeVersionId(versionId);
     const vData = readJSON(path.join(versionsDir, `${safeId}.json`));
 
@@ -262,34 +268,45 @@ const server = http.createServer(async (req, res) => {
       return;
     }
 
+    // Validate parameters
+    const VALID_THEMES = ['dark', 'light'];
+    const safeTheme = VALID_THEMES.includes(theme) ? theme : 'dark';
+    const safeRatio = VIEWPORTS[ratio] ? ratio : '16:9';
+    const viewport = VIEWPORTS[safeRatio];
+
+    let browser = null;
     try {
-      const browser = await chromium.launch();
-      const ratioTag = ratio.replace(':', 'x');
-      const exportSubDir = path.join(outputDir, `${safeId}_${ratioTag}_${theme}`);
+      browser = await chromium.launch();
+      const ratioTag = safeRatio.replace(':', 'x');
+      const exportSubDir = path.join(outputDir, `${safeId}_${ratioTag}_${safeTheme}`);
       if (!fs.existsSync(exportSubDir)) fs.mkdirSync(exportSubDir, { recursive: true });
 
       const results = [];
       for (let i = 0; i < vData.config.selected.length; i++) {
-        const slideId = vData.config.selected[i];
+        const slideId = vData.config.selected[i].replace(/[^a-zA-Z0-9_-]/g, '');
         const page = await browser.newPage({ viewport, deviceScaleFactor: 4 });
 
-        const previewUrl = `http://127.0.0.1:3000/preview.html?slide=${slideId}&theme=${theme}&ratio=${encodeURIComponent(ratio)}`;
-        await page.goto(previewUrl, { waitUntil: 'networkidle' });
-        await page.waitForTimeout(2000);
+        try {
+          const previewUrl = `http://127.0.0.1:3000/preview.html?slide=${slideId}&theme=${safeTheme}&ratio=${encodeURIComponent(safeRatio)}`;
+          await page.goto(previewUrl, { waitUntil: 'networkidle', timeout: 15000 });
+          await page.waitForTimeout(2000);
 
-        const num = String(i + 1).padStart(2, '0');
-        const outputPath = path.join(exportSubDir, `${num}_${slideId}.png`);
-        await page.screenshot({ path: outputPath, type: 'png' });
-        await page.close();
-        results.push({ slideId, file: `${num}_${slideId}.png` });
+          const num = String(i + 1).padStart(2, '0');
+          const outputPath = path.join(exportSubDir, `${num}_${slideId}.png`);
+          await page.screenshot({ path: outputPath, type: 'png' });
+          results.push({ slideId, file: `${num}_${slideId}.png` });
+        } finally {
+          await page.close().catch(() => {});
+        }
       }
 
-      await browser.close();
       res.writeHead(200, { 'Content-Type': 'application/json' });
       res.end(JSON.stringify({ ok: true, count: results.length, files: results, dir: exportSubDir }));
     } catch (e) {
       res.writeHead(500);
       res.end('Batch export failed: ' + e.message);
+    } finally {
+      if (browser) await browser.close().catch(() => {});
     }
     return;
   }
