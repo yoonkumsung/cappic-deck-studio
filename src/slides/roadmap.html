@@ -1,0 +1,224 @@
+<div class="slide">
+  <div class="slide-title">{{title}}</div>
+
+  <div class="slide-content" style="display:grid;grid-template-rows:auto auto;gap:var(--sp-md);">
+
+    <!-- Row 1: Gantt Chart -->
+    <div class="card" style="padding:var(--sp-sm);overflow:hidden;">
+      <div style="position:relative;z-index:1;">
+        <!-- Subtitle -->
+        <div style="font-size:var(--fs-caption);font-weight:var(--fw-body);color:var(--text-tertiary);margin-bottom:var(--sp-sm);">{{subtitle}}</div>
+
+        <!-- Gantt Grid -->
+        <div style="display:grid;grid-template-columns:200px repeat(12,1fr);gap:0;width:100%;">
+
+          <!-- Header Row -->
+          <div style="background:var(--secondary-15);padding:var(--sp-xs);font-size:var(--fs-source);font-weight:var(--fw-heading);color:var(--text-tertiary);border-bottom:1px solid var(--secondary-10);height:44px;display:flex;align-items:center;"></div>
+          <div style="background:var(--secondary-15);padding:var(--sp-xs);font-size:var(--fs-source);font-weight:var(--fw-heading);color:var(--text-secondary);text-align:center;border-bottom:1px solid var(--secondary-10);height:44px;display:flex;align-items:center;justify-content:center;">1</div>
+          <div style="background:var(--secondary-15);padding:var(--sp-xs);font-size:var(--fs-source);font-weight:var(--fw-heading);color:var(--text-secondary);text-align:center;border-bottom:1px solid var(--secondary-10);height:44px;display:flex;align-items:center;justify-content:center;">2</div>
+          <div style="background:var(--secondary-15);padding:var(--sp-xs);font-size:var(--fs-source);font-weight:var(--fw-heading);color:var(--text-secondary);text-align:center;border-bottom:1px solid var(--secondary-10);height:44px;display:flex;align-items:center;justify-content:center;">3</div>
+          <div style="background:var(--secondary-15);padding:var(--sp-xs);font-size:var(--fs-source);font-weight:var(--fw-heading);color:var(--text-secondary);text-align:center;border-bottom:1px solid var(--secondary-10);height:44px;display:flex;align-items:center;justify-content:center;">4</div>
+          <div style="background:var(--secondary-15);padding:var(--sp-xs);font-size:var(--fs-source);font-weight:var(--fw-heading);color:var(--text-secondary);text-align:center;border-bottom:1px solid var(--secondary-10);height:44px;display:flex;align-items:center;justify-content:center;">5</div>
+          <div style="background:var(--secondary-15);padding:var(--sp-xs);font-size:var(--fs-source);font-weight:var(--fw-heading);color:var(--text-secondary);text-align:center;border-bottom:1px solid var(--secondary-10);height:44px;display:flex;align-items:center;justify-content:center;">6</div>
+          <div style="background:var(--secondary-15);padding:var(--sp-xs);font-size:var(--fs-source);font-weight:var(--fw-heading);color:var(--text-secondary);text-align:center;border-bottom:1px solid var(--secondary-10);height:44px;display:flex;align-items:center;justify-content:center;">7</div>
+          <div style="background:var(--secondary-15);padding:var(--sp-xs);font-size:var(--fs-source);font-weight:var(--fw-heading);color:var(--text-secondary);text-align:center;border-bottom:1px solid var(--secondary-10);height:44px;display:flex;align-items:center;justify-content:center;">8</div>
+          <div style="background:var(--secondary-15);padding:var(--sp-xs);font-size:var(--fs-source);font-weight:var(--fw-heading);color:var(--text-secondary);text-align:center;border-bottom:1px solid var(--secondary-10);height:44px;display:flex;align-items:center;justify-content:center;">9</div>
+          <div style="background:var(--secondary-15);padding:var(--sp-xs);font-size:var(--fs-source);font-weight:var(--fw-heading);color:var(--text-secondary);text-align:center;border-bottom:1px solid var(--secondary-10);height:44px;display:flex;align-items:center;justify-content:center;">10</div>
+          <div style="background:var(--secondary-15);padding:var(--sp-xs);font-size:var(--fs-source);font-weight:var(--fw-heading);color:var(--text-secondary);text-align:center;border-bottom:1px solid var(--secondary-10);height:44px;display:flex;align-items:center;justify-content:center;">11</div>
+          <div style="background:var(--secondary-15);padding:var(--sp-xs);font-size:var(--fs-source);font-weight:var(--fw-heading);color:var(--text-secondary);text-align:center;border-bottom:1px solid var(--secondary-10);height:44px;display:flex;align-items:center;justify-content:center;">12</div>
+
+          <!-- Task 1: 1-3월 -->
+          <div style="padding:var(--sp-xs);font-size:var(--fs-caption);font-weight:var(--fw-heading);color:var(--text-secondary);display:flex;align-items:center;border-bottom:1px solid var(--secondary-05);height:44px;">{{task1Name}}</div>
+          <div style="position:relative;border-bottom:1px solid var(--secondary-05);grid-column:2/5;height:44px;"><div style="position:absolute;top:50%;transform:translateY(-50%);height:16px;left:2px;right:2px;background:var(--secondary);border-radius:4px;"></div></div>
+          <div style="border-bottom:1px solid var(--secondary-05);height:44px;"></div>
+          <div style="border-bottom:1px solid var(--secondary-05);height:44px;"></div>
+          <div style="border-bottom:1px solid var(--secondary-05);height:44px;"></div>
+          <div style="border-bottom:1px solid var(--secondary-05);height:44px;"></div>
+          <div style="border-bottom:1px solid var(--secondary-05);height:44px;"></div>
+          <div style="border-bottom:1px solid var(--secondary-05);height:44px;"></div>
+          <div style="border-bottom:1px solid var(--secondary-05);height:44px;"></div>
+          <div style="border-bottom:1px solid var(--secondary-05);height:44px;"></div>
+
+          <!-- Task 2: 5월 -->
+          <div style="padding:var(--sp-xs);font-size:var(--fs-caption);font-weight:var(--fw-heading);color:var(--text-secondary);display:flex;align-items:center;border-bottom:1px solid var(--secondary-05);height:44px;">{{task2Name}}</div>
+          <div style="border-bottom:1px solid var(--secondary-05);height:44px;"></div>
+          <div style="border-bottom:1px solid var(--secondary-05);height:44px;"></div>
+          <div style="border-bottom:1px solid var(--secondary-05);height:44px;"></div>
+          <div style="border-bottom:1px solid var(--secondary-05);height:44px;"></div>
+          <div style="position:relative;border-bottom:1px solid var(--secondary-05);height:44px;"><div style="position:absolute;top:50%;transform:translateY(-50%);height:16px;left:2px;right:2px;background:var(--secondary);border-radius:4px;"></div></div>
+          <div style="border-bottom:1px solid var(--secondary-05);height:44px;"></div>
+          <div style="border-bottom:1px solid var(--secondary-05);height:44px;"></div>
+          <div style="border-bottom:1px solid var(--secondary-05);height:44px;"></div>
+          <div style="border-bottom:1px solid var(--secondary-05);height:44px;"></div>
+          <div style="border-bottom:1px solid var(--secondary-05);height:44px;"></div>
+          <div style="border-bottom:1px solid var(--secondary-05);height:44px;"></div>
+          <div style="border-bottom:1px solid var(--secondary-05);height:44px;"></div>
+
+          <!-- Task 3: 1-12월 -->
+          <div style="padding:var(--sp-xs);font-size:var(--fs-caption);font-weight:var(--fw-heading);color:var(--text-secondary);display:flex;align-items:center;border-bottom:1px solid var(--secondary-05);height:44px;">{{task3Name}}</div>
+          <div style="position:relative;border-bottom:1px solid var(--secondary-05);grid-column:2/14;height:44px;"><div style="position:absolute;top:50%;transform:translateY(-50%);height:16px;left:2px;right:2px;background:var(--secondary-50);border-radius:4px;"></div></div>
+
+          <!-- Task 4: 3-8월 -->
+          <div style="padding:var(--sp-xs);font-size:var(--fs-caption);font-weight:var(--fw-heading);color:var(--text-secondary);display:flex;align-items:center;border-bottom:1px solid var(--secondary-05);height:44px;">{{task4Name}}</div>
+          <div style="border-bottom:1px solid var(--secondary-05);height:44px;"></div>
+          <div style="border-bottom:1px solid var(--secondary-05);height:44px;"></div>
+          <div style="position:relative;border-bottom:1px solid var(--secondary-05);grid-column:4/10;height:44px;"><div style="position:absolute;top:50%;transform:translateY(-50%);height:16px;left:2px;right:2px;background:var(--secondary);border-radius:4px;"></div></div>
+          <div style="border-bottom:1px solid var(--secondary-05);height:44px;"></div>
+          <div style="border-bottom:1px solid var(--secondary-05);height:44px;"></div>
+          <div style="border-bottom:1px solid var(--secondary-05);height:44px;"></div>
+          <div style="border-bottom:1px solid var(--secondary-05);height:44px;"></div>
+
+          <!-- Task 5: 5-6월 -->
+          <div style="padding:var(--sp-xs);font-size:var(--fs-caption);font-weight:var(--fw-heading);color:var(--text-secondary);display:flex;align-items:center;border-bottom:1px solid var(--secondary-05);height:44px;">{{task5Name}}</div>
+          <div style="border-bottom:1px solid var(--secondary-05);height:44px;"></div>
+          <div style="border-bottom:1px solid var(--secondary-05);height:44px;"></div>
+          <div style="border-bottom:1px solid var(--secondary-05);height:44px;"></div>
+          <div style="border-bottom:1px solid var(--secondary-05);height:44px;"></div>
+          <div style="position:relative;border-bottom:1px solid var(--secondary-05);grid-column:6/8;height:44px;"><div style="position:absolute;top:50%;transform:translateY(-50%);height:16px;left:2px;right:2px;background:var(--secondary);border-radius:4px;"></div></div>
+          <div style="border-bottom:1px solid var(--secondary-05);height:44px;"></div>
+          <div style="border-bottom:1px solid var(--secondary-05);height:44px;"></div>
+          <div style="border-bottom:1px solid var(--secondary-05);height:44px;"></div>
+          <div style="border-bottom:1px solid var(--secondary-05);height:44px;"></div>
+          <div style="border-bottom:1px solid var(--secondary-05);height:44px;"></div>
+
+          <!-- Task 6: 7월 -->
+          <div style="padding:var(--sp-xs);font-size:var(--fs-caption);font-weight:var(--fw-heading);color:var(--text-secondary);display:flex;align-items:center;border-bottom:1px solid var(--secondary-05);height:44px;">{{task6Name}}</div>
+          <div style="border-bottom:1px solid var(--secondary-05);height:44px;"></div>
+          <div style="border-bottom:1px solid var(--secondary-05);height:44px;"></div>
+          <div style="border-bottom:1px solid var(--secondary-05);height:44px;"></div>
+          <div style="border-bottom:1px solid var(--secondary-05);height:44px;"></div>
+          <div style="border-bottom:1px solid var(--secondary-05);height:44px;"></div>
+          <div style="border-bottom:1px solid var(--secondary-05);height:44px;"></div>
+          <div style="position:relative;border-bottom:1px solid var(--secondary-05);height:44px;"><div style="position:absolute;top:50%;transform:translateY(-50%);height:16px;left:2px;right:2px;background:var(--secondary);border-radius:4px;"></div></div>
+          <div style="border-bottom:1px solid var(--secondary-05);height:44px;"></div>
+          <div style="border-bottom:1px solid var(--secondary-05);height:44px;"></div>
+          <div style="border-bottom:1px solid var(--secondary-05);height:44px;"></div>
+          <div style="border-bottom:1px solid var(--secondary-05);height:44px;"></div>
+          <div style="border-bottom:1px solid var(--secondary-05);height:44px;"></div>
+
+          <!-- Task 7: 8-9월 -->
+          <div style="padding:var(--sp-xs);font-size:var(--fs-caption);font-weight:var(--fw-heading);color:var(--text-secondary);display:flex;align-items:center;border-bottom:1px solid var(--secondary-05);height:44px;">{{task7Name}}</div>
+          <div style="border-bottom:1px solid var(--secondary-05);height:44px;"></div>
+          <div style="border-bottom:1px solid var(--secondary-05);height:44px;"></div>
+          <div style="border-bottom:1px solid var(--secondary-05);height:44px;"></div>
+          <div style="border-bottom:1px solid var(--secondary-05);height:44px;"></div>
+          <div style="border-bottom:1px solid var(--secondary-05);height:44px;"></div>
+          <div style="border-bottom:1px solid var(--secondary-05);height:44px;"></div>
+          <div style="border-bottom:1px solid var(--secondary-05);height:44px;"></div>
+          <div style="position:relative;border-bottom:1px solid var(--secondary-05);grid-column:9/11;height:44px;"><div style="position:absolute;top:50%;transform:translateY(-50%);height:16px;left:2px;right:2px;background:var(--secondary);border-radius:4px;"></div></div>
+          <div style="border-bottom:1px solid var(--secondary-05);height:44px;"></div>
+          <div style="border-bottom:1px solid var(--secondary-05);height:44px;"></div>
+          <div style="border-bottom:1px solid var(--secondary-05);height:44px;"></div>
+
+          <!-- Task 8: 9-10월 -->
+          <div style="padding:var(--sp-xs);font-size:var(--fs-caption);font-weight:var(--fw-heading);color:var(--text-secondary);display:flex;align-items:center;border-bottom:1px solid var(--secondary-05);height:44px;">{{task8Name}}</div>
+          <div style="border-bottom:1px solid var(--secondary-05);height:44px;"></div>
+          <div style="border-bottom:1px solid var(--secondary-05);height:44px;"></div>
+          <div style="border-bottom:1px solid var(--secondary-05);height:44px;"></div>
+          <div style="border-bottom:1px solid var(--secondary-05);height:44px;"></div>
+          <div style="border-bottom:1px solid var(--secondary-05);height:44px;"></div>
+          <div style="border-bottom:1px solid var(--secondary-05);height:44px;"></div>
+          <div style="border-bottom:1px solid var(--secondary-05);height:44px;"></div>
+          <div style="border-bottom:1px solid var(--secondary-05);height:44px;"></div>
+          <div style="position:relative;border-bottom:1px solid var(--secondary-05);grid-column:10/12;height:44px;"><div style="position:absolute;top:50%;transform:translateY(-50%);height:16px;left:2px;right:2px;background:var(--secondary);border-radius:4px;"></div></div>
+          <div style="border-bottom:1px solid var(--secondary-05);height:44px;"></div>
+          <div style="border-bottom:1px solid var(--secondary-05);height:44px;"></div>
+
+          <!-- Task 9: 10-12월 -->
+          <div style="padding:var(--sp-xs);font-size:var(--fs-caption);font-weight:var(--fw-heading);color:var(--text-secondary);display:flex;align-items:center;height:44px;">{{task9Name}}</div>
+          <div style="height:44px;"></div>
+          <div style="height:44px;"></div>
+          <div style="height:44px;"></div>
+          <div style="height:44px;"></div>
+          <div style="height:44px;"></div>
+          <div style="height:44px;"></div>
+          <div style="height:44px;"></div>
+          <div style="height:44px;"></div>
+          <div style="height:44px;"></div>
+          <div style="position:relative;grid-column:11/14;height:44px;"><div style="position:absolute;top:50%;transform:translateY(-50%);height:16px;left:2px;right:2px;background:var(--secondary);border-radius:4px;"></div></div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 2: KPI + Risks -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-md);">
+
+      <!-- Left: KPI Table -->
+      <div class="card" style="padding:var(--sp-sm);">
+        <div style="position:relative;z-index:1;">
+          <div style="font-size:var(--fs-caption);font-weight:var(--fw-heading);color:var(--text-primary);margin-bottom:var(--sp-sm);">{{kpiTitle}}</div>
+
+          <div style="display:grid;grid-template-columns:auto 1fr 1fr 1fr;gap:0;width:100%;">
+            <!-- Header -->
+            <div style="padding:var(--sp-xs);font-size:var(--fs-caption);font-weight:var(--fw-heading);color:var(--text-tertiary);background:var(--secondary-15);border-bottom:1px solid var(--secondary-10);"></div>
+            <div style="padding:var(--sp-xs);font-size:var(--fs-caption);font-weight:var(--fw-heading);color:var(--secondary);text-align:center;background:var(--secondary-15);border-bottom:1px solid var(--secondary-10);">2026</div>
+            <div style="padding:var(--sp-xs);font-size:var(--fs-caption);font-weight:var(--fw-heading);color:var(--secondary);text-align:center;background:var(--secondary-15);border-bottom:1px solid var(--secondary-10);">2027</div>
+            <div style="padding:var(--sp-xs);font-size:var(--fs-caption);font-weight:var(--fw-heading);color:var(--secondary);text-align:center;background:var(--secondary-15);border-bottom:1px solid var(--secondary-10);">2028</div>
+
+            <!-- Row: employ -->
+            <div style="padding:var(--sp-xs);font-size:var(--fs-caption);font-weight:var(--fw-body);color:var(--text-tertiary);border-bottom:1px solid var(--secondary-05);">고용</div>
+            <div style="padding:var(--sp-xs);font-size:var(--fs-body);font-weight:var(--fw-heading);color:var(--text-primary);text-align:center;border-bottom:1px solid var(--secondary-05);">{{kpiEmploy26}}</div>
+            <div style="padding:var(--sp-xs);font-size:var(--fs-body);font-weight:var(--fw-heading);color:var(--text-primary);text-align:center;border-bottom:1px solid var(--secondary-05);">{{kpiEmploy27}}</div>
+            <div style="padding:var(--sp-xs);font-size:var(--fs-body);font-weight:var(--fw-heading);color:var(--text-primary);text-align:center;border-bottom:1px solid var(--secondary-05);">{{kpiEmploy28}}</div>
+
+            <!-- Row: revenue -->
+            <div style="padding:var(--sp-xs);font-size:var(--fs-caption);font-weight:var(--fw-body);color:var(--text-tertiary);border-bottom:1px solid var(--secondary-05);">총매출</div>
+            <div style="padding:var(--sp-xs);font-size:var(--fs-body);font-weight:var(--fw-heading);color:var(--secondary);text-align:center;border-bottom:1px solid var(--secondary-05);">{{kpiRevenue26}}</div>
+            <div style="padding:var(--sp-xs);font-size:var(--fs-body);font-weight:var(--fw-heading);color:var(--secondary);text-align:center;border-bottom:1px solid var(--secondary-05);">{{kpiRevenue27}}</div>
+            <div style="padding:var(--sp-xs);font-size:var(--fs-body);font-weight:var(--fw-heading);color:var(--secondary);text-align:center;border-bottom:1px solid var(--secondary-05);">{{kpiRevenue28}}</div>
+
+            <!-- Row: export -->
+            <div style="padding:var(--sp-xs);font-size:var(--fs-caption);font-weight:var(--fw-body);color:var(--text-tertiary);border-bottom:1px solid var(--secondary-05);">수출</div>
+            <div style="padding:var(--sp-xs);font-size:var(--fs-body);font-weight:var(--fw-heading);color:var(--text-primary);text-align:center;border-bottom:1px solid var(--secondary-05);">{{kpiExport26}}</div>
+            <div style="padding:var(--sp-xs);font-size:var(--fs-body);font-weight:var(--fw-heading);color:var(--text-primary);text-align:center;border-bottom:1px solid var(--secondary-05);">{{kpiExport27}}</div>
+            <div style="padding:var(--sp-xs);font-size:var(--fs-body);font-weight:var(--fw-heading);color:var(--text-primary);text-align:center;border-bottom:1px solid var(--secondary-05);">{{kpiExport28}}</div>
+
+            <!-- Row: investment -->
+            <div style="padding:var(--sp-xs);font-size:var(--fs-caption);font-weight:var(--fw-body);color:var(--text-tertiary);">투자</div>
+            <div style="padding:var(--sp-xs);font-size:var(--fs-body);font-weight:var(--fw-heading);color:var(--text-primary);text-align:center;">{{kpiInvest26}}</div>
+            <div style="padding:var(--sp-xs);font-size:var(--fs-body);font-weight:var(--fw-heading);color:var(--text-primary);text-align:center;">{{kpiInvest27}}</div>
+            <div style="padding:var(--sp-xs);font-size:var(--fs-body);font-weight:var(--fw-heading);color:var(--text-primary);text-align:center;">{{kpiInvest28}}</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Risks -->
+      <div class="card" style="padding:var(--sp-sm);">
+        <div style="position:relative;z-index:1;">
+          <div style="font-size:var(--fs-caption);font-weight:var(--fw-heading);color:var(--text-primary);margin-bottom:var(--sp-sm);">{{riskTitle}}</div>
+
+          <div style="display:flex;flex-direction:column;gap:var(--sp-xs);">
+            <!-- Risk 1 -->
+            <div style="display:flex;align-items:center;gap:var(--sp-sm);">
+              <span style="font-size:var(--fs-source);font-weight:var(--fw-heading);color:var(--main-black);background:var(--secondary);padding:2px var(--sp-xs);border-radius:4px;white-space:nowrap;">{{risk1Tag}}</span>
+              <span style="font-size:var(--fs-caption);color:var(--text-secondary);">{{risk1Desc}}</span>
+            </div>
+            <!-- Risk 2 -->
+            <div style="display:flex;align-items:center;gap:var(--sp-sm);">
+              <span style="font-size:var(--fs-source);font-weight:var(--fw-heading);color:var(--main-black);background:var(--secondary);padding:2px var(--sp-xs);border-radius:4px;white-space:nowrap;">{{risk2Tag}}</span>
+              <span style="font-size:var(--fs-caption);color:var(--text-secondary);">{{risk2Desc}}</span>
+            </div>
+            <!-- Risk 3 -->
+            <div style="display:flex;align-items:center;gap:var(--sp-sm);">
+              <span style="font-size:var(--fs-source);font-weight:var(--fw-heading);color:var(--main-black);background:var(--secondary);padding:2px var(--sp-xs);border-radius:4px;white-space:nowrap;">{{risk3Tag}}</span>
+              <span style="font-size:var(--fs-caption);color:var(--text-secondary);">{{risk3Desc}}</span>
+            </div>
+            <!-- Risk 4 -->
+            <div style="display:flex;align-items:center;gap:var(--sp-sm);">
+              <span style="font-size:var(--fs-source);font-weight:var(--fw-heading);color:var(--main-black);background:var(--secondary);padding:2px var(--sp-xs);border-radius:4px;white-space:nowrap;">{{risk4Tag}}</span>
+              <span style="font-size:var(--fs-caption);color:var(--text-secondary);">{{risk4Desc}}</span>
+            </div>
+            <!-- Risk 5 -->
+            <div style="display:flex;align-items:center;gap:var(--sp-sm);">
+              <span style="font-size:var(--fs-source);font-weight:var(--fw-heading);color:var(--main-black);background:var(--secondary);padding:2px var(--sp-xs);border-radius:4px;white-space:nowrap;">{{risk5Tag}}</span>
+              <span style="font-size:var(--fs-caption);color:var(--text-secondary);">{{risk5Desc}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>

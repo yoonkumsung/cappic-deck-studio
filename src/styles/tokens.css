@@ -21,9 +21,19 @@
   --secondary-dark:    #5BC4D0;
   --secondary-light:   rgba(126, 220, 230, 0.12);
 
-  --accent:            #F7E150;
-  --accent-dark:       #E5D040;
-  --accent-light:      rgba(247, 225, 80, 0.12);
+  /* accent = secondary alias (2색 체계: 시안 원톱) */
+  --accent:            var(--secondary);
+  --accent-dark:       var(--secondary-dark);
+  --accent-light:      var(--secondary-light);
+
+  /* ══ Opacity Variants (슬라이드에서 rgba 직접 사용 금지) ══ */
+
+  --secondary-05:      rgba(126,220,230,0.05);
+  --secondary-10:      rgba(126,220,230,0.10);
+  --secondary-15:      rgba(126,220,230,0.15);
+  --secondary-20:      rgba(126,220,230,0.20);
+  --secondary-50:      rgba(126,220,230,0.50);
+  --secondary-70:      rgba(126,220,230,0.70);
 
   --semantic-up:       #7AE85A;
   --semantic-down:     #FF4D6A;
@@ -83,7 +93,7 @@
   --card-default:      linear-gradient(165deg, #1A1A1A 0%, #111111 50%, #0D0D0D 100%);
   --card-elevated:     linear-gradient(165deg, #222222 0%, #1A1A1A 50%, #141414 100%);
   --card-secondary:    linear-gradient(165deg, rgba(126,220,230,0.12) 0%, rgba(126,220,230,0.06) 50%, rgba(126,220,230,0.03) 100%);
-  --card-accent:       linear-gradient(165deg, rgba(247,225,80,0.12) 0%, rgba(247,225,80,0.06) 50%, rgba(247,225,80,0.03) 100%);
+  --card-accent:       var(--card-secondary);  /* 2색 체계: accent = secondary */
   --card-radius:       16px;
   --card-shadow:       0 1px 2px rgba(0,0,0,0.4),
                        0 4px 12px rgba(0,0,0,0.3),

@@ -1,0 +1,141 @@
+<div class="slide">
+  <div class="slide-title">{{title}}</div>
+
+  <div class="slide-content" style="display:grid;grid-template-rows:1fr auto;gap:var(--sp-md);height:100%;">
+
+    <!-- Main area: flywheel + phases -->
+    <div style="display:grid;grid-template-columns:55fr 45fr;gap:var(--sp-lg);">
+
+      <!-- LEFT: Flywheel SVG -->
+      <div style="display:flex;align-items:center;justify-content:center;">
+        <svg viewBox="0 0 520 520" style="width:100%;max-width:520px;max-height:100%;">
+          <defs>
+            <marker id="fw-arrow" viewBox="0 0 10 8" refX="8" refY="4" markerWidth="8" markerHeight="6" orient="auto-start-reverse">
+              <path d="M0,0 L10,4 L0,8 Z" fill="var(--secondary)" />
+            </marker>
+            <linearGradient id="fw-center-grad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#1A1A1A" />
+              <stop offset="100%" stop-color="#111111" />
+            </linearGradient>
+          </defs>
+
+          <!-- Orbit circle -->
+          <circle cx="260" cy="260" r="190" fill="none" stroke="var(--secondary-15)" stroke-width="3" />
+
+          <!-- Curved arrow arcs between nodes (clockwise) -->
+          <!-- Node1(260,70) -> Node2(443,202) -->
+          <path d="M295,83 A190,190 0 0,1 428,180" fill="none" stroke="var(--secondary)" stroke-width="2.5" marker-end="url(#fw-arrow)" />
+          <!-- Node2(443,202) -> Node3(372,434) -->
+          <path d="M455,238 A190,190 0 0,1 392,418" fill="none" stroke="var(--secondary)" stroke-width="2.5" marker-end="url(#fw-arrow)" />
+          <!-- Node3(372,434) -> Node4(148,434) -->
+          <path d="M345,452 A190,190 0 0,1 175,452" fill="none" stroke="var(--secondary)" stroke-width="2.5" marker-end="url(#fw-arrow)" />
+          <!-- Node4(148,434) -> Node5(77,202) -->
+          <path d="M128,418 A190,190 0 0,1 65,238" fill="none" stroke="var(--secondary)" stroke-width="2.5" marker-end="url(#fw-arrow)" />
+          <!-- Node5(77,202) -> Node1(260,70) -->
+          <path d="M92,180 A190,190 0 0,1 225,83" fill="none" stroke="var(--secondary)" stroke-width="2.5" marker-end="url(#fw-arrow)" />
+
+          <!-- Center circle -->
+          <circle cx="260" cy="260" r="65" fill="url(#fw-center-grad)" stroke="var(--secondary-20)" stroke-width="2" />
+          <text x="260" y="250" text-anchor="middle" font-size="20" font-weight="700" fill="white">B2B2C</text>
+          <text x="260" y="274" text-anchor="middle" font-size="20" font-weight="700" fill="white">플라이휠</text>
+          <text x="260" y="292" text-anchor="middle" font-size="12" fill="#B0B0B0">{{fwCenterSub}}</text>
+
+          <!-- Node 1 (top, 270deg): cx=260, cy=70 -->
+          <circle cx="260" cy="70" r="52" fill="var(--secondary-10)" stroke="var(--secondary-50)" stroke-width="2" />
+          <text x="260" y="66" text-anchor="middle" font-size="15" font-weight="700" fill="white">{{fw1}}</text>
+          <text x="260" y="84" text-anchor="middle" font-size="12" fill="#B0B0B0">{{fw1Sub}}</text>
+
+          <!-- Node 2 (right, 342deg): cx=443, cy=202 -->
+          <circle cx="443" cy="202" r="52" fill="var(--secondary-10)" stroke="var(--secondary-50)" stroke-width="2" />
+          <text x="443" y="198" text-anchor="middle" font-size="15" font-weight="700" fill="white">{{fw2}}</text>
+          <text x="443" y="216" text-anchor="middle" font-size="12" fill="#B0B0B0">{{fw2Sub}}</text>
+
+          <!-- Node 3 (bottom-right, 54deg): cx=372, cy=434 -->
+          <circle cx="372" cy="434" r="52" fill="var(--secondary-10)" stroke="var(--secondary-50)" stroke-width="2" />
+          <text x="372" y="430" text-anchor="middle" font-size="15" font-weight="700" fill="white">{{fw3}}</text>
+          <text x="372" y="448" text-anchor="middle" font-size="12" fill="#B0B0B0">{{fw3Sub}}</text>
+
+          <!-- Node 4 (bottom-left, 126deg): cx=148, cy=434 -->
+          <circle cx="148" cy="434" r="52" fill="var(--secondary-10)" stroke="var(--secondary-50)" stroke-width="2" />
+          <text x="148" y="430" text-anchor="middle" font-size="15" font-weight="700" fill="white">{{fw4}}</text>
+          <text x="148" y="448" text-anchor="middle" font-size="12" fill="#B0B0B0">{{fw4Sub}}</text>
+
+          <!-- Node 5 (left, 198deg): cx=77, cy=202 -->
+          <circle cx="77" cy="202" r="52" fill="var(--secondary-10)" stroke="var(--secondary-50)" stroke-width="2" />
+          <text x="77" y="198" text-anchor="middle" font-size="15" font-weight="700" fill="white">{{fw5}}</text>
+          <text x="77" y="216" text-anchor="middle" font-size="12" fill="#B0B0B0">{{fw5Sub}}</text>
+        </svg>
+      </div>
+
+      <!-- RIGHT: 3 phase cards stacked -->
+      <div style="display:flex;flex-direction:column;gap:var(--sp-sm);">
+
+        <!-- Phase 1 (highlighted) -->
+        <div class="card card-secondary" style="flex:1;display:flex;flex-direction:column;justify-content:center;">
+          <div style="position:relative;z-index:1;">
+            <div style="display:flex;align-items:center;gap:var(--sp-sm);margin-bottom:var(--sp-xs);">
+              <span style="font-size:var(--fs-source);font-weight:var(--fw-heading);color:var(--secondary);background:var(--secondary-15);border-radius:4px;padding:2px var(--sp-xs);">{{phase1Badge}}</span>
+              <span style="font-size:var(--fs-heading);font-weight:var(--fw-heading);color:var(--text-primary);">{{phase1Title}}</span>
+              <span style="font-size:var(--fs-caption);color:var(--text-tertiary);margin-left:auto;">{{phase1Timeline}}</span>
+            </div>
+            <div style="font-size:var(--fs-body);color:var(--text-secondary);line-height:1.6;">{{phase1Desc}}</div>
+          </div>
+        </div>
+
+        <!-- Phase 2 -->
+        <div class="card" style="flex:1;display:flex;flex-direction:column;justify-content:center;">
+          <div style="position:relative;z-index:1;">
+            <div style="display:flex;align-items:center;gap:var(--sp-sm);margin-bottom:var(--sp-xs);">
+              <span style="font-size:var(--fs-source);font-weight:var(--fw-heading);color:var(--secondary);background:var(--secondary-15);border-radius:4px;padding:2px var(--sp-xs);">{{phase2Badge}}</span>
+              <span style="font-size:var(--fs-heading);font-weight:var(--fw-heading);color:var(--text-primary);">{{phase2Title}}</span>
+              <span style="font-size:var(--fs-caption);color:var(--text-tertiary);margin-left:auto;">{{phase2Timeline}}</span>
+            </div>
+            <div style="font-size:var(--fs-body);color:var(--text-secondary);line-height:1.6;">{{phase2Desc}}</div>
+          </div>
+        </div>
+
+        <!-- Phase 3 -->
+        <div class="card" style="flex:1;display:flex;flex-direction:column;justify-content:center;">
+          <div style="position:relative;z-index:1;">
+            <div style="display:flex;align-items:center;gap:var(--sp-sm);margin-bottom:var(--sp-xs);">
+              <span style="font-size:var(--fs-source);font-weight:var(--fw-heading);color:var(--secondary);background:var(--secondary-15);border-radius:4px;padding:2px var(--sp-xs);">{{phase3Badge}}</span>
+              <span style="font-size:var(--fs-heading);font-weight:var(--fw-heading);color:var(--text-primary);">{{phase3Title}}</span>
+              <span style="font-size:var(--fs-caption);color:var(--text-tertiary);margin-left:auto;">{{phase3Timeline}}</span>
+            </div>
+            <div style="font-size:var(--fs-body);color:var(--text-secondary);line-height:1.6;">{{phase3Desc}}</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Bottom: 4 metrics -->
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:var(--sp-sm);">
+      <div class="card" style="text-align:center;">
+        <div style="position:relative;z-index:1;">
+          <div style="font-size:var(--fs-caption);color:var(--text-tertiary);">{{met1Label}}</div>
+          <div style="font-size:var(--fs-heading);font-weight:var(--fw-heading);color:var(--secondary);margin-top:var(--sp-xs);">{{met1Value}}</div>
+        </div>
+      </div>
+      <div class="card" style="text-align:center;">
+        <div style="position:relative;z-index:1;">
+          <div style="font-size:var(--fs-caption);color:var(--text-tertiary);">{{met2Label}}</div>
+          <div style="font-size:var(--fs-heading);font-weight:var(--fw-heading);color:var(--secondary);margin-top:var(--sp-xs);">{{met2Value}}</div>
+        </div>
+      </div>
+      <div class="card card-secondary" style="text-align:center;">
+        <div style="position:relative;z-index:1;">
+          <div style="font-size:var(--fs-caption);color:var(--text-tertiary);">{{met3Label}}</div>
+          <div style="font-size:var(--fs-heading);font-weight:var(--fw-heading);color:var(--secondary);margin-top:var(--sp-xs);">{{met3Value}}</div>
+        </div>
+      </div>
+      <div class="card" style="text-align:center;">
+        <div style="position:relative;z-index:1;">
+          <div style="font-size:var(--fs-caption);color:var(--text-tertiary);">{{met4Label}}</div>
+          <div style="font-size:var(--fs-heading);font-weight:var(--fw-heading);color:var(--secondary);margin-top:var(--sp-xs);">{{met4Value}}</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

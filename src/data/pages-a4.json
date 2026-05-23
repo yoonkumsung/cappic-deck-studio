@@ -41,7 +41,7 @@
     "problem": { "label": "문제", "color": "#FF4D6A" },
     "solution": { "label": "솔루션", "color": "#7EDCE6" },
     "validation": { "label": "검증", "color": "#7AE85A" },
-    "bm": { "label": "BM", "color": "#F7E150" },
+    "bm": { "label": "BM", "color": "#7EDCE6" },
     "competition": { "label": "경쟁사", "color": "#FF8C42" },
     "market": { "label": "시장분석", "color": "#90E0EF" },
     "team": { "label": "팀", "color": "#E0E0E0" }

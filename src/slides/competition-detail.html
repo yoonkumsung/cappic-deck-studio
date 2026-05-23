@@ -4,108 +4,89 @@
   <div class="slide-content" style="display:flex;flex-direction:column;">
     <table style="width:100%;height:100%;border-collapse:collapse;table-layout:fixed;">
       <colgroup>
-        <col style="width:9%;"><col style="width:13%;"><col style="width:13%;"><col style="width:13%;"><col style="width:13%;"><col style="width:13%;"><col style="width:13%;"><col style="width:13%;">
+        <col style="width:11%;"><col style="width:16%;"><col style="width:15%;"><col style="width:15%;"><col style="width:14%;"><col style="width:14%;"><col style="width:15%;">
       </colgroup>
       <thead>
         <tr>
           <th style="padding:var(--sp-xs);font-size:var(--fs-body);font-weight:var(--fw-heading);color:var(--text-primary);text-align:center;border-bottom:2px solid var(--text-tertiary);background:rgba(255,255,255,0.03);">구분</th>
-          <th style="padding:var(--sp-xs);font-size:var(--fs-body);font-weight:var(--fw-heading);color:var(--secondary);text-align:center;border-bottom:2px solid var(--secondary);background:rgba(126,220,230,0.06);">CAPP!C</th>
-          <th style="padding:var(--sp-xs);font-size:var(--fs-caption);font-weight:var(--fw-heading);color:var(--text-primary);text-align:center;border-bottom:2px solid var(--text-tertiary);">Veo /<br>DreamCam</th>
-          <th style="padding:var(--sp-xs);font-size:var(--fs-caption);font-weight:var(--fw-heading);color:var(--text-primary);text-align:center;border-bottom:2px solid var(--text-tertiary);">Pixellot /<br>Hudl / Bepro</th>
-          <th style="padding:var(--sp-xs);font-size:var(--fs-caption);font-weight:var(--fw-heading);color:var(--text-primary);text-align:center;border-bottom:2px solid var(--text-tertiary);">Soloshot</th>
-          <th style="padding:var(--sp-xs);font-size:var(--fs-caption);font-weight:var(--fw-heading);color:var(--text-primary);text-align:center;border-bottom:2px solid var(--text-tertiary);">XbotGo</th>
-          <th style="padding:var(--sp-xs);font-size:var(--fs-caption);font-weight:var(--fw-heading);color:var(--text-primary);text-align:center;border-bottom:2px solid var(--text-tertiary);">ChampNote</th>
-          <th style="padding:var(--sp-xs);font-size:var(--fs-caption);font-weight:var(--fw-heading);color:var(--text-primary);text-align:center;border-bottom:2px solid var(--text-tertiary);">Galloping</th>
+          <th style="padding:var(--sp-xs);font-size:var(--fs-heading);font-weight:var(--fw-heading);color:var(--secondary);text-align:center;border-bottom:2px solid var(--secondary);background:var(--secondary-05);">{{col1Name}}</th>
+          <th style="padding:var(--sp-xs);font-size:var(--fs-body);font-weight:var(--fw-heading);color:var(--text-primary);text-align:center;border-bottom:2px solid var(--text-tertiary);">{{col2Name}}</th>
+          <th style="padding:var(--sp-xs);font-size:var(--fs-body);font-weight:var(--fw-heading);color:var(--text-primary);text-align:center;border-bottom:2px solid var(--text-tertiary);">{{col3Name}}</th>
+          <th style="padding:var(--sp-xs);font-size:var(--fs-body);font-weight:var(--fw-heading);color:var(--text-primary);text-align:center;border-bottom:2px solid var(--text-tertiary);">{{col4Name}}</th>
+          <th style="padding:var(--sp-xs);font-size:var(--fs-body);font-weight:var(--fw-heading);color:var(--text-primary);text-align:center;border-bottom:2px solid var(--text-tertiary);">{{col5Name}}</th>
+          <th style="padding:var(--sp-xs);font-size:var(--fs-body);font-weight:var(--fw-heading);color:var(--text-primary);text-align:center;border-bottom:2px solid var(--text-tertiary);">{{col6Name}}</th>
         </tr>
       </thead>
       <tbody>
-        <!-- 설치/운영 난이도 -->
+        <!-- 촬영 방식 -->
         <tr>
-          <td style="padding:var(--sp-xs);font-size:var(--fs-caption);font-weight:var(--fw-heading);color:var(--text-tertiary);text-align:center;border-bottom:1px solid rgba(255,255,255,0.06);background:rgba(255,255,255,0.03);">설치/운영<br>난이도</td>
-          <td style="padding:var(--sp-xs);font-size:var(--fs-caption);font-weight:var(--fw-heading);color:var(--secondary);text-align:center;border-bottom:1px solid rgba(126,220,230,0.1);background:rgba(126,220,230,0.06);"><b>하</b><br><span style="font-weight:400;color:var(--text-tertiary);">간편하게 벽 / 기둥 부착</span></td>
-          <td style="padding:var(--sp-xs);font-size:var(--fs-caption);color:var(--text-secondary);text-align:center;border-bottom:1px solid rgba(255,255,255,0.06);">중<br><span style="color:var(--text-tertiary);">매번 삼각대·전원 세팅</span></td>
-          <td style="padding:var(--sp-xs);font-size:var(--fs-caption);color:var(--text-secondary);text-align:center;border-bottom:1px solid rgba(255,255,255,0.06);">상<br><span style="color:var(--text-tertiary);">설치·공사·전문가 필요</span></td>
-          <td style="padding:var(--sp-xs);font-size:var(--fs-caption);color:var(--text-secondary);text-align:center;border-bottom:1px solid rgba(255,255,255,0.06);">중<br><span style="color:var(--text-tertiary);">삼각대·캘리브레이션</span></td>
-          <td style="padding:var(--sp-xs);font-size:var(--fs-caption);color:var(--text-secondary);text-align:center;border-bottom:1px solid rgba(255,255,255,0.06);">중<br><span style="color:var(--text-tertiary);">스마트폰 연결 촬영</span></td>
-          <td style="padding:var(--sp-xs);font-size:var(--fs-caption);color:var(--text-secondary);text-align:center;border-bottom:1px solid rgba(255,255,255,0.06);">중<br><span style="color:var(--text-tertiary);">고정형 DSLR</span></td>
-          <td style="padding:var(--sp-xs);font-size:var(--fs-caption);color:var(--text-secondary);text-align:center;border-bottom:1px solid rgba(255,255,255,0.06);">상<br><span style="color:var(--text-tertiary);">설치된 부스에서만 가능</span></td>
+          <td style="padding:var(--sp-xs);font-size:var(--fs-body);font-weight:var(--fw-heading);color:var(--text-tertiary);text-align:center;border-bottom:1px solid rgba(255,255,255,0.06);background:rgba(255,255,255,0.03);">촬영 방식</td>
+          <td style="padding:var(--sp-xs);font-size:var(--fs-body);font-weight:var(--fw-heading);color:var(--secondary);text-align:center;border-bottom:1px solid var(--secondary-10);background:var(--secondary-05);">{{method1}}<br><span style="font-size:var(--fs-caption);font-weight:400;color:var(--text-tertiary);">{{method1Sub}}</span></td>
+          <td style="padding:var(--sp-xs);font-size:var(--fs-body);color:var(--text-secondary);text-align:center;border-bottom:1px solid rgba(255,255,255,0.06);">{{method2}}<br><span style="font-size:var(--fs-caption);color:var(--text-tertiary);">{{method2Sub}}</span></td>
+          <td style="padding:var(--sp-xs);font-size:var(--fs-body);color:var(--text-secondary);text-align:center;border-bottom:1px solid rgba(255,255,255,0.06);">{{method3}}<br><span style="font-size:var(--fs-caption);color:var(--text-tertiary);">{{method3Sub}}</span></td>
+          <td style="padding:var(--sp-xs);font-size:var(--fs-body);color:var(--text-secondary);text-align:center;border-bottom:1px solid rgba(255,255,255,0.06);">{{method4}}<br><span style="font-size:var(--fs-caption);color:var(--text-tertiary);">{{method4Sub}}</span></td>
+          <td style="padding:var(--sp-xs);font-size:var(--fs-body);color:var(--text-secondary);text-align:center;border-bottom:1px solid rgba(255,255,255,0.06);">{{method5}}<br><span style="font-size:var(--fs-caption);color:var(--text-tertiary);">{{method5Sub}}</span></td>
+          <td style="padding:var(--sp-xs);font-size:var(--fs-body);color:var(--text-secondary);text-align:center;border-bottom:1px solid rgba(255,255,255,0.06);">{{method6}}<br><span style="font-size:var(--fs-caption);color:var(--text-tertiary);">{{method6Sub}}</span></td>
         </tr>
         <!-- 초기 비용 -->
         <tr>
-          <td style="padding:var(--sp-xs);font-size:var(--fs-caption);font-weight:var(--fw-heading);color:var(--text-tertiary);text-align:center;border-bottom:1px solid rgba(255,255,255,0.06);background:rgba(255,255,255,0.03);">초기 비용</td>
-          <td style="padding:var(--sp-xs);font-size:var(--fs-caption);font-weight:var(--fw-heading);color:var(--secondary);text-align:center;border-bottom:1px solid rgba(126,220,230,0.1);background:rgba(126,220,230,0.06);">(B2B) 180만 원<br>(B2C) 77만 원</td>
-          <td style="padding:var(--sp-xs);font-size:var(--fs-caption);color:var(--text-secondary);text-align:center;border-bottom:1px solid rgba(255,255,255,0.06);">약 200~450만 원</td>
-          <td style="padding:var(--sp-xs);font-size:var(--fs-caption);color:var(--text-secondary);text-align:center;border-bottom:1px solid rgba(255,255,255,0.06);">1,000만 원+</td>
-          <td style="padding:var(--sp-xs);font-size:var(--fs-caption);color:var(--text-secondary);text-align:center;border-bottom:1px solid rgba(255,255,255,0.06);">약 120~200만 원</td>
-          <td style="padding:var(--sp-xs);font-size:var(--fs-caption);color:var(--text-secondary);text-align:center;border-bottom:1px solid rgba(255,255,255,0.06);">약 50~150만 원<br><span style="color:var(--text-tertiary);">스마트폰 추가 필수</span></td>
-          <td style="padding:var(--sp-xs);font-size:var(--fs-caption);color:var(--text-secondary);text-align:center;border-bottom:1px solid rgba(255,255,255,0.06);">설치 협의</td>
-          <td style="padding:var(--sp-xs);font-size:var(--fs-caption);color:var(--text-secondary);text-align:center;border-bottom:1px solid rgba(255,255,255,0.06);">설치 협의</td>
+          <td style="padding:var(--sp-xs);font-size:var(--fs-body);font-weight:var(--fw-heading);color:var(--text-tertiary);text-align:center;border-bottom:1px solid rgba(255,255,255,0.06);background:rgba(255,255,255,0.03);">초기 비용</td>
+          <td style="padding:var(--sp-xs);font-size:var(--fs-body);font-weight:var(--fw-heading);color:var(--secondary);text-align:center;border-bottom:1px solid var(--secondary-10);background:var(--secondary-05);">{{cost1}}</td>
+          <td style="padding:var(--sp-xs);font-size:var(--fs-body);color:var(--text-secondary);text-align:center;border-bottom:1px solid rgba(255,255,255,0.06);">{{cost2}}</td>
+          <td style="padding:var(--sp-xs);font-size:var(--fs-body);color:var(--text-secondary);text-align:center;border-bottom:1px solid rgba(255,255,255,0.06);">{{cost3}}</td>
+          <td style="padding:var(--sp-xs);font-size:var(--fs-body);color:var(--text-secondary);text-align:center;border-bottom:1px solid rgba(255,255,255,0.06);">{{cost4}}<br><span style="font-size:var(--fs-caption);color:var(--text-tertiary);">{{cost4Sub}}</span></td>
+          <td style="padding:var(--sp-xs);font-size:var(--fs-body);color:var(--text-secondary);text-align:center;border-bottom:1px solid rgba(255,255,255,0.06);">{{cost5}}</td>
+          <td style="padding:var(--sp-xs);font-size:var(--fs-body);color:var(--text-secondary);text-align:center;border-bottom:1px solid rgba(255,255,255,0.06);">{{cost6}}</td>
         </tr>
-        <!-- 월 반복 비용 -->
+        <!-- 월 구독 -->
         <tr>
-          <td style="padding:var(--sp-xs);font-size:var(--fs-caption);font-weight:var(--fw-heading);color:var(--text-tertiary);text-align:center;border-bottom:1px solid rgba(255,255,255,0.06);background:rgba(255,255,255,0.03);">월 반복<br>비용</td>
-          <td style="padding:var(--sp-xs);font-size:var(--fs-caption);font-weight:var(--fw-heading);color:var(--secondary);text-align:center;border-bottom:1px solid rgba(126,220,230,0.1);background:rgba(126,220,230,0.06);">(B2B) 약 13만 원<br>(B2C) 0원 / 1만원 이내</td>
-          <td style="padding:var(--sp-xs);font-size:var(--fs-caption);color:var(--text-secondary);text-align:center;border-bottom:1px solid rgba(255,255,255,0.06);">약 40~60만 원</td>
-          <td style="padding:var(--sp-xs);font-size:var(--fs-caption);color:var(--text-secondary);text-align:center;border-bottom:1px solid rgba(255,255,255,0.06);">100만 원+</td>
-          <td style="padding:var(--sp-xs);font-size:var(--fs-caption);color:var(--text-secondary);text-align:center;border-bottom:1px solid rgba(255,255,255,0.06);">0원</td>
-          <td style="padding:var(--sp-xs);font-size:var(--fs-caption);color:var(--text-secondary);text-align:center;border-bottom:1px solid rgba(255,255,255,0.06);">0원</td>
-          <td style="padding:var(--sp-xs);font-size:var(--fs-caption);color:var(--text-secondary);text-align:center;border-bottom:1px solid rgba(255,255,255,0.06);">원생 수 비례</td>
-          <td style="padding:var(--sp-xs);font-size:var(--fs-caption);color:var(--text-secondary);text-align:center;border-bottom:1px solid rgba(255,255,255,0.06);">약 10~30만 원<br><span style="color:var(--text-tertiary);">센터/팀 계약</span></td>
+          <td style="padding:var(--sp-xs);font-size:var(--fs-body);font-weight:var(--fw-heading);color:var(--text-tertiary);text-align:center;border-bottom:1px solid rgba(255,255,255,0.06);background:rgba(255,255,255,0.03);">월 구독</td>
+          <td style="padding:var(--sp-xs);font-size:var(--fs-body);font-weight:var(--fw-heading);color:var(--secondary);text-align:center;border-bottom:1px solid var(--secondary-10);background:var(--secondary-05);">{{sub1}}</td>
+          <td style="padding:var(--sp-xs);font-size:var(--fs-body);color:var(--text-secondary);text-align:center;border-bottom:1px solid rgba(255,255,255,0.06);">{{sub2}}</td>
+          <td style="padding:var(--sp-xs);font-size:var(--fs-body);color:var(--text-secondary);text-align:center;border-bottom:1px solid rgba(255,255,255,0.06);">{{sub3}}</td>
+          <td style="padding:var(--sp-xs);font-size:var(--fs-body);color:var(--text-secondary);text-align:center;border-bottom:1px solid rgba(255,255,255,0.06);">{{sub4}}</td>
+          <td style="padding:var(--sp-xs);font-size:var(--fs-body);color:var(--text-secondary);text-align:center;border-bottom:1px solid rgba(255,255,255,0.06);">{{sub5}}</td>
+          <td style="padding:var(--sp-xs);font-size:var(--fs-body);color:var(--text-secondary);text-align:center;border-bottom:1px solid rgba(255,255,255,0.06);">{{sub6}}<br><span style="font-size:var(--fs-caption);color:var(--text-tertiary);">{{sub6Sub}}</span></td>
         </tr>
-        <!-- 개인 하이라이트 및 분석 -->
+        <!-- 개인 하이라이트 -->
         <tr>
-          <td style="padding:var(--sp-xs);font-size:var(--fs-caption);font-weight:var(--fw-heading);color:var(--text-tertiary);text-align:center;border-bottom:1px solid rgba(255,255,255,0.06);background:rgba(255,255,255,0.03);">개인<br>하이라이트<br>및 분석</td>
-          <td style="padding:var(--sp-xs);font-size:var(--fs-body);font-weight:var(--fw-heading);color:var(--secondary);text-align:center;border-bottom:1px solid rgba(126,220,230,0.1);background:rgba(126,220,230,0.06);">◎</td>
-          <td style="padding:var(--sp-xs);font-size:var(--fs-body);color:var(--text-secondary);text-align:center;border-bottom:1px solid rgba(255,255,255,0.06);">△<br><span style="font-size:var(--fs-caption);color:var(--text-tertiary);">전술 위주</span></td>
-          <td style="padding:var(--sp-xs);font-size:var(--fs-body);color:var(--text-secondary);text-align:center;border-bottom:1px solid rgba(255,255,255,0.06);">△<br><span style="font-size:var(--fs-caption);color:var(--text-tertiary);">방송·데이터 중심</span></td>
-          <td style="padding:var(--sp-xs);font-size:var(--fs-body);color:var(--text-secondary);text-align:center;border-bottom:1px solid rgba(255,255,255,0.06);">○<br><span style="font-size:var(--fs-caption);color:var(--text-tertiary);">개인 퍼포먼스 기록</span></td>
-          <td style="padding:var(--sp-xs);font-size:var(--fs-body);color:var(--text-secondary);text-align:center;border-bottom:1px solid rgba(255,255,255,0.06);">○<br><span style="font-size:var(--fs-caption);color:var(--text-tertiary);">개인 팔로우샷 특화</span></td>
-          <td style="padding:var(--sp-xs);font-size:var(--fs-body);color:var(--text-secondary);text-align:center;border-bottom:1px solid rgba(255,255,255,0.06);">△<br><span style="font-size:var(--fs-caption);color:var(--text-tertiary);">사진 중심</span></td>
-          <td style="padding:var(--sp-xs);font-size:var(--fs-body);color:var(--text-secondary);text-align:center;border-bottom:1px solid rgba(255,255,255,0.06);">△<br><span style="font-size:var(--fs-caption);color:var(--text-tertiary);">개인 기술</span></td>
+          <td style="padding:var(--sp-xs);font-size:var(--fs-body);font-weight:var(--fw-heading);color:var(--text-tertiary);text-align:center;border-bottom:1px solid rgba(255,255,255,0.06);background:rgba(255,255,255,0.03);">개인<br>하이라이트</td>
+          <td style="padding:var(--sp-xs);font-size:var(--fs-heading);font-weight:var(--fw-heading);color:var(--secondary);text-align:center;border-bottom:1px solid var(--secondary-10);background:var(--secondary-05);">{{hl1}}</td>
+          <td style="padding:var(--sp-xs);font-size:var(--fs-heading);color:var(--text-secondary);text-align:center;border-bottom:1px solid rgba(255,255,255,0.06);">{{hl2}}<br><span style="font-size:var(--fs-caption);color:var(--text-tertiary);">{{hl2Sub}}</span></td>
+          <td style="padding:var(--sp-xs);font-size:var(--fs-heading);color:var(--text-secondary);text-align:center;border-bottom:1px solid rgba(255,255,255,0.06);">{{hl3}}<br><span style="font-size:var(--fs-caption);color:var(--text-tertiary);">{{hl3Sub}}</span></td>
+          <td style="padding:var(--sp-xs);font-size:var(--fs-heading);color:var(--text-secondary);text-align:center;border-bottom:1px solid rgba(255,255,255,0.06);">{{hl4}}<br><span style="font-size:var(--fs-caption);color:var(--text-tertiary);">{{hl4Sub}}</span></td>
+          <td style="padding:var(--sp-xs);font-size:var(--fs-heading);color:var(--text-secondary);text-align:center;border-bottom:1px solid rgba(255,255,255,0.06);">{{hl5}}<br><span style="font-size:var(--fs-caption);color:var(--text-tertiary);">{{hl5Sub}}</span></td>
+          <td style="padding:var(--sp-xs);font-size:var(--fs-heading);color:var(--text-secondary);text-align:center;border-bottom:1px solid rgba(255,255,255,0.06);">{{hl6}}<br><span style="font-size:var(--fs-caption);color:var(--text-tertiary);">{{hl6Sub}}</span></td>
         </tr>
-        <!-- 팀 전술·경기 분석 -->
+        <!-- B2B 수익모델 -->
         <tr>
-          <td style="padding:var(--sp-xs);font-size:var(--fs-caption);font-weight:var(--fw-heading);color:var(--text-tertiary);text-align:center;border-bottom:1px solid rgba(255,255,255,0.06);background:rgba(255,255,255,0.03);">팀 전술·<br>경기 분석</td>
-          <td style="padding:var(--sp-xs);font-size:var(--fs-body);font-weight:var(--fw-heading);color:var(--secondary);text-align:center;border-bottom:1px solid rgba(126,220,230,0.1);background:rgba(126,220,230,0.06);">△<br><span style="font-size:var(--fs-caption);font-weight:400;color:var(--text-tertiary);">기본 전술 파악 가능</span></td>
-          <td style="padding:var(--sp-xs);font-size:var(--fs-body);color:var(--text-secondary);text-align:center;border-bottom:1px solid rgba(255,255,255,0.06);">○<br><span style="font-size:var(--fs-caption);color:var(--text-tertiary);">파노라마·전술 분석</span></td>
-          <td style="padding:var(--sp-xs);font-size:var(--fs-body);color:var(--text-secondary);text-align:center;border-bottom:1px solid rgba(255,255,255,0.06);">◎<br><span style="font-size:var(--fs-caption);color:var(--text-tertiary);">고급 데이터·전술 분석</span></td>
-          <td style="padding:var(--sp-xs);font-size:var(--fs-body);color:var(--text-secondary);text-align:center;border-bottom:1px solid rgba(255,255,255,0.06);">✕</td>
-          <td style="padding:var(--sp-xs);font-size:var(--fs-body);color:var(--text-secondary);text-align:center;border-bottom:1px solid rgba(255,255,255,0.06);">✕</td>
-          <td style="padding:var(--sp-xs);font-size:var(--fs-body);color:var(--text-secondary);text-align:center;border-bottom:1px solid rgba(255,255,255,0.06);">✕</td>
-          <td style="padding:var(--sp-xs);font-size:var(--fs-body);color:var(--text-secondary);text-align:center;border-bottom:1px solid rgba(255,255,255,0.06);">△<br><span style="font-size:var(--fs-caption);color:var(--text-tertiary);">훈련 상황 분석 위주</span></td>
+          <td style="padding:var(--sp-xs);font-size:var(--fs-body);font-weight:var(--fw-heading);color:var(--text-tertiary);text-align:center;border-bottom:1px solid rgba(255,255,255,0.06);background:rgba(255,255,255,0.03);">자동화<br>수준</td>
+          <td style="padding:var(--sp-xs);font-size:var(--fs-heading);font-weight:var(--fw-heading);color:var(--secondary);text-align:center;border-bottom:1px solid var(--secondary-10);background:var(--secondary-05);">{{biz1}}<br><span style="font-size:var(--fs-caption);font-weight:400;color:var(--text-tertiary);">{{biz1Sub}}</span></td>
+          <td style="padding:var(--sp-xs);font-size:var(--fs-heading);color:var(--text-secondary);text-align:center;border-bottom:1px solid rgba(255,255,255,0.06);">{{biz2}}<br><span style="font-size:var(--fs-caption);color:var(--text-tertiary);">{{biz2Sub}}</span></td>
+          <td style="padding:var(--sp-xs);font-size:var(--fs-heading);color:var(--text-secondary);text-align:center;border-bottom:1px solid rgba(255,255,255,0.06);">{{biz3}}<br><span style="font-size:var(--fs-caption);color:var(--text-tertiary);">{{biz3Sub}}</span></td>
+          <td style="padding:var(--sp-xs);font-size:var(--fs-heading);color:var(--text-secondary);text-align:center;border-bottom:1px solid rgba(255,255,255,0.06);">{{biz4}}<br><span style="font-size:var(--fs-caption);color:var(--text-tertiary);">{{biz4Sub}}</span></td>
+          <td style="padding:var(--sp-xs);font-size:var(--fs-heading);color:var(--text-secondary);text-align:center;border-bottom:1px solid rgba(255,255,255,0.06);">{{biz5}}<br><span style="font-size:var(--fs-caption);color:var(--text-tertiary);">{{biz5Sub}}</span></td>
+          <td style="padding:var(--sp-xs);font-size:var(--fs-heading);color:var(--text-secondary);text-align:center;border-bottom:1px solid rgba(255,255,255,0.06);">{{biz6}}<br><span style="font-size:var(--fs-caption);color:var(--text-tertiary);">{{biz6Sub}}</span></td>
         </tr>
-        <!-- 구장/시설 수익모델 -->
+        <!-- 운영 난이도 -->
         <tr>
-          <td style="padding:var(--sp-xs);font-size:var(--fs-caption);font-weight:var(--fw-heading);color:var(--text-tertiary);text-align:center;border-bottom:1px solid rgba(255,255,255,0.06);background:rgba(255,255,255,0.03);">구장/시설<br>수익모델</td>
-          <td style="padding:var(--sp-xs);font-size:var(--fs-body);font-weight:var(--fw-heading);color:var(--secondary);text-align:center;border-bottom:1px solid rgba(126,220,230,0.1);background:rgba(126,220,230,0.06);">◎<br><span style="font-size:var(--fs-caption);font-weight:400;color:var(--text-tertiary);">B2B2C, 촬영+구독 매출</span></td>
-          <td style="padding:var(--sp-xs);font-size:var(--fs-body);color:var(--text-secondary);text-align:center;border-bottom:1px solid rgba(255,255,255,0.06);">○<br><span style="font-size:var(--fs-caption);color:var(--text-tertiary);">클럽/아카데미 계약</span></td>
-          <td style="padding:var(--sp-xs);font-size:var(--fs-body);color:var(--text-secondary);text-align:center;border-bottom:1px solid rgba(255,255,255,0.06);">○<br><span style="font-size:var(--fs-caption);color:var(--text-tertiary);">리그/협회/클럽 계약</span></td>
-          <td style="padding:var(--sp-xs);font-size:var(--fs-body);color:var(--text-secondary);text-align:center;border-bottom:1px solid rgba(255,255,255,0.06);">✕<br><span style="font-size:var(--fs-caption);color:var(--text-tertiary);">개인 구매 중심</span></td>
-          <td style="padding:var(--sp-xs);font-size:var(--fs-body);color:var(--text-secondary);text-align:center;border-bottom:1px solid rgba(255,255,255,0.06);">✕<br><span style="font-size:var(--fs-caption);color:var(--text-tertiary);">개인 장비 판매 위주</span></td>
-          <td style="padding:var(--sp-xs);font-size:var(--fs-body);color:var(--text-secondary);text-align:center;border-bottom:1px solid rgba(255,255,255,0.06);">○<br><span style="font-size:var(--fs-caption);color:var(--text-tertiary);">학원 운영 인프라</span></td>
-          <td style="padding:var(--sp-xs);font-size:var(--fs-body);color:var(--text-secondary);text-align:center;border-bottom:1px solid rgba(255,255,255,0.06);">△<br><span style="font-size:var(--fs-caption);color:var(--text-tertiary);">센터 부가 서비스</span></td>
+          <td style="padding:var(--sp-xs);font-size:var(--fs-body);font-weight:var(--fw-heading);color:var(--text-tertiary);text-align:center;border-bottom:1px solid rgba(255,255,255,0.06);background:rgba(255,255,255,0.03);">운영 난이도</td>
+          <td style="padding:var(--sp-xs);font-size:var(--fs-heading);font-weight:var(--fw-heading);color:var(--secondary);text-align:center;border-bottom:1px solid var(--secondary-10);background:var(--secondary-05);">{{diff1}}</td>
+          <td style="padding:var(--sp-xs);font-size:var(--fs-heading);color:var(--text-secondary);text-align:center;border-bottom:1px solid rgba(255,255,255,0.06);">{{diff2}}</td>
+          <td style="padding:var(--sp-xs);font-size:var(--fs-heading);color:var(--text-secondary);text-align:center;border-bottom:1px solid rgba(255,255,255,0.06);">{{diff3}}</td>
+          <td style="padding:var(--sp-xs);font-size:var(--fs-heading);color:var(--text-secondary);text-align:center;border-bottom:1px solid rgba(255,255,255,0.06);">{{diff4}}</td>
+          <td style="padding:var(--sp-xs);font-size:var(--fs-heading);color:var(--text-secondary);text-align:center;border-bottom:1px solid rgba(255,255,255,0.06);">{{diff5}}</td>
+          <td style="padding:var(--sp-xs);font-size:var(--fs-heading);color:var(--text-secondary);text-align:center;border-bottom:1px solid rgba(255,255,255,0.06);">{{diff6}}</td>
         </tr>
-        <!-- 플랫폼 기능 -->
+        <!-- 제품 사진 -->
         <tr>
-          <td style="padding:var(--sp-xs);font-size:var(--fs-caption);font-weight:var(--fw-heading);color:var(--text-tertiary);text-align:center;border-bottom:1px solid rgba(255,255,255,0.06);background:rgba(255,255,255,0.03);">플랫폼<br>기능</td>
-          <td style="padding:var(--sp-xs);font-size:var(--fs-body);font-weight:var(--fw-heading);color:var(--secondary);text-align:center;border-bottom:1px solid rgba(126,220,230,0.1);background:rgba(126,220,230,0.06);">○<br><span style="font-size:var(--fs-caption);font-weight:400;color:var(--text-tertiary);">SNS, AI 코칭 + 마켓</span></td>
-          <td style="padding:var(--sp-xs);font-size:var(--fs-body);color:var(--text-secondary);text-align:center;border-bottom:1px solid rgba(255,255,255,0.06);">△<br><span style="font-size:var(--fs-caption);color:var(--text-tertiary);">Veo 플랫폼 분석·공유</span></td>
-          <td style="padding:var(--sp-xs);font-size:var(--fs-body);color:var(--text-secondary);text-align:center;border-bottom:1px solid rgba(255,255,255,0.06);">△<br><span style="font-size:var(--fs-caption);color:var(--text-tertiary);">전술·데이터 플랫폼</span></td>
-          <td style="padding:var(--sp-xs);font-size:var(--fs-body);color:var(--text-secondary);text-align:center;border-bottom:1px solid rgba(255,255,255,0.06);">△<br><span style="font-size:var(--fs-caption);color:var(--text-tertiary);">기본 앱·뷰어 위주</span></td>
-          <td style="padding:var(--sp-xs);font-size:var(--fs-body);color:var(--text-secondary);text-align:center;border-bottom:1px solid rgba(255,255,255,0.06);">△<br><span style="font-size:var(--fs-caption);color:var(--text-tertiary);">촬영 제어·클립 공유</span></td>
-          <td style="padding:var(--sp-xs);font-size:var(--fs-body);color:var(--text-secondary);text-align:center;border-bottom:1px solid rgba(255,255,255,0.06);">○<br><span style="font-size:var(--fs-caption);color:var(--text-tertiary);">학원 운영·결제·사진·공유</span></td>
-          <td style="padding:var(--sp-xs);font-size:var(--fs-body);color:var(--text-secondary);text-align:center;border-bottom:1px solid rgba(255,255,255,0.06);">✕</td>
-        </tr>
-        <!-- 형태 (이미지) -->
-        <tr>
-          <td style="padding:var(--sp-xs);font-size:var(--fs-caption);font-weight:var(--fw-heading);color:var(--text-tertiary);text-align:center;background:rgba(255,255,255,0.03);">형태</td>
-          <td style="padding:var(--sp-xs);text-align:center;background:rgba(126,220,230,0.06);"><div style="height:80px;display:flex;align-items:center;justify-content:center;"><img src="{{imgCappic}}" style="max-width:90%;max-height:72px;object-fit:contain;"></div></td>
-          <td style="padding:var(--sp-xs);text-align:center;"><div style="height:80px;display:flex;align-items:center;justify-content:center;"><img src="{{imgVeo}}" style="max-width:90%;max-height:72px;object-fit:contain;"></div></td>
-          <td style="padding:var(--sp-xs);text-align:center;"><div style="height:80px;display:flex;align-items:center;justify-content:center;"><img src="{{imgPixellot}}" style="max-width:90%;max-height:72px;object-fit:contain;"></div></td>
-          <td style="padding:var(--sp-xs);text-align:center;"><div style="height:80px;display:flex;align-items:center;justify-content:center;"><img src="{{imgSoloshot}}" style="max-width:90%;max-height:72px;object-fit:contain;"></div></td>
-          <td style="padding:var(--sp-xs);text-align:center;"><div style="height:80px;display:flex;align-items:center;justify-content:center;"><img src="{{imgXbotgo}}" style="max-width:90%;max-height:72px;object-fit:contain;"></div></td>
-          <td style="padding:var(--sp-xs);text-align:center;"><div style="height:80px;display:flex;align-items:center;justify-content:center;"><img src="{{imgChampnote}}" style="max-width:90%;max-height:72px;object-fit:contain;"></div></td>
-          <td style="padding:var(--sp-xs);text-align:center;"><div style="height:80px;display:flex;align-items:center;justify-content:center;"><img src="{{imgGalloping}}" style="max-width:90%;max-height:72px;object-fit:contain;"></div></td>
+          <td style="padding:var(--sp-xs);font-size:var(--fs-body);font-weight:var(--fw-heading);color:var(--text-tertiary);text-align:center;background:rgba(255,255,255,0.03);">형태</td>
+          <td style="padding:var(--sp-xs);text-align:center;background:var(--secondary-05);"><div style="height:90px;display:flex;align-items:center;justify-content:center;"><img src="{{imgCappic}}" style="max-width:90%;max-height:82px;object-fit:contain;"></div></td>
+          <td style="padding:var(--sp-xs);text-align:center;"><div style="height:90px;display:flex;align-items:center;justify-content:center;"><img src="{{imgVbp}}" style="max-width:90%;max-height:82px;object-fit:contain;"></div></td>
+          <td style="padding:var(--sp-xs);text-align:center;"><div style="height:90px;display:flex;align-items:center;justify-content:center;"><img src="{{imgSnaproot}}" style="max-width:90%;max-height:82px;object-fit:contain;"></div></td>
+          <td style="padding:var(--sp-xs);text-align:center;"><div style="height:90px;display:flex;align-items:center;justify-content:center;"><img src="{{imgXbotgo}}" style="max-width:90%;max-height:82px;object-fit:contain;"></div></td>
+          <td style="padding:var(--sp-xs);text-align:center;"><div style="height:90px;display:flex;align-items:center;justify-content:center;"><img src="{{imgChampnote}}" style="max-width:90%;max-height:82px;object-fit:contain;"></div></td>
+          <td style="padding:var(--sp-xs);text-align:center;"><div style="height:90px;display:flex;align-items:center;justify-content:center;"><img src="{{imgGalloping}}" style="max-width:90%;max-height:82px;object-fit:contain;"></div></td>
         </tr>
       </tbody>
     </table>

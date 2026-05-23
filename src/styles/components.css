@@ -240,14 +240,14 @@
 .timeline-dot.active {
   background: var(--secondary-dark);
   box-shadow: 0 0 0 2px var(--secondary-dark),
-              0 0 12px rgba(126, 220, 230, 0.3);
+              0 0 12px var(--secondary-20);
 }
 
 .timeline-dot.milestone {
   background: var(--accent);
   border-color: var(--bg-slide);
   box-shadow: 0 0 0 2px var(--accent-dark),
-              0 0 12px rgba(247, 225, 80, 0.3);
+              0 0 12px var(--accent-20);
 }
 
 .timeline-dot.future {

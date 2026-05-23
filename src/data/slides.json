@@ -1,10 +1,10 @@
 {
   "slides": [
     { "id": "cover", "title": "커버", "subtitle": "한 줄 정체성 + 로고", "tags": ["IR", "GOV"] },
-    { "id": "competition-detail", "title": "경쟁사 상세 비교", "subtitle": "핵심 3개 항목만 비교", "tags": ["IR", "GOV"] },
+    { "id": "competition-detail", "title": "경쟁사 상세 비교", "subtitle": "핵심 항목 비교", "tags": ["IR", "GOV", "B2B"] },
     { "id": "pmf-1", "title": "PMF ① 시장 기회", "subtitle": "TAM 88조 · AI 통합 솔루션 부재", "tags": ["IR", "GOV"] },
-    { "id": "pmf-2", "title": "PMF ② 현장 수요", "subtitle": "코치 1인 월 240~600 세션", "tags": ["IR", "GOV"] },
-    { "id": "pmf-3", "title": "PMF ③ 수요 검증", "subtitle": "학부모 100명 설문 → 97%", "tags": ["IR", "GOV"] },
+    { "id": "pmf-2", "title": "PMF ② 현장 수요", "subtitle": "촬영 수요 97%, 촬영 서비스 경험 22%", "tags": ["IR", "GOV"] },
+    { "id": "pmf-3", "title": "PMF ③ 수요 검증", "subtitle": "이용 의향 91%, 월 1만원 이상 지불 의사 64%", "tags": ["IR", "GOV"] },
     { "id": "pmf-4", "title": "PMF ④ 솔루션 검증", "subtitle": "3-way 비교 만족도 1위", "tags": ["IR", "GOV"] },
     { "id": "pmf-5", "title": "PMF ⑤ 실사용 검증", "subtitle": "블라인드 긍정 87%", "tags": ["IR", "GOV"] },
     { "id": "pmf-6", "title": "PMF ⑥ 구매 의사", "subtitle": "B2B LOI 10개 구장", "tags": ["IR", "GOV"] },
@@ -12,11 +12,18 @@
     { "id": "business-model", "title": "Business Model", "subtitle": "HW 판매 + SW 구독 반복 수익", "tags": ["IR", "GOV"] },
     { "id": "market-som", "title": "시장 분석 및 Scale-up", "subtitle": "TAM → SAM → SOM 바텀업", "tags": ["IR", "GOV"] },
     { "id": "financials", "title": "재무 계획", "subtitle": "사업비 배분 + 매출 계획", "tags": ["IR", "GOV"] },
-    { "id": "ulsan-policy-fit", "title": "울산 정책 정합성", "subtitle": "울산시 정책 방향 + 지역 연계", "tags": ["IR", "GOV"] },
-    { "id": "ulsan-market", "title": "울산 시장 분석", "subtitle": "규모 · 특성 · 경쟁 · 전망", "tags": ["IR", "GOV"] }
+    { "id": "company-overview", "title": "개요 및 연혁", "subtitle": "회사 정보 + 마일스톤 타임라인", "tags": ["IR", "GOV"] },
+    { "id": "team-overview", "title": "조직 및 직원 현황", "subtitle": "핵심 팀 3인 + 자문단 3인", "tags": ["IR", "GOV"] },
+    { "id": "partners", "title": "협력업체", "subtitle": "제조 / 기술 R&D / 지원 파트너", "tags": ["IR", "GOV"] },
+    { "id": "cost-structure", "title": "매출원가 및 수익 구조", "subtitle": "프리오더 vs 펀딩 양산 비교", "tags": ["IR", "GOV"] },
+    { "id": "gtm-strategy", "title": "Go-to-Market", "subtitle": "B2B2C 플라이휠 + 3단계 확장", "tags": ["IR", "GOV"] },
+    { "id": "roadmap", "title": "향후 추진계획", "subtitle": "12개월 로드맵 + KPI + 리스크", "tags": ["IR", "GOV"] },
+    { "id": "ulsan-policy-fit", "title": "울산 정책 정합성", "subtitle": "울산시 정책 방향 + 지역 연계", "tags": ["GOV"] },
+    { "id": "ulsan-market", "title": "울산 시장 분석", "subtitle": "규모 · 특성 · 경쟁 · 전망", "tags": ["GOV"] }
   ],
   "tags": {
     "IR": { "label": "IR", "color": "#7EDCE6" },
-    "GOV": { "label": "GOV", "color": "#F7E150" }
+    "GOV": { "label": "GOV", "color": "#5BC4D0" },
+    "B2B": { "label": "B2B", "color": "#A0D0D6" }
   }
 }

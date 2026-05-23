@@ -1,0 +1,177 @@
+<div class="slide">
+  <div class="slide-title">{{title}}</div>
+
+  <div class="slide-content" style="display:grid;grid-template-rows:auto auto 1fr;gap:var(--sp-sm);height:100%;">
+
+    <!-- Row 1: Production Run Cards -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-md);">
+
+      <!-- Pre-order Card -->
+      <div class="card" style="display:flex;flex-direction:column;">
+        <div style="position:relative;z-index:1;">
+          <div style="display:flex;align-items:center;gap:var(--sp-sm);margin-bottom:var(--sp-sm);">
+            <div style="font-size:var(--fs-heading);font-weight:var(--fw-heading);color:var(--text-primary);margin-bottom:0;">{{preTitle}}</div>
+            <span style="font-size:var(--fs-caption);font-weight:var(--fw-heading);color:var(--text-tertiary);">{{preTime}}</span>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sp-sm);margin-bottom:var(--sp-sm);">
+            <div class="sg-item">
+              <div class="sg-item-label">판매가</div>
+              <div style="font-size:var(--fs-heading);font-weight:var(--fw-heading);color:var(--text-secondary);">{{prePrice}}</div>
+            </div>
+            <div class="sg-item">
+              <div class="sg-item-label">원가</div>
+              <div style="font-size:var(--fs-heading);font-weight:var(--fw-heading);color:var(--text-secondary);">{{preCOGS}}</div>
+            </div>
+            <div class="sg-item">
+              <div class="sg-item-label">GM</div>
+              <div style="font-size:var(--fs-heading);font-weight:var(--fw-heading);color:var(--secondary);">{{preGM}}</div>
+            </div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:var(--sp-xs);">
+            <div style="display:flex;justify-content:space-between;font-size:var(--fs-caption);color:var(--text-tertiary);">
+              <span>{{preBOM1}}</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;font-size:var(--fs-caption);color:var(--text-tertiary);">
+              <span>{{preBOM2}}</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;font-size:var(--fs-caption);color:var(--text-tertiary);">
+              <span>{{preBOM3}}</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;font-size:var(--fs-caption);color:var(--text-tertiary);">
+              <span>{{preBOM4}}</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;font-size:var(--fs-body);color:var(--secondary);border-top:1px solid var(--secondary-15);padding-top:var(--sp-xs);margin-top:var(--sp-xs);">
+              <span>합계</span>
+              <span style="font-weight:var(--fw-heading);">{{preTotal}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Funding Card -->
+      <div class="card card-secondary" style="display:flex;flex-direction:column;">
+        <div style="position:relative;z-index:1;">
+          <div style="display:flex;align-items:center;gap:var(--sp-sm);margin-bottom:var(--sp-sm);">
+            <div style="font-size:var(--fs-heading);font-weight:var(--fw-heading);color:var(--text-primary);margin-bottom:0;">{{fundTitle}}</div>
+            <span style="font-size:var(--fs-caption);font-weight:var(--fw-heading);color:var(--text-tertiary);">{{fundTime}}</span>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sp-sm);margin-bottom:var(--sp-sm);">
+            <div class="sg-item">
+              <div class="sg-item-label">판매가</div>
+              <div style="font-size:var(--fs-heading);font-weight:var(--fw-heading);color:var(--text-primary);">{{fundPrice}}</div>
+            </div>
+            <div class="sg-item">
+              <div class="sg-item-label">원가</div>
+              <div style="font-size:var(--fs-heading);font-weight:var(--fw-heading);color:var(--text-primary);">{{fundCOGS}}</div>
+            </div>
+            <div class="sg-item">
+              <div class="sg-item-label">GM</div>
+              <div style="font-size:var(--fs-heading);font-weight:var(--fw-heading);color:var(--secondary);">{{fundGM}}</div>
+            </div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:var(--sp-xs);">
+            <div style="display:flex;justify-content:space-between;font-size:var(--fs-caption);color:var(--text-tertiary);">
+              <span>{{fundBOM1}}</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;font-size:var(--fs-caption);color:var(--text-tertiary);">
+              <span>{{fundBOM2}}</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;font-size:var(--fs-caption);color:var(--text-tertiary);">
+              <span>{{fundBOM3}}</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;font-size:var(--fs-caption);color:var(--text-tertiary);">
+              <span>{{fundBOM4}}</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;font-size:var(--fs-body);color:var(--secondary);border-top:1px solid var(--secondary-15);padding-top:var(--sp-xs);margin-top:var(--sp-xs);">
+              <span>합계</span>
+              <span style="font-weight:var(--fw-heading);">{{fundTotal}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Row 2: KPI Cards -->
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sp-md);">
+
+      <div class="card" style="display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;">
+        <div style="position:relative;z-index:1;">
+          <div style="font-size:var(--fs-caption);color:var(--text-tertiary);margin-bottom:var(--sp-xs);">{{kpi1Label}}</div>
+          <div style="font-size:var(--fs-display);font-weight:var(--fw-display);color:var(--text-primary);line-height:1;">{{kpi1Value}}</div>
+          <div style="font-size:var(--fs-source);color:var(--text-tertiary);margin-top:var(--sp-xs);">{{kpi1Sub}}</div>
+        </div>
+      </div>
+
+      <div class="card" style="display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;">
+        <div style="position:relative;z-index:1;">
+          <div style="font-size:var(--fs-caption);color:var(--text-tertiary);margin-bottom:var(--sp-xs);">{{kpi2Label}}</div>
+          <div style="font-size:var(--fs-display);font-weight:var(--fw-display);color:var(--text-primary);line-height:1;">{{kpi2Value}}</div>
+          <div style="font-size:var(--fs-source);color:var(--text-tertiary);margin-top:var(--sp-xs);">{{kpi2Sub}}</div>
+        </div>
+      </div>
+
+      <div class="card card-secondary" style="display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;">
+        <div style="position:relative;z-index:1;">
+          <div style="font-size:var(--fs-caption);color:var(--text-tertiary);margin-bottom:var(--sp-xs);">{{kpi3Label}}</div>
+          <div style="font-size:var(--fs-display);font-weight:var(--fw-display);color:var(--secondary);line-height:1;">{{kpi3Value}}</div>
+          <div style="font-size:var(--fs-source);color:var(--text-tertiary);margin-top:var(--sp-xs);">{{kpi3Sub}}</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Row 3: Funding Sources + CapEx -->
+    <div style="display:grid;grid-template-columns:3fr 2fr;gap:var(--sp-md);">
+
+      <!-- Funding Sources -->
+      <div class="card" style="display:flex;flex-direction:column;">
+        <div style="position:relative;z-index:1;flex:1;display:flex;flex-direction:column;">
+          <div class="sg-card-title">재원 구성</div>
+          <div class="sg-data-list">
+            <div class="sg-item" style="flex-direction:row;">
+              <span style="font-size:var(--fs-caption);color:var(--text-secondary);">{{src1}}</span>
+            </div>
+            <div class="sg-item" style="flex-direction:row;">
+              <span style="font-size:var(--fs-caption);color:var(--text-secondary);">{{src2}}</span>
+            </div>
+            <div class="sg-item" style="flex-direction:row;">
+              <span style="font-size:var(--fs-caption);color:var(--text-secondary);">{{src3}}</span>
+            </div>
+            <div class="sg-item" style="flex-direction:row;">
+              <span style="font-size:var(--fs-caption);color:var(--text-secondary);">{{src4}}</span>
+            </div>
+            <div class="sg-item" style="flex-direction:row;">
+              <span style="font-size:var(--fs-caption);color:var(--text-secondary);">{{src5}}</span>
+            </div>
+            <div class="sg-item" style="flex-direction:row;">
+              <span style="font-size:var(--fs-caption);color:var(--text-secondary);">{{src6}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CapEx -->
+      <div class="card" style="display:flex;flex-direction:column;">
+        <div style="position:relative;z-index:1;flex:1;display:flex;flex-direction:column;">
+          <div class="sg-card-title">CapEx</div>
+          <div class="sg-data-list">
+            <div class="sg-item">
+              <div style="font-size:var(--fs-caption);color:var(--text-secondary);">{{capex1}}</div>
+            </div>
+            <div class="sg-item">
+              <div style="font-size:var(--fs-caption);color:var(--text-secondary);">{{capex2}}</div>
+            </div>
+            <div class="sg-item">
+              <div style="font-size:var(--fs-source);color:var(--text-tertiary);line-height:1.5;">{{capexNote}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="slide-subtitle" style="position:absolute;top:130px;left:var(--slide-pad-side);right:var(--slide-pad-side);text-align:center;font-size:var(--fs-caption);color:var(--text-tertiary);">{{subtitle}}</div>
+</div>

@@ -42,14 +42,14 @@
   background: var(--card-elevated);
 }
 
-/* ── Secondary Card (Cyan) ── */
+/* ── Secondary Card (Teal) ── */
 .card-secondary {
   background: var(--card-secondary);
-  border-color: rgba(126, 220, 230, 0.12);
+  border-color: var(--secondary-10);
 }
 
-/* ── Accent Card (Yellow) ── */
+/* ── Accent Card (Coral) ── */
 .card-accent {
   background: var(--card-accent);
-  border-color: rgba(247, 225, 80, 0.12);
+  border-color: var(--accent-10);
 }

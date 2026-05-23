@@ -13,7 +13,7 @@
     </div>
 
     <!-- SAM: 204×204 at (12,102), center=(114,204), r=102 -->
-    <div style="width:204px;height:204px;border-radius:50%;border:4px solid rgba(126,220,230,0.55);background:rgba(126,220,230,0.04);position:absolute;top:102px;left:12px;"></div>
+    <div style="width:204px;height:204px;border-radius:50%;border:4px solid var(--secondary-50);background:var(--secondary-05);position:absolute;top:102px;left:12px;"></div>
     <!-- SAM text: shifted right+down -->
     <div style="position:absolute;top:132px;left:130px;transform:translateX(-50%);text-align:center;white-space:nowrap;">
       <div style="font-size:var(--fs-caption);color:var(--secondary);font-weight:800;letter-spacing:3px;">SAM</div>
@@ -21,10 +21,10 @@
     </div>
 
     <!-- SOM: 102×102, center=(78,240), dist from SAM center=sqrt(36²+36²)=50.9 < 51(102-51) ✓ -->
-    <div style="width:102px;height:102px;border-radius:50%;border:4px solid var(--accent);background:rgba(247,225,80,0.1);position:absolute;top:189px;left:27px;display:flex;align-items:center;justify-content:center;">
+    <div style="width:102px;height:102px;border-radius:50%;border:4px solid var(--secondary);background:var(--secondary-10);position:absolute;top:189px;left:27px;display:flex;align-items:center;justify-content:center;">
       <div style="text-align:center;line-height:1.15;">
-        <div style="font-size:var(--fs-source);color:var(--accent);font-weight:800;letter-spacing:2px;">SOM</div>
-        <div style="font-size:var(--fs-body);font-weight:800;color:var(--accent);">{{somValue}}</div>
+        <div style="font-size:var(--fs-source);color:var(--secondary);font-weight:800;letter-spacing:2px;">SOM</div>
+        <div style="font-size:var(--fs-body);font-weight:800;color:var(--secondary);">{{somValue}}</div>
       </div>
     </div>
   </div>
@@ -48,7 +48,7 @@
   </div>
   <!-- SOM line -->
   <div style="position:absolute;top:420px;left:486px;display:flex;align-items:center;gap:16px;">
-    <div style="width:50px;height:2.5px;background:var(--accent);opacity:0.6;flex-shrink:0;"></div>
+    <div style="width:50px;height:2.5px;background:var(--secondary);opacity:0.6;flex-shrink:0;"></div>
     <div>
       <div style="font-size:var(--fs-body);color:var(--text-secondary);font-weight:400;">{{somSub}}</div>
       <div style="font-size:var(--fs-caption);color:var(--text-tertiary);font-weight:400;margin-top:2px;">{{somSubDetail}}</div>
@@ -58,15 +58,15 @@
   <!-- ═══ BAR CHART (bottom:130 = 130px from slide bottom) ═══ -->
   <!-- 2026: x:140, w:280 -->
   <div style="position:absolute;bottom:130px;left:440px;width:280px;text-align:center;">
-    <div style="font-size:var(--fs-body);font-weight:800;color:var(--accent);margin-bottom:14px;">{{bar1Value}}</div>
-    <div style="height:30px;border-radius:6px 6px 0 0;background:linear-gradient(180deg, var(--accent), rgba(247,225,80,0.2));"></div>
-    <div style="font-size:var(--fs-body);font-weight:700;color:var(--accent);margin-top:6px;">{{bar1Year}}</div>
+    <div style="font-size:var(--fs-body);font-weight:800;color:var(--secondary);margin-bottom:14px;">{{bar1Value}}</div>
+    <div style="height:30px;border-radius:6px 6px 0 0;background:linear-gradient(180deg, var(--secondary), var(--secondary-20));"></div>
+    <div style="font-size:var(--fs-body);font-weight:700;color:var(--secondary);margin-top:6px;">{{bar1Year}}</div>
   </div>
 
   <!-- 2027: x:440, w:300 -->
   <div style="position:absolute;bottom:130px;left:740px;width:300px;text-align:center;">
     <div style="font-size:var(--fs-heading);font-weight:800;color:var(--text-primary);margin-bottom:14px;">{{bar2Value}}+</div>
-    <div style="height:130px;border-radius:6px 6px 0 0;background:linear-gradient(180deg, rgba(126,220,230,0.5), rgba(126,220,230,0.12));padding:14px;box-sizing:border-box;text-align:left;overflow:hidden;">
+    <div style="height:130px;border-radius:6px 6px 0 0;background:linear-gradient(180deg, var(--secondary-50), var(--secondary-10));padding:14px;box-sizing:border-box;text-align:left;overflow:hidden;">
       <div style="font-size:var(--fs-caption);color:var(--text-primary);line-height:1.5;font-weight:400;">HW 3,000대: <b>23억원+</b><br>SW구독 2만명: <b>18억원+</b><br>B2B+B2G 100건: <b>6억원+</b><br>일본·글로벌 B2C: <b>3억원+</b></div>
     </div>
     <div style="font-size:var(--fs-body);color:var(--text-primary);margin-top:6px;">{{bar2Year}}</div>
@@ -75,7 +75,7 @@
   <!-- 2028: x:760, w:340 -->
   <div style="position:absolute;bottom:130px;left:1060px;width:340px;text-align:center;">
     <div style="font-size:var(--fs-stat);font-weight:800;color:var(--text-primary);margin-bottom:14px;">{{bar3Value}}+</div>
-    <div style="height:260px;border-radius:6px 6px 0 0;background:linear-gradient(180deg, rgba(126,220,230,0.55), rgba(126,220,230,0.15));padding:16px;box-sizing:border-box;text-align:left;overflow:hidden;">
+    <div style="height:260px;border-radius:6px 6px 0 0;background:linear-gradient(180deg, var(--secondary-50), var(--secondary-15));padding:16px;box-sizing:border-box;text-align:left;overflow:hidden;">
       <div style="font-size:var(--fs-caption);color:var(--text-primary);line-height:1.5;font-weight:400;">HW 8,000대: <b>56억원+</b><br>SW구독 8만명: <b>50억원+</b><br>B2B 500건: <b>52억원+</b><br>B2G 공공시설 600건: <b>20억원+</b><br>MALL·커머스: <b>12억원+</b><br>중계·광고: <b>10억원+</b></div>
     </div>
     <div style="font-size:var(--fs-body);color:var(--text-primary);margin-top:6px;">{{bar3Year}}</div>
@@ -84,15 +84,15 @@
   <!-- 2029: x:1120, w:380 -->
   <div style="position:absolute;bottom:130px;left:1420px;width:380px;text-align:center;">
     <div style="font-size:var(--fs-display);font-weight:800;color:var(--secondary);line-height:1;margin-bottom:14px;">{{bar4Value}}+</div>
-    <div style="height:520px;border-radius:6px 6px 0 0;background:linear-gradient(180deg, rgba(126,220,230,0.7), rgba(126,220,230,0.25));padding:18px 16px;box-sizing:border-box;text-align:left;overflow:hidden;">
+    <div style="height:520px;border-radius:6px 6px 0 0;background:linear-gradient(180deg, var(--secondary-70), var(--secondary-20));padding:18px 16px;box-sizing:border-box;text-align:left;overflow:hidden;">
       <div style="font-size:var(--fs-caption);color:#fff;line-height:1.5;font-weight:400;text-shadow:0 1px 3px rgba(0,0,0,0.3);">HW 2만대: <b>140억원+</b><br>SW구독 25만명: <b>105억원+</b><br>B2B 1,200건: <b>85억원+</b><br>B2G 공공시설 1,500건: <b>45억원+</b><br>MALL·커머스: <b>50억원+</b><br>크리에이터·광고: <b>35억원+</b><br>자사 브랜드: <b>40억원+</b></div>
     </div>
     <div style="font-size:var(--fs-body);font-weight:700;color:var(--secondary);margin-top:6px;">{{bar4Year}}</div>
   </div>
 
   <!-- ═══ 26 SCHEDULE STRIP (bottom:72) ═══ -->
-  <div style="position:absolute;bottom:72px;left:120px;right:120px;display:flex;gap:10px;padding:6px 16px;background:rgba(247,225,80,0.03);border-top:1px solid rgba(247,225,80,0.08);">
-    <span style="font-size:var(--fs-caption);font-weight:700;color:var(--accent);">26년</span>
+  <div style="position:absolute;bottom:72px;left:120px;right:120px;display:flex;gap:10px;padding:6px 16px;background:var(--secondary-05);border-top:1px solid var(--secondary-05);">
+    <span style="font-size:var(--fs-caption);font-weight:700;color:var(--secondary);">26년</span>
     <span style="font-size:var(--fs-caption);color:var(--text-tertiary);">
       <span style="color:var(--text-secondary);">4월</span> 와디즈 1차 100대 →
       <span style="color:var(--text-secondary);">3~5월</span> B2B 20사 →

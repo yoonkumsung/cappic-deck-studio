@@ -1,0 +1,68 @@
+{
+  "fields": [
+    { "key": "title", "label": "타이틀", "type": "text", "value": "향후 추진계획" },
+    { "key": "subtitle", "label": "서브타이틀", "type": "text", "value": "26년 1차년도 월별 추진 일정" },
+
+    { "key": "task1Name", "label": "과제1 이름", "type": "text", "value": "제품 고도화/특허 출원" },
+    { "key": "task1Org", "label": "과제1 담당", "type": "text", "value": "CAPP!C" },
+    { "key": "task1Note", "label": "과제1 비고", "type": "text", "value": "Miss Rate 측정, 특허 1건 등록 목표" },
+
+    { "key": "task2Name", "label": "과제2 이름", "type": "text", "value": "KC 인증 (전자파 인증 예정)" },
+    { "key": "task2Org", "label": "과제2 담당", "type": "text", "value": "CAPP!C" },
+    { "key": "task2Note", "label": "과제2 비고", "type": "text", "value": "전자파 적합성/안전" },
+
+    { "key": "task3Name", "label": "과제3 이름", "type": "text", "value": "청년창업사관학교 16기" },
+    { "key": "task3Org", "label": "과제3 담당", "type": "text", "value": "중진공" },
+    { "key": "task3Note", "label": "과제3 비고", "type": "text", "value": "사업화자금 0.5억 집행" },
+
+    { "key": "task4Name", "label": "과제4 이름", "type": "text", "value": "B2B LOI 영업 누적 20개소" },
+    { "key": "task4Org", "label": "과제4 담당", "type": "text", "value": "CAPP!C" },
+    { "key": "task4Note", "label": "과제4 비고", "type": "text", "value": "LOI 계약 건수" },
+
+    { "key": "task5Name", "label": "과제5 이름", "type": "text", "value": "법인 전환/프리오더 50대" },
+    { "key": "task5Org", "label": "과제5 담당", "type": "text", "value": "CAPP!C" },
+    { "key": "task5Note", "label": "과제5 비고", "type": "text", "value": "법인 등기 완료, 6월 50대 출고" },
+
+    { "key": "task6Name", "label": "과제6 이름", "type": "text", "value": "정책자금 확보 3억" },
+    { "key": "task6Org", "label": "과제6 담당", "type": "text", "value": "중진공/기보" },
+    { "key": "task6Note", "label": "과제6 비고", "type": "text", "value": "7월 1주 확정" },
+
+    { "key": "task7Name", "label": "과제7 이름", "type": "text", "value": "B2C 와디즈 펀딩/파일럿" },
+    { "key": "task7Org", "label": "과제7 담당", "type": "text", "value": "CAPP!C/와디즈" },
+    { "key": "task7Note", "label": "과제7 비고", "type": "text", "value": "펀딩 달성률/설치 성공률" },
+
+    { "key": "task8Name", "label": "과제8 이름", "type": "text", "value": "500대 양산/채널 다각화" },
+    { "key": "task8Org", "label": "과제8 담당", "type": "text", "value": "CAPP!C/STC" },
+    { "key": "task8Note", "label": "과제8 비고", "type": "text", "value": "불량률 <3% / SLA" },
+
+    { "key": "task9Name", "label": "과제9 이름", "type": "text", "value": "Seed 투자 유치/TIPS 준비" },
+    { "key": "task9Org", "label": "과제9 담당", "type": "text", "value": "CAPP!C/VC" },
+    { "key": "task9Note", "label": "과제9 비고", "type": "text", "value": "MRR/B2B 개소 수" },
+
+    { "key": "kpiTitle", "label": "KPI 제목", "type": "text", "value": "3개년 KPI" },
+    { "key": "kpiEmploy26", "label": "고용 2026", "type": "text", "value": "5명" },
+    { "key": "kpiEmploy27", "label": "고용 2027", "type": "text", "value": "10명" },
+    { "key": "kpiEmploy28", "label": "고용 2028", "type": "text", "value": "20명" },
+    { "key": "kpiRevenue26", "label": "총매출 2026", "type": "text", "value": "8억" },
+    { "key": "kpiRevenue27", "label": "총매출 2027", "type": "text", "value": "30억" },
+    { "key": "kpiRevenue28", "label": "총매출 2028", "type": "text", "value": "100억+" },
+    { "key": "kpiExport26", "label": "수출 2026", "type": "text", "value": "3천만" },
+    { "key": "kpiExport27", "label": "수출 2027", "type": "text", "value": "10억" },
+    { "key": "kpiExport28", "label": "수출 2028", "type": "text", "value": "30억+" },
+    { "key": "kpiInvest26", "label": "투자 2026", "type": "text", "value": "Seed 5천~1억" },
+    { "key": "kpiInvest27", "label": "투자 2027", "type": "text", "value": "Pre-A 3~5억" },
+    { "key": "kpiInvest28", "label": "투자 2028", "type": "text", "value": "Series A" },
+
+    { "key": "riskTitle", "label": "리스크 제목", "type": "text", "value": "리스크 대응" },
+    { "key": "risk1Tag", "label": "리스크1 태그", "type": "text", "value": "공급망" },
+    { "key": "risk1Desc", "label": "리스크1 설명", "type": "text", "value": "SBC 보드/카메라 모듈 듀얼 소싱" },
+    { "key": "risk2Tag", "label": "리스크2 태그", "type": "text", "value": "인증" },
+    { "key": "risk2Desc", "label": "리스크2 설명", "type": "text", "value": "26.05 KC 전자파 인증 착수, 리드타임 단축" },
+    { "key": "risk3Tag", "label": "리스크3 태그", "type": "text", "value": "기술" },
+    { "key": "risk3Desc", "label": "리스크3 설명", "type": "text", "value": "정확도 미달 시 클라우드 후처리 백업" },
+    { "key": "risk4Tag", "label": "리스크4 태그", "type": "text", "value": "시장" },
+    { "key": "risk4Desc", "label": "리스크4 설명", "type": "text", "value": "LOI 80대 BEP 확보로 1차 양산 안전판" },
+    { "key": "risk5Tag", "label": "리스크5 태그", "type": "text", "value": "자금" },
+    { "key": "risk5Desc", "label": "리스크5 설명", "type": "text", "value": "중진공 2억 + 기보 1억 (7월 1주 확정)" }
+  ]
+}

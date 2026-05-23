@@ -19,12 +19,12 @@
 }
 
 .badge-secondary {
-  background: rgba(126, 220, 230, 0.12);
+  background: var(--secondary-10);
   color: var(--secondary);
 }
 
 .badge-accent {
-  background: rgba(247, 225, 80, 0.15);
+  background: var(--accent-15);
   color: var(--accent);
 }
 

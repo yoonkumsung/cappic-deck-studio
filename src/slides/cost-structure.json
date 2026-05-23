@@ -1,0 +1,49 @@
+{
+  "fields": [
+    { "key": "title", "label": "타이틀", "type": "text", "value": "매출원가 및 수익 구조" },
+    { "key": "subtitle", "label": "서브타이틀", "type": "text", "value": "2026년 양산 550대 / 평균 GM 약 46%" },
+
+    { "key": "preTitle", "label": "프리오더 제목", "type": "text", "value": "프리오더 50대" },
+    { "key": "preTime", "label": "프리오더 시기", "type": "text", "value": "26.06 / 3D 프린팅 목업" },
+    { "key": "prePrice", "label": "프리오더 판매가", "type": "text", "value": "990천원" },
+    { "key": "preCOGS", "label": "프리오더 원가", "type": "text", "value": "784천원" },
+    { "key": "preGM", "label": "프리오더 GM", "type": "text", "value": "20.8%" },
+    { "key": "preBOM1", "label": "프리오더 BOM 1", "type": "text", "value": "Rock Pi 보드: 15.0백만" },
+    { "key": "preBOM2", "label": "프리오더 BOM 2", "type": "text", "value": "카메라 모듈: 1.7백만" },
+    { "key": "preBOM3", "label": "프리오더 BOM 3", "type": "text", "value": "3D 프린팅 케이스: 10.0백만" },
+    { "key": "preBOM4", "label": "프리오더 BOM 4", "type": "text", "value": "기타 부품/조립: 12.5백만" },
+    { "key": "preTotal", "label": "프리오더 합계", "type": "text", "value": "39.2백만" },
+
+    { "key": "fundTitle", "label": "펀딩 제목", "type": "text", "value": "펀딩 500대" },
+    { "key": "fundTime", "label": "펀딩 시기", "type": "text", "value": "26.09 / 사출 양산" },
+    { "key": "fundPrice", "label": "펀딩 판매가", "type": "text", "value": "1,200천원" },
+    { "key": "fundCOGS", "label": "펀딩 원가", "type": "text", "value": "624천원" },
+    { "key": "fundGM", "label": "펀딩 GM", "type": "text", "value": "48.0%" },
+    { "key": "fundBOM1", "label": "펀딩 BOM 1", "type": "text", "value": "Rock Pi 보드: 150.0백만" },
+    { "key": "fundBOM2", "label": "펀딩 BOM 2", "type": "text", "value": "카메라 모듈 + NRE: 27.0백만" },
+    { "key": "fundBOM3", "label": "펀딩 BOM 3", "type": "text", "value": "사출 케이스: 15.0백만" },
+    { "key": "fundBOM4", "label": "펀딩 BOM 4", "type": "text", "value": "기타 부품/조립: 120.0백만" },
+    { "key": "fundTotal", "label": "펀딩 합계", "type": "text", "value": "312.0백만" },
+
+    { "key": "kpi1Label", "label": "KPI 1 라벨", "type": "text", "value": "26년 매출" },
+    { "key": "kpi1Value", "label": "KPI 1 값", "type": "text", "value": "6.5억원" },
+    { "key": "kpi1Sub", "label": "KPI 1 보조", "type": "text", "value": "프리오더 49.5백만 + 펀딩 600백만" },
+    { "key": "kpi2Label", "label": "KPI 2 라벨", "type": "text", "value": "매출총이익" },
+    { "key": "kpi2Value", "label": "KPI 2 값", "type": "text", "value": "2.98억원" },
+    { "key": "kpi2Sub", "label": "KPI 2 보조", "type": "text", "value": "프리오더 10.3 + 펀딩 288백만" },
+    { "key": "kpi3Label", "label": "KPI 3 라벨", "type": "text", "value": "평균 GM" },
+    { "key": "kpi3Value", "label": "KPI 3 값", "type": "text", "value": "45.9%" },
+    { "key": "kpi3Sub", "label": "KPI 3 보조", "type": "text", "value": "금형 감가상각 반영 시 약 39%" },
+
+    { "key": "capex1", "label": "CapEx 1", "type": "text", "value": "양산 사출 금형 1식: 100백만" },
+    { "key": "capex2", "label": "CapEx 2", "type": "text", "value": "3D 프린팅 목업: 10백만" },
+    { "key": "capexNote", "label": "CapEx 비고", "type": "text", "value": "금형비는 COGS가 아닌 CapEx로 분리. 1,300대 감가상각 분산 시 대당 약 77,000원 추가, 실질 GM 약 39%로 안정화" },
+
+    { "key": "src1", "label": "재원 1", "type": "text", "value": "중진공: 양산 사출 금형 1식 - 100백만" },
+    { "key": "src2", "label": "재원 2", "type": "text", "value": "중진공: 카메라 모듈 일괄 구매 - 44백만" },
+    { "key": "src3", "label": "재원 3", "type": "text", "value": "중진공: 예비비/부품 보강 - 6백만" },
+    { "key": "src4", "label": "재원 4", "type": "text", "value": "청창사: 제조/디자인/제품화 - 38백만" },
+    { "key": "src5", "label": "재원 5", "type": "text", "value": "청창사: 개발자 인건비 6개월 - 12백만" },
+    { "key": "src6", "label": "재원 6", "type": "text", "value": "자본금: 임차료/관리비/운영 버퍼 - 30백만" }
+  ]
+}

@@ -1,0 +1,151 @@
+<div class="slide">
+  <div class="slide-title">{{title}}</div>
+
+  <div class="slide-content" style="display:grid;grid-template-columns:2fr 3fr;gap:var(--sp-lg);height:100%;">
+
+    <!-- LEFT: Company Info -->
+    <div class="card" style="display:flex;flex-direction:column;overflow:hidden;">
+      <div style="position:relative;z-index:1;display:flex;flex-direction:column;height:100%;">
+
+        <!-- Company name + Product highlight -->
+        <div style="margin-bottom:var(--sp-md);padding-bottom:var(--sp-sm);border-bottom:1px solid var(--secondary-10);">
+          <div style="font-size:var(--fs-heading);font-weight:var(--fw-display);color:var(--text-primary);margin-bottom:var(--sp-xs);">CAPP!C</div>
+          <div style="font-size:var(--fs-body);font-weight:var(--fw-heading);color:var(--secondary);">{{product}}</div>
+          <div style="font-size:var(--fs-caption);color:var(--text-tertiary);margin-top:var(--sp-xs);">{{productSub}}</div>
+        </div>
+
+        <!-- Info items -->
+        <div style="display:flex;flex-direction:column;gap:var(--sp-sm);flex:1;">
+          <div>
+            <div style="font-size:var(--fs-caption);color:var(--text-tertiary);letter-spacing:var(--ls-label);margin-bottom:4px;">대표이사</div>
+            <div style="font-size:var(--fs-body);color:var(--text-secondary);">{{ceoName}}</div>
+          </div>
+          <div>
+            <div style="font-size:var(--fs-caption);color:var(--text-tertiary);letter-spacing:var(--ls-label);margin-bottom:4px;">설립일</div>
+            <div style="font-size:var(--fs-body);color:var(--text-secondary);">{{foundDate}} <span style="font-size:var(--fs-caption);color:var(--secondary);">{{foundNote}}</span></div>
+          </div>
+          <div>
+            <div style="font-size:var(--fs-caption);color:var(--text-tertiary);letter-spacing:var(--ls-label);margin-bottom:4px;">사업자등록번호</div>
+            <div style="font-size:var(--fs-body);color:var(--text-secondary);">{{bizNumber}}</div>
+          </div>
+          <div>
+            <div style="font-size:var(--fs-caption);color:var(--text-tertiary);letter-spacing:var(--ls-label);margin-bottom:4px;">업종</div>
+            <div style="font-size:var(--fs-body);color:var(--text-secondary);">{{industry}}</div>
+          </div>
+        </div>
+
+        <!-- Locations -->
+        <div style="margin-top:var(--sp-md);padding-top:var(--sp-sm);border-top:1px solid var(--secondary-10);">
+          <div style="font-size:var(--fs-caption);color:var(--text-tertiary);letter-spacing:var(--ls-label);margin-bottom:var(--sp-xs);">거점</div>
+          <div style="display:flex;flex-wrap:wrap;gap:var(--sp-xs);">
+            <div style="font-size:var(--fs-caption);color:var(--text-secondary);background:var(--secondary-10);padding:4px var(--sp-sm);border-radius:4px;">{{loc1}}</div>
+            <div style="font-size:var(--fs-caption);color:var(--text-secondary);background:var(--secondary-10);padding:4px var(--sp-sm);border-radius:4px;">{{loc2}}</div>
+            <div style="font-size:var(--fs-caption);color:var(--text-secondary);background:var(--secondary-10);padding:4px var(--sp-sm);border-radius:4px;">{{loc3}}</div>
+          </div>
+        </div>
+
+        <!-- Corp note -->
+        <div style="margin-top:var(--sp-sm);font-size:var(--fs-source);color:var(--text-tertiary);line-height:1.5;">{{corpNote}}</div>
+
+      </div>
+    </div>
+
+    <!-- RIGHT: Timeline + Achievements -->
+    <div style="display:flex;flex-direction:column;gap:var(--sp-md);height:100%;">
+
+      <!-- Timeline Card -->
+      <div class="card" style="flex:1;display:flex;flex-direction:column;overflow:hidden;">
+        <div style="position:relative;z-index:1;display:flex;flex-direction:column;height:100%;">
+          <div style="font-size:var(--fs-heading);font-weight:var(--fw-heading);color:var(--text-primary);margin-bottom:var(--sp-sm);">연혁</div>
+          <div style="display:flex;flex-direction:column;gap:var(--sp-xs);flex:1;justify-content:space-between;">
+            <!-- Done milestones (1-6) -->
+            <div style="display:flex;align-items:baseline;gap:var(--sp-sm);">
+              <div style="font-size:var(--fs-caption);color:var(--secondary);min-width:80px;font-weight:var(--fw-heading);">{{tl1Date}}</div>
+              <div style="font-size:var(--fs-body);color:var(--text-primary);">{{tl1Desc}}</div>
+            </div>
+            <div style="display:flex;align-items:baseline;gap:var(--sp-sm);">
+              <div style="font-size:var(--fs-caption);color:var(--secondary);min-width:80px;font-weight:var(--fw-heading);">{{tl2Date}}</div>
+              <div style="font-size:var(--fs-body);color:var(--text-primary);">{{tl2Desc}}</div>
+            </div>
+            <div style="display:flex;align-items:baseline;gap:var(--sp-sm);">
+              <div style="font-size:var(--fs-caption);color:var(--secondary);min-width:80px;font-weight:var(--fw-heading);">{{tl3Date}}</div>
+              <div style="font-size:var(--fs-body);color:var(--text-primary);">{{tl3Desc}}</div>
+            </div>
+            <div style="display:flex;align-items:baseline;gap:var(--sp-sm);">
+              <div style="font-size:var(--fs-caption);color:var(--secondary);min-width:80px;font-weight:var(--fw-heading);">{{tl4Date}}</div>
+              <div style="font-size:var(--fs-body);color:var(--text-primary);">{{tl4Desc}}</div>
+            </div>
+            <div style="display:flex;align-items:baseline;gap:var(--sp-sm);">
+              <div style="font-size:var(--fs-caption);color:var(--secondary);min-width:80px;font-weight:var(--fw-heading);">{{tl5Date}}</div>
+              <div style="font-size:var(--fs-body);color:var(--text-primary);">{{tl5Desc}}</div>
+            </div>
+            <div style="display:flex;align-items:baseline;gap:var(--sp-sm);">
+              <div style="font-size:var(--fs-caption);color:var(--secondary);min-width:80px;font-weight:var(--fw-heading);">{{tl6Date}}</div>
+              <div style="font-size:var(--fs-body);color:var(--text-primary);">{{tl6Desc}}</div>
+            </div>
+            <!-- Future milestones (7-9) -->
+            <div style="display:flex;align-items:baseline;gap:var(--sp-sm);opacity:0.4;">
+              <div style="font-size:var(--fs-caption);color:var(--text-tertiary);min-width:80px;font-weight:var(--fw-heading);">{{tl7Date}}</div>
+              <div style="font-size:var(--fs-body);color:var(--text-tertiary);">{{tl7Desc}}</div>
+            </div>
+            <div style="display:flex;align-items:baseline;gap:var(--sp-sm);opacity:0.4;">
+              <div style="font-size:var(--fs-caption);color:var(--text-tertiary);min-width:80px;font-weight:var(--fw-heading);">{{tl8Date}}</div>
+              <div style="font-size:var(--fs-body);color:var(--text-tertiary);">{{tl8Desc}}</div>
+            </div>
+            <div style="display:flex;align-items:baseline;gap:var(--sp-sm);opacity:0.4;">
+              <div style="font-size:var(--fs-caption);color:var(--text-tertiary);min-width:80px;font-weight:var(--fw-heading);">{{tl9Date}}</div>
+              <div style="font-size:var(--fs-body);color:var(--text-tertiary);">{{tl9Desc}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Achievements Card -->
+      <div class="card" style="display:flex;flex-direction:column;overflow:hidden;">
+        <div style="position:relative;z-index:1;">
+          <div style="font-size:var(--fs-heading);font-weight:var(--fw-heading);color:var(--text-primary);margin-bottom:var(--sp-sm);">주요 성과</div>
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sp-sm);">
+            <!-- Achievement 1 -->
+            <div style="display:flex;flex-direction:column;gap:var(--sp-xs);">
+              <div style="font-size:var(--fs-source);font-weight:var(--fw-heading);color:var(--secondary);background:var(--secondary-15);padding:2px var(--sp-xs);border-radius:4px;display:inline-block;width:fit-content;">{{ach1Rank}}</div>
+              <div style="font-size:var(--fs-caption);color:var(--text-primary);font-weight:var(--fw-heading);">{{ach1Title}}</div>
+              <div style="font-size:var(--fs-source);color:var(--text-tertiary);">{{ach1Org}}</div>
+            </div>
+            <!-- Achievement 2 -->
+            <div style="display:flex;flex-direction:column;gap:var(--sp-xs);">
+              <div style="font-size:var(--fs-source);font-weight:var(--fw-heading);color:var(--secondary);background:var(--secondary-15);padding:2px var(--sp-xs);border-radius:4px;display:inline-block;width:fit-content;">{{ach2Rank}}</div>
+              <div style="font-size:var(--fs-caption);color:var(--text-primary);font-weight:var(--fw-heading);">{{ach2Title}}</div>
+              <div style="font-size:var(--fs-source);color:var(--text-tertiary);">{{ach2Org}}</div>
+            </div>
+            <!-- Achievement 3 -->
+            <div style="display:flex;flex-direction:column;gap:var(--sp-xs);">
+              <div style="font-size:var(--fs-source);font-weight:var(--fw-heading);color:var(--secondary);background:var(--secondary-15);padding:2px var(--sp-xs);border-radius:4px;display:inline-block;width:fit-content;">{{ach3Rank}}</div>
+              <div style="font-size:var(--fs-caption);color:var(--text-primary);font-weight:var(--fw-heading);">{{ach3Title}}</div>
+              <div style="font-size:var(--fs-source);color:var(--text-tertiary);">{{ach3Org}}</div>
+            </div>
+            <!-- Achievement 4 -->
+            <div style="display:flex;flex-direction:column;gap:var(--sp-xs);">
+              <div style="font-size:var(--fs-source);font-weight:var(--fw-heading);color:var(--secondary);background:var(--secondary-15);padding:2px var(--sp-xs);border-radius:4px;display:inline-block;width:fit-content;">{{ach4Rank}}</div>
+              <div style="font-size:var(--fs-caption);color:var(--text-primary);font-weight:var(--fw-heading);">{{ach4Title}}</div>
+              <div style="font-size:var(--fs-source);color:var(--text-tertiary);">{{ach4Org}}</div>
+            </div>
+            <!-- Achievement 5 -->
+            <div style="display:flex;flex-direction:column;gap:var(--sp-xs);">
+              <div style="font-size:var(--fs-source);font-weight:var(--fw-heading);color:var(--secondary);background:var(--secondary-15);padding:2px var(--sp-xs);border-radius:4px;display:inline-block;width:fit-content;">{{ach5Rank}}</div>
+              <div style="font-size:var(--fs-caption);color:var(--text-primary);font-weight:var(--fw-heading);">{{ach5Title}}</div>
+              <div style="font-size:var(--fs-source);color:var(--text-tertiary);">{{ach5Org}}</div>
+            </div>
+            <!-- Achievement 6 -->
+            <div style="display:flex;flex-direction:column;gap:var(--sp-xs);">
+              <div style="font-size:var(--fs-source);font-weight:var(--fw-heading);color:var(--secondary);background:var(--secondary-15);padding:2px var(--sp-xs);border-radius:4px;display:inline-block;width:fit-content;">{{ach6Rank}}</div>
+              <div style="font-size:var(--fs-caption);color:var(--text-primary);font-weight:var(--fw-heading);">{{ach6Title}}</div>
+              <div style="font-size:var(--fs-source);color:var(--text-tertiary);">{{ach6Org}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>

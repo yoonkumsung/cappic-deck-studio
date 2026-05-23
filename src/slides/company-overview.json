@@ -1,0 +1,57 @@
+{
+  "fields": [
+    { "key": "title", "label": "슬라이드 제목", "type": "text", "value": "개요 및 연혁" },
+
+    { "key": "ceoName", "label": "대표이사", "type": "text", "value": "금성윤" },
+    { "key": "foundDate", "label": "설립일", "type": "text", "value": "2026.04.27" },
+    { "key": "foundNote", "label": "설립 비고", "type": "text", "value": "법인 전환 완료" },
+    { "key": "bizNumber", "label": "사업자등록번호", "type": "text", "value": "407-88-03604" },
+    { "key": "industry", "label": "업종", "type": "text", "value": "제조업, AI 솔루션" },
+    { "key": "product", "label": "주력 제품", "type": "text", "value": "CAPP!C PRO" },
+    { "key": "productSub", "label": "제품 설명", "type": "text", "value": "Edge AI 스포츠 자동 촬영 디바이스" },
+
+    { "key": "loc1", "label": "거점 1", "type": "text", "value": "울산 창경 메이커하우스 / 양산/제조" },
+    { "key": "loc2", "label": "거점 2", "type": "text", "value": "대전 한남대 혁신파크 / 세일즈" },
+    { "key": "loc3", "label": "거점 3", "type": "text", "value": "서울 G밸리 킥스업 / 연구개발" },
+
+    { "key": "corpNote", "label": "법인 요약", "type": "text", "value": "2026.04 법인 전환 완료 자본금 3,000만원, 대표이사 최대주주, 공동창업 2인" },
+
+    { "key": "tl1Date", "label": "연혁 1 일자", "type": "text", "value": "25.03" },
+    { "key": "tl1Desc", "label": "연혁 1 내용", "type": "text", "value": "시장 확인, 촬영/편집 솔루션 검증" },
+    { "key": "tl2Date", "label": "연혁 2 일자", "type": "text", "value": "25.07~12" },
+    { "key": "tl2Desc", "label": "연혁 2 내용", "type": "text", "value": "PMF 검증, B2B LOI 10개소 확보" },
+    { "key": "tl3Date", "label": "연혁 3 일자", "type": "text", "value": "25.12" },
+    { "key": "tl3Desc", "label": "연혁 3 내용", "type": "text", "value": "스타트업 데모데이 1위, 예비창업패키지 우선 선정" },
+    { "key": "tl4Date", "label": "연혁 4 일자", "type": "text", "value": "26.01" },
+    { "key": "tl4Desc", "label": "연혁 4 내용", "type": "text", "value": "계층적 시계열 분석 딥러닝 모델 특허 출원" },
+    { "key": "tl5Date", "label": "연혁 5 일자", "type": "text", "value": "26.03" },
+    { "key": "tl5Desc", "label": "연혁 5 내용", "type": "text", "value": "개인사업자 등록, 청년창업사관학교 16기 입교" },
+    { "key": "tl6Date", "label": "연혁 6 일자", "type": "text", "value": "26.04" },
+    { "key": "tl6Desc", "label": "연혁 6 내용", "type": "text", "value": "법인 전환 완료, 프리오더 진행" },
+    { "key": "tl7Date", "label": "연혁 7 일자", "type": "text", "value": "26.08" },
+    { "key": "tl7Desc", "label": "연혁 7 내용", "type": "text", "value": "울산/경남 파일럿 5개소 계약, B2C 펀딩 모집" },
+    { "key": "tl8Date", "label": "연혁 8 일자", "type": "text", "value": "26.09" },
+    { "key": "tl8Desc", "label": "연혁 8 내용", "type": "text", "value": "양산 개시 (500대)" },
+    { "key": "tl9Date", "label": "연혁 9 일자", "type": "text", "value": "26.12" },
+    { "key": "tl9Desc", "label": "연혁 9 내용", "type": "text", "value": "Seed 투자 유치, TIPS 준비" },
+
+    { "key": "ach1Rank", "label": "성과 1 등급", "type": "text", "value": "1ST PLACE" },
+    { "key": "ach1Title", "label": "성과 1 제목", "type": "text", "value": "IR 데모데이 1위" },
+    { "key": "ach1Org", "label": "성과 1 기관", "type": "text", "value": "창업진흥원/가톨릭관동대" },
+    { "key": "ach2Rank", "label": "성과 2 등급", "type": "text", "value": "SELECTED" },
+    { "key": "ach2Title", "label": "성과 2 제목", "type": "text", "value": "청년창업사관학교 16기" },
+    { "key": "ach2Org", "label": "성과 2 기관", "type": "text", "value": "대전 캠퍼스 입교" },
+    { "key": "ach3Rank", "label": "성과 3 등급", "type": "text", "value": "PANEL" },
+    { "key": "ach3Title", "label": "성과 3 제목", "type": "text", "value": "중기부 창업 루키 간담회" },
+    { "key": "ach3Org", "label": "성과 3 기관", "type": "text", "value": "장관 주재 패널 출연" },
+    { "key": "ach4Rank", "label": "성과 4 등급", "type": "text", "value": "3RD PLACE" },
+    { "key": "ach4Title", "label": "성과 4 제목", "type": "text", "value": "경기도 AI 창업경진대회" },
+    { "key": "ach4Org", "label": "성과 4 기관", "type": "text", "value": "경기도경제과학진흥원장상" },
+    { "key": "ach5Rank", "label": "성과 5 등급", "type": "text", "value": "FILED" },
+    { "key": "ach5Title", "label": "성과 5 제목", "type": "text", "value": "특허 1건 출원" },
+    { "key": "ach5Org", "label": "성과 5 기관", "type": "text", "value": "계층적 시계열 모델" },
+    { "key": "ach6Rank", "label": "성과 6 등급", "type": "text", "value": "FILED" },
+    { "key": "ach6Title", "label": "성과 6 제목", "type": "text", "value": "상표 1건 출원" },
+    { "key": "ach6Org", "label": "성과 6 기관", "type": "text", "value": "CAPP!C / 09류" }
+  ]
+}
