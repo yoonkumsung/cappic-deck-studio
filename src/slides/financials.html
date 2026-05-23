@@ -18,72 +18,138 @@
         <div style="margin-left:auto;font-size:var(--fs-source);color:var(--text-tertiary);">{{chartUnit}}</div>
       </div>
 
-      <!-- Bar chart area -->
-      <div style="display:flex;flex:1;align-items:flex-end;gap:var(--sp-xs);padding-bottom:var(--sp-sm);border-bottom:1px solid var(--secondary-05);min-height:300px;">
-        <!-- 3월 -->
-        <div style="flex:1;display:flex;gap:4px;align-items:flex-end;justify-content:center;height:100%;">
-          <div style="width:24px;height:{{m3InPct}};background:var(--text-primary);border-radius:4px 4px 0 0;min-height:4px;"></div>
-          <div style="width:24px;height:{{m3OutPct}};background:var(--secondary-50);border-radius:4px 4px 0 0;min-height:4px;"></div>
+      <!-- Bar chart area with Y-axis -->
+      <div style="display:flex;flex:1;min-height:300px;">
+        <!-- Y-axis labels -->
+        <div style="display:flex;flex-direction:column;justify-content:space-between;padding-bottom:var(--sp-sm);padding-right:var(--sp-xs);align-items:flex-end;">
+          <span style="font-size:var(--fs-source);color:var(--text-tertiary);">600K</span>
+          <span style="font-size:var(--fs-source);color:var(--text-tertiary);">480K</span>
+          <span style="font-size:var(--fs-source);color:var(--text-tertiary);">360K</span>
+          <span style="font-size:var(--fs-source);color:var(--text-tertiary);">240K</span>
+          <span style="font-size:var(--fs-source);color:var(--text-tertiary);">120K</span>
+          <span style="font-size:var(--fs-source);color:var(--text-tertiary);">0</span>
         </div>
-        <!-- 4월 -->
-        <div style="flex:1;display:flex;gap:4px;align-items:flex-end;justify-content:center;height:100%;">
-          <div style="width:24px;height:{{m4InPct}};background:var(--text-primary);border-radius:4px 4px 0 0;"></div>
-          <div style="width:24px;height:{{m4OutPct}};background:var(--secondary-50);border-radius:4px 4px 0 0;"></div>
-        </div>
-        <!-- 5월 -->
-        <div style="flex:1;display:flex;gap:4px;align-items:flex-end;justify-content:center;height:100%;">
-          <div style="width:24px;height:{{m5InPct}};background:var(--text-primary);border-radius:4px 4px 0 0;"></div>
-          <div style="width:24px;height:{{m5OutPct}};background:var(--secondary-50);border-radius:4px 4px 0 0;"></div>
-        </div>
-        <!-- 6월 -->
-        <div style="flex:1;display:flex;gap:4px;align-items:flex-end;justify-content:center;height:100%;">
-          <div style="width:24px;height:{{m6InPct}};background:var(--text-primary);border-radius:4px 4px 0 0;"></div>
-          <div style="width:24px;height:{{m6OutPct}};background:var(--secondary-50);border-radius:4px 4px 0 0;"></div>
-        </div>
-        <!-- 7월 -->
-        <div style="flex:1;display:flex;gap:4px;align-items:flex-end;justify-content:center;height:100%;">
-          <div style="width:24px;height:{{m7InPct}};background:var(--text-primary);border-radius:4px 4px 0 0;"></div>
-          <div style="width:24px;height:{{m7OutPct}};background:var(--secondary-50);border-radius:4px 4px 0 0;"></div>
-        </div>
-        <!-- 8월 -->
-        <div style="flex:1;display:flex;gap:4px;align-items:flex-end;justify-content:center;height:100%;">
-          <div style="width:24px;height:{{m8InPct}};background:var(--text-primary);border-radius:4px 4px 0 0;"></div>
-          <div style="width:24px;height:{{m8OutPct}};background:var(--secondary-50);border-radius:4px 4px 0 0;"></div>
-        </div>
-        <!-- 9월 -->
-        <div style="flex:1;display:flex;gap:4px;align-items:flex-end;justify-content:center;height:100%;">
-          <div style="width:24px;height:{{m9InPct}};background:var(--text-primary);border-radius:4px 4px 0 0;"></div>
-          <div style="width:24px;height:{{m9OutPct}};background:var(--secondary-50);border-radius:4px 4px 0 0;"></div>
-        </div>
-        <!-- 10월 -->
-        <div style="flex:1;display:flex;gap:4px;align-items:flex-end;justify-content:center;height:100%;">
-          <div style="width:24px;height:{{m10InPct}};background:var(--text-primary);border-radius:4px 4px 0 0;"></div>
-          <div style="width:24px;height:{{m10OutPct}};background:var(--secondary-50);border-radius:4px 4px 0 0;"></div>
-        </div>
-        <!-- 11월 -->
-        <div style="flex:1;display:flex;gap:4px;align-items:flex-end;justify-content:center;height:100%;">
-          <div style="width:24px;height:{{m11InPct}};background:var(--text-primary);border-radius:4px 4px 0 0;"></div>
-          <div style="width:24px;height:{{m11OutPct}};background:var(--secondary-50);border-radius:4px 4px 0 0;"></div>
-        </div>
-        <!-- 12월 -->
-        <div style="flex:1;display:flex;gap:4px;align-items:flex-end;justify-content:center;height:100%;">
-          <div style="width:24px;height:{{m12InPct}};background:var(--text-primary);border-radius:4px 4px 0 0;"></div>
-          <div style="width:24px;height:{{m12OutPct}};background:var(--secondary-50);border-radius:4px 4px 0 0;"></div>
-        </div>
-      </div>
 
-      <!-- Month labels -->
-      <div style="display:flex;gap:var(--sp-xs);padding-top:var(--sp-xs);">
-        <div style="flex:1;text-align:center;font-size:var(--fs-source);color:var(--text-tertiary);">{{m3Label}}</div>
-        <div style="flex:1;text-align:center;font-size:var(--fs-source);color:var(--text-tertiary);">{{m4Label}}</div>
-        <div style="flex:1;text-align:center;font-size:var(--fs-source);color:var(--text-tertiary);">{{m5Label}}</div>
-        <div style="flex:1;text-align:center;font-size:var(--fs-source);color:var(--text-tertiary);">{{m6Label}}</div>
-        <div style="flex:1;text-align:center;font-size:var(--fs-source);color:var(--text-tertiary);">{{m7Label}}</div>
-        <div style="flex:1;text-align:center;font-size:var(--fs-source);color:var(--text-tertiary);">{{m8Label}}</div>
-        <div style="flex:1;text-align:center;font-size:var(--fs-source);color:var(--text-tertiary);">{{m9Label}}</div>
-        <div style="flex:1;text-align:center;font-size:var(--fs-source);color:var(--text-tertiary);">{{m10Label}}</div>
-        <div style="flex:1;text-align:center;font-size:var(--fs-source);color:var(--text-tertiary);">{{m11Label}}</div>
-        <div style="flex:1;text-align:center;font-size:var(--fs-source);color:var(--text-tertiary);">{{m12Label}}</div>
+        <!-- Chart area with grid lines -->
+        <div style="flex:1;display:flex;flex-direction:column;position:relative;">
+          <!-- Grid lines -->
+          <div style="position:absolute;inset:0;display:flex;flex-direction:column;justify-content:space-between;pointer-events:none;padding-bottom:var(--sp-sm);">
+            <div style="border-bottom:1px solid var(--secondary-05);"></div>
+            <div style="border-bottom:1px solid var(--secondary-05);"></div>
+            <div style="border-bottom:1px solid var(--secondary-05);"></div>
+            <div style="border-bottom:1px solid var(--secondary-05);"></div>
+            <div style="border-bottom:1px solid var(--secondary-05);"></div>
+            <div style="border-bottom:1px solid var(--secondary-05);"></div>
+          </div>
+
+          <!-- Bars -->
+          <div style="display:flex;flex:1;align-items:flex-end;gap:var(--sp-xs);padding-bottom:var(--sp-sm);border-bottom:1px solid var(--secondary-05);">
+            <!-- 3월 -->
+            <div style="flex:1;display:flex;gap:4px;align-items:flex-end;justify-content:center;height:100%;">
+              <div style="width:28px;height:{{m3InPct}};background:linear-gradient(180deg,var(--text-primary),var(--text-secondary));border-radius:4px 4px 0 0;min-height:4px;position:relative;overflow:hidden;">
+                <span style="position:absolute;left:50%;top:var(--sp-xs);transform:translateX(-50%) rotate(-90deg);transform-origin:center;font-size:var(--fs-source);color:var(--main-black);white-space:nowrap;">{{m3In}}</span>
+              </div>
+              <div style="width:28px;height:{{m3OutPct}};background:linear-gradient(180deg,var(--secondary-70),var(--secondary-50));border-radius:4px 4px 0 0;min-height:4px;position:relative;overflow:hidden;">
+                <span style="position:absolute;left:50%;top:var(--sp-xs);transform:translateX(-50%) rotate(-90deg);transform-origin:center;font-size:var(--fs-source);color:var(--main-black);white-space:nowrap;">{{m3Out}}</span>
+              </div>
+            </div>
+            <!-- 4월 -->
+            <div style="flex:1;display:flex;gap:4px;align-items:flex-end;justify-content:center;height:100%;">
+              <div style="width:28px;height:{{m4InPct}};background:linear-gradient(180deg,var(--text-primary),var(--text-secondary));border-radius:4px 4px 0 0;position:relative;overflow:hidden;">
+                <span style="position:absolute;left:50%;top:var(--sp-xs);transform:translateX(-50%) rotate(-90deg);transform-origin:center;font-size:var(--fs-source);color:var(--main-black);white-space:nowrap;">{{m4In}}</span>
+              </div>
+              <div style="width:28px;height:{{m4OutPct}};background:linear-gradient(180deg,var(--secondary-70),var(--secondary-50));border-radius:4px 4px 0 0;position:relative;overflow:hidden;">
+                <span style="position:absolute;left:50%;top:var(--sp-xs);transform:translateX(-50%) rotate(-90deg);transform-origin:center;font-size:var(--fs-source);color:var(--main-black);white-space:nowrap;">{{m4Out}}</span>
+              </div>
+            </div>
+            <!-- 5월 -->
+            <div style="flex:1;display:flex;gap:4px;align-items:flex-end;justify-content:center;height:100%;">
+              <div style="width:28px;height:{{m5InPct}};background:linear-gradient(180deg,var(--text-primary),var(--text-secondary));border-radius:4px 4px 0 0;position:relative;overflow:hidden;">
+                <span style="position:absolute;left:50%;top:var(--sp-xs);transform:translateX(-50%) rotate(-90deg);transform-origin:center;font-size:var(--fs-source);color:var(--main-black);white-space:nowrap;">{{m5In}}</span>
+              </div>
+              <div style="width:28px;height:{{m5OutPct}};background:linear-gradient(180deg,var(--secondary-70),var(--secondary-50));border-radius:4px 4px 0 0;position:relative;overflow:hidden;">
+                <span style="position:absolute;left:50%;top:var(--sp-xs);transform:translateX(-50%) rotate(-90deg);transform-origin:center;font-size:var(--fs-source);color:var(--main-black);white-space:nowrap;">{{m5Out}}</span>
+              </div>
+            </div>
+            <!-- 6월 -->
+            <div style="flex:1;display:flex;gap:4px;align-items:flex-end;justify-content:center;height:100%;">
+              <div style="width:28px;height:{{m6InPct}};background:linear-gradient(180deg,var(--text-primary),var(--text-secondary));border-radius:4px 4px 0 0;position:relative;overflow:hidden;">
+                <span style="position:absolute;left:50%;top:var(--sp-xs);transform:translateX(-50%) rotate(-90deg);transform-origin:center;font-size:var(--fs-source);color:var(--main-black);white-space:nowrap;">{{m6In}}</span>
+              </div>
+              <div style="width:28px;height:{{m6OutPct}};background:linear-gradient(180deg,var(--secondary-70),var(--secondary-50));border-radius:4px 4px 0 0;position:relative;overflow:hidden;">
+                <span style="position:absolute;left:50%;top:var(--sp-xs);transform:translateX(-50%) rotate(-90deg);transform-origin:center;font-size:var(--fs-source);color:var(--main-black);white-space:nowrap;">{{m6Out}}</span>
+              </div>
+            </div>
+            <!-- 7월 -->
+            <div style="flex:1;display:flex;gap:4px;align-items:flex-end;justify-content:center;height:100%;">
+              <div style="width:28px;height:{{m7InPct}};background:linear-gradient(180deg,var(--text-primary),var(--text-secondary));border-radius:4px 4px 0 0;position:relative;overflow:hidden;">
+                <span style="position:absolute;left:50%;top:var(--sp-xs);transform:translateX(-50%) rotate(-90deg);transform-origin:center;font-size:var(--fs-source);color:var(--main-black);white-space:nowrap;">{{m7In}}</span>
+              </div>
+              <div style="width:28px;height:{{m7OutPct}};background:linear-gradient(180deg,var(--secondary-70),var(--secondary-50));border-radius:4px 4px 0 0;position:relative;overflow:hidden;">
+                <span style="position:absolute;left:50%;top:var(--sp-xs);transform:translateX(-50%) rotate(-90deg);transform-origin:center;font-size:var(--fs-source);color:var(--main-black);white-space:nowrap;">{{m7Out}}</span>
+              </div>
+            </div>
+            <!-- 8월 -->
+            <div style="flex:1;display:flex;gap:4px;align-items:flex-end;justify-content:center;height:100%;">
+              <div style="width:28px;height:{{m8InPct}};background:linear-gradient(180deg,var(--text-primary),var(--text-secondary));border-radius:4px 4px 0 0;position:relative;overflow:hidden;">
+                <span style="position:absolute;left:50%;top:var(--sp-xs);transform:translateX(-50%) rotate(-90deg);transform-origin:center;font-size:var(--fs-source);color:var(--main-black);white-space:nowrap;">{{m8In}}</span>
+              </div>
+              <div style="width:28px;height:{{m8OutPct}};background:linear-gradient(180deg,var(--secondary-70),var(--secondary-50));border-radius:4px 4px 0 0;position:relative;overflow:hidden;">
+                <span style="position:absolute;left:50%;top:var(--sp-xs);transform:translateX(-50%) rotate(-90deg);transform-origin:center;font-size:var(--fs-source);color:var(--main-black);white-space:nowrap;">{{m8Out}}</span>
+              </div>
+            </div>
+            <!-- 9월 -->
+            <div style="flex:1;display:flex;gap:4px;align-items:flex-end;justify-content:center;height:100%;">
+              <div style="width:28px;height:{{m9InPct}};background:linear-gradient(180deg,var(--text-primary),var(--text-secondary));border-radius:4px 4px 0 0;position:relative;overflow:hidden;">
+                <span style="position:absolute;left:50%;top:var(--sp-xs);transform:translateX(-50%) rotate(-90deg);transform-origin:center;font-size:var(--fs-source);color:var(--main-black);white-space:nowrap;">{{m9In}}</span>
+              </div>
+              <div style="width:28px;height:{{m9OutPct}};background:linear-gradient(180deg,var(--secondary-70),var(--secondary-50));border-radius:4px 4px 0 0;position:relative;overflow:hidden;">
+                <span style="position:absolute;left:50%;top:var(--sp-xs);transform:translateX(-50%) rotate(-90deg);transform-origin:center;font-size:var(--fs-source);color:var(--main-black);white-space:nowrap;">{{m9Out}}</span>
+              </div>
+            </div>
+            <!-- 10월 -->
+            <div style="flex:1;display:flex;gap:4px;align-items:flex-end;justify-content:center;height:100%;">
+              <div style="width:28px;height:{{m10InPct}};background:linear-gradient(180deg,var(--text-primary),var(--text-secondary));border-radius:4px 4px 0 0;position:relative;overflow:hidden;">
+                <span style="position:absolute;left:50%;top:var(--sp-xs);transform:translateX(-50%) rotate(-90deg);transform-origin:center;font-size:var(--fs-source);color:var(--main-black);white-space:nowrap;">{{m10In}}</span>
+              </div>
+              <div style="width:28px;height:{{m10OutPct}};background:linear-gradient(180deg,var(--secondary-70),var(--secondary-50));border-radius:4px 4px 0 0;position:relative;overflow:hidden;">
+                <span style="position:absolute;left:50%;top:var(--sp-xs);transform:translateX(-50%) rotate(-90deg);transform-origin:center;font-size:var(--fs-source);color:var(--main-black);white-space:nowrap;">{{m10Out}}</span>
+              </div>
+            </div>
+            <!-- 11월 -->
+            <div style="flex:1;display:flex;gap:4px;align-items:flex-end;justify-content:center;height:100%;">
+              <div style="width:28px;height:{{m11InPct}};background:linear-gradient(180deg,var(--text-primary),var(--text-secondary));border-radius:4px 4px 0 0;position:relative;overflow:hidden;">
+                <span style="position:absolute;left:50%;top:var(--sp-xs);transform:translateX(-50%) rotate(-90deg);transform-origin:center;font-size:var(--fs-source);color:var(--main-black);white-space:nowrap;">{{m11In}}</span>
+              </div>
+              <div style="width:28px;height:{{m11OutPct}};background:linear-gradient(180deg,var(--secondary-70),var(--secondary-50));border-radius:4px 4px 0 0;position:relative;overflow:hidden;">
+                <span style="position:absolute;left:50%;top:var(--sp-xs);transform:translateX(-50%) rotate(-90deg);transform-origin:center;font-size:var(--fs-source);color:var(--main-black);white-space:nowrap;">{{m11Out}}</span>
+              </div>
+            </div>
+            <!-- 12월 -->
+            <div style="flex:1;display:flex;gap:4px;align-items:flex-end;justify-content:center;height:100%;">
+              <div style="width:28px;height:{{m12InPct}};background:linear-gradient(180deg,var(--text-primary),var(--text-secondary));border-radius:4px 4px 0 0;position:relative;overflow:hidden;">
+                <span style="position:absolute;left:50%;top:var(--sp-xs);transform:translateX(-50%) rotate(-90deg);transform-origin:center;font-size:var(--fs-source);color:var(--main-black);white-space:nowrap;">{{m12In}}</span>
+              </div>
+              <div style="width:28px;height:{{m12OutPct}};background:linear-gradient(180deg,var(--secondary-70),var(--secondary-50));border-radius:4px 4px 0 0;position:relative;overflow:hidden;">
+                <span style="position:absolute;left:50%;top:var(--sp-xs);transform:translateX(-50%) rotate(-90deg);transform-origin:center;font-size:var(--fs-source);color:var(--main-black);white-space:nowrap;">{{m12Out}}</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Month labels -->
+          <div style="display:flex;gap:var(--sp-xs);padding-top:var(--sp-xs);">
+            <div style="flex:1;text-align:center;font-size:var(--fs-source);color:var(--text-tertiary);">{{m3Label}}</div>
+            <div style="flex:1;text-align:center;font-size:var(--fs-source);color:var(--text-tertiary);">{{m4Label}}</div>
+            <div style="flex:1;text-align:center;font-size:var(--fs-source);color:var(--text-tertiary);">{{m5Label}}</div>
+            <div style="flex:1;text-align:center;font-size:var(--fs-source);color:var(--text-tertiary);">{{m6Label}}</div>
+            <div style="flex:1;text-align:center;font-size:var(--fs-source);color:var(--text-tertiary);">{{m7Label}}</div>
+            <div style="flex:1;text-align:center;font-size:var(--fs-source);color:var(--text-tertiary);">{{m8Label}}</div>
+            <div style="flex:1;text-align:center;font-size:var(--fs-source);color:var(--text-tertiary);">{{m9Label}}</div>
+            <div style="flex:1;text-align:center;font-size:var(--fs-source);color:var(--text-tertiary);">{{m10Label}}</div>
+            <div style="flex:1;text-align:center;font-size:var(--fs-source);color:var(--text-tertiary);">{{m11Label}}</div>
+            <div style="flex:1;text-align:center;font-size:var(--fs-source);color:var(--text-tertiary);">{{m12Label}}</div>
+          </div>
+        </div>
       </div>
     </div>
 
