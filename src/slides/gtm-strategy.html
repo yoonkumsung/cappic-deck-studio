@@ -1,141 +1,122 @@
 <div class="slide">
   <div class="slide-title">{{title}}</div>
 
-  <div class="slide-content" style="display:grid;grid-template-rows:1fr auto;gap:var(--sp-md);height:100%;">
+  <div class="slide-content" style="display:flex;flex-direction:column;gap:var(--sp-sm);">
 
-    <!-- Main area: flywheel + phases -->
-    <div style="display:grid;grid-template-columns:55fr 45fr;gap:var(--sp-lg);">
+    <!-- Subtitle -->
+    <div style="display:flex;align-items:flex-start;gap:var(--sp-xs);">
+      <div style="width:8px;height:8px;border-radius:50%;background:var(--secondary);margin-top:7px;flex-shrink:0;"></div>
+      <div style="font-size:var(--fs-caption);font-weight:var(--fw-body);color:var(--text-secondary);line-height:1.6;">{{subtitle}}</div>
+    </div>
 
-      <!-- LEFT: Flywheel SVG -->
-      <div style="display:flex;align-items:center;justify-content:center;">
-        <svg viewBox="0 0 520 520" style="width:100%;max-width:520px;max-height:100%;">
+    <!-- Main: left flywheel + right expansion -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-xl);flex:1;align-items:center;">
+
+      <!-- LEFT: Flywheel -->
+      <div style="position:relative;width:100%;max-width:480px;height:480px;margin:0 auto;">
+
+        <svg viewBox="0 0 480 480" style="position:absolute;inset:0;width:100%;height:100%;">
           <defs>
-            <marker id="fw-arrow" viewBox="0 0 10 8" refX="8" refY="4" markerWidth="8" markerHeight="6" orient="auto-start-reverse">
-              <path d="M0,0 L10,4 L0,8 Z" fill="var(--secondary)" />
+            <marker id="gtm-aTeal" markerWidth="20" markerHeight="20" refX="10" refY="10" orient="auto" markerUnits="userSpaceOnUse">
+              <path d="M 0 2 L 19 10 L 0 18 Z" fill="#7EDCE6" opacity="0.8"/>
             </marker>
-            <linearGradient id="fw-center-grad" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stop-color="#1A1A1A" />
-              <stop offset="100%" stop-color="#111111" />
-            </linearGradient>
+            <marker id="gtm-aDark" markerWidth="20" markerHeight="20" refX="10" refY="10" orient="auto" markerUnits="userSpaceOnUse">
+              <path d="M 0 2 L 19 10 L 0 18 Z" fill="#666" opacity="0.6"/>
+            </marker>
           </defs>
-
-          <!-- Orbit circle -->
-          <circle cx="260" cy="260" r="190" fill="none" stroke="var(--secondary-15)" stroke-width="3" />
-
-          <!-- Curved arrow arcs between nodes (clockwise) -->
-          <!-- Node1(260,70) -> Node2(443,202) -->
-          <path d="M295,83 A190,190 0 0,1 428,180" fill="none" stroke="var(--secondary)" stroke-width="2.5" marker-end="url(#fw-arrow)" />
-          <!-- Node2(443,202) -> Node3(372,434) -->
-          <path d="M455,238 A190,190 0 0,1 392,418" fill="none" stroke="var(--secondary)" stroke-width="2.5" marker-end="url(#fw-arrow)" />
-          <!-- Node3(372,434) -> Node4(148,434) -->
-          <path d="M345,452 A190,190 0 0,1 175,452" fill="none" stroke="var(--secondary)" stroke-width="2.5" marker-end="url(#fw-arrow)" />
-          <!-- Node4(148,434) -> Node5(77,202) -->
-          <path d="M128,418 A190,190 0 0,1 65,238" fill="none" stroke="var(--secondary)" stroke-width="2.5" marker-end="url(#fw-arrow)" />
-          <!-- Node5(77,202) -> Node1(260,70) -->
-          <path d="M92,180 A190,190 0 0,1 225,83" fill="none" stroke="var(--secondary)" stroke-width="2.5" marker-end="url(#fw-arrow)" />
-
-          <!-- Center circle -->
-          <circle cx="260" cy="260" r="65" fill="url(#fw-center-grad)" stroke="var(--secondary-20)" stroke-width="2" />
-          <text x="260" y="250" text-anchor="middle" font-size="20" font-weight="700" fill="white">B2B2C</text>
-          <text x="260" y="274" text-anchor="middle" font-size="20" font-weight="700" fill="white">플라이휠</text>
-          <text x="260" y="292" text-anchor="middle" font-size="12" fill="#B0B0B0">{{fwCenterSub}}</text>
-
-          <!-- Node 1 (top, 270deg): cx=260, cy=70 -->
-          <circle cx="260" cy="70" r="52" fill="var(--secondary-10)" stroke="var(--secondary-50)" stroke-width="2" />
-          <text x="260" y="66" text-anchor="middle" font-size="15" font-weight="700" fill="white">{{fw1}}</text>
-          <text x="260" y="84" text-anchor="middle" font-size="12" fill="#B0B0B0">{{fw1Sub}}</text>
-
-          <!-- Node 2 (right, 342deg): cx=443, cy=202 -->
-          <circle cx="443" cy="202" r="52" fill="var(--secondary-10)" stroke="var(--secondary-50)" stroke-width="2" />
-          <text x="443" y="198" text-anchor="middle" font-size="15" font-weight="700" fill="white">{{fw2}}</text>
-          <text x="443" y="216" text-anchor="middle" font-size="12" fill="#B0B0B0">{{fw2Sub}}</text>
-
-          <!-- Node 3 (bottom-right, 54deg): cx=372, cy=434 -->
-          <circle cx="372" cy="434" r="52" fill="var(--secondary-10)" stroke="var(--secondary-50)" stroke-width="2" />
-          <text x="372" y="430" text-anchor="middle" font-size="15" font-weight="700" fill="white">{{fw3}}</text>
-          <text x="372" y="448" text-anchor="middle" font-size="12" fill="#B0B0B0">{{fw3Sub}}</text>
-
-          <!-- Node 4 (bottom-left, 126deg): cx=148, cy=434 -->
-          <circle cx="148" cy="434" r="52" fill="var(--secondary-10)" stroke="var(--secondary-50)" stroke-width="2" />
-          <text x="148" y="430" text-anchor="middle" font-size="15" font-weight="700" fill="white">{{fw4}}</text>
-          <text x="148" y="448" text-anchor="middle" font-size="12" fill="#B0B0B0">{{fw4Sub}}</text>
-
-          <!-- Node 5 (left, 198deg): cx=77, cy=202 -->
-          <circle cx="77" cy="202" r="52" fill="var(--secondary-10)" stroke="var(--secondary-50)" stroke-width="2" />
-          <text x="77" y="198" text-anchor="middle" font-size="15" font-weight="700" fill="white">{{fw5}}</text>
-          <text x="77" y="216" text-anchor="middle" font-size="12" fill="#B0B0B0">{{fw5Sub}}</text>
+          <circle cx="240" cy="240" r="168" fill="none" stroke="rgba(126,220,230,0.15)" stroke-width="3"/>
+          <path d="M 282 82 A 168 168 0 0 1 358 128 A 168 168 0 0 1 402 198" fill="none" stroke="#7EDCE6" stroke-width="3.5" stroke-linecap="round" opacity="0.6" marker-mid="url(#gtm-aTeal)"/>
+          <path d="M 402 282 A 168 168 0 0 1 358 352 A 168 168 0 0 1 282 398" fill="none" stroke="#666" stroke-width="3.5" stroke-linecap="round" opacity="0.4" marker-mid="url(#gtm-aDark)"/>
+          <path d="M 198 398 A 168 168 0 0 1 122 352 A 168 168 0 0 1 78 282" fill="none" stroke="#7EDCE6" stroke-width="3.5" stroke-linecap="round" opacity="0.6" marker-mid="url(#gtm-aTeal)"/>
+          <path d="M 78 198 A 168 168 0 0 1 122 128 A 168 168 0 0 1 198 82" fill="none" stroke="#666" stroke-width="3.5" stroke-linecap="round" opacity="0.4" marker-mid="url(#gtm-aDark)"/>
         </svg>
+
+        <!-- Center -->
+        <div style="position:absolute;width:140px;height:140px;left:170px;top:170px;border-radius:50%;background:linear-gradient(165deg,#1a1a1a,#111);border:2px solid var(--secondary-20);display:flex;align-items:center;justify-content:center;flex-direction:column;z-index:10;">
+          <div style="font-size:var(--fs-caption);font-weight:var(--fw-display);color:var(--text-primary);text-align:center;line-height:1.3;">{{fwCenter}}<br>{{fwCenterLabel}}</div>
+          <div style="font-size:var(--fs-source);font-weight:var(--fw-body);color:var(--text-tertiary);margin-top:4px;">{{fwCenterSub}}</div>
+        </div>
+
+        <!-- Top card -->
+        <div class="card" style="position:absolute;width:160px;left:160px;top:8px;padding:var(--sp-sm);text-align:center;z-index:20;">
+          <div style="position:relative;z-index:1;">
+            <div style="font-size:24px;margin-bottom:4px;">
+              <svg width="32" height="24" viewBox="0 0 32 24" fill="none"><rect x="0.5" y="0.5" width="31" height="23" rx="2" fill="#4CAF50" stroke="#388E3C" stroke-width="1"/><line x1="16" y1="0.5" x2="16" y2="23.5" stroke="white" stroke-width="0.8"/><circle cx="16" cy="12" r="3.5" fill="none" stroke="white" stroke-width="0.8"/><rect x="0.5" y="5" width="5" height="14" fill="none" stroke="white" stroke-width="0.8"/><rect x="26.5" y="5" width="5" height="14" fill="none" stroke="white" stroke-width="0.8"/><circle cx="16" cy="12" r="0.8" fill="white"/></svg>
+            </div>
+            <div style="font-size:var(--fs-caption);font-weight:var(--fw-heading);color:var(--text-primary);margin-bottom:2px;">{{fw1}}</div>
+            <div style="font-size:var(--fs-source);font-weight:var(--fw-body);color:var(--text-tertiary);line-height:1.4;">{{fw1Sub}}</div>
+          </div>
+        </div>
+        <!-- Right card -->
+        <div class="card" style="position:absolute;width:160px;left:325px;top:192px;padding:var(--sp-sm);text-align:center;z-index:20;">
+          <div style="position:relative;z-index:1;">
+            <div style="font-size:24px;margin-bottom:4px;">💬</div>
+            <div style="font-size:var(--fs-caption);font-weight:var(--fw-heading);color:var(--text-primary);margin-bottom:2px;">{{fw2}}</div>
+            <div style="font-size:var(--fs-source);font-weight:var(--fw-body);color:var(--text-tertiary);line-height:1.4;">{{fw2Sub}}</div>
+          </div>
+        </div>
+        <!-- Bottom card -->
+        <div class="card" style="position:absolute;width:160px;left:160px;top:365px;padding:var(--sp-sm);text-align:center;z-index:20;">
+          <div style="position:relative;z-index:1;">
+            <div style="font-size:24px;margin-bottom:4px;">🌐</div>
+            <div style="font-size:var(--fs-caption);font-weight:var(--fw-heading);color:var(--text-primary);margin-bottom:2px;">{{fw3}}</div>
+            <div style="font-size:var(--fs-source);font-weight:var(--fw-body);color:var(--text-tertiary);line-height:1.4;">{{fw3Sub}}</div>
+          </div>
+        </div>
+        <!-- Left card -->
+        <div class="card" style="position:absolute;width:160px;left:-5px;top:192px;padding:var(--sp-sm);text-align:center;z-index:20;">
+          <div style="position:relative;z-index:1;">
+            <div style="font-size:24px;margin-bottom:4px;">📊</div>
+            <div style="font-size:var(--fs-caption);font-weight:var(--fw-heading);color:var(--text-primary);margin-bottom:2px;">{{fw4}}</div>
+            <div style="font-size:var(--fs-source);font-weight:var(--fw-body);color:var(--text-tertiary);line-height:1.4;">{{fw4Sub}}</div>
+          </div>
+        </div>
       </div>
 
-      <!-- RIGHT: 3 phase cards stacked -->
-      <div style="display:flex;flex-direction:column;gap:var(--sp-sm);">
-
-        <!-- Phase 1 (highlighted) -->
-        <div class="card card-secondary" style="flex:1;display:flex;flex-direction:column;justify-content:center;">
-          <div style="position:relative;z-index:1;">
-            <div style="display:flex;align-items:center;gap:var(--sp-sm);margin-bottom:var(--sp-xs);">
-              <span style="font-size:var(--fs-source);font-weight:var(--fw-heading);color:var(--secondary);background:var(--secondary-15);border-radius:4px;padding:2px var(--sp-xs);">{{phase1Badge}}</span>
-              <span style="font-size:var(--fs-heading);font-weight:var(--fw-heading);color:var(--text-primary);">{{phase1Title}}</span>
-              <span style="font-size:var(--fs-caption);color:var(--text-tertiary);margin-left:auto;">{{phase1Timeline}}</span>
-            </div>
-            <div style="font-size:var(--fs-body);color:var(--text-secondary);line-height:1.6;">{{phase1Desc}}</div>
+      <!-- RIGHT: Expansion steps -->
+      <div style="display:flex;flex-direction:column;">
+        <!-- Step 4 -->
+        <div style="display:flex;align-items:center;gap:var(--sp-sm);padding:var(--sp-sm) var(--sp-md);position:relative;">
+          <div style="position:absolute;left:43px;top:50%;bottom:0;width:2px;background:var(--secondary-15);"></div>
+          <div style="width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:var(--fs-caption);font-weight:var(--fw-display);color:#000;background:linear-gradient(135deg,var(--secondary),#0A7A88);flex-shrink:0;position:relative;z-index:2;box-shadow:0 2px 8px var(--secondary-20);">4</div>
+          <div>
+            <div style="font-size:var(--fs-body);font-weight:var(--fw-heading);color:var(--text-primary);">{{step4Title}}</div>
+            <div style="font-size:var(--fs-caption);font-weight:var(--fw-body);color:var(--text-tertiary);line-height:1.5;">{{step4Desc}}</div>
+            <span style="display:inline-block;font-size:var(--fs-source);font-weight:var(--fw-heading);padding:2px var(--sp-xs);border-radius:4px;margin-top:4px;background:var(--secondary-10);color:var(--text-tertiary);">{{step4Tag}}</span>
           </div>
         </div>
-
-        <!-- Phase 2 -->
-        <div class="card" style="flex:1;display:flex;flex-direction:column;justify-content:center;">
-          <div style="position:relative;z-index:1;">
-            <div style="display:flex;align-items:center;gap:var(--sp-sm);margin-bottom:var(--sp-xs);">
-              <span style="font-size:var(--fs-source);font-weight:var(--fw-heading);color:var(--secondary);background:var(--secondary-15);border-radius:4px;padding:2px var(--sp-xs);">{{phase2Badge}}</span>
-              <span style="font-size:var(--fs-heading);font-weight:var(--fw-heading);color:var(--text-primary);">{{phase2Title}}</span>
-              <span style="font-size:var(--fs-caption);color:var(--text-tertiary);margin-left:auto;">{{phase2Timeline}}</span>
-            </div>
-            <div style="font-size:var(--fs-body);color:var(--text-secondary);line-height:1.6;">{{phase2Desc}}</div>
+        <!-- Step 3 -->
+        <div style="display:flex;align-items:center;gap:var(--sp-sm);padding:var(--sp-sm) var(--sp-md);position:relative;">
+          <div style="position:absolute;left:43px;top:0;bottom:0;width:2px;background:var(--secondary-15);"></div>
+          <div style="width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:var(--fs-caption);font-weight:var(--fw-display);color:#000;background:linear-gradient(135deg,var(--secondary),#0A7A88);flex-shrink:0;position:relative;z-index:2;box-shadow:0 2px 8px var(--secondary-20);">3</div>
+          <div>
+            <div style="font-size:var(--fs-body);font-weight:var(--fw-heading);color:var(--text-primary);">{{step3Title}}</div>
+            <div style="font-size:var(--fs-caption);font-weight:var(--fw-body);color:var(--text-tertiary);line-height:1.5;">{{step3Desc}}</div>
+            <span style="display:inline-block;font-size:var(--fs-source);font-weight:var(--fw-heading);padding:2px var(--sp-xs);border-radius:4px;margin-top:4px;background:var(--secondary-15);color:var(--secondary);">{{step3Tag}}</span>
           </div>
         </div>
-
-        <!-- Phase 3 -->
-        <div class="card" style="flex:1;display:flex;flex-direction:column;justify-content:center;">
-          <div style="position:relative;z-index:1;">
-            <div style="display:flex;align-items:center;gap:var(--sp-sm);margin-bottom:var(--sp-xs);">
-              <span style="font-size:var(--fs-source);font-weight:var(--fw-heading);color:var(--secondary);background:var(--secondary-15);border-radius:4px;padding:2px var(--sp-xs);">{{phase3Badge}}</span>
-              <span style="font-size:var(--fs-heading);font-weight:var(--fw-heading);color:var(--text-primary);">{{phase3Title}}</span>
-              <span style="font-size:var(--fs-caption);color:var(--text-tertiary);margin-left:auto;">{{phase3Timeline}}</span>
-            </div>
-            <div style="font-size:var(--fs-body);color:var(--text-secondary);line-height:1.6;">{{phase3Desc}}</div>
+        <!-- Step 2 -->
+        <div style="display:flex;align-items:center;gap:var(--sp-sm);padding:var(--sp-sm) var(--sp-md);position:relative;">
+          <div style="position:absolute;left:43px;top:0;bottom:0;width:2px;background:var(--secondary-15);"></div>
+          <div style="width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:var(--fs-caption);font-weight:var(--fw-display);color:#000;background:linear-gradient(135deg,var(--secondary),#0A7A88);flex-shrink:0;position:relative;z-index:2;box-shadow:0 2px 8px var(--secondary-20);">2</div>
+          <div>
+            <div style="font-size:var(--fs-body);font-weight:var(--fw-heading);color:var(--text-primary);">{{step2Title}}</div>
+            <div style="font-size:var(--fs-caption);font-weight:var(--fw-body);color:var(--text-tertiary);line-height:1.5;">{{step2Desc}}</div>
+            <span style="display:inline-block;font-size:var(--fs-source);font-weight:var(--fw-heading);padding:2px var(--sp-xs);border-radius:4px;margin-top:4px;background:var(--secondary-15);color:var(--secondary);">{{step2Tag}}</span>
           </div>
         </div>
-
+        <!-- Step 1 -->
+        <div style="display:flex;align-items:center;gap:var(--sp-sm);padding:var(--sp-sm) var(--sp-md);position:relative;">
+          <div style="position:absolute;left:43px;top:0;bottom:50%;width:2px;background:var(--secondary-15);"></div>
+          <div style="width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:var(--fs-caption);font-weight:var(--fw-display);color:var(--text-primary);background:linear-gradient(135deg,#555,#333);flex-shrink:0;position:relative;z-index:2;">1</div>
+          <div>
+            <div style="font-size:var(--fs-body);font-weight:var(--fw-heading);color:var(--text-primary);">{{step1Title}}</div>
+            <div style="font-size:var(--fs-caption);font-weight:var(--fw-body);color:var(--text-tertiary);line-height:1.5;">{{step1Desc}}</div>
+            <span style="display:inline-block;font-size:var(--fs-source);font-weight:var(--fw-heading);padding:2px var(--sp-xs);border-radius:4px;margin-top:4px;background:var(--secondary-10);color:var(--text-tertiary);">{{step1Tag}}</span>
+          </div>
+        </div>
       </div>
+
     </div>
-
-    <!-- Bottom: 4 metrics -->
-    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:var(--sp-sm);">
-      <div class="card" style="text-align:center;">
-        <div style="position:relative;z-index:1;">
-          <div style="font-size:var(--fs-caption);color:var(--text-tertiary);">{{met1Label}}</div>
-          <div style="font-size:var(--fs-heading);font-weight:var(--fw-heading);color:var(--secondary);margin-top:var(--sp-xs);">{{met1Value}}</div>
-        </div>
-      </div>
-      <div class="card" style="text-align:center;">
-        <div style="position:relative;z-index:1;">
-          <div style="font-size:var(--fs-caption);color:var(--text-tertiary);">{{met2Label}}</div>
-          <div style="font-size:var(--fs-heading);font-weight:var(--fw-heading);color:var(--secondary);margin-top:var(--sp-xs);">{{met2Value}}</div>
-        </div>
-      </div>
-      <div class="card card-secondary" style="text-align:center;">
-        <div style="position:relative;z-index:1;">
-          <div style="font-size:var(--fs-caption);color:var(--text-tertiary);">{{met3Label}}</div>
-          <div style="font-size:var(--fs-heading);font-weight:var(--fw-heading);color:var(--secondary);margin-top:var(--sp-xs);">{{met3Value}}</div>
-        </div>
-      </div>
-      <div class="card" style="text-align:center;">
-        <div style="position:relative;z-index:1;">
-          <div style="font-size:var(--fs-caption);color:var(--text-tertiary);">{{met4Label}}</div>
-          <div style="font-size:var(--fs-heading);font-weight:var(--fw-heading);color:var(--secondary);margin-top:var(--sp-xs);">{{met4Value}}</div>
-        </div>
-      </div>
-    </div>
-
   </div>
 </div>

@@ -1,88 +1,178 @@
 <div class="slide">
   <div class="slide-title">{{title}}</div>
 
-  <div class="slide-content sg-cols-2">
+  <div class="slide-content" style="display:grid;grid-template-rows:1fr auto auto;gap:var(--sp-sm);height:100%;">
 
-    <!-- Left: Budget breakdown (donut concept with bars) -->
-    <div class="card" style="display:flex;flex-direction:column;justify-content:center;">
-      <div style="position:relative;z-index:1;">
-        <div class="sg-card-title">{{budgetTitle}}</div>
-        <div class="sg-data-list">
-          <!-- Item 1 -->
-          <div class="sg-item">
-            <div style="display:flex;justify-content:space-between;align-items:center;">
-              <div class="sg-item-label">{{bud1Name}}</div>
-              <div class="sg-item-value" style="color:var(--secondary);">{{bud1Pct}}</div>
-            </div>
-            <div style="width:100%;height:var(--sp-xs);background:rgba(255,255,255,0.06);border-radius:var(--sp-xs);overflow:hidden;margin-top:var(--sp-xs);">
-              <div style="width:35%;height:100%;background:var(--secondary);border-radius:var(--sp-xs);"></div>
-            </div>
-          </div>
-          <!-- Item 2 -->
-          <div class="sg-item">
-            <div style="display:flex;justify-content:space-between;align-items:center;">
-              <div class="sg-item-label">{{bud2Name}}</div>
-              <div class="sg-item-value" style="color:var(--secondary);">{{bud2Pct}}</div>
-            </div>
-            <div style="width:100%;height:var(--sp-xs);background:rgba(255,255,255,0.06);border-radius:var(--sp-xs);overflow:hidden;margin-top:var(--sp-xs);">
-              <div style="width:35%;height:100%;background:var(--secondary);border-radius:var(--sp-xs);"></div>
-            </div>
-          </div>
-          <!-- Item 3 -->
-          <div class="sg-item">
-            <div style="display:flex;justify-content:space-between;align-items:center;">
-              <div class="sg-item-label">{{bud3Name}}</div>
-              <div class="sg-item-value">{{bud3Pct}}</div>
-            </div>
-            <div style="width:100%;height:var(--sp-xs);background:rgba(255,255,255,0.06);border-radius:var(--sp-xs);overflow:hidden;margin-top:var(--sp-xs);">
-              <div style="width:15%;height:100%;background:var(--text-secondary);border-radius:var(--sp-xs);"></div>
-            </div>
-          </div>
-          <!-- Item 4 -->
-          <div class="sg-item">
-            <div style="display:flex;justify-content:space-between;align-items:center;">
-              <div class="sg-item-label">{{bud4Name}}</div>
-              <div class="sg-item-value">{{bud4Pct}}</div>
-            </div>
-            <div style="width:100%;height:var(--sp-xs);background:rgba(255,255,255,0.06);border-radius:var(--sp-xs);overflow:hidden;margin-top:var(--sp-xs);">
-              <div style="width:8%;height:100%;background:var(--text-tertiary);border-radius:var(--sp-xs);"></div>
-            </div>
-          </div>
-          <!-- Item 5 -->
-          <div class="sg-item">
-            <div style="display:flex;justify-content:space-between;align-items:center;">
-              <div class="sg-item-label">{{bud5Name}}</div>
-              <div class="sg-item-value">{{bud5Pct}}</div>
-            </div>
-            <div style="width:100%;height:var(--sp-xs);background:rgba(255,255,255,0.06);border-radius:var(--sp-xs);overflow:hidden;margin-top:var(--sp-xs);">
-              <div style="width:7%;height:100%;background:var(--text-tertiary);border-radius:var(--sp-xs);"></div>
-            </div>
-          </div>
+    <!-- Row 1: CSS Bar Chart -->
+    <div class="card" style="padding:var(--sp-md);display:flex;flex-direction:column;">
+      <!-- Legend -->
+      <div style="display:flex;gap:var(--sp-md);align-items:center;margin-bottom:var(--sp-sm);">
+        <div style="display:flex;align-items:center;gap:var(--sp-xs);">
+          <div style="width:var(--sp-sm);height:var(--sp-xs);background:var(--text-primary);border-radius:4px;"></div>
+          <span style="font-size:var(--fs-source);color:var(--text-tertiary);">{{legendInflow}}</span>
         </div>
+        <div style="display:flex;align-items:center;gap:var(--sp-xs);">
+          <div style="width:var(--sp-sm);height:var(--sp-xs);background:var(--secondary-50);border-radius:4px;"></div>
+          <span style="font-size:var(--fs-source);color:var(--text-tertiary);">{{legendOutflow}}</span>
+        </div>
+        <div style="margin-left:auto;font-size:var(--fs-source);color:var(--text-tertiary);">{{chartUnit}}</div>
+      </div>
+
+      <!-- Bar chart area -->
+      <div style="display:flex;flex:1;align-items:flex-end;gap:var(--sp-xs);padding-bottom:var(--sp-sm);border-bottom:1px solid var(--secondary-05);min-height:300px;">
+        <!-- 3월 -->
+        <div style="flex:1;display:flex;gap:4px;align-items:flex-end;justify-content:center;height:100%;">
+          <div style="width:24px;height:{{m3InPct}};background:var(--text-primary);border-radius:4px 4px 0 0;min-height:4px;"></div>
+          <div style="width:24px;height:{{m3OutPct}};background:var(--secondary-50);border-radius:4px 4px 0 0;min-height:4px;"></div>
+        </div>
+        <!-- 4월 -->
+        <div style="flex:1;display:flex;gap:4px;align-items:flex-end;justify-content:center;height:100%;">
+          <div style="width:24px;height:{{m4InPct}};background:var(--text-primary);border-radius:4px 4px 0 0;"></div>
+          <div style="width:24px;height:{{m4OutPct}};background:var(--secondary-50);border-radius:4px 4px 0 0;"></div>
+        </div>
+        <!-- 5월 -->
+        <div style="flex:1;display:flex;gap:4px;align-items:flex-end;justify-content:center;height:100%;">
+          <div style="width:24px;height:{{m5InPct}};background:var(--text-primary);border-radius:4px 4px 0 0;"></div>
+          <div style="width:24px;height:{{m5OutPct}};background:var(--secondary-50);border-radius:4px 4px 0 0;"></div>
+        </div>
+        <!-- 6월 -->
+        <div style="flex:1;display:flex;gap:4px;align-items:flex-end;justify-content:center;height:100%;">
+          <div style="width:24px;height:{{m6InPct}};background:var(--text-primary);border-radius:4px 4px 0 0;"></div>
+          <div style="width:24px;height:{{m6OutPct}};background:var(--secondary-50);border-radius:4px 4px 0 0;"></div>
+        </div>
+        <!-- 7월 -->
+        <div style="flex:1;display:flex;gap:4px;align-items:flex-end;justify-content:center;height:100%;">
+          <div style="width:24px;height:{{m7InPct}};background:var(--text-primary);border-radius:4px 4px 0 0;"></div>
+          <div style="width:24px;height:{{m7OutPct}};background:var(--secondary-50);border-radius:4px 4px 0 0;"></div>
+        </div>
+        <!-- 8월 -->
+        <div style="flex:1;display:flex;gap:4px;align-items:flex-end;justify-content:center;height:100%;">
+          <div style="width:24px;height:{{m8InPct}};background:var(--text-primary);border-radius:4px 4px 0 0;"></div>
+          <div style="width:24px;height:{{m8OutPct}};background:var(--secondary-50);border-radius:4px 4px 0 0;"></div>
+        </div>
+        <!-- 9월 -->
+        <div style="flex:1;display:flex;gap:4px;align-items:flex-end;justify-content:center;height:100%;">
+          <div style="width:24px;height:{{m9InPct}};background:var(--text-primary);border-radius:4px 4px 0 0;"></div>
+          <div style="width:24px;height:{{m9OutPct}};background:var(--secondary-50);border-radius:4px 4px 0 0;"></div>
+        </div>
+        <!-- 10월 -->
+        <div style="flex:1;display:flex;gap:4px;align-items:flex-end;justify-content:center;height:100%;">
+          <div style="width:24px;height:{{m10InPct}};background:var(--text-primary);border-radius:4px 4px 0 0;"></div>
+          <div style="width:24px;height:{{m10OutPct}};background:var(--secondary-50);border-radius:4px 4px 0 0;"></div>
+        </div>
+        <!-- 11월 -->
+        <div style="flex:1;display:flex;gap:4px;align-items:flex-end;justify-content:center;height:100%;">
+          <div style="width:24px;height:{{m11InPct}};background:var(--text-primary);border-radius:4px 4px 0 0;"></div>
+          <div style="width:24px;height:{{m11OutPct}};background:var(--secondary-50);border-radius:4px 4px 0 0;"></div>
+        </div>
+        <!-- 12월 -->
+        <div style="flex:1;display:flex;gap:4px;align-items:flex-end;justify-content:center;height:100%;">
+          <div style="width:24px;height:{{m12InPct}};background:var(--text-primary);border-radius:4px 4px 0 0;"></div>
+          <div style="width:24px;height:{{m12OutPct}};background:var(--secondary-50);border-radius:4px 4px 0 0;"></div>
+        </div>
+      </div>
+
+      <!-- Month labels -->
+      <div style="display:flex;gap:var(--sp-xs);padding-top:var(--sp-xs);">
+        <div style="flex:1;text-align:center;font-size:var(--fs-source);color:var(--text-tertiary);">{{m3Label}}</div>
+        <div style="flex:1;text-align:center;font-size:var(--fs-source);color:var(--text-tertiary);">{{m4Label}}</div>
+        <div style="flex:1;text-align:center;font-size:var(--fs-source);color:var(--text-tertiary);">{{m5Label}}</div>
+        <div style="flex:1;text-align:center;font-size:var(--fs-source);color:var(--text-tertiary);">{{m6Label}}</div>
+        <div style="flex:1;text-align:center;font-size:var(--fs-source);color:var(--text-tertiary);">{{m7Label}}</div>
+        <div style="flex:1;text-align:center;font-size:var(--fs-source);color:var(--text-tertiary);">{{m8Label}}</div>
+        <div style="flex:1;text-align:center;font-size:var(--fs-source);color:var(--text-tertiary);">{{m9Label}}</div>
+        <div style="flex:1;text-align:center;font-size:var(--fs-source);color:var(--text-tertiary);">{{m10Label}}</div>
+        <div style="flex:1;text-align:center;font-size:var(--fs-source);color:var(--text-tertiary);">{{m11Label}}</div>
+        <div style="flex:1;text-align:center;font-size:var(--fs-source);color:var(--text-tertiary);">{{m12Label}}</div>
       </div>
     </div>
 
-    <!-- Right: Key financial metrics -->
-    <div class="card card-secondary" style="display:flex;flex-direction:column;justify-content:center;">
-      <div style="position:relative;z-index:1;">
-        <div class="sg-card-title">{{metricsTitle}}</div>
-        <div class="sg-data-list">
-          <div class="sg-item">
-            <div class="sg-item-label">{{met1Label}}</div>
-            <div class="sg-item-value">{{met1Value}}</div>
-          </div>
-          <div class="sg-item">
-            <div class="sg-item-label">{{met2Label}}</div>
-            <div class="sg-item-value">{{met2Value}}</div>
-          </div>
-          <div class="sg-item">
-            <div class="sg-item-label">{{met3Label}}</div>
-            <div class="sg-item-value">{{met3Value}}</div>
-          </div>
-          <div class="sg-item">
-            <div class="sg-item-label">{{met4Label}}</div>
-            <div class="sg-item-value">{{met4Value}}</div>
-          </div>
+    <!-- Row 2: Timeline milestones -->
+    <div style="display:flex;gap:0;">
+      <!-- 3월 -->
+      <div style="flex:1;padding:var(--sp-xs);border-left:2px solid var(--text-tertiary);opacity:0.7;">
+        <div style="font-size:var(--fs-source);color:var(--text-secondary);font-weight:var(--fw-heading);">{{tl3Title}}</div>
+        <div style="font-size:var(--fs-source);color:var(--text-tertiary);">{{tl3Desc}}</div>
+      </div>
+      <!-- 4월 -->
+      <div style="flex:1;padding:var(--sp-xs);border-left:2px solid var(--text-tertiary);opacity:0.7;">
+        <div style="font-size:var(--fs-source);color:var(--text-secondary);font-weight:var(--fw-heading);">{{tl4Title}}</div>
+        <div style="font-size:var(--fs-source);color:var(--text-tertiary);">{{tl4Desc}}</div>
+      </div>
+      <!-- 5월 (fund) -->
+      <div style="flex:1;padding:var(--sp-xs);border-left:2px solid var(--secondary);">
+        <div style="font-size:var(--fs-source);color:var(--secondary);font-weight:var(--fw-heading);">{{tl5Title}}</div>
+        <div style="font-size:var(--fs-source);color:var(--text-tertiary);">{{tl5Desc}}</div>
+      </div>
+      <!-- 6월 (highlight) -->
+      <div style="flex:1;padding:var(--sp-xs);border-left:2px solid var(--text-primary);">
+        <div style="font-size:var(--fs-source);color:var(--text-primary);font-weight:var(--fw-heading);">{{tl6Title}}</div>
+        <div style="font-size:var(--fs-source);color:var(--text-secondary);">{{tl6Desc}}</div>
+      </div>
+      <!-- 7월 (fund) -->
+      <div style="flex:1;padding:var(--sp-xs);border-left:2px solid var(--secondary);">
+        <div style="font-size:var(--fs-source);color:var(--secondary);font-weight:var(--fw-heading);">{{tl7Title}}</div>
+        <div style="font-size:var(--fs-source);color:var(--text-tertiary);">{{tl7Desc}}</div>
+      </div>
+      <!-- 8월 -->
+      <div style="flex:1;padding:var(--sp-xs);border-left:2px solid var(--text-tertiary);opacity:0.7;">
+        <div style="font-size:var(--fs-source);color:var(--text-secondary);font-weight:var(--fw-heading);">{{tl8Title}}</div>
+        <div style="font-size:var(--fs-source);color:var(--text-tertiary);">{{tl8Desc}}</div>
+      </div>
+      <!-- 9월 (highlight) -->
+      <div style="flex:1;padding:var(--sp-xs);border-left:2px solid var(--text-primary);">
+        <div style="font-size:var(--fs-source);color:var(--text-primary);font-weight:var(--fw-heading);">{{tl9Title}}</div>
+        <div style="font-size:var(--fs-source);color:var(--text-secondary);">{{tl9Desc}}</div>
+      </div>
+      <!-- 10월 (fund) -->
+      <div style="flex:1;padding:var(--sp-xs);border-left:2px solid var(--secondary);">
+        <div style="font-size:var(--fs-source);color:var(--secondary);font-weight:var(--fw-heading);">{{tl10Title}}</div>
+        <div style="font-size:var(--fs-source);color:var(--text-tertiary);">{{tl10Desc}}</div>
+      </div>
+      <!-- 11월 -->
+      <div style="flex:1;padding:var(--sp-xs);border-left:2px solid var(--text-tertiary);opacity:0.7;">
+        <div style="font-size:var(--fs-source);color:var(--text-secondary);font-weight:var(--fw-heading);">{{tl11Title}}</div>
+        <div style="font-size:var(--fs-source);color:var(--text-tertiary);">{{tl11Desc}}</div>
+      </div>
+      <!-- 12월 (highlight) -->
+      <div style="flex:1;padding:var(--sp-xs);border-left:2px solid var(--text-primary);">
+        <div style="font-size:var(--fs-source);color:var(--text-primary);font-weight:var(--fw-heading);">{{tl12Title}}</div>
+        <div style="font-size:var(--fs-source);color:var(--text-secondary);">{{tl12Desc}}</div>
+      </div>
+    </div>
+
+    <!-- Row 3: 4 Summary Cards -->
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:var(--sp-sm);">
+      <!-- 연간 유입 -->
+      <div class="card" style="padding:var(--sp-md);">
+        <div style="position:relative;z-index:1;">
+          <div style="font-size:var(--fs-source);color:var(--text-tertiary);margin-bottom:var(--sp-xs);">{{sum1Label}}</div>
+          <div style="font-size:var(--fs-heading);color:var(--text-primary);font-weight:var(--fw-heading);">{{sum1Value}}</div>
+          <div style="font-size:var(--fs-source);color:var(--text-tertiary);margin-top:var(--sp-xs);">{{sum1Desc}}</div>
+        </div>
+      </div>
+      <!-- 연간 유출 -->
+      <div class="card" style="padding:var(--sp-md);">
+        <div style="position:relative;z-index:1;">
+          <div style="font-size:var(--fs-source);color:var(--text-tertiary);margin-bottom:var(--sp-xs);">{{sum2Label}}</div>
+          <div style="font-size:var(--fs-heading);color:var(--text-primary);font-weight:var(--fw-heading);">{{sum2Value}}</div>
+          <div style="font-size:var(--fs-source);color:var(--text-tertiary);margin-top:var(--sp-xs);">{{sum2Desc}}</div>
+        </div>
+      </div>
+      <!-- 연말 현금 (highlighted) -->
+      <div class="card card-secondary" style="padding:var(--sp-md);">
+        <div style="position:relative;z-index:1;">
+          <div style="font-size:var(--fs-source);color:var(--text-tertiary);margin-bottom:var(--sp-xs);">{{sum3Label}}</div>
+          <div style="font-size:var(--fs-heading);color:var(--secondary);font-weight:var(--fw-heading);">{{sum3Value}}</div>
+          <div style="font-size:var(--fs-source);color:var(--text-tertiary);margin-top:var(--sp-xs);">{{sum3Desc}}</div>
+        </div>
+      </div>
+      <!-- 레버리지 배수 -->
+      <div class="card" style="padding:var(--sp-md);">
+        <div style="position:relative;z-index:1;">
+          <div style="font-size:var(--fs-source);color:var(--text-tertiary);margin-bottom:var(--sp-xs);">{{sum4Label}}</div>
+          <div style="font-size:var(--fs-heading);color:var(--text-primary);font-weight:var(--fw-heading);">{{sum4Value}}</div>
+          <div style="font-size:var(--fs-source);color:var(--text-tertiary);margin-top:var(--sp-xs);">{{sum4Desc}}</div>
         </div>
       </div>
     </div>
