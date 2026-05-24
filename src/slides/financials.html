@@ -1,243 +1,176 @@
 <div class="slide">
   <div class="slide-title">{{title}}</div>
 
-  <div class="slide-content" style="display:grid;grid-template-rows:1fr auto auto;gap:var(--sp-sm);height:100%;">
+  <div class="slide-content" style="display:flex;flex-direction:column;gap:var(--sp-sm);">
 
-    <!-- Row 1: CSS Bar Chart -->
-    <div class="card" style="padding:var(--sp-md);display:flex;flex-direction:column;">
-      <!-- Legend -->
-      <div style="display:flex;gap:var(--sp-md);align-items:center;margin-bottom:var(--sp-sm);">
-        <div style="display:flex;align-items:center;gap:var(--sp-xs);">
-          <div style="width:var(--sp-sm);height:var(--sp-xs);background:var(--text-primary);border-radius:4px;"></div>
-          <span style="font-size:var(--fs-source);color:var(--text-tertiary);">{{legendInflow}}</span>
-        </div>
-        <div style="display:flex;align-items:center;gap:var(--sp-xs);">
-          <div style="width:var(--sp-sm);height:var(--sp-xs);background:var(--secondary-50);border-radius:4px;"></div>
-          <span style="font-size:var(--fs-source);color:var(--text-tertiary);">{{legendOutflow}}</span>
-        </div>
-        <div style="margin-left:auto;font-size:var(--fs-source);color:var(--text-tertiary);">{{chartUnit}}</div>
-      </div>
-
-      <!-- Bar chart area with Y-axis -->
-      <div style="display:flex;flex:1;min-height:300px;">
-        <!-- Y-axis labels -->
-        <div style="display:flex;flex-direction:column;justify-content:space-between;padding-bottom:var(--sp-sm);padding-right:var(--sp-xs);align-items:flex-end;">
-          <span style="font-size:var(--fs-source);color:var(--text-tertiary);">600K</span>
-          <span style="font-size:var(--fs-source);color:var(--text-tertiary);">480K</span>
-          <span style="font-size:var(--fs-source);color:var(--text-tertiary);">360K</span>
-          <span style="font-size:var(--fs-source);color:var(--text-tertiary);">240K</span>
-          <span style="font-size:var(--fs-source);color:var(--text-tertiary);">120K</span>
-          <span style="font-size:var(--fs-source);color:var(--text-tertiary);">0</span>
-        </div>
-
-        <!-- Chart area with grid lines -->
-        <div style="flex:1;display:flex;flex-direction:column;position:relative;">
-          <!-- Grid lines -->
-          <div style="position:absolute;inset:0;display:flex;flex-direction:column;justify-content:space-between;pointer-events:none;padding-bottom:var(--sp-sm);">
-            <div style="border-bottom:1px solid var(--secondary-05);"></div>
-            <div style="border-bottom:1px solid var(--secondary-05);"></div>
-            <div style="border-bottom:1px solid var(--secondary-05);"></div>
-            <div style="border-bottom:1px solid var(--secondary-05);"></div>
-            <div style="border-bottom:1px solid var(--secondary-05);"></div>
-            <div style="border-bottom:1px solid var(--secondary-05);"></div>
-          </div>
-
-          <!-- Bars -->
-          <div style="display:flex;flex:1;align-items:flex-end;gap:var(--sp-xs);padding-bottom:var(--sp-sm);border-bottom:1px solid var(--secondary-05);">
-            <!-- 3월 -->
-            <div style="flex:1;display:flex;gap:4px;align-items:flex-end;justify-content:center;height:100%;">
-              <div style="width:28px;height:{{m3InPct}};background:linear-gradient(180deg,var(--text-primary),var(--text-secondary));border-radius:4px 4px 0 0;min-height:4px;position:relative;overflow:hidden;">
-                <span style="position:absolute;left:50%;top:var(--sp-xs);transform:translateX(-50%) rotate(-90deg);transform-origin:center;font-size:var(--fs-source);color:var(--main-black);white-space:nowrap;">{{m3In}}</span>
-              </div>
-              <div style="width:28px;height:{{m3OutPct}};background:linear-gradient(180deg,var(--secondary-70),var(--secondary-50));border-radius:4px 4px 0 0;min-height:4px;position:relative;overflow:hidden;">
-                <span style="position:absolute;left:50%;top:var(--sp-xs);transform:translateX(-50%) rotate(-90deg);transform-origin:center;font-size:var(--fs-source);color:var(--main-black);white-space:nowrap;">{{m3Out}}</span>
-              </div>
-            </div>
-            <!-- 4월 -->
-            <div style="flex:1;display:flex;gap:4px;align-items:flex-end;justify-content:center;height:100%;">
-              <div style="width:28px;height:{{m4InPct}};background:linear-gradient(180deg,var(--text-primary),var(--text-secondary));border-radius:4px 4px 0 0;position:relative;overflow:hidden;">
-                <span style="position:absolute;left:50%;top:var(--sp-xs);transform:translateX(-50%) rotate(-90deg);transform-origin:center;font-size:var(--fs-source);color:var(--main-black);white-space:nowrap;">{{m4In}}</span>
-              </div>
-              <div style="width:28px;height:{{m4OutPct}};background:linear-gradient(180deg,var(--secondary-70),var(--secondary-50));border-radius:4px 4px 0 0;position:relative;overflow:hidden;">
-                <span style="position:absolute;left:50%;top:var(--sp-xs);transform:translateX(-50%) rotate(-90deg);transform-origin:center;font-size:var(--fs-source);color:var(--main-black);white-space:nowrap;">{{m4Out}}</span>
-              </div>
-            </div>
-            <!-- 5월 -->
-            <div style="flex:1;display:flex;gap:4px;align-items:flex-end;justify-content:center;height:100%;">
-              <div style="width:28px;height:{{m5InPct}};background:linear-gradient(180deg,var(--text-primary),var(--text-secondary));border-radius:4px 4px 0 0;position:relative;overflow:hidden;">
-                <span style="position:absolute;left:50%;top:var(--sp-xs);transform:translateX(-50%) rotate(-90deg);transform-origin:center;font-size:var(--fs-source);color:var(--main-black);white-space:nowrap;">{{m5In}}</span>
-              </div>
-              <div style="width:28px;height:{{m5OutPct}};background:linear-gradient(180deg,var(--secondary-70),var(--secondary-50));border-radius:4px 4px 0 0;position:relative;overflow:hidden;">
-                <span style="position:absolute;left:50%;top:var(--sp-xs);transform:translateX(-50%) rotate(-90deg);transform-origin:center;font-size:var(--fs-source);color:var(--main-black);white-space:nowrap;">{{m5Out}}</span>
-              </div>
-            </div>
-            <!-- 6월 -->
-            <div style="flex:1;display:flex;gap:4px;align-items:flex-end;justify-content:center;height:100%;">
-              <div style="width:28px;height:{{m6InPct}};background:linear-gradient(180deg,var(--text-primary),var(--text-secondary));border-radius:4px 4px 0 0;position:relative;overflow:hidden;">
-                <span style="position:absolute;left:50%;top:var(--sp-xs);transform:translateX(-50%) rotate(-90deg);transform-origin:center;font-size:var(--fs-source);color:var(--main-black);white-space:nowrap;">{{m6In}}</span>
-              </div>
-              <div style="width:28px;height:{{m6OutPct}};background:linear-gradient(180deg,var(--secondary-70),var(--secondary-50));border-radius:4px 4px 0 0;position:relative;overflow:hidden;">
-                <span style="position:absolute;left:50%;top:var(--sp-xs);transform:translateX(-50%) rotate(-90deg);transform-origin:center;font-size:var(--fs-source);color:var(--main-black);white-space:nowrap;">{{m6Out}}</span>
-              </div>
-            </div>
-            <!-- 7월 -->
-            <div style="flex:1;display:flex;gap:4px;align-items:flex-end;justify-content:center;height:100%;">
-              <div style="width:28px;height:{{m7InPct}};background:linear-gradient(180deg,var(--text-primary),var(--text-secondary));border-radius:4px 4px 0 0;position:relative;overflow:hidden;">
-                <span style="position:absolute;left:50%;top:var(--sp-xs);transform:translateX(-50%) rotate(-90deg);transform-origin:center;font-size:var(--fs-source);color:var(--main-black);white-space:nowrap;">{{m7In}}</span>
-              </div>
-              <div style="width:28px;height:{{m7OutPct}};background:linear-gradient(180deg,var(--secondary-70),var(--secondary-50));border-radius:4px 4px 0 0;position:relative;overflow:hidden;">
-                <span style="position:absolute;left:50%;top:var(--sp-xs);transform:translateX(-50%) rotate(-90deg);transform-origin:center;font-size:var(--fs-source);color:var(--main-black);white-space:nowrap;">{{m7Out}}</span>
-              </div>
-            </div>
-            <!-- 8월 -->
-            <div style="flex:1;display:flex;gap:4px;align-items:flex-end;justify-content:center;height:100%;">
-              <div style="width:28px;height:{{m8InPct}};background:linear-gradient(180deg,var(--text-primary),var(--text-secondary));border-radius:4px 4px 0 0;position:relative;overflow:hidden;">
-                <span style="position:absolute;left:50%;top:var(--sp-xs);transform:translateX(-50%) rotate(-90deg);transform-origin:center;font-size:var(--fs-source);color:var(--main-black);white-space:nowrap;">{{m8In}}</span>
-              </div>
-              <div style="width:28px;height:{{m8OutPct}};background:linear-gradient(180deg,var(--secondary-70),var(--secondary-50));border-radius:4px 4px 0 0;position:relative;overflow:hidden;">
-                <span style="position:absolute;left:50%;top:var(--sp-xs);transform:translateX(-50%) rotate(-90deg);transform-origin:center;font-size:var(--fs-source);color:var(--main-black);white-space:nowrap;">{{m8Out}}</span>
-              </div>
-            </div>
-            <!-- 9월 -->
-            <div style="flex:1;display:flex;gap:4px;align-items:flex-end;justify-content:center;height:100%;">
-              <div style="width:28px;height:{{m9InPct}};background:linear-gradient(180deg,var(--text-primary),var(--text-secondary));border-radius:4px 4px 0 0;position:relative;overflow:hidden;">
-                <span style="position:absolute;left:50%;top:var(--sp-xs);transform:translateX(-50%) rotate(-90deg);transform-origin:center;font-size:var(--fs-source);color:var(--main-black);white-space:nowrap;">{{m9In}}</span>
-              </div>
-              <div style="width:28px;height:{{m9OutPct}};background:linear-gradient(180deg,var(--secondary-70),var(--secondary-50));border-radius:4px 4px 0 0;position:relative;overflow:hidden;">
-                <span style="position:absolute;left:50%;top:var(--sp-xs);transform:translateX(-50%) rotate(-90deg);transform-origin:center;font-size:var(--fs-source);color:var(--main-black);white-space:nowrap;">{{m9Out}}</span>
-              </div>
-            </div>
-            <!-- 10월 -->
-            <div style="flex:1;display:flex;gap:4px;align-items:flex-end;justify-content:center;height:100%;">
-              <div style="width:28px;height:{{m10InPct}};background:linear-gradient(180deg,var(--text-primary),var(--text-secondary));border-radius:4px 4px 0 0;position:relative;overflow:hidden;">
-                <span style="position:absolute;left:50%;top:var(--sp-xs);transform:translateX(-50%) rotate(-90deg);transform-origin:center;font-size:var(--fs-source);color:var(--main-black);white-space:nowrap;">{{m10In}}</span>
-              </div>
-              <div style="width:28px;height:{{m10OutPct}};background:linear-gradient(180deg,var(--secondary-70),var(--secondary-50));border-radius:4px 4px 0 0;position:relative;overflow:hidden;">
-                <span style="position:absolute;left:50%;top:var(--sp-xs);transform:translateX(-50%) rotate(-90deg);transform-origin:center;font-size:var(--fs-source);color:var(--main-black);white-space:nowrap;">{{m10Out}}</span>
-              </div>
-            </div>
-            <!-- 11월 -->
-            <div style="flex:1;display:flex;gap:4px;align-items:flex-end;justify-content:center;height:100%;">
-              <div style="width:28px;height:{{m11InPct}};background:linear-gradient(180deg,var(--text-primary),var(--text-secondary));border-radius:4px 4px 0 0;position:relative;overflow:hidden;">
-                <span style="position:absolute;left:50%;top:var(--sp-xs);transform:translateX(-50%) rotate(-90deg);transform-origin:center;font-size:var(--fs-source);color:var(--main-black);white-space:nowrap;">{{m11In}}</span>
-              </div>
-              <div style="width:28px;height:{{m11OutPct}};background:linear-gradient(180deg,var(--secondary-70),var(--secondary-50));border-radius:4px 4px 0 0;position:relative;overflow:hidden;">
-                <span style="position:absolute;left:50%;top:var(--sp-xs);transform:translateX(-50%) rotate(-90deg);transform-origin:center;font-size:var(--fs-source);color:var(--main-black);white-space:nowrap;">{{m11Out}}</span>
-              </div>
-            </div>
-            <!-- 12월 -->
-            <div style="flex:1;display:flex;gap:4px;align-items:flex-end;justify-content:center;height:100%;">
-              <div style="width:28px;height:{{m12InPct}};background:linear-gradient(180deg,var(--text-primary),var(--text-secondary));border-radius:4px 4px 0 0;position:relative;overflow:hidden;">
-                <span style="position:absolute;left:50%;top:var(--sp-xs);transform:translateX(-50%) rotate(-90deg);transform-origin:center;font-size:var(--fs-source);color:var(--main-black);white-space:nowrap;">{{m12In}}</span>
-              </div>
-              <div style="width:28px;height:{{m12OutPct}};background:linear-gradient(180deg,var(--secondary-70),var(--secondary-50));border-radius:4px 4px 0 0;position:relative;overflow:hidden;">
-                <span style="position:absolute;left:50%;top:var(--sp-xs);transform:translateX(-50%) rotate(-90deg);transform-origin:center;font-size:var(--fs-source);color:var(--main-black);white-space:nowrap;">{{m12Out}}</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Month labels -->
-          <div style="display:flex;gap:var(--sp-xs);padding-top:var(--sp-xs);">
-            <div style="flex:1;text-align:center;font-size:var(--fs-source);color:var(--text-tertiary);">{{m3Label}}</div>
-            <div style="flex:1;text-align:center;font-size:var(--fs-source);color:var(--text-tertiary);">{{m4Label}}</div>
-            <div style="flex:1;text-align:center;font-size:var(--fs-source);color:var(--text-tertiary);">{{m5Label}}</div>
-            <div style="flex:1;text-align:center;font-size:var(--fs-source);color:var(--text-tertiary);">{{m6Label}}</div>
-            <div style="flex:1;text-align:center;font-size:var(--fs-source);color:var(--text-tertiary);">{{m7Label}}</div>
-            <div style="flex:1;text-align:center;font-size:var(--fs-source);color:var(--text-tertiary);">{{m8Label}}</div>
-            <div style="flex:1;text-align:center;font-size:var(--fs-source);color:var(--text-tertiary);">{{m9Label}}</div>
-            <div style="flex:1;text-align:center;font-size:var(--fs-source);color:var(--text-tertiary);">{{m10Label}}</div>
-            <div style="flex:1;text-align:center;font-size:var(--fs-source);color:var(--text-tertiary);">{{m11Label}}</div>
-            <div style="flex:1;text-align:center;font-size:var(--fs-source);color:var(--text-tertiary);">{{m12Label}}</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Row 2: Timeline milestones -->
-    <div style="display:flex;gap:0;">
+    <!-- SVG Chart + Timeline (unified coordinate system) -->
+    <svg viewBox="0 0 1680 460" style="flex:1;width:100%;" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="inGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#FFFFFF"/><stop offset="100%" stop-color="#B0B0B0"/></linearGradient>
+        <linearGradient id="outGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="rgba(126,220,230,0.5)"/><stop offset="100%" stop-color="rgba(126,220,230,0.3)"/></linearGradient>
+      </defs>
+      <!-- Grid lines -->
+      <line x1="90" y1="60" x2="1640" y2="60" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+      <line x1="90" y1="122" x2="1640" y2="122" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+      <line x1="90" y1="184" x2="1640" y2="184" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+      <line x1="90" y1="246" x2="1640" y2="246" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+      <line x1="90" y1="308" x2="1640" y2="308" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+      <line x1="90" y1="370" x2="1640" y2="370" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+      <!-- Y-axis labels -->
+      <text x="76" y="64" text-anchor="end" font-size="18" font-weight="500" fill="#B0B0B0">600K</text>
+      <text x="76" y="126" text-anchor="end" font-size="18" font-weight="500" fill="#B0B0B0">480K</text>
+      <text x="76" y="188" text-anchor="end" font-size="18" font-weight="500" fill="#B0B0B0">360K</text>
+      <text x="76" y="250" text-anchor="end" font-size="18" font-weight="500" fill="#B0B0B0">240K</text>
+      <text x="76" y="312" text-anchor="end" font-size="18" font-weight="500" fill="#B0B0B0">120K</text>
+      <text x="76" y="374" text-anchor="end" font-size="18" font-weight="500" fill="#B0B0B0">0</text>
+      <text x="90" y="40" font-size="13" font-weight="500" fill="#B0B0B0">단위: 천원</text>
+      <!-- Bars (all bottom-aligned to y=370) -->
+      <!-- 3월: inf=130K h=67.2, out=47K h=24.4 -->
+      <rect x="133" y="302.8" width="34" height="67.2" rx="4" fill="url(#inGrad)"/>
+      <rect x="173" y="345.6" width="34" height="24.4" rx="4" fill="url(#outGrad)"/>
+      <!-- 4월: inf=76K h=39.3, out=10K h=5.2 -->
+      <rect x="288" y="330.7" width="34" height="39.3" rx="4" fill="url(#inGrad)"/>
+      <rect x="328" y="364.8" width="34" height="5.2" rx="4" fill="url(#outGrad)"/>
+      <!-- 5월: inf=158K h=81.6, out=161K h=83.1 -->
+      <rect x="443" y="288.4" width="34" height="81.6" rx="4" fill="url(#inGrad)"/>
+      <rect x="483" y="286.9" width="34" height="83.1" rx="4" fill="url(#outGrad)"/>
+      <!-- 6월: inf=63K h=32.3, out=8K h=4.1 -->
+      <rect x="598" y="337.7" width="34" height="32.3" rx="4" fill="url(#inGrad)"/>
+      <rect x="638" y="365.9" width="34" height="4.1" rx="4" fill="url(#outGrad)"/>
+      <!-- 7월: inf=440K h=227.3, out=148K h=76.5 -->
+      <rect x="753" y="142.7" width="34" height="227.3" rx="4" fill="url(#inGrad)"/>
+      <rect x="793" y="293.5" width="34" height="76.5" rx="4" fill="url(#outGrad)"/>
+      <!-- 8월: inf=55K h=28.3, out=150K h=77.5 -->
+      <rect x="908" y="341.7" width="34" height="28.3" rx="4" fill="url(#inGrad)"/>
+      <rect x="948" y="292.5" width="34" height="77.5" rx="4" fill="url(#outGrad)"/>
+      <!-- 9월: inf=140K h=72.2, out=10K h=5.1 -->
+      <rect x="1063" y="297.8" width="34" height="72.2" rx="4" fill="url(#inGrad)"/>
+      <rect x="1103" y="364.9" width="34" height="5.1" rx="4" fill="url(#outGrad)"/>
+      <!-- 10월: inf=123K h=63.4, out=207K h=106.8 -->
+      <rect x="1218" y="306.6" width="34" height="63.4" rx="4" fill="url(#inGrad)"/>
+      <rect x="1258" y="263.2" width="34" height="106.8" rx="4" fill="url(#outGrad)"/>
+      <!-- 11월: inf=53K h=27.3, out=14K h=7.1 -->
+      <rect x="1373" y="342.7" width="34" height="27.3" rx="4" fill="url(#inGrad)"/>
+      <rect x="1413" y="362.9" width="34" height="7.1" rx="4" fill="url(#outGrad)"/>
+      <!-- 12월: inf=103K h=53, out=14K h=7.1 -->
+      <rect x="1528" y="317" width="34" height="53" rx="4" fill="url(#inGrad)"/>
+      <rect x="1568" y="362.9" width="34" height="7.1" rx="4" fill="url(#outGrad)"/>
+      <!-- Month labels (aligned to bar centers) -->
+      <text x="167" y="395" text-anchor="middle" font-size="18" font-weight="700" fill="#B0B0B0">3월</text>
+      <text x="322" y="395" text-anchor="middle" font-size="18" font-weight="700" fill="#B0B0B0">4월</text>
+      <text x="477" y="395" text-anchor="middle" font-size="18" font-weight="700" fill="#B0B0B0">5월</text>
+      <text x="632" y="395" text-anchor="middle" font-size="18" font-weight="700" fill="#B0B0B0">6월</text>
+      <text x="787" y="395" text-anchor="middle" font-size="18" font-weight="700" fill="#B0B0B0">7월</text>
+      <text x="942" y="395" text-anchor="middle" font-size="18" font-weight="700" fill="#B0B0B0">8월</text>
+      <text x="1097" y="395" text-anchor="middle" font-size="18" font-weight="700" fill="#B0B0B0">9월</text>
+      <text x="1252" y="395" text-anchor="middle" font-size="18" font-weight="700" fill="#B0B0B0">10월</text>
+      <text x="1407" y="395" text-anchor="middle" font-size="18" font-weight="700" fill="#B0B0B0">11월</text>
+      <text x="1562" y="395" text-anchor="middle" font-size="18" font-weight="700" fill="#B0B0B0">12월</text>
+      <!-- Cumulative line -->
+      <polyline points="167,327.3 322,293.1 477,294.6 632,266.3 787,115.2 942,164.4 1097,97.7 1252,141.1 1407,120.9 1562,75.1" fill="none" stroke="#7EDCE6" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"/>
+      <!-- Dots -->
+      <circle cx="167" cy="327.3" r="6" fill="#7EDCE6" stroke="#000" stroke-width="2.5"/>
+      <circle cx="322" cy="293.1" r="6" fill="#7EDCE6" stroke="#000" stroke-width="2.5"/>
+      <circle cx="477" cy="294.6" r="6" fill="#7EDCE6" stroke="#000" stroke-width="2.5"/>
+      <circle cx="632" cy="266.3" r="6" fill="#7EDCE6" stroke="#000" stroke-width="2.5"/>
+      <circle cx="787" cy="115.2" r="6" fill="#7EDCE6" stroke="#000" stroke-width="2.5"/>
+      <circle cx="942" cy="164.4" r="6" fill="#7EDCE6" stroke="#000" stroke-width="2.5"/>
+      <circle cx="1097" cy="97.7" r="6" fill="#7EDCE6" stroke="#000" stroke-width="2.5"/>
+      <circle cx="1252" cy="141.1" r="6" fill="#7EDCE6" stroke="#000" stroke-width="2.5"/>
+      <circle cx="1407" cy="120.9" r="6" fill="#7EDCE6" stroke="#000" stroke-width="2.5"/>
+      <circle cx="1562" cy="75.1" r="6" fill="#7EDCE6" stroke="#000" stroke-width="2.5"/>
+      <!-- Cumulative labels (positioned above dots) -->
+      <text x="167" y="303" text-anchor="middle" font-size="18" font-weight="800" fill="#7EDCE6">82,710</text>
+      <text x="322" y="269" text-anchor="middle" font-size="18" font-weight="800" fill="#7EDCE6">148,760</text>
+      <text x="477" y="271" text-anchor="middle" font-size="18" font-weight="800" fill="#7EDCE6">145,833</text>
+      <text x="632" y="242" text-anchor="middle" font-size="18" font-weight="800" fill="#7EDCE6">200,582</text>
+      <text x="787" y="93" text-anchor="middle" font-size="18" font-weight="800" fill="#7EDCE6">492,616</text>
+      <text x="942" y="143" text-anchor="middle" font-size="18" font-weight="800" fill="#7EDCE6">397,544</text>
+      <text x="1097" y="76" text-anchor="middle" font-size="18" font-weight="800" fill="#7EDCE6">527,498</text>
+      <text x="1252" y="120" text-anchor="middle" font-size="18" font-weight="800" fill="#7EDCE6">443,466</text>
+      <text x="1407" y="98" text-anchor="middle" font-size="18" font-weight="800" fill="#7EDCE6">482,476</text>
+      <!-- End callout (연말 현금 5.71억, above 12월 dot) -->
+      <rect x="1470" y="10" width="184" height="36" rx="10" fill="#7EDCE6"/>
+      <polygon points="1556,46 1562,58 1568,46" fill="#7EDCE6"/>
+      <text x="1562" y="34" text-anchor="middle" font-size="18" font-weight="800" fill="#000">연말 현금 5.71억</text>
+      <!-- Timeline (inside SVG, aligned to bar centers) -->
+      <line x1="90" y1="415" x2="1640" y2="415" stroke="rgba(255,255,255,0.1)" stroke-width="2"/>
       <!-- 3월 -->
-      <div style="flex:1;padding:var(--sp-xs);border-left:2px solid var(--text-tertiary);opacity:0.7;">
-        <div style="font-size:var(--fs-source);color:var(--text-secondary);font-weight:var(--fw-heading);">{{tl3Title}}</div>
-        <div style="font-size:var(--fs-source);color:var(--text-tertiary);">{{tl3Desc}}</div>
-      </div>
+      <circle cx="167" cy="415" r="4" fill="#B0B0B0" stroke="#000" stroke-width="2"/>
+      <text x="167" y="437" text-anchor="middle" font-size="16" font-weight="700" fill="#FFFFFF">{{tl3Title}}</text>
+      <text x="167" y="457" text-anchor="middle" font-size="16" fill="#B0B0B0">{{tl3Desc}}</text>
       <!-- 4월 -->
-      <div style="flex:1;padding:var(--sp-xs);border-left:2px solid var(--text-tertiary);opacity:0.7;">
-        <div style="font-size:var(--fs-source);color:var(--text-secondary);font-weight:var(--fw-heading);">{{tl4Title}}</div>
-        <div style="font-size:var(--fs-source);color:var(--text-tertiary);">{{tl4Desc}}</div>
-      </div>
-      <!-- 5월 (fund) -->
-      <div style="flex:1;padding:var(--sp-xs);border-left:2px solid var(--secondary);">
-        <div style="font-size:var(--fs-source);color:var(--secondary);font-weight:var(--fw-heading);">{{tl5Title}}</div>
-        <div style="font-size:var(--fs-source);color:var(--text-tertiary);">{{tl5Desc}}</div>
-      </div>
-      <!-- 6월 (highlight) -->
-      <div style="flex:1;padding:var(--sp-xs);border-left:2px solid var(--text-primary);">
-        <div style="font-size:var(--fs-source);color:var(--text-primary);font-weight:var(--fw-heading);">{{tl6Title}}</div>
-        <div style="font-size:var(--fs-source);color:var(--text-secondary);">{{tl6Desc}}</div>
-      </div>
-      <!-- 7월 (fund) -->
-      <div style="flex:1;padding:var(--sp-xs);border-left:2px solid var(--secondary);">
-        <div style="font-size:var(--fs-source);color:var(--secondary);font-weight:var(--fw-heading);">{{tl7Title}}</div>
-        <div style="font-size:var(--fs-source);color:var(--text-tertiary);">{{tl7Desc}}</div>
-      </div>
+      <circle cx="322" cy="415" r="4" fill="#B0B0B0" stroke="#000" stroke-width="2"/>
+      <text x="322" y="437" text-anchor="middle" font-size="16" font-weight="700" fill="#FFFFFF">{{tl4Title}}</text>
+      <text x="322" y="457" text-anchor="middle" font-size="16" fill="#B0B0B0">{{tl4Desc}}</text>
+      <!-- 5월 -->
+      <circle cx="477" cy="415" r="5" fill="#7EDCE6" stroke="#000" stroke-width="2"/>
+      <text x="477" y="437" text-anchor="middle" font-size="16" font-weight="700" fill="#7EDCE6">{{tl5Title}}</text>
+      <text x="477" y="457" text-anchor="middle" font-size="16" fill="#7EDCE6">{{tl5Desc}}</text>
+      <!-- 6월 -->
+      <circle cx="632" cy="415" r="5" fill="#FFFFFF" stroke="#000" stroke-width="2"/>
+      <text x="632" y="437" text-anchor="middle" font-size="16" font-weight="700" fill="#FFFFFF">{{tl6Title}}</text>
+      <text x="632" y="457" text-anchor="middle" font-size="16" fill="#B0B0B0">{{tl6Desc}}</text>
+      <!-- 7월 -->
+      <circle cx="787" cy="415" r="5" fill="#7EDCE6" stroke="#000" stroke-width="2"/>
+      <text x="787" y="437" text-anchor="middle" font-size="16" font-weight="700" fill="#7EDCE6">{{tl7Title}}</text>
+      <text x="787" y="457" text-anchor="middle" font-size="16" fill="#7EDCE6">{{tl7Desc}}</text>
       <!-- 8월 -->
-      <div style="flex:1;padding:var(--sp-xs);border-left:2px solid var(--text-tertiary);opacity:0.7;">
-        <div style="font-size:var(--fs-source);color:var(--text-secondary);font-weight:var(--fw-heading);">{{tl8Title}}</div>
-        <div style="font-size:var(--fs-source);color:var(--text-tertiary);">{{tl8Desc}}</div>
-      </div>
-      <!-- 9월 (highlight) -->
-      <div style="flex:1;padding:var(--sp-xs);border-left:2px solid var(--text-primary);">
-        <div style="font-size:var(--fs-source);color:var(--text-primary);font-weight:var(--fw-heading);">{{tl9Title}}</div>
-        <div style="font-size:var(--fs-source);color:var(--text-secondary);">{{tl9Desc}}</div>
-      </div>
-      <!-- 10월 (fund) -->
-      <div style="flex:1;padding:var(--sp-xs);border-left:2px solid var(--secondary);">
-        <div style="font-size:var(--fs-source);color:var(--secondary);font-weight:var(--fw-heading);">{{tl10Title}}</div>
-        <div style="font-size:var(--fs-source);color:var(--text-tertiary);">{{tl10Desc}}</div>
-      </div>
+      <circle cx="942" cy="415" r="4" fill="#B0B0B0" stroke="#000" stroke-width="2"/>
+      <text x="942" y="437" text-anchor="middle" font-size="16" font-weight="700" fill="#FFFFFF">{{tl8Title}}</text>
+      <text x="942" y="457" text-anchor="middle" font-size="16" fill="#B0B0B0">{{tl8Desc}}</text>
+      <!-- 9월 -->
+      <circle cx="1097" cy="415" r="5" fill="#FFFFFF" stroke="#000" stroke-width="2"/>
+      <text x="1097" y="437" text-anchor="middle" font-size="16" font-weight="700" fill="#FFFFFF">{{tl9Title}}</text>
+      <text x="1097" y="457" text-anchor="middle" font-size="16" fill="#B0B0B0">{{tl9Desc}}</text>
+      <!-- 10월 -->
+      <circle cx="1252" cy="415" r="5" fill="#7EDCE6" stroke="#000" stroke-width="2"/>
+      <text x="1252" y="437" text-anchor="middle" font-size="16" font-weight="700" fill="#7EDCE6">{{tl10Title}}</text>
+      <text x="1252" y="457" text-anchor="middle" font-size="16" fill="#7EDCE6">{{tl10Desc}}</text>
       <!-- 11월 -->
-      <div style="flex:1;padding:var(--sp-xs);border-left:2px solid var(--text-tertiary);opacity:0.7;">
-        <div style="font-size:var(--fs-source);color:var(--text-secondary);font-weight:var(--fw-heading);">{{tl11Title}}</div>
-        <div style="font-size:var(--fs-source);color:var(--text-tertiary);">{{tl11Desc}}</div>
-      </div>
-      <!-- 12월 (highlight) -->
-      <div style="flex:1;padding:var(--sp-xs);border-left:2px solid var(--text-primary);">
-        <div style="font-size:var(--fs-source);color:var(--text-primary);font-weight:var(--fw-heading);">{{tl12Title}}</div>
-        <div style="font-size:var(--fs-source);color:var(--text-secondary);">{{tl12Desc}}</div>
-      </div>
+      <circle cx="1407" cy="415" r="4" fill="#B0B0B0" stroke="#000" stroke-width="2"/>
+      <text x="1407" y="437" text-anchor="middle" font-size="16" font-weight="700" fill="#FFFFFF">{{tl11Title}}</text>
+      <text x="1407" y="457" text-anchor="middle" font-size="16" fill="#B0B0B0">{{tl11Desc}}</text>
+      <!-- 12월 -->
+      <circle cx="1562" cy="415" r="5" fill="#FFFFFF" stroke="#000" stroke-width="2"/>
+      <text x="1562" y="437" text-anchor="middle" font-size="16" font-weight="700" fill="#FFFFFF">{{tl12Title}}</text>
+      <text x="1562" y="457" text-anchor="middle" font-size="16" fill="#B0B0B0">{{tl12Desc}}</text>
+    </svg>
+
+    <!-- Legend -->
+    <div style="display:flex;gap:var(--sp-lg);justify-content:center;">
+      <div style="display:flex;align-items:center;gap:var(--sp-xs);font-size:var(--fs-source);color:var(--text-tertiary);"><div style="width:14px;height:14px;border-radius:3px;background:var(--text-primary);"></div>{{legendInflow}}</div>
+      <div style="display:flex;align-items:center;gap:var(--sp-xs);font-size:var(--fs-source);color:var(--text-tertiary);"><div style="width:14px;height:14px;border-radius:3px;background:var(--secondary);opacity:0.4;"></div>{{legendOutflow}}</div>
+      <div style="display:flex;align-items:center;gap:var(--sp-xs);font-size:var(--fs-source);color:var(--text-tertiary);"><div style="width:22px;height:3px;border-radius:2px;background:var(--secondary);"></div>누적 자금</div>
     </div>
 
-    <!-- Row 3: 4 Summary Cards -->
+    <!-- Summary Cards -->
     <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:var(--sp-sm);">
-      <!-- 연간 유입 -->
       <div class="card" style="padding:var(--sp-md);">
         <div style="position:relative;z-index:1;">
-          <div style="font-size:var(--fs-source);color:var(--text-tertiary);margin-bottom:var(--sp-xs);">{{sum1Label}}</div>
-          <div style="font-size:var(--fs-heading);color:var(--text-primary);font-weight:var(--fw-heading);">{{sum1Value}}</div>
+          <div style="font-size:var(--fs-caption);color:var(--text-tertiary);">{{sum1Label}}</div>
+          <div style="font-size:var(--fs-stat);font-weight:var(--fw-display);color:var(--text-primary);line-height:1;margin-top:var(--sp-xs);">{{sum1Value}}</div>
           <div style="font-size:var(--fs-source);color:var(--text-tertiary);margin-top:var(--sp-xs);">{{sum1Desc}}</div>
         </div>
       </div>
-      <!-- 연간 유출 -->
       <div class="card" style="padding:var(--sp-md);">
         <div style="position:relative;z-index:1;">
-          <div style="font-size:var(--fs-source);color:var(--text-tertiary);margin-bottom:var(--sp-xs);">{{sum2Label}}</div>
-          <div style="font-size:var(--fs-heading);color:var(--text-primary);font-weight:var(--fw-heading);">{{sum2Value}}</div>
+          <div style="font-size:var(--fs-caption);color:var(--text-tertiary);">{{sum2Label}}</div>
+          <div style="font-size:var(--fs-stat);font-weight:var(--fw-display);color:var(--text-primary);line-height:1;margin-top:var(--sp-xs);">{{sum2Value}}</div>
           <div style="font-size:var(--fs-source);color:var(--text-tertiary);margin-top:var(--sp-xs);">{{sum2Desc}}</div>
         </div>
       </div>
-      <!-- 연말 현금 (highlighted) -->
       <div class="card card-secondary" style="padding:var(--sp-md);">
         <div style="position:relative;z-index:1;">
-          <div style="font-size:var(--fs-source);color:var(--text-tertiary);margin-bottom:var(--sp-xs);">{{sum3Label}}</div>
-          <div style="font-size:var(--fs-heading);color:var(--secondary);font-weight:var(--fw-heading);">{{sum3Value}}</div>
+          <div style="font-size:var(--fs-caption);color:var(--secondary);">{{sum3Label}}</div>
+          <div style="font-size:var(--fs-stat);font-weight:var(--fw-display);color:var(--secondary);line-height:1;margin-top:var(--sp-xs);">{{sum3Value}}</div>
           <div style="font-size:var(--fs-source);color:var(--text-tertiary);margin-top:var(--sp-xs);">{{sum3Desc}}</div>
         </div>
       </div>
-      <!-- 레버리지 배수 -->
       <div class="card" style="padding:var(--sp-md);">
         <div style="position:relative;z-index:1;">
-          <div style="font-size:var(--fs-source);color:var(--text-tertiary);margin-bottom:var(--sp-xs);">{{sum4Label}}</div>
-          <div style="font-size:var(--fs-heading);color:var(--text-primary);font-weight:var(--fw-heading);">{{sum4Value}}</div>
+          <div style="font-size:var(--fs-caption);color:var(--text-tertiary);">{{sum4Label}}</div>
+          <div style="font-size:var(--fs-stat);font-weight:var(--fw-display);color:var(--text-primary);line-height:1;margin-top:var(--sp-xs);">{{sum4Value}}</div>
           <div style="font-size:var(--fs-source);color:var(--text-tertiary);margin-top:var(--sp-xs);">{{sum4Desc}}</div>
         </div>
       </div>

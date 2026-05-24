@@ -21,7 +21,7 @@
     { "key": "cat2Desc", "label": "카테고리2 설명", "type": "text", "value": "AI 코칭 / 도메인 지식 / 사업 자문" },
     { "key": "p4Name", "label": "R&D1 이름", "type": "text", "value": "경희대 스포츠지도학과" },
     { "key": "p4Role", "label": "R&D1 역할", "type": "text", "value": "AI 코칭 리포트 공동 개발" },
-    { "key": "p4Desc", "label": "R&D1 설명", "type": "text", "value": "KBS 청춘FC 프로그램 주장 / 유소년 축구교실 운영" },
+    { "key": "p4Desc", "label": "R&D1 설명", "type": "text", "value": "유소년 스포츠 코칭 / 운동 역학 분석 전문" },
     { "key": "p4Status", "label": "R&D1 상태", "type": "text", "value": "26.04~ 협업 중" },
     { "key": "p5Name", "label": "R&D2 이름", "type": "text", "value": "KFA 라이센스 코치" },
     { "key": "p5Role", "label": "R&D2 역할", "type": "text", "value": "현장 자문 (5명)" },

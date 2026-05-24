@@ -1,63 +1,49 @@
 <div class="slide">
   <div class="slide-title">{{title}} <span style="font-weight:400;font-size:var(--fs-stat);margin-left:var(--sp-sm);"><b>HW 판매</b>로 고객 획득 · <b>SW 구독</b>으로 반복 수익 창출</span></div>
 
-  <div class="slide-content" style="display:grid;grid-template-rows:1fr auto;gap:var(--sp-md);">
+  <div class="slide-content" style="display:grid;grid-template-rows:1fr auto;gap:var(--sp-sm);">
 
     <div style="display:grid;grid-template-columns:2fr 3fr;gap:var(--sp-lg);">
 
     <!-- B2C 그룹 -->
-    <div style="border:2px solid var(--secondary);border-radius:var(--card-radius);padding:var(--sp-md);display:flex;flex-direction:column;gap:var(--sp-sm);">
+    <div style="border:2px solid var(--secondary);border-radius:var(--card-radius);padding:var(--sp-md);display:flex;flex-direction:column;gap:var(--sp-md);">
       <div style="font-size:var(--fs-heading);font-weight:var(--fw-heading);color:var(--secondary);text-align:center;">B2C</div>
 
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-sm);flex:1;">
-        <!-- 패밀리 -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-md);flex:1;">
+        <!-- 패밀리 (추천) -->
         <div class="card card-secondary" style="display:flex;flex-direction:column;padding:var(--sp-md);border:1px solid var(--secondary);">
-          <div style="position:relative;z-index:1;flex:1;display:flex;flex-direction:column;gap:var(--sp-xs);">
+          <div style="position:relative;z-index:1;flex:1;display:flex;flex-direction:column;gap:var(--sp-sm);">
             <div style="display:flex;justify-content:space-between;align-items:center;">
-              <div style="font-size:var(--fs-body);font-weight:var(--fw-heading);color:var(--secondary);">FAMILY</div>
-              <div style="font-size:var(--fs-source);font-weight:var(--fw-heading);color:var(--secondary);background:var(--secondary-20);padding:2px 8px;border-radius:4px;">추천</div>
+              <div style="font-size:var(--fs-heading);font-weight:var(--fw-heading);color:var(--secondary);">FAMILY</div>
+              <div style="font-size:var(--fs-caption);font-weight:var(--fw-heading);color:var(--secondary);background:var(--secondary-20);padding:2px 8px;border-radius:4px;">추천</div>
             </div>
-            <div style="font-size:var(--fs-caption);color:var(--secondary);opacity:0.7;">개인 / 유소년</div>
-            <div>
-              <div style="font-size:var(--fs-stat);font-weight:var(--fw-display);color:var(--secondary);line-height:1;">{{b2cPrice}}<span style="font-size:var(--fs-caption);color:var(--secondary);">만원</span></div>
-              <div style="font-size:var(--fs-source);color:var(--secondary);opacity:0.6;">1대 · 부가세 별도</div>
-            </div>
-            <div style="border-top:1px solid var(--secondary-15);padding-top:var(--sp-xs);">
-              <div style="font-size:var(--fs-caption);color:var(--secondary);">SW {{subFamilyPrice}}/월</div>
-            </div>
-            <div style="border-top:1px solid var(--secondary-15);margin-top:var(--sp-sm);padding-top:var(--sp-sm);">
-              <div style="display:flex;justify-content:space-between;align-items:baseline;">
-                <span style="font-size:var(--fs-source);color:var(--text-tertiary);">2년 LTV</span>
-                <span style="font-size:var(--fs-body);font-weight:var(--fw-heading);color:var(--secondary);">{{ltvFamily}}만</span>
+            <div style="font-size:var(--fs-body);color:var(--secondary);">개인 / 유소년</div>
+            <div style="margin-top:auto;">
+              <div style="font-size:var(--fs-body);color:var(--secondary);">HW 정가</div>
+              <div style="font-size:var(--fs-stat);font-weight:var(--fw-display);color:var(--secondary);line-height:1;margin-top:var(--sp-sm);">{{b2cPrice}}만원</div>
+              <div style="font-size:var(--fs-caption);color:var(--secondary);opacity:0.6;margin-top:var(--sp-sm);">1대 · VAT 포함</div>
+              <div style="border-top:1px solid var(--secondary-15);margin-top:var(--sp-md);padding-top:var(--sp-sm);">
+                <div style="font-size:var(--fs-body);color:var(--secondary);">SW 구독</div>
+                <div style="font-size:var(--fs-heading);font-weight:var(--fw-heading);color:var(--secondary);margin-top:var(--sp-sm);">{{subFamilyPrice}}<span style="font-size:var(--fs-body);color:var(--secondary);opacity:0.7;">/월</span></div>
               </div>
-              <div style="display:flex;height:6px;border-radius:3px;overflow:hidden;gap:2px;margin-top:4px;">
-                <div style="flex:100;background:var(--text-tertiary);border-radius:3px;"></div>
-                <div style="flex:9;background:var(--secondary);border-radius:3px;"></div>
-              </div>
+              <div style="border-top:1px solid var(--secondary-15);margin-top:var(--sp-sm);padding-top:var(--sp-xs);"><div style="display:flex;justify-content:space-between;align-items:baseline;"><span style="font-size:var(--fs-source);color:var(--text-tertiary);">2년 LTV</span><span style="font-size:var(--fs-body);font-weight:var(--fw-heading);color:var(--secondary);">{{ltvFamily}}만</span></div><div style="display:flex;height:6px;border-radius:3px;overflow:hidden;gap:2px;margin-top:4px;"><div style="flex:149;background:var(--text-tertiary);border-radius:3px;"></div><div style="flex:9;background:var(--secondary);border-radius:3px;"></div></div></div>
             </div>
           </div>
         </div>
         <!-- 팀 -->
         <div class="card" style="display:flex;flex-direction:column;padding:var(--sp-md);">
-          <div style="position:relative;z-index:1;flex:1;display:flex;flex-direction:column;gap:var(--sp-xs);">
-            <div style="font-size:var(--fs-body);font-weight:var(--fw-heading);color:var(--text-primary);">TEAM</div>
-            <div style="font-size:var(--fs-caption);color:var(--text-tertiary);opacity:0.7;">동호회</div>
-            <div>
-              <div style="font-size:var(--fs-stat);font-weight:var(--fw-display);color:var(--text-primary);line-height:1;">{{b2cPrice}}<span style="font-size:var(--fs-caption);color:var(--text-tertiary);">만원</span></div>
-              <div style="font-size:var(--fs-source);color:var(--text-tertiary);opacity:0.6;">1대 · 부가세 별도</div>
-            </div>
-            <div style="border-top:1px solid var(--secondary-05);padding-top:var(--sp-xs);">
-              <div style="font-size:var(--fs-caption);color:var(--text-tertiary);">SW {{subTeamPrice}}/월</div>
-            </div>
-            <div style="border-top:1px solid var(--secondary-05);margin-top:var(--sp-sm);padding-top:var(--sp-sm);">
-              <div style="display:flex;justify-content:space-between;align-items:baseline;">
-                <span style="font-size:var(--fs-source);color:var(--text-tertiary);">2년 LTV</span>
-                <span style="font-size:var(--fs-body);font-weight:var(--fw-heading);color:var(--text-primary);">{{ltvTeam}}만</span>
+          <div style="position:relative;z-index:1;flex:1;display:flex;flex-direction:column;gap:var(--sp-sm);">
+            <div style="font-size:var(--fs-heading);font-weight:var(--fw-heading);color:var(--text-primary);">TEAM</div>
+            <div style="font-size:var(--fs-body);color:var(--text-tertiary);">동호회</div>
+            <div style="margin-top:auto;">
+              <div style="font-size:var(--fs-body);color:var(--text-tertiary);">HW 정가</div>
+              <div style="font-size:var(--fs-stat);font-weight:var(--fw-display);color:var(--text-primary);line-height:1;margin-top:var(--sp-sm);">{{b2cPrice}}만원</div>
+              <div style="font-size:var(--fs-caption);color:var(--text-tertiary);opacity:0.6;margin-top:var(--sp-sm);">1대 · VAT 포함</div>
+              <div style="border-top:1px solid rgba(255,255,255,0.06);margin-top:var(--sp-md);padding-top:var(--sp-sm);">
+                <div style="font-size:var(--fs-body);color:var(--text-tertiary);">SW 구독</div>
+                <div style="font-size:var(--fs-heading);font-weight:var(--fw-heading);color:var(--text-primary);margin-top:var(--sp-sm);">{{subTeamPrice}}<span style="font-size:var(--fs-body);color:var(--text-tertiary);">/월</span></div>
               </div>
-              <div style="display:flex;height:6px;border-radius:3px;overflow:hidden;gap:2px;margin-top:4px;">
-                <div style="flex:77;background:var(--text-tertiary);border-radius:3px;"></div>
-                <div style="flex:94;background:var(--secondary);border-radius:3px;"></div>
-              </div>
+              <div style="border-top:1px solid rgba(255,255,255,0.06);margin-top:var(--sp-sm);padding-top:var(--sp-xs);"><div style="display:flex;justify-content:space-between;align-items:baseline;"><span style="font-size:var(--fs-source);color:var(--text-tertiary);">2년 LTV</span><span style="font-size:var(--fs-body);font-weight:var(--fw-heading);color:var(--text-primary);">{{ltvTeam}}만</span></div><div style="display:flex;height:6px;border-radius:3px;overflow:hidden;gap:2px;margin-top:4px;"><div style="flex:149;background:var(--text-tertiary);border-radius:3px;"></div><div style="flex:94;background:var(--secondary);border-radius:3px;"></div></div></div>
             </div>
           </div>
         </div>
@@ -65,82 +51,61 @@
     </div>
 
     <!-- B2B 그룹 -->
-    <div style="border:2px solid var(--secondary);border-radius:var(--card-radius);padding:var(--sp-md);display:flex;flex-direction:column;gap:var(--sp-sm);">
+    <div style="border:2px solid var(--secondary);border-radius:var(--card-radius);padding:var(--sp-md);display:flex;flex-direction:column;gap:var(--sp-md);">
       <div style="font-size:var(--fs-heading);font-weight:var(--fw-heading);color:var(--secondary);text-align:center;">B2B</div>
 
-      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:var(--sp-sm);flex:1;">
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:var(--sp-md);flex:1;">
         <!-- 베이직 -->
         <div class="card" style="display:flex;flex-direction:column;padding:var(--sp-md);">
-          <div style="position:relative;z-index:1;flex:1;display:flex;flex-direction:column;gap:var(--sp-xs);">
-            <div style="font-size:var(--fs-body);font-weight:var(--fw-heading);color:var(--text-primary);">BASIC</div>
-            <div style="font-size:var(--fs-caption);color:var(--text-tertiary);opacity:0.7;">학원 / 실내</div>
-            <div>
-              <div style="font-size:var(--fs-stat);font-weight:var(--fw-display);color:var(--text-primary);line-height:1;">{{b2bBasicPrice}}<span style="font-size:var(--fs-caption);color:var(--text-tertiary);">만원</span></div>
-              <div style="font-size:var(--fs-source);color:var(--text-tertiary);opacity:0.6;">1대 · 부가세 별도</div>
-            </div>
-            <div style="border-top:1px solid var(--secondary-05);padding-top:var(--sp-xs);">
-              <div style="font-size:var(--fs-caption);color:var(--text-tertiary);">SW {{subBasicPrice}}/월</div>
-            </div>
-            <div style="border-top:1px solid var(--secondary-05);margin-top:var(--sp-sm);padding-top:var(--sp-sm);">
-              <div style="display:flex;justify-content:space-between;align-items:baseline;">
-                <span style="font-size:var(--fs-source);color:var(--text-tertiary);">2년 LTV</span>
-                <span style="font-size:var(--fs-body);font-weight:var(--fw-heading);color:var(--text-primary);">{{ltvBasic}}만</span>
+          <div style="position:relative;z-index:1;flex:1;display:flex;flex-direction:column;gap:var(--sp-sm);">
+            <div style="font-size:var(--fs-heading);font-weight:var(--fw-heading);color:var(--text-primary);">BASIC</div>
+            <div style="font-size:var(--fs-body);color:var(--text-tertiary);">학원 / 실내</div>
+            <div style="margin-top:auto;">
+              <div style="font-size:var(--fs-body);color:var(--text-tertiary);">HW 정가</div>
+              <div style="font-size:var(--fs-stat);font-weight:var(--fw-display);color:var(--text-primary);line-height:1;margin-top:var(--sp-sm);">{{b2bBasicPrice}}만원</div>
+              <div style="font-size:var(--fs-caption);color:var(--text-tertiary);opacity:0.6;margin-top:var(--sp-sm);">1대 · VAT 포함</div>
+              <div style="border-top:1px solid rgba(255,255,255,0.06);margin-top:var(--sp-md);padding-top:var(--sp-sm);">
+                <div style="font-size:var(--fs-body);color:var(--text-tertiary);">SW 구독</div>
+                <div style="font-size:var(--fs-heading);font-weight:var(--fw-heading);color:var(--text-primary);margin-top:var(--sp-sm);">{{subBasicPrice}}<span style="font-size:var(--fs-body);color:var(--text-tertiary);">/월</span></div>
               </div>
-              <div style="display:flex;height:6px;border-radius:3px;overflow:hidden;gap:2px;margin-top:4px;">
-                <div style="flex:120;background:var(--text-tertiary);border-radius:3px;"></div>
-                <div style="flex:121;background:var(--secondary);border-radius:3px;"></div>
-              </div>
+              <div style="border-top:1px solid rgba(255,255,255,0.06);margin-top:var(--sp-sm);padding-top:var(--sp-xs);"><div style="display:flex;justify-content:space-between;align-items:baseline;"><span style="font-size:var(--fs-source);color:var(--text-tertiary);">2년 LTV</span><span style="font-size:var(--fs-body);font-weight:var(--fw-heading);color:var(--text-primary);">{{ltvBasic}}만</span></div><div style="display:flex;height:6px;border-radius:3px;overflow:hidden;gap:2px;margin-top:4px;"><div style="flex:119;background:var(--text-tertiary);border-radius:3px;"></div><div style="flex:142;background:var(--secondary);border-radius:3px;"></div></div></div>
             </div>
           </div>
         </div>
         <!-- 프리미엄 -->
         <div class="card card-secondary" style="display:flex;flex-direction:column;padding:var(--sp-md);border:1px solid var(--secondary);">
-          <div style="position:relative;z-index:1;flex:1;display:flex;flex-direction:column;gap:var(--sp-xs);">
+          <div style="position:relative;z-index:1;flex:1;display:flex;flex-direction:column;gap:var(--sp-sm);">
             <div style="display:flex;justify-content:space-between;align-items:center;">
-              <div style="font-size:var(--fs-body);font-weight:var(--fw-heading);color:var(--secondary);">PREMIUM</div>
-              <div style="font-size:var(--fs-source);font-weight:var(--fw-heading);color:var(--secondary);background:var(--secondary-20);padding:2px 8px;border-radius:4px;">추천</div>
+              <div style="font-size:var(--fs-heading);font-weight:var(--fw-heading);color:var(--secondary);">PREMIUM</div>
+              <div style="font-size:var(--fs-caption);font-weight:var(--fw-heading);color:var(--secondary);background:var(--secondary-20);padding:2px 8px;border-radius:4px;">추천</div>
             </div>
-            <div style="font-size:var(--fs-caption);color:var(--secondary);opacity:0.7;">학원 / 실내</div>
-            <div>
-              <div style="font-size:var(--fs-stat);font-weight:var(--fw-display);color:var(--secondary);line-height:1;">{{b2bPremiumPrice}}<span style="font-size:var(--fs-caption);color:var(--secondary);">만원</span></div>
-              <div style="font-size:var(--fs-source);color:var(--secondary);opacity:0.6;">2대 · 부가세 별도</div>
-            </div>
-            <div style="border-top:1px solid var(--secondary-15);padding-top:var(--sp-xs);">
-              <div style="font-size:var(--fs-caption);color:var(--secondary);">SW {{subPremiumPrice}}/월</div>
-            </div>
-            <div style="border-top:1px solid var(--secondary-15);margin-top:var(--sp-sm);padding-top:var(--sp-sm);">
-              <div style="display:flex;justify-content:space-between;align-items:baseline;">
-                <span style="font-size:var(--fs-source);color:var(--text-tertiary);">2년 LTV</span>
-                <span style="font-size:var(--fs-body);font-weight:var(--fw-heading);color:var(--secondary);">{{ltvPremium}}만</span>
+            <div style="font-size:var(--fs-body);color:var(--secondary);">학원 / 실내</div>
+            <div style="margin-top:auto;">
+              <div style="font-size:var(--fs-body);color:var(--secondary);">HW 정가</div>
+              <div style="font-size:var(--fs-stat);font-weight:var(--fw-display);color:var(--secondary);line-height:1;margin-top:var(--sp-sm);">{{b2bPremiumPrice}}만원</div>
+              <div style="font-size:var(--fs-caption);color:var(--secondary);opacity:0.6;margin-top:var(--sp-sm);">2대 · VAT 포함</div>
+              <div style="border-top:1px solid var(--secondary-15);margin-top:var(--sp-md);padding-top:var(--sp-sm);">
+                <div style="font-size:var(--fs-body);color:var(--secondary);">SW 구독</div>
+                <div style="font-size:var(--fs-heading);font-weight:var(--fw-heading);color:var(--secondary);margin-top:var(--sp-sm);">{{subPremiumPrice}}<span style="font-size:var(--fs-body);color:var(--secondary);opacity:0.7;">/월</span></div>
               </div>
-              <div style="display:flex;height:6px;border-radius:3px;overflow:hidden;gap:2px;margin-top:4px;">
-                <div style="flex:199;background:var(--text-tertiary);border-radius:3px;"></div>
-                <div style="flex:192;background:var(--secondary);border-radius:3px;"></div>
-              </div>
+              <div style="border-top:1px solid var(--secondary-15);margin-top:var(--sp-sm);padding-top:var(--sp-xs);"><div style="display:flex;justify-content:space-between;align-items:baseline;"><span style="font-size:var(--fs-source);color:var(--text-tertiary);">2년 LTV</span><span style="font-size:var(--fs-body);font-weight:var(--fw-heading);color:var(--secondary);">{{ltvPremium}}만</span></div><div style="display:flex;height:6px;border-radius:3px;overflow:hidden;gap:2px;margin-top:4px;"><div style="flex:198;background:var(--text-tertiary);border-radius:3px;"></div><div style="flex:214;background:var(--secondary);border-radius:3px;"></div></div></div>
             </div>
           </div>
         </div>
         <!-- 플래티넘 -->
         <div class="card" style="display:flex;flex-direction:column;padding:var(--sp-md);">
-          <div style="position:relative;z-index:1;flex:1;display:flex;flex-direction:column;gap:var(--sp-xs);">
-            <div style="font-size:var(--fs-body);font-weight:var(--fw-heading);color:var(--text-primary);">PLATINUM</div>
-            <div style="font-size:var(--fs-caption);color:var(--text-tertiary);opacity:0.7;">스튜디오 / 야외</div>
-            <div>
-              <div style="font-size:var(--fs-stat);font-weight:var(--fw-display);color:var(--text-primary);line-height:1;">{{b2bPlatinumPrice}}<span style="font-size:var(--fs-caption);color:var(--text-tertiary);">만원</span></div>
-              <div style="font-size:var(--fs-source);color:var(--text-tertiary);opacity:0.6;">4대 · 부가세 별도</div>
-            </div>
-            <div style="border-top:1px solid var(--secondary-05);padding-top:var(--sp-xs);">
-              <div style="font-size:var(--fs-caption);color:var(--text-tertiary);">SW {{subPlatinumPrice}}/월</div>
-            </div>
-            <div style="border-top:1px solid var(--secondary-05);margin-top:var(--sp-sm);padding-top:var(--sp-sm);">
-              <div style="display:flex;justify-content:space-between;align-items:baseline;">
-                <span style="font-size:var(--fs-source);color:var(--text-tertiary);">2년 LTV</span>
-                <span style="font-size:var(--fs-body);font-weight:var(--fw-heading);color:var(--text-primary);">{{ltvPlatinum}}만</span>
+          <div style="position:relative;z-index:1;flex:1;display:flex;flex-direction:column;gap:var(--sp-sm);">
+            <div style="font-size:var(--fs-heading);font-weight:var(--fw-heading);color:var(--text-primary);">PLATINUM</div>
+            <div style="font-size:var(--fs-body);color:var(--text-tertiary);">스튜디오 / 야외</div>
+            <div style="margin-top:auto;">
+              <div style="font-size:var(--fs-body);color:var(--text-tertiary);">HW 정가</div>
+              <div style="font-size:var(--fs-stat);font-weight:var(--fw-display);color:var(--text-primary);line-height:1;margin-top:var(--sp-sm);">{{b2bPlatinumPrice}}만원</div>
+              <div style="font-size:var(--fs-caption);color:var(--text-tertiary);opacity:0.6;margin-top:var(--sp-sm);">4대 · VAT 포함</div>
+              <div style="border-top:1px solid rgba(255,255,255,0.06);margin-top:var(--sp-md);padding-top:var(--sp-sm);">
+                <div style="font-size:var(--fs-body);color:var(--text-tertiary);">SW 구독</div>
+                <div style="font-size:var(--fs-heading);font-weight:var(--fw-heading);color:var(--text-primary);margin-top:var(--sp-sm);">{{subPlatinumPrice}}<span style="font-size:var(--fs-body);color:var(--text-tertiary);">/월</span></div>
               </div>
-              <div style="display:flex;height:6px;border-radius:3px;overflow:hidden;gap:2px;margin-top:4px;">
-                <div style="flex:388;background:var(--text-tertiary);border-radius:3px;"></div>
-                <div style="flex:259;background:var(--secondary);border-radius:3px;"></div>
-              </div>
+              <div style="border-top:1px solid rgba(255,255,255,0.06);margin-top:var(--sp-sm);padding-top:var(--sp-xs);"><div style="display:flex;justify-content:space-between;align-items:baseline;"><span style="font-size:var(--fs-source);color:var(--text-tertiary);">2년 LTV</span><span style="font-size:var(--fs-body);font-weight:var(--fw-heading);color:var(--text-primary);">{{ltvPlatinum}}만</span></div><div style="display:flex;height:6px;border-radius:3px;overflow:hidden;gap:2px;margin-top:4px;"><div style="flex:385;background:var(--text-tertiary);border-radius:3px;"></div><div style="flex:307;background:var(--secondary);border-radius:3px;"></div></div></div>
             </div>
           </div>
         </div>
@@ -153,25 +118,25 @@
     <div style="display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:var(--sp-sm);align-items:center;">
       <div class="card" style="display:flex;align-items:center;">
         <div style="position:relative;z-index:1;">
-          <div style="font-size:var(--fs-caption);color:var(--text-tertiary);">500대 기준 HW 판매 매출</div>
-          <div style="font-size:var(--fs-stat);font-weight:var(--fw-display);color:var(--text-primary);line-height:1;margin-top:var(--sp-xs);">{{metricHW}}<span style="font-weight:400;"> +</span></div>
-          <div style="font-size:var(--fs-caption);color:var(--text-tertiary);margin-top:var(--sp-xs);">{{metricHWSub}}</div>
+          <div style="font-size:var(--fs-body);color:var(--text-tertiary);">500대 기준 HW 판매 매출</div>
+          <div style="font-size:var(--fs-stat);font-weight:var(--fw-display);color:var(--text-primary);line-height:1;margin-top:var(--sp-sm);">{{metricHW}}<span style="font-weight:400;"> +</span></div>
+          <div style="font-size:var(--fs-body);color:var(--text-tertiary);margin-top:var(--sp-sm);">{{metricHWSub}}</div>
         </div>
       </div>
-      <div style="font-size:var(--fs-stat);font-weight:var(--fw-display);color:var(--text-tertiary);">+</div>
+      <div style="font-size:var(--fs-display);font-weight:var(--fw-display);color:var(--text-tertiary);">+</div>
       <div class="card" style="display:flex;align-items:center;">
         <div style="position:relative;z-index:1;">
-          <div style="font-size:var(--fs-caption);color:var(--text-tertiary);">500대 기준 SW ARR</div>
-          <div style="font-size:var(--fs-stat);font-weight:var(--fw-display);color:var(--text-primary);line-height:1;margin-top:var(--sp-xs);">{{metricARR}}<span style="font-weight:400;"> +</span></div>
-          <div style="font-size:var(--fs-caption);color:var(--text-tertiary);margin-top:var(--sp-xs);">{{metricARRSub}}</div>
+          <div style="font-size:var(--fs-body);color:var(--text-tertiary);">500대 기준 SW ARR</div>
+          <div style="font-size:var(--fs-stat);font-weight:var(--fw-display);color:var(--text-primary);line-height:1;margin-top:var(--sp-sm);">{{metricARR}}<span style="font-weight:400;"> +</span></div>
+          <div style="font-size:var(--fs-body);color:var(--text-tertiary);margin-top:var(--sp-sm);">{{metricARRSub}}</div>
         </div>
       </div>
-      <div style="font-size:var(--fs-stat);font-weight:var(--fw-display);color:var(--text-tertiary);">=</div>
+      <div style="font-size:var(--fs-display);font-weight:var(--fw-display);color:var(--text-tertiary);">=</div>
       <div class="card card-secondary" style="display:flex;align-items:center;">
         <div style="position:relative;z-index:1;">
-          <div style="font-size:var(--fs-caption);color:var(--secondary);">500대 기준 총매출</div>
-          <div style="font-size:var(--fs-stat);font-weight:var(--fw-display);color:var(--text-primary);line-height:1;margin-top:var(--sp-xs);">{{metricRevenue}}<span style="font-weight:400;"> +</span></div>
-          <div style="font-size:var(--fs-caption);color:var(--text-secondary);margin-top:var(--sp-xs);">{{metricRevenueSub}}</div>
+          <div style="font-size:var(--fs-body);color:var(--secondary);">500대 기준 총매출</div>
+          <div style="font-size:var(--fs-stat);font-weight:var(--fw-display);color:var(--text-primary);line-height:1;margin-top:var(--sp-sm);">{{metricRevenue}}<span style="font-weight:400;"> +</span></div>
+          <div style="font-size:var(--fs-body);color:var(--text-secondary);margin-top:var(--sp-sm);">{{metricRevenueSub}}</div>
         </div>
       </div>
     </div>

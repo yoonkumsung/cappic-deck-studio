@@ -139,6 +139,13 @@
 
       document.getElementById('slideRoot').innerHTML = html;
 
+      // Execute any script tags in the template
+      document.getElementById('slideRoot').querySelectorAll('script').forEach(oldScript => {
+        const newScript = document.createElement('script');
+        newScript.textContent = oldScript.textContent;
+        oldScript.parentNode.replaceChild(newScript, oldScript);
+      });
+
       // Apply per-slide styles from JSON _styles field
       if (jsonData && jsonData._styles) {
         const root = document.getElementById('slideRoot').firstElementChild;
