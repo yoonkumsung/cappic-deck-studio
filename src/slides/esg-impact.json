@@ -1,0 +1,52 @@
+{
+  "fields": [
+    { "key": "title", "label": "타이틀", "type": "text", "value": "ESG 및 기대효과" },
+
+    { "key": "eLabel", "label": "E 라벨", "type": "text", "value": "E  기록의 민주화" },
+    { "key": "e1", "label": "E 항목1", "type": "text", "value": "경쟁 제품 대비 절반 이하 수준 비용으로 제공" },
+    { "key": "e2", "label": "E 항목2", "type": "text", "value": "온디바이스 AI로 서버 의존 최소화, 탄소 배출 절감" },
+    { "key": "e3", "label": "E 항목3", "type": "text", "value": "소득/지역 무관하게 누구나 접근 가능" },
+
+    { "key": "sLabel", "label": "S 라벨", "type": "text", "value": "S  교육의 민주화" },
+    { "key": "s1", "label": "S 항목1", "type": "text", "value": "AI 자세 분석/자연어 코칭으로 표준화된 교육 환경 제공" },
+    { "key": "s2", "label": "S 항목2", "type": "text", "value": "유소년 부상 방지 및 성장 기록 축적" },
+    { "key": "s3", "label": "S 항목3", "type": "text", "value": "지역 청년 우선 채용, 저소득층 무료 멘토링 연계" },
+
+    { "key": "gLabel", "label": "G 라벨", "type": "text", "value": "G  기회의 민주화" },
+    { "key": "g1", "label": "G 항목1", "type": "text", "value": "객관적 데이터 기반 공정한 선수 평가 제공" },
+    { "key": "g2", "label": "G 항목2", "type": "text", "value": "유소년 인재의 해외 유출 방지에 기여" },
+    { "key": "g3", "label": "G 항목3", "type": "text", "value": "촬영 데이터 윤리 가이드라인 제정, KPI 공시 체계 구축" },
+
+    { "key": "probHead", "label": "문제 헤더", "type": "text", "value": "PROBLEM" },
+    { "key": "solHead", "label": "솔루션 헤더", "type": "text", "value": "SOLUTION" },
+    { "key": "benHead", "label": "기대효과 헤더", "type": "text", "value": "BENEFIT" },
+
+    { "key": "p1", "label": "문제1", "type": "text", "value": "높은 촬영 비용" },
+    { "key": "p1d", "label": "문제1 설명", "type": "text", "value": "1회 55만원 / 1대 350만원" },
+    { "key": "sol1", "label": "솔루션1", "type": "text", "value": "AI 자동 촬영 시스템" },
+    { "key": "sol1d", "label": "솔루션1 설명", "type": "text", "value": "전문 인력 없이 고품질 촬영" },
+    { "key": "b1", "label": "효과1", "type": "text", "value": "합리적인 가격" },
+    { "key": "b1d", "label": "효과1 설명", "type": "text", "value": "경쟁 제품의 20% 수준" },
+
+    { "key": "p2", "label": "문제2", "type": "text", "value": "처리 지연" },
+    { "key": "p2d", "label": "문제2 설명", "type": "text", "value": "촬영/편집 후 전달까지 5-7일 소요" },
+    { "key": "sol2", "label": "솔루션2", "type": "text", "value": "Edge AI 시스템" },
+    { "key": "sol2d", "label": "솔루션2 설명", "type": "text", "value": "온디바이스에서 실시간 하이라이트 생성" },
+    { "key": "b2", "label": "효과2", "type": "text", "value": "1시간 내 결과물 확인" },
+    { "key": "b2d", "label": "효과2 설명", "type": "text", "value": "SNS 공유 및 실시간 코칭 가능" },
+
+    { "key": "p3", "label": "문제3", "type": "text", "value": "개인별 맞춤 서비스 부재" },
+    { "key": "p3d", "label": "문제3 설명", "type": "text", "value": "단체 위주 / 개인 하이라이트 포착 어려움" },
+    { "key": "sol3", "label": "솔루션3", "type": "text", "value": "AI 객체 인식 / 다중 추적" },
+    { "key": "sol3d", "label": "솔루션3 설명", "type": "text", "value": "실시간 다중 객체 인식 및 추적" },
+    { "key": "b3", "label": "효과3", "type": "text", "value": "개인별 하이라이트 제공" },
+    { "key": "b3d", "label": "효과3 설명", "type": "text", "value": "딥러닝 기반 AI 모델로 자동 선별" },
+
+    { "key": "p4", "label": "문제4", "type": "text", "value": "스포츠 교육 불평등" },
+    { "key": "p4d", "label": "문제4 설명", "type": "text", "value": "인맥/비용 장벽 / 검증되지 않은 코칭" },
+    { "key": "sol4", "label": "솔루션4", "type": "text", "value": "AI 코칭 어시스턴트" },
+    { "key": "sol4d", "label": "솔루션4 설명", "type": "text", "value": "자세 및 경기 맥락을 고려한 피드백 제공" },
+    { "key": "b4", "label": "효과4", "type": "text", "value": "전문 교육 접근성 확대" },
+    { "key": "b4d", "label": "효과4 설명", "type": "text", "value": "데이터 기반의 성장 기록 가능" }
+  ]
+}

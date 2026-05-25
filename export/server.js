@@ -229,6 +229,11 @@ const server = http.createServer(async (req, res) => {
       const outputPath = path.join(exportSubDir, `${safeSlideId}.png`);
       await page.screenshot({ path: outputPath, type: 'png' });
 
+      // Set 300 DPI metadata
+      const sharp = require('sharp');
+      await sharp(outputPath).withMetadata({ density: 300 }).toFile(outputPath + '.tmp');
+      fs.renameSync(outputPath + '.tmp', outputPath);
+
       const file = fs.readFileSync(outputPath);
       res.writeHead(200, {
         'Content-Type': 'image/png',
@@ -292,6 +297,10 @@ const server = http.createServer(async (req, res) => {
           const num = String(i + 1).padStart(2, '0');
           const outputPath = path.join(exportSubDir, `${num}_${slideId}.png`);
           await page.screenshot({ path: outputPath, type: 'png' });
+          // Set 300 DPI metadata
+          const sharp = require('sharp');
+          await sharp(outputPath).withMetadata({ density: 300 }).toFile(outputPath + '.tmp');
+          fs.renameSync(outputPath + '.tmp', outputPath);
           results.push({ slideId, file: `${num}_${slideId}.png` });
         } finally {
           await page.close().catch(() => {});

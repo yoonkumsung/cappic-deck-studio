@@ -1,122 +1,33 @@
 {
   "fields": [
-    {
-      "key": "title",
-      "label": "타이틀",
-      "type": "text",
-      "value": "Market & Scale-up"
-    },
-    {
-      "key": "tamValue",
-      "label": "TAM 값",
-      "type": "text",
-      "value": "52조원"
-    },
-    {
-      "key": "samValue",
-      "label": "SAM 값",
-      "type": "text",
-      "value": "1.3조원"
-    },
-    {
-      "key": "somValue",
-      "label": "SOM 값",
-      "type": "text",
-      "value": "8억원"
-    },
-    {
-      "key": "tamSub",
-      "label": "TAM 메인",
-      "type": "text",
-      "value": "글로벌 스포츠테크 시장 52조원 (CAGR 23%)"
-    },
-    {
-      "key": "tamSubDetail",
-      "label": "TAM 서브",
-      "type": "text",
-      "value": "+ 유소년 시장 85조원 + 스트리밍 시장 42조원"
-    },
-    {
-      "key": "samSub",
-      "label": "SAM 메인",
-      "type": "text",
-      "value": "국내 생활체육 시장 8천억원 + 유소년 교육 시장 5천억원"
-    },
-    {
-      "key": "samSubDetail",
-      "label": "SAM 서브",
-      "type": "text",
-      "value": "* 생활체육 참여율 49.5%"
-    },
-    {
-      "key": "somSub",
-      "label": "SOM 메인",
-      "type": "text",
-      "value": "울산·부산·경남 체육시설 100개소 + 생활체육 동호인 5천명"
-    },
-    {
-      "key": "somSubDetail",
-      "label": "SOM 서브",
-      "type": "text",
-      "value": "* 축구·농구·야구·테니스 4개 종목 우선"
-    },
-    {
-      "key": "bar1Value",
-      "label": "26년 매출",
-      "type": "text",
-      "value": "~10억원"
-    },
-    {
-      "key": "bar1Year",
-      "label": "26년",
-      "type": "text",
-      "value": "2026"
-    },
-    {
-      "key": "bar2Value",
-      "label": "27년 매출",
-      "type": "text",
-      "value": "50억원"
-    },
-    {
-      "key": "bar2Year",
-      "label": "27년",
-      "type": "text",
-      "value": "2027"
-    },
-    {
-      "key": "bar3Value",
-      "label": "28년 매출",
-      "type": "text",
-      "value": "200억원"
-    },
-    {
-      "key": "bar3Year",
-      "label": "28년",
-      "type": "text",
-      "value": "2028"
-    },
-    {
-      "key": "bar4Value",
-      "label": "29년 매출",
-      "type": "text",
-      "value": "500억원"
-    },
-    {
-      "key": "bar4Year",
-      "label": "29년",
-      "type": "text",
-      "value": "2029"
-    },
-    {
-      "key": "source",
-      "label": "출처",
-      "type": "text",
-      "value": "출처: IMARC Group, SNS Insider, 통계청 (24년)"
-    }
-  ],
-  "_styles": {
-    "--title-align": "center",
-    "--fs-display": "48px"
-  }
+    { "key": "title", "label": "타이틀", "type": "text", "value": "Market Opportunity" },
+
+    { "key": "tamValue", "label": "TAM 값", "type": "text", "value": "88조원" },
+    { "key": "tamDesc", "label": "TAM 설명", "type": "text", "value": "스포츠 촬영 52조원 + 분석 36조원 (CAGR 20%)" },
+    { "key": "samValue", "label": "SAM 값", "type": "text", "value": "1.3조원" },
+    { "key": "samDesc", "label": "SAM 설명", "type": "text", "value": "국내 생활체육 8천억 + 유소년 교육 5천억" },
+    { "key": "somValue", "label": "SOM 값", "type": "text", "value": "5.46억" },
+    { "key": "somDesc", "label": "SOM 설명", "type": "text", "value": "26년 바텀업" },
+
+    { "key": "b2bFunnel", "label": "B2B 퍼널", "type": "text", "value": "주요 학원시설 300개소 → 영업 도달 100개소 → 계약 전환 30%" },
+    { "key": "b2bResult", "label": "B2B 결과", "type": "text", "value": "30개소, 50대 x 90만 = 0.45억" },
+
+    { "key": "fundFunnel", "label": "펀딩 퍼널", "type": "text", "value": "(Wadiz 테크 카테고리 평균) 노출 15만명 → 조회 5% → 참여 3.8%(300명)" },
+    { "key": "fundResult", "label": "펀딩 결과", "type": "text", "value": "300대 x 99만 = 2.97억" },
+
+    { "key": "mallFunnel", "label": "자사몰 퍼널", "type": "text", "value": "SNS/SEO 월 유입 3,000명 → 구매 전환 1.4% → 4개월 운영" },
+    { "key": "mallResult", "label": "자사몰 결과", "type": "text", "value": "170대 x 120만 = 2.04억" },
+
+    { "key": "somTotal", "label": "SOM 합계", "type": "text", "value": "SOM 5.46억원" },
+    { "key": "somSub", "label": "SOM 부제", "type": "text", "value": "520대 / 평균 105만원" },
+
+    { "key": "wn1Title", "label": "Why Now 1 제목", "type": "text", "value": "스포츠 콘텐츠 제작 및 시청 확대" },
+    { "key": "wn1Desc", "label": "Why Now 1 설명", "type": "text", "value": "스포츠 소셜미디어 플랫폼 CAGR 18.3% (Mordor Intelligence)" },
+    { "key": "wn2Title", "label": "Why Now 2 제목", "type": "text", "value": "스포츠 교육 및 생활 체육 참여 확대" },
+    { "key": "wn2Desc", "label": "Why Now 2 설명", "type": "text", "value": "체육시설 연 17% 증가, 생활체육 참여율 49.5% 역대 최고 (문체부)" },
+    { "key": "wn3Title", "label": "Why Now 3 제목", "type": "text", "value": "아마추어 스포츠 촬영 시장 공백" },
+    { "key": "wn3Desc", "label": "Why Now 3 설명", "type": "text", "value": "기존 촬영 시스템 평균 300만원+ 고가 / 프로팀 전술분석 전용" },
+
+    { "key": "source", "label": "출처", "type": "text", "value": "출처: IMARC Group, SNS Insider, 통계청 (24년)" }
+  ]
 }

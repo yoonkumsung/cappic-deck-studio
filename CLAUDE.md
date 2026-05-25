@@ -30,13 +30,14 @@
 |---------|----------|------|
 | --text-primary #FFFFFF | #111111 | 흰색 텍스트 → 검정 |
 | --text-secondary #E0E0E0 | #333333 | 밝은 회색 → 진한 회색 |
-| --text-tertiary #B0B0B0 | #888888 | 회색 → 중간 회색 |
+| --text-tertiary #B0B0B0 | #555555 | 회색 → 그라파이트 (회색 금지) |
 | --main-black #000000 | #FFFFFF | 검정 배경 → 흰색 배경 |
 | --secondary #7EDCE6 | #0A7A88 | 시안 → 진한 시안 (흰 배경 가독성) |
 | --semantic-up #7AE85A | #1A7A10 | 연두 → 진한 초록 |
 | --semantic-down #FF4D6A | #C01030 | 분홍 → 진한 빨강 |
 
 **핵심 원칙:**
+- **라이트모드에서 회색(#888 이상) 텍스트 사용 금지. 가장 연한 텍스트도 그라파이트(#555555)까지만 허용**
 - 흰 배경에서 가독성 확보를 위해 accent/secondary 색상은 더 진하게
 - 카드 배경은 #F8F8F8~#EEEEEE (순백이 아닌 밝은 회색으로 배경과 구분)
 - **rgba(255,255,255,xx) 절대 사용 금지** - 라이트모드에서 안 보임
@@ -142,11 +143,17 @@
 
 ---
 
-## 7. 카드
+## 7. 카드 (Ultra-minimal 스타일)
 
-- `.card` 클래스 필수 (gradient + shadow + gloss overlay)
-- 내부 padding: 32px (var(--card-pad)) - 변경 금지
+- `.card` 클래스 필수
+- **카드는 콘텐츠의 배경 역할만 한다. 장식하지 않는다.**
+- 배경: 단색 (다크 #111, 라이트 #F5F5F5) - 그라데이션 금지
+- 그림자: 1겹만 (`0 2px 20px`) + 상단 1px inset 하이라이트
+- 글로스 오버레이: 사용 금지
+- border-radius: 12px
+- 보더: 1px, 극히 미세하게 (rgba 0.06)
 - 보더 컬러 라인(border-top 등) 금지
+- 내부 padding: 32px (var(--card-pad)) - 변경 금지
 - 사진+데이터 구조일 때: `.card.card-photo` + `.sg-card-col` 사용
 
 ---

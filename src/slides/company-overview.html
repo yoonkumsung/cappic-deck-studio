@@ -1,150 +1,171 @@
 <div class="slide">
   <div class="slide-title">{{title}}</div>
 
-  <div class="slide-content" style="display:grid;grid-template-columns:2fr 3fr;gap:var(--sp-lg);height:100%;">
+  <div class="slide-content" style="display:flex;flex-direction:column;gap:var(--sp-sm);">
 
-    <!-- LEFT: Company Info -->
-    <div class="card" style="display:flex;flex-direction:column;overflow:hidden;">
-      <div style="position:relative;z-index:1;display:flex;flex-direction:column;height:100%;">
+    <!-- Top: 2-column (Company Info + Achievements), aligned height -->
+    <div style="display:grid;grid-template-columns:380px 1fr;gap:var(--sp-xl);flex:1;align-items:stretch;">
 
-        <!-- Company name + Product highlight -->
-        <div style="margin-bottom:var(--sp-md);padding-bottom:var(--sp-sm);border-bottom:1px solid var(--secondary-10);">
-          <div style="font-size:var(--fs-heading);font-weight:var(--fw-display);color:var(--text-primary);margin-bottom:var(--sp-xs);">CAPP!C</div>
-          <div style="font-size:var(--fs-body);font-weight:var(--fw-heading);color:var(--secondary);">{{product}}</div>
-          <div style="font-size:var(--fs-caption);color:var(--text-tertiary);margin-top:var(--sp-xs);">{{productSub}}</div>
+      <!-- LEFT: Company Info -->
+      <div style="display:flex;flex-direction:column;justify-content:space-evenly;">
+
+        <!-- Logo + Brand -->
+        <div style="margin-bottom:var(--sp-sm);padding-bottom:var(--sp-sm);border-bottom:1px solid var(--secondary-10);">
+          <img src="assets/ci-white.png" alt="CAPP!C" style="height:64px;display:block;margin-bottom:var(--sp-xs);" loading="eager">
+          <div style="font-size:var(--fs-caption);color:var(--text-primary);">Capture & Pick, Picture</div>
         </div>
 
         <!-- Info items -->
-        <div style="display:flex;flex-direction:column;gap:var(--sp-sm);flex:1;">
-          <div>
-            <div style="font-size:var(--fs-caption);color:var(--text-tertiary);letter-spacing:var(--ls-label);margin-bottom:4px;">대표이사</div>
-            <div style="font-size:var(--fs-body);color:var(--text-secondary);">{{ceoName}}</div>
+        <div style="display:flex;flex-direction:column;gap:var(--sp-md);">
+          <div style="display:flex;gap:var(--sp-sm);">
+            <div style="font-size:var(--fs-caption);color:var(--text-tertiary);min-width:90px;">법인명</div>
+            <div style="font-size:var(--fs-caption);color:var(--text-primary);font-weight:var(--fw-heading);">{{corpName}}</div>
           </div>
-          <div>
-            <div style="font-size:var(--fs-caption);color:var(--text-tertiary);letter-spacing:var(--ls-label);margin-bottom:4px;">설립일</div>
-            <div style="font-size:var(--fs-body);color:var(--text-secondary);">{{foundDate}} <span style="font-size:var(--fs-caption);color:var(--secondary);">{{foundNote}}</span></div>
+          <div style="display:flex;gap:var(--sp-sm);">
+            <div style="font-size:var(--fs-caption);color:var(--text-tertiary);min-width:90px;">대표이사</div>
+            <div style="font-size:var(--fs-caption);color:var(--text-primary);font-weight:var(--fw-heading);">{{ceoName}}</div>
           </div>
-          <div>
-            <div style="font-size:var(--fs-caption);color:var(--text-tertiary);letter-spacing:var(--ls-label);margin-bottom:4px;">사업자등록번호</div>
-            <div style="font-size:var(--fs-body);color:var(--text-secondary);">{{bizNumber}}</div>
+          <div style="display:flex;gap:var(--sp-sm);">
+            <div style="font-size:var(--fs-caption);color:var(--text-tertiary);min-width:90px;">법인 설립일</div>
+            <div style="font-size:var(--fs-caption);color:var(--text-primary);font-weight:var(--fw-heading);">{{foundDate}}</div>
           </div>
-          <div>
-            <div style="font-size:var(--fs-caption);color:var(--text-tertiary);letter-spacing:var(--ls-label);margin-bottom:4px;">업종</div>
-            <div style="font-size:var(--fs-body);color:var(--text-secondary);">{{industry}}</div>
+          <div style="display:flex;gap:var(--sp-sm);">
+            <div style="font-size:var(--fs-caption);color:var(--text-tertiary);min-width:90px;">사업자번호</div>
+            <div style="font-size:var(--fs-caption);color:var(--text-primary);font-weight:var(--fw-heading);">{{bizNumber}}</div>
+          </div>
+          <div style="display:flex;gap:var(--sp-sm);">
+            <div style="font-size:var(--fs-caption);color:var(--text-tertiary);min-width:90px;">업종</div>
+            <div style="font-size:var(--fs-caption);color:var(--text-primary);font-weight:var(--fw-heading);">{{industry}}</div>
+          </div>
+          <div style="display:flex;gap:var(--sp-sm);">
+            <div style="font-size:var(--fs-caption);color:var(--text-tertiary);min-width:90px;">주 제품</div>
+            <div style="font-size:var(--fs-caption);color:var(--text-primary);font-weight:var(--fw-heading);">Edge AI 스포츠 자동 촬영 분석 디바이스</div>
           </div>
         </div>
 
         <!-- Locations -->
-        <div style="margin-top:var(--sp-md);padding-top:var(--sp-sm);border-top:1px solid var(--secondary-10);">
-          <div style="font-size:var(--fs-caption);color:var(--text-tertiary);letter-spacing:var(--ls-label);margin-bottom:var(--sp-xs);">거점</div>
-          <div style="display:flex;flex-wrap:wrap;gap:var(--sp-xs);">
-            <div style="font-size:var(--fs-caption);color:var(--text-secondary);background:var(--secondary-10);padding:4px var(--sp-sm);border-radius:4px;">{{loc1}}</div>
-            <div style="font-size:var(--fs-caption);color:var(--text-secondary);background:var(--secondary-10);padding:4px var(--sp-sm);border-radius:4px;">{{loc2}}</div>
-            <div style="font-size:var(--fs-caption);color:var(--text-secondary);background:var(--secondary-10);padding:4px var(--sp-sm);border-radius:4px;">{{loc3}}</div>
+        <div style="margin-top:var(--sp-md);padding-top:var(--sp-sm);border-top:1px solid var(--secondary-10);display:flex;flex-direction:column;gap:var(--sp-sm);">
+          <div style="display:flex;align-items:center;gap:var(--sp-xs);">
+            <span style="font-size:var(--fs-caption);font-weight:var(--fw-heading);color:var(--secondary);background:var(--secondary-15);padding:2px var(--sp-xs);border-radius:4px;width:44px;text-align:center;flex-shrink:0;">본사</span>
+            <span style="font-size:var(--fs-caption);color:var(--text-secondary);">{{loc1Addr}}</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:var(--sp-xs);">
+            <span style="font-size:var(--fs-caption);font-weight:var(--fw-heading);color:var(--secondary);background:var(--secondary-15);padding:2px var(--sp-xs);border-radius:4px;width:44px;text-align:center;flex-shrink:0;">지사</span>
+            <span style="font-size:var(--fs-caption);color:var(--text-secondary);">{{loc2Addr}}</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:var(--sp-xs);">
+            <span style="font-size:var(--fs-caption);font-weight:var(--fw-heading);color:var(--secondary);background:var(--secondary-15);padding:2px var(--sp-xs);border-radius:4px;width:44px;text-align:center;flex-shrink:0;">R&D</span>
+            <span style="font-size:var(--fs-caption);color:var(--text-secondary);">{{loc3Addr}}</span>
           </div>
         </div>
 
-        <!-- Corp note -->
-        <div style="margin-top:var(--sp-sm);font-size:var(--fs-source);color:var(--text-tertiary);line-height:1.5;">{{corpNote}}</div>
-
       </div>
+
+      <!-- RIGHT: Achievements (photo overlay, smaller) -->
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sp-md);align-content:center;">
+        <div style="position:relative;border-radius:var(--card-radius);overflow:hidden;background:var(--secondary-05);">
+          <div style="aspect-ratio:4/3;overflow:hidden;">
+            <img src="{{ach1Photo}}" style="width:100%;height:100%;object-fit:cover;">
+          </div>
+          <div style="position:absolute;bottom:0;right:0;left:0;padding:var(--sp-xs) var(--sp-sm);background:linear-gradient(0deg,rgba(0,0,0,0.85) 0%,rgba(0,0,0,0) 100%);">
+            <div style="font-size:var(--fs-caption);color:#FFFFFF;font-weight:var(--fw-heading);text-align:right;">{{ach1Title}}</div>
+            <div style="font-size:var(--fs-source);color:rgba(255,255,255,0.8);text-align:right;margin-top:2px;">{{ach1Org}}</div>
+          </div>
+        </div>
+        <div style="position:relative;border-radius:var(--card-radius);overflow:hidden;background:var(--secondary-05);">
+          <div style="aspect-ratio:4/3;overflow:hidden;">
+            <img src="{{ach2Photo}}" style="width:100%;height:100%;object-fit:cover;">
+          </div>
+          <div style="position:absolute;bottom:0;right:0;left:0;padding:var(--sp-xs) var(--sp-sm);background:linear-gradient(0deg,rgba(0,0,0,0.85) 0%,rgba(0,0,0,0) 100%);">
+            <div style="font-size:var(--fs-caption);color:#FFFFFF;font-weight:var(--fw-heading);text-align:right;">{{ach2Title}}</div>
+            <div style="font-size:var(--fs-source);color:rgba(255,255,255,0.8);text-align:right;margin-top:2px;">{{ach2Org}}</div>
+          </div>
+        </div>
+        <div style="position:relative;border-radius:var(--card-radius);overflow:hidden;background:var(--secondary-05);">
+          <div style="aspect-ratio:4/3;overflow:hidden;">
+            <img src="{{ach3Photo}}" style="width:100%;height:100%;object-fit:cover;">
+          </div>
+          <div style="position:absolute;bottom:0;right:0;left:0;padding:var(--sp-xs) var(--sp-sm);background:linear-gradient(0deg,rgba(0,0,0,0.85) 0%,rgba(0,0,0,0) 100%);">
+            <div style="font-size:var(--fs-caption);color:#FFFFFF;font-weight:var(--fw-heading);text-align:right;">{{ach3Title}}</div>
+            <div style="font-size:var(--fs-source);color:rgba(255,255,255,0.8);text-align:right;margin-top:2px;">{{ach3Org}}</div>
+          </div>
+        </div>
+        <div style="position:relative;border-radius:var(--card-radius);overflow:hidden;background:var(--secondary-05);">
+          <div style="aspect-ratio:4/3;overflow:hidden;">
+            <img src="{{ach4Photo}}" style="width:100%;height:100%;object-fit:cover;">
+          </div>
+          <div style="position:absolute;bottom:0;right:0;left:0;padding:var(--sp-xs) var(--sp-sm);background:linear-gradient(0deg,rgba(0,0,0,0.85) 0%,rgba(0,0,0,0) 100%);">
+            <div style="font-size:var(--fs-caption);color:#FFFFFF;font-weight:var(--fw-heading);text-align:right;">{{ach4Title}}</div>
+            <div style="font-size:var(--fs-source);color:rgba(255,255,255,0.8);text-align:right;margin-top:2px;">{{ach4Org}}</div>
+          </div>
+        </div>
+        <div style="position:relative;border-radius:var(--card-radius);overflow:hidden;background:var(--secondary-05);">
+          <div style="aspect-ratio:4/3;overflow:hidden;">
+            <img src="{{ach5Photo}}" style="width:100%;height:100%;object-fit:cover;">
+          </div>
+          <div style="position:absolute;bottom:0;right:0;left:0;padding:var(--sp-xs) var(--sp-sm);background:linear-gradient(0deg,rgba(0,0,0,0.85) 0%,rgba(0,0,0,0) 100%);">
+            <div style="font-size:var(--fs-caption);color:#FFFFFF;font-weight:var(--fw-heading);text-align:right;">{{ach5Title}}</div>
+            <div style="font-size:var(--fs-source);color:rgba(255,255,255,0.8);text-align:right;margin-top:2px;">{{ach5Org}}</div>
+          </div>
+        </div>
+        <div style="position:relative;border-radius:var(--card-radius);overflow:hidden;background:var(--secondary-05);">
+          <div style="aspect-ratio:4/3;overflow:hidden;">
+            <img src="{{ach6Photo}}" style="width:100%;height:100%;object-fit:cover;">
+          </div>
+          <div style="position:absolute;bottom:0;right:0;left:0;padding:var(--sp-xs) var(--sp-sm);background:linear-gradient(0deg,rgba(0,0,0,0.85) 0%,rgba(0,0,0,0) 100%);">
+            <div style="font-size:var(--fs-caption);color:#FFFFFF;font-weight:var(--fw-heading);text-align:right;">{{ach6Title}}</div>
+            <div style="font-size:var(--fs-source);color:rgba(255,255,255,0.8);text-align:right;margin-top:2px;">{{ach6Org}}</div>
+          </div>
+        </div>
+      </div>
+
     </div>
 
-    <!-- RIGHT: Timeline + Achievements -->
-    <div style="display:flex;flex-direction:column;gap:var(--sp-md);height:100%;">
-
-      <!-- Timeline Card -->
-      <div class="card" style="flex:1;display:flex;flex-direction:column;overflow:hidden;">
-        <div style="position:relative;z-index:1;display:flex;flex-direction:column;height:100%;">
-          <div style="font-size:var(--fs-heading);font-weight:var(--fw-heading);color:var(--text-primary);margin-bottom:var(--sp-sm);">연혁</div>
-          <div style="display:flex;flex-direction:column;gap:var(--sp-xs);flex:1;justify-content:space-between;">
-            <!-- Done milestones (1-6) -->
-            <div style="display:flex;align-items:baseline;gap:var(--sp-sm);">
-              <div style="font-size:var(--fs-caption);color:var(--secondary);min-width:80px;font-weight:var(--fw-heading);">{{tl1Date}}</div>
-              <div style="font-size:var(--fs-body);color:var(--text-primary);">{{tl1Desc}}</div>
-            </div>
-            <div style="display:flex;align-items:baseline;gap:var(--sp-sm);">
-              <div style="font-size:var(--fs-caption);color:var(--secondary);min-width:80px;font-weight:var(--fw-heading);">{{tl2Date}}</div>
-              <div style="font-size:var(--fs-body);color:var(--text-primary);">{{tl2Desc}}</div>
-            </div>
-            <div style="display:flex;align-items:baseline;gap:var(--sp-sm);">
-              <div style="font-size:var(--fs-caption);color:var(--secondary);min-width:80px;font-weight:var(--fw-heading);">{{tl3Date}}</div>
-              <div style="font-size:var(--fs-body);color:var(--text-primary);">{{tl3Desc}}</div>
-            </div>
-            <div style="display:flex;align-items:baseline;gap:var(--sp-sm);">
-              <div style="font-size:var(--fs-caption);color:var(--secondary);min-width:80px;font-weight:var(--fw-heading);">{{tl4Date}}</div>
-              <div style="font-size:var(--fs-body);color:var(--text-primary);">{{tl4Desc}}</div>
-            </div>
-            <div style="display:flex;align-items:baseline;gap:var(--sp-sm);">
-              <div style="font-size:var(--fs-caption);color:var(--secondary);min-width:80px;font-weight:var(--fw-heading);">{{tl5Date}}</div>
-              <div style="font-size:var(--fs-body);color:var(--text-primary);">{{tl5Desc}}</div>
-            </div>
-            <div style="display:flex;align-items:baseline;gap:var(--sp-sm);">
-              <div style="font-size:var(--fs-caption);color:var(--secondary);min-width:80px;font-weight:var(--fw-heading);">{{tl6Date}}</div>
-              <div style="font-size:var(--fs-body);color:var(--text-primary);">{{tl6Desc}}</div>
-            </div>
-            <!-- Future milestones (7-9) -->
-            <div style="display:flex;align-items:baseline;gap:var(--sp-sm);opacity:0.4;">
-              <div style="font-size:var(--fs-caption);color:var(--text-tertiary);min-width:80px;font-weight:var(--fw-heading);">{{tl7Date}}</div>
-              <div style="font-size:var(--fs-body);color:var(--text-tertiary);">{{tl7Desc}}</div>
-            </div>
-            <div style="display:flex;align-items:baseline;gap:var(--sp-sm);opacity:0.4;">
-              <div style="font-size:var(--fs-caption);color:var(--text-tertiary);min-width:80px;font-weight:var(--fw-heading);">{{tl8Date}}</div>
-              <div style="font-size:var(--fs-body);color:var(--text-tertiary);">{{tl8Desc}}</div>
-            </div>
-            <div style="display:flex;align-items:baseline;gap:var(--sp-sm);opacity:0.4;">
-              <div style="font-size:var(--fs-caption);color:var(--text-tertiary);min-width:80px;font-weight:var(--fw-heading);">{{tl9Date}}</div>
-              <div style="font-size:var(--fs-body);color:var(--text-tertiary);">{{tl9Desc}}</div>
-            </div>
-          </div>
+    <!-- Bottom: Timeline (horizontal, 8 items, tighter text) -->
+    <div style="padding-top:var(--sp-sm);">
+      <div style="display:flex;align-items:flex-start;position:relative;">
+        <div style="position:absolute;top:5px;left:0;right:0;height:2px;background:var(--secondary-20);"></div>
+        <div style="flex:1;text-align:center;position:relative;padding:0 2px;">
+          <div style="width:10px;height:10px;border-radius:50%;background:var(--secondary);margin:0 auto 6px;position:relative;z-index:1;"></div>
+          <div style="font-size:var(--fs-caption);color:var(--secondary);font-weight:var(--fw-heading);">{{tl1Date}}</div>
+          <div style="font-size:var(--fs-caption);color:var(--text-tertiary);margin-top:4px;line-height:1.3;">{{tl1Desc}}</div>
+        </div>
+        <div style="flex:1;text-align:center;position:relative;padding:0 2px;">
+          <div style="width:10px;height:10px;border-radius:50%;background:var(--secondary);margin:0 auto 6px;position:relative;z-index:1;"></div>
+          <div style="font-size:var(--fs-caption);color:var(--secondary);font-weight:var(--fw-heading);">{{tl2Date}}</div>
+          <div style="font-size:var(--fs-caption);color:var(--text-tertiary);margin-top:4px;line-height:1.3;">{{tl2Desc}}</div>
+        </div>
+        <div style="flex:1;text-align:center;position:relative;padding:0 2px;">
+          <div style="width:10px;height:10px;border-radius:50%;background:var(--secondary);margin:0 auto 6px;position:relative;z-index:1;"></div>
+          <div style="font-size:var(--fs-caption);color:var(--secondary);font-weight:var(--fw-heading);">{{tl3Date}}</div>
+          <div style="font-size:var(--fs-caption);color:var(--text-tertiary);margin-top:4px;line-height:1.3;">{{tl3Desc}}</div>
+        </div>
+        <div style="flex:1;text-align:center;position:relative;padding:0 2px;">
+          <div style="width:10px;height:10px;border-radius:50%;background:var(--secondary);margin:0 auto 6px;position:relative;z-index:1;"></div>
+          <div style="font-size:var(--fs-caption);color:var(--secondary);font-weight:var(--fw-heading);">{{tl4Date}}</div>
+          <div style="font-size:var(--fs-caption);color:var(--text-tertiary);margin-top:4px;line-height:1.3;">{{tl4Desc}}</div>
+        </div>
+        <div style="flex:1;text-align:center;position:relative;padding:0 2px;">
+          <div style="width:10px;height:10px;border-radius:50%;background:var(--secondary);margin:0 auto 6px;position:relative;z-index:1;"></div>
+          <div style="font-size:var(--fs-caption);color:var(--secondary);font-weight:var(--fw-heading);">{{tl5Date}}</div>
+          <div style="font-size:var(--fs-caption);color:var(--text-tertiary);margin-top:4px;line-height:1.3;">{{tl5Desc}}</div>
+        </div>
+        <div style="flex:1;text-align:center;position:relative;padding:0 2px;">
+          <div style="width:10px;height:10px;border-radius:50%;background:var(--secondary);margin:0 auto 6px;position:relative;z-index:1;"></div>
+          <div style="font-size:var(--fs-caption);color:var(--secondary);font-weight:var(--fw-heading);">{{tl6Date}}</div>
+          <div style="font-size:var(--fs-caption);color:var(--text-tertiary);margin-top:4px;line-height:1.3;">{{tl6Desc}}</div>
+        </div>
+        <div style="flex:1;text-align:center;position:relative;padding:0 2px;">
+          <div style="width:10px;height:10px;border-radius:50%;background:var(--secondary);margin:0 auto 6px;position:relative;z-index:1;"></div>
+          <div style="font-size:var(--fs-caption);color:var(--secondary);font-weight:var(--fw-heading);">{{tl7Date}}</div>
+          <div style="font-size:var(--fs-caption);color:var(--text-tertiary);margin-top:4px;line-height:1.3;">{{tl7Desc}}</div>
+        </div>
+        <div style="flex:1;text-align:center;position:relative;padding:0 2px;">
+          <div style="width:12px;height:12px;border-radius:50%;background:var(--secondary);margin:-1px auto 6px;position:relative;z-index:1;box-shadow:0 0 0 4px var(--secondary-20);"></div>
+          <div style="font-size:var(--fs-caption);color:var(--secondary);font-weight:var(--fw-heading);">{{tl8Date}}</div>
+          <div style="font-size:var(--fs-caption);color:var(--text-tertiary);margin-top:4px;line-height:1.3;">{{tl8Desc}}</div>
         </div>
       </div>
-
-      <!-- Achievements Card -->
-      <div class="card" style="display:flex;flex-direction:column;overflow:hidden;">
-        <div style="position:relative;z-index:1;">
-          <div style="font-size:var(--fs-heading);font-weight:var(--fw-heading);color:var(--text-primary);margin-bottom:var(--sp-sm);">주요 성과</div>
-          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sp-sm);">
-            <!-- Achievement 1 -->
-            <div style="display:flex;flex-direction:column;gap:var(--sp-xs);">
-              <div style="font-size:var(--fs-source);font-weight:var(--fw-heading);color:var(--secondary);background:var(--secondary-15);padding:2px var(--sp-xs);border-radius:4px;display:inline-block;width:fit-content;">{{ach1Rank}}</div>
-              <div style="font-size:var(--fs-caption);color:var(--text-primary);font-weight:var(--fw-heading);">{{ach1Title}}</div>
-              <div style="font-size:var(--fs-source);color:var(--text-tertiary);">{{ach1Org}}</div>
-            </div>
-            <!-- Achievement 2 -->
-            <div style="display:flex;flex-direction:column;gap:var(--sp-xs);">
-              <div style="font-size:var(--fs-source);font-weight:var(--fw-heading);color:var(--secondary);background:var(--secondary-15);padding:2px var(--sp-xs);border-radius:4px;display:inline-block;width:fit-content;">{{ach2Rank}}</div>
-              <div style="font-size:var(--fs-caption);color:var(--text-primary);font-weight:var(--fw-heading);">{{ach2Title}}</div>
-              <div style="font-size:var(--fs-source);color:var(--text-tertiary);">{{ach2Org}}</div>
-            </div>
-            <!-- Achievement 3 -->
-            <div style="display:flex;flex-direction:column;gap:var(--sp-xs);">
-              <div style="font-size:var(--fs-source);font-weight:var(--fw-heading);color:var(--secondary);background:var(--secondary-15);padding:2px var(--sp-xs);border-radius:4px;display:inline-block;width:fit-content;">{{ach3Rank}}</div>
-              <div style="font-size:var(--fs-caption);color:var(--text-primary);font-weight:var(--fw-heading);">{{ach3Title}}</div>
-              <div style="font-size:var(--fs-source);color:var(--text-tertiary);">{{ach3Org}}</div>
-            </div>
-            <!-- Achievement 4 -->
-            <div style="display:flex;flex-direction:column;gap:var(--sp-xs);">
-              <div style="font-size:var(--fs-source);font-weight:var(--fw-heading);color:var(--secondary);background:var(--secondary-15);padding:2px var(--sp-xs);border-radius:4px;display:inline-block;width:fit-content;">{{ach4Rank}}</div>
-              <div style="font-size:var(--fs-caption);color:var(--text-primary);font-weight:var(--fw-heading);">{{ach4Title}}</div>
-              <div style="font-size:var(--fs-source);color:var(--text-tertiary);">{{ach4Org}}</div>
-            </div>
-            <!-- Achievement 5 -->
-            <div style="display:flex;flex-direction:column;gap:var(--sp-xs);">
-              <div style="font-size:var(--fs-source);font-weight:var(--fw-heading);color:var(--secondary);background:var(--secondary-15);padding:2px var(--sp-xs);border-radius:4px;display:inline-block;width:fit-content;">{{ach5Rank}}</div>
-              <div style="font-size:var(--fs-caption);color:var(--text-primary);font-weight:var(--fw-heading);">{{ach5Title}}</div>
-              <div style="font-size:var(--fs-source);color:var(--text-tertiary);">{{ach5Org}}</div>
-            </div>
-            <!-- Achievement 6 -->
-            <div style="display:flex;flex-direction:column;gap:var(--sp-xs);">
-              <div style="font-size:var(--fs-source);font-weight:var(--fw-heading);color:var(--secondary);background:var(--secondary-15);padding:2px var(--sp-xs);border-radius:4px;display:inline-block;width:fit-content;">{{ach6Rank}}</div>
-              <div style="font-size:var(--fs-caption);color:var(--text-primary);font-weight:var(--fw-heading);">{{ach6Title}}</div>
-              <div style="font-size:var(--fs-source);color:var(--text-tertiary);">{{ach6Org}}</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
     </div>
 
   </div>

@@ -1,36 +1,44 @@
 {
   "fields": [
-    { "key": "title", "label": "타이틀", "type": "text", "value": "조직 및 직원 현황" },
-    { "key": "subtitle", "label": "서브타이틀", "type": "text", "value": "풀타임 근무자 3인 / 어드바이저 3인" },
+    { "key": "title", "label": "타이틀", "type": "text", "value": "TEAM" },
 
     { "key": "c1Name", "label": "CEO 이름", "type": "text", "value": "금성윤" },
-    { "key": "c1Role", "label": "CEO 직책", "type": "text", "value": "CEO / 제품/사업화" },
-    { "key": "c1Domain", "label": "CEO 도메인", "type": "text", "value": "사업 기획 / 투자/제휴 / 데이터 분석 / 브랜딩/퍼널 설계" },
-    { "key": "c1Career", "label": "CEO 경력", "type": "text", "value": "국회 정책비서관 (산자위/정무위)<br>대선 중앙선대위 청년 전문위원<br>NH농협 (개인 여신/출납)" },
-    { "key": "c1Edu", "label": "CEO 학력", "type": "text", "value": "강원대 농업경제학<br>중기부 AI 개발자 양성과정 수료" },
+    { "key": "c1PhotoA", "label": "CEO 사진A", "type": "text", "value": "assets/team/kum-sy-1.png" },
+    { "key": "c1PhotoB", "label": "CEO 사진B", "type": "text", "value": "assets/team/kum-sy-2.jpg" },
+    { "key": "c1Domain", "label": "CEO 도메인", "type": "text", "value": "사업 기획 / IR / 데이터 분석 / 브랜딩" },
+    { "key": "c1Career", "label": "CEO 경력", "type": "text", "value": "국회의원 비서관: IT·벤처·산업 정책 기획<br>대선 청년 전문위원: IT 공약·홍보 캠페인 담당<br>NH농협 계장: 개인 여신·출납" },
+    { "key": "c1Key", "label": "CEO 기여", "type": "text", "value": "데이터 기반 MVP 피봇 / 제품화·브랜딩 주도" },
 
-    { "key": "c2Name", "label": "CTO 이름", "type": "text", "value": "김민혁" },
-    { "key": "c2Role", "label": "CTO 직책", "type": "text", "value": "CTO / 개발 총괄" },
-    { "key": "c2Domain", "label": "CTO 도메인", "type": "text", "value": "SW/임베디드 / 앱/서버 / MLOps / End-to-End 풀스택" },
-    { "key": "c2Career", "label": "CTO 경력", "type": "text", "value": "삼성 비스포크 앱 아키텍처 설계<br>End-to-End 개발 및 MLOps 운영<br>임베디드 펌웨어/NPU 추론 최적화" },
-    { "key": "c2Edu", "label": "CTO 학력", "type": "text", "value": "소프트웨어 공학 전공<br>풀스택 엔지니어" },
+    { "key": "c2Name", "label": "CCO 이름", "type": "text", "value": "김동훈" },
+    { "key": "c2PhotoA", "label": "CCO 사진A", "type": "text", "value": "assets/team/kim-dh-1.png" },
+    { "key": "c2PhotoB", "label": "CCO 사진B", "type": "text", "value": "assets/team/kim-dh-2.png" },
+    { "key": "c2Domain", "label": "CCO 도메인", "type": "text", "value": "GTM 세일즈 / 현장 운영 / 콘텐츠 확산" },
+    { "key": "c2Career", "label": "CCO 경력", "type": "text", "value": "전 프로축구 선수<br>축구교실 운영 / KFA 라이센스 지도자<br>SBS 골때녀 / 안정환 19 / 고알레 출연" },
+    { "key": "c2Key", "label": "CCO 기여", "type": "text", "value": "스포츠 네트워크로 LOI + 프리오더 50건 확보" },
 
-    { "key": "c3Name", "label": "CCO 이름", "type": "text", "value": "김동훈" },
-    { "key": "c3Role", "label": "CCO 직책", "type": "text", "value": "CCO / 영업/현장" },
-    { "key": "c3Domain", "label": "CCO 도메인", "type": "text", "value": "GTM 세일즈/제휴 / 현장 운영 / 콘텐츠 확산" },
-    { "key": "c3Career", "label": "CCO 경력", "type": "text", "value": "전 프로축구 선수<br>축구교실 운영 / KFA 라이센스 지도자<br>SBS 골때녀 / 안정환 19 출연" },
-    { "key": "c3Extra", "label": "CCO 네트워크", "type": "text", "value": "스포츠 크리에이터<br>체육시설 네트워크 보유" },
+    { "key": "c3Name", "label": "CTO 이름", "type": "text", "value": "김민혁" },
+    { "key": "c3PhotoA", "label": "CTO 사진A", "type": "text", "value": "assets/team/kim-mh-1.png" },
+    { "key": "c3PhotoB", "label": "CTO 사진B", "type": "text", "value": "assets/team/kim-mh-2.png" },
+    { "key": "c3Domain", "label": "CTO 도메인", "type": "text", "value": "SW / 임베디드 / MLOps / End-to-End" },
+    { "key": "c3Career", "label": "CTO 경력", "type": "text", "value": "주요 대기업 SI 리드 엔지니어<br>삼성전자 비스포크 앱 아키텍처 참여<br>응용소프트웨어공학 전공" },
+    { "key": "c3Key", "label": "CTO 기여", "type": "text", "value": "HW-SW 개발 총괄 / 프로토타입 설계 주도" },
 
     { "key": "a1Name", "label": "자문1 이름", "type": "text", "value": "김대한" },
+    { "key": "a1Photo", "label": "자문1 사진", "type": "text", "value": "assets/team/kim-dh-adv.png" },
     { "key": "a1Role", "label": "자문1 역할", "type": "text", "value": "PM / 제조" },
-    { "key": "a1Desc", "label": "자문1 경력", "type": "text", "value": "전 OO인프라기술 PM / 전 O인터렉트 LLM 수석연구원 / 서강대 기술경영학 석사" },
+    { "key": "a1Line1", "label": "자문1 1줄", "type": "text", "value": "전 OO인프라기술 PM / O인터렉트 LLM 수석연구원" },
+    { "key": "a1Line2", "label": "자문1 2줄", "type": "text", "value": "서강대학교 기술경영학 석사" },
 
     { "key": "a2Name", "label": "자문2 이름", "type": "text", "value": "강신우" },
+    { "key": "a2Photo", "label": "자문2 사진", "type": "text", "value": "assets/team/kang-sw.png" },
     { "key": "a2Role", "label": "자문2 역할", "type": "text", "value": "백엔드" },
-    { "key": "a2Desc", "label": "자문2 경력", "type": "text", "value": "전 O클라우드 인프라 운영 / 전 O이드 AIP Manager / 서울시립대 전자공학" },
+    { "key": "a2Line1", "label": "자문2 1줄", "type": "text", "value": "전 O클라우드 인프라 운영 / O이드 AIP Manager" },
+    { "key": "a2Line2", "label": "자문2 2줄", "type": "text", "value": "서울시립대 전자공학 학사" },
 
     { "key": "a3Name", "label": "자문3 이름", "type": "text", "value": "홍수민" },
+    { "key": "a3Photo", "label": "자문3 사진", "type": "text", "value": "assets/team/hong-sm.png" },
     { "key": "a3Role", "label": "자문3 역할", "type": "text", "value": "마케팅" },
-    { "key": "a3Desc", "label": "자문3 경력", "type": "text", "value": "전 교육업 1위 기업 퍼포먼스 마케터 / 전 코스피 상장사 브랜드 마케터 / 심리/교육학 전공" }
+    { "key": "a3Line1", "label": "자문3 1줄", "type": "text", "value": "1위 교육회사 퍼포먼스 마케터 / KOSPI 상장사 브랜드 마케터" },
+    { "key": "a3Line2", "label": "자문3 2줄", "type": "text", "value": "국문학·심리학 학사 / 교원 자격 보유" }
   ]
 }

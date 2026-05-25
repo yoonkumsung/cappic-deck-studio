@@ -1,0 +1,23 @@
+{
+  "fields": [
+    { "key": "title", "label": "타이틀", "type": "text", "value": "Revenue Roadmap" },
+
+    { "key": "y1Year", "label": "1년차", "type": "text", "value": "2026" },
+    { "key": "y1Value", "label": "1년차 매출", "type": "text", "value": "5.46억" },
+    { "key": "y1Driver1", "label": "1년차 드라이버1", "type": "text", "value": "HW 520대 판매" },
+    { "key": "y1Driver2", "label": "1년차 드라이버2", "type": "text", "value": "축구 1종목 집중" },
+    { "key": "y1Driver3", "label": "1년차 드라이버3", "type": "text", "value": "울산/수도권 B2B 30개소" },
+
+    { "key": "y2Year", "label": "2년차", "type": "text", "value": "2027" },
+    { "key": "y2Value", "label": "2년차 매출", "type": "text", "value": "50억+" },
+    { "key": "y2Driver1", "label": "2년차 드라이버1", "type": "text", "value": "HW 3,000대 + SW 구독 2만명" },
+    { "key": "y2Driver2", "label": "2년차 드라이버2", "type": "text", "value": "축구/농구/클라이밍/테니스 4종목" },
+    { "key": "y2Driver3", "label": "2년차 드라이버3", "type": "text", "value": "전국 B2B 100개소 + 일본 진출" },
+
+    { "key": "y3Year", "label": "3년차", "type": "text", "value": "2028" },
+    { "key": "y3Value", "label": "3년차 매출", "type": "text", "value": "200억+" },
+    { "key": "y3Driver1", "label": "3년차 드라이버1", "type": "text", "value": "HW 8,000대 + SW 구독 8만명" },
+    { "key": "y3Driver2", "label": "3년차 드라이버2", "type": "text", "value": "6종목+ / B2B 500건 + B2G 진입" },
+    { "key": "y3Driver3", "label": "3년차 드라이버3", "type": "text", "value": "일본/동남아 + 자사 커머스" }
+  ]
+}

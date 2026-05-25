@@ -1,7 +1,7 @@
 {
   "fields": [
-    { "key": "tagline", "label": "슬로건", "type": "text", "value": "IT'S YOUR HIGHLIGHT" },
-    { "key": "subtitle", "label": "서브타이틀", "type": "text", "value": "Edge AI 기반 스포츠 자동 촬영·분석 플랫폼" },
+    { "key": "tagline", "label": "슬로건", "type": "text", "value": "IT'S YOUR HIGHLIGHTS" },
+    { "key": "subtitle", "label": "서브타이틀", "type": "text", "value": "Edge AI Sports Camera Device" },
     { "key": "hudRes", "label": "HUD 해상도 표시", "type": "text", "value": "DUAL 4K 130°" },
     { "key": "hudTag1", "label": "HUD 태그 1 (시안)", "type": "text", "value": "AI TRACKING" },
     { "key": "hudTag2", "label": "HUD 태그 2 (옐로)", "type": "text", "value": "AUTO HIGHLIGHT" },

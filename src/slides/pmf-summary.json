@@ -1,0 +1,33 @@
+{
+  "fields": [
+    { "key": "title", "label": "타이틀", "type": "text", "value": "PMF 7단계 검증" },
+
+    { "key": "s1Name", "label": "1단계 이름", "type": "text", "value": "시장 기회" },
+    { "key": "s1Desc", "label": "1단계 설명", "type": "text", "value": "글로벌 스포츠 촬영·분석 시장 88조원, 연 20% 성장" },
+    { "key": "s1Tag", "label": "1단계 태그", "type": "text", "value": "시장 공백 확인" },
+
+    { "key": "s2Name", "label": "2단계 이름", "type": "text", "value": "현장 수요" },
+    { "key": "s2Desc", "label": "2단계 설명", "type": "text", "value": "촬영 수요 97% / 촬영 서비스 경험 22%" },
+    { "key": "s2Tag", "label": "2단계 태그", "type": "text", "value": "현장 수요 확인" },
+
+    { "key": "s3Name", "label": "3단계 이름", "type": "text", "value": "수요 검증" },
+    { "key": "s3Desc", "label": "3단계 설명", "type": "text", "value": "이용 의향 91% / 월 1만원 이상 지불 의사 64%" },
+    { "key": "s3Tag", "label": "3단계 태그", "type": "text", "value": "수요 검증" },
+
+    { "key": "s4Name", "label": "4단계 이름", "type": "text", "value": "솔루션 검증" },
+    { "key": "s4Desc", "label": "4단계 설명", "type": "text", "value": "스마트폰 · 미러리스 · 액션캠 · MVP 동시 비교 테스트" },
+    { "key": "s4Tag", "label": "4단계 태그", "type": "text", "value": "우위 확인" },
+
+    { "key": "s5Name", "label": "5단계 이름", "type": "text", "value": "실사용 검증" },
+    { "key": "s5Desc", "label": "5단계 설명", "type": "text", "value": "테스터의 80%가 SNS에 자발적으로 공유" },
+    { "key": "s5Tag", "label": "5단계 태그", "type": "text", "value": "실사용 검증" },
+
+    { "key": "s6Name", "label": "6단계 이름", "type": "text", "value": "구매 의사" },
+    { "key": "s6Desc", "label": "6단계 설명", "type": "text", "value": "시제품 출시 전 B2B LOI 10개소 / 총 신청 50건+" },
+    { "key": "s6Tag", "label": "6단계 태그", "type": "text", "value": "사전 확보" },
+
+    { "key": "s7Name", "label": "7단계 이름", "type": "text", "value": "실행 역량" },
+    { "key": "s7Desc", "label": "7단계 설명", "type": "text", "value": "가설 - 테스트 - 피드백을 통한 10회 이상의 Pivoting" },
+    { "key": "s7Tag", "label": "7단계 태그", "type": "text", "value": "린스타트업" }
+  ]
+}

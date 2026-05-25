@@ -96,3 +96,28 @@
   color: var(--text-source);
   font-weight: 500;
 }
+
+/* ── Theme-aware Logo ── */
+.logo-dark  { display: block; }
+.logo-light { display: none; }
+[data-theme="light"] .logo-dark  { display: none; }
+[data-theme="light"] .logo-light { display: block; }
+
+/* ── PMF row divider (dark: subtle, light: visible) ── */
+.slide-content > [style*="border-bottom:1px solid"] { border-color: var(--secondary-20) !important; }
+.slide-content > [style*="border-top:1px solid"]    { border-color: var(--secondary-20) !important; }
+[data-theme="light"] .slide-content > [style*="border-bottom:1px solid"] { border-color: #CCCCCC !important; }
+[data-theme="light"] .slide-content > [style*="border-top:1px solid"]    { border-color: #CCCCCC !important; }
+
+/* ── PMF Tag colors (dark: yellow, light: deep red) ── */
+.pmf-tag { color: #FFD54F; }
+[data-theme="light"] .pmf-tag { color: #D32F2F; }
+
+/* ── PMF Step 7 highlight (all text colored) ── */
+.pmf-step7-circle { color: #FFD54F; border-color: #FFD54F; }
+.pmf-step7-text   { color: #FFD54F; }
+.pmf-step7-tag    { color: #FFD54F; }
+[data-theme="light"] .pmf-step7-circle { color: #D32F2F; border-color: #D32F2F; }
+[data-theme="light"] .pmf-step7-text   { color: #D32F2F; }
+[data-theme="light"] .pmf-step7-tag    { color: #D32F2F; }
+[data-theme="light"] .cover-vignette   { display: block !important; }
