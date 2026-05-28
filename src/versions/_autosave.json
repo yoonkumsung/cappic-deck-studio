@@ -1,6 +1,6 @@
 {
   "id": "_autosave",
-  "savedAt": "2026-05-25T18:08:06.743Z",
+  "savedAt": "2026-05-28T20:22:23.014Z",
   "config": {
     "selected": [
       "cover",
@@ -25,9 +25,21 @@
       "roadmap",
       "esg-impact",
       "ulsan-policy-fit",
-      "ulsan-market"
+      "ulsan-market",
+      "b2b-s1-cover",
+      "b2b-s2-pain",
+      "b2b-s3-solution",
+      "b2b-s4-lockin",
+      "b2b-s5-acquisition",
+      "b2b-s5b-roi",
+      "b2b-s6-compare",
+      "b2b-s7-proof",
+      "b2b-s8-plan",
+      "b2b-s9-process",
+      "competition-detail-b2b",
+      "team-overview-b2b"
     ],
-    "theme": "dark",
+    "theme": "light",
     "ratio": "16:9",
     "tokenOverrides": {},
     "slideStyles": {}

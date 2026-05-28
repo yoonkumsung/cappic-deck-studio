@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>S4. 가치 1 - 락인</title>
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1024px; height: 768px; }
+  body {
+    font-family: 'Pretendard Variable', Pretendard, -apple-system, sans-serif;
+    background: #2a2a2a;
+    overflow: hidden;
+  }
+  .slide {
+    width: 1024px; height: 768px;
+    background: #FAFAFA;
+    position: relative;
+    overflow: hidden;
+    color: #1D1D1F;
+  }
+
+  .headline {
+    position: absolute;
+    top: 55px; left: 60px; right: 60px;
+    font-size: 36px;
+    font-weight: 900;
+    color: #1D1D1F;
+    letter-spacing: -1.5px;
+    line-height: 1.2;
+  }
+  .headline .accent { color: #00A399; }
+
+  .subhead {
+    position: absolute;
+    top: 158px; left: 60px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #8E8E93;
+  }
+
+  /* Before / After 2단 */
+  .ba-grid {
+    position: absolute;
+    top: 205px; left: 60px; right: 60px;
+    height: 270px;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 18px;
+    align-items: stretch;
+  }
+
+  .ba-card {
+    border-radius: 18px;
+    padding: 22px 24px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+  .ba-card.before {
+    background: linear-gradient(165deg, #FFF5F5, #FFEBEB);
+    border: 1px solid rgba(255,107,107,0.2);
+  }
+  .ba-card.after {
+    background: linear-gradient(165deg, #E6FAF8, #D4F5F2);
+    border: 1px solid rgba(0,199,190,0.25);
+  }
+
+  .ba-tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 5px 12px;
+    border-radius: 5px;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+    align-self: flex-start;
+  }
+  .ba-card.before .ba-tag { background: rgba(255,107,107,0.18); color: #D93636; }
+  .ba-card.after .ba-tag { background: rgba(0,163,153,0.18); color: #00A399; }
+
+  .ba-title {
+    font-size: 22px;
+    font-weight: 900;
+    letter-spacing: -0.6px;
+    line-height: 1.2;
+    margin-bottom: 18px;
+    color: #1D1D1F;
+  }
+
+  .ba-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex: 1;
+    justify-content: center;
+  }
+  .ba-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 11px;
+  }
+  .ba-icon {
+    width: 26px; height: 26px;
+    border-radius: 7px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px; font-weight: 900;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .ba-card.before .ba-icon { background: rgba(255,107,107,0.22); color: #D93636; }
+  .ba-card.after .ba-icon { background: rgba(0,163,153,0.2); color: #00A399; }
+
+  .ba-text {
+    flex: 1;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.45;
+    color: #1D1D1F;
+  }
+  .ba-text strong { font-weight: 800; }
+  .ba-card.before .ba-text strong { color: #D93636; }
+  .ba-card.after .ba-text strong { color: #00A399; }
+
+  /* 화살표 */
+  .arrow-mid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+  }
+  .arrow-mid .ar {
+    font-size: 38px;
+    font-weight: 900;
+    color: #00A399;
+  }
+
+  /* 정량 박스 - 80% (위 ba-grid 폭에 맞춤) */
+  .stat-block {
+    position: absolute;
+    top: 510px;
+    left: 60px; right: 60px;
+    height: 150px;
+    background: linear-gradient(165deg, #00C7BE, #00A399);
+    border-radius: 18px;
+    padding: 24px 36px;
+    display: flex;
+    align-items: center;
+    gap: 34px;
+    box-shadow: 0 6px 24px rgba(0,163,153,0.25);
+    overflow: hidden;
+  }
+  .stat-block::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; height: 40%;
+    background: linear-gradient(180deg, rgba(255,255,255,0.18), transparent);
+    border-radius: 18px 18px 0 0;
+  }
+  .stat-block > * { position: relative; z-index: 2; }
+
+  .stat-big {
+    font-size: 96px;
+    font-weight: 900;
+    color: #fff;
+    letter-spacing: -4px;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+  .stat-big .unit { font-size: 42px; margin-left: 4px; }
+
+  .stat-text {
+    flex: 1;
+  }
+  .stat-text .desc {
+    font-size: 26px;
+    font-weight: 800;
+    color: #1D1D1F;
+    line-height: 1.3;
+    letter-spacing: -0.5px;
+    margin-bottom: 10px;
+  }
+  .stat-text .desc strong { color: #fff; }
+  .stat-text .meta {
+    font-size: 12.5px;
+    font-weight: 700;
+    color: rgba(0,0,0,0.55);
+    letter-spacing: 0.2px;
+  }
+</style>
+</head>
+<body>
+<div class="slide">
+
+  <div class="headline">
+    매주 받는 우리 아이 영상은,<br>
+    <span class="accent">시설을 떠나기 어렵게</span> 만듭니다
+  </div>
+
+  <div class="subhead">
+    매주 쌓이는 우리 아이 영상 = 학부모가 떠날 수 없는 이유
+  </div>
+
+  <!-- Before / After -->
+  <div class="ba-grid">
+
+    <div class="ba-card before">
+      <div class="ba-tag">BEFORE</div>
+      <div class="ba-title">캡픽 도입 전</div>
+      <div class="ba-list">
+        <div class="ba-item">
+          <div class="ba-icon">!</div>
+          <div class="ba-text">학부모가 <strong>"우리 아이 영상 좀 보내달라"</strong> 카톡 폭주</div>
+        </div>
+        <div class="ba-item">
+          <div class="ba-icon">!</div>
+          <div class="ba-text">코치가 매주 <strong>야근하며 편집</strong> · 본업에 못 집중</div>
+        </div>
+        <div class="ba-item">
+          <div class="ba-icon">!</div>
+          <div class="ba-text">학부모는 <strong>"성장이 안 보인다"</strong>며 옆 시설 검토</div>
+        </div>
+        <div class="ba-item">
+          <div class="ba-icon">!</div>
+          <div class="ba-text">재등록 시즌마다 <strong>이탈률 걱정</strong>으로 광고비 증가</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="arrow-mid"><div class="ar">→</div></div>
+
+    <div class="ba-card after">
+      <div class="ba-tag">AFTER</div>
+      <div class="ba-title">캡픽 도입 후</div>
+      <div class="ba-list">
+        <div class="ba-item">
+          <div class="ba-icon">✓</div>
+          <div class="ba-text">수업 종료 후 <strong>2시간 이내 학부모 앱</strong>에 자동 전송</div>
+        </div>
+        <div class="ba-item">
+          <div class="ba-icon">✓</div>
+          <div class="ba-text">코치 영상 작업 <strong>0분</strong> · 본업인 훈련과 선수 지도에만 집중</div>
+        </div>
+        <div class="ba-item">
+          <div class="ba-icon">✓</div>
+          <div class="ba-text">학부모는 <strong>매주 성장 기록</strong>을 자산처럼 보관</div>
+        </div>
+        <div class="ba-item">
+          <div class="ba-icon">✓</div>
+          <div class="ba-text">"옆 시설은 영상이 안 옴" → <strong>이탈 비용 ↑</strong></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 정량 박스 - 80% -->
+  <div class="stat-block">
+    <div class="stat-big">80<span class="unit">%</span></div>
+    <div class="stat-text">
+      <div class="desc">학부모가 자기 아이 영상을 <strong>SNS에 자발적으로 업로드</strong></div>
+      <div class="meta">CAPP!C 자체 테스트 결과 · 2차 MVP, n=10팀, 1주 기준</div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

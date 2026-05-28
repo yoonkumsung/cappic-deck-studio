@@ -1,0 +1,165 @@
+<div class="slide">
+  <div class="slide-title">{{title}}</div>
+
+  <div class="slide-content" style="display:grid;grid-template-rows:1fr 180px;gap:var(--sp-md);height:100%;">
+
+    <!-- 핵심 팀 -->
+    <div style="display:grid;grid-template-columns:1fr 1px 1fr 1px 1fr;gap:0 var(--sp-lg);padding:0 var(--sp-md);justify-items:center;">
+
+      <!-- CCO (좌) -->
+      <div style="display:flex;flex-direction:column;gap:var(--sp-md);padding:0 var(--sp-sm);max-width:440px;align-items:center;text-align:center;">
+        <div style="height:190px;display:flex;align-items:center;position:relative;">
+          <div style="width:220px;height:165px;border-radius:8px;overflow:hidden;position:absolute;left:calc(50% - 214px);top:calc(50% - 75px);box-shadow:0 4px 16px rgba(0,0,0,0.3);z-index:1;">
+            <img src="{{c2PhotoA}}" style="width:100%;height:100%;object-fit:cover;" onerror="this.parentElement.style.background='var(--secondary-10)'">
+          </div>
+          <div style="width:220px;height:165px;border-radius:8px;overflow:hidden;position:absolute;left:calc(50% - 5px);top:calc(50% - 83px);box-shadow:0 4px 16px rgba(0,0,0,0.3);">
+            <img src="{{c2PhotoB}}" style="width:100%;height:100%;object-fit:cover;" onerror="this.parentElement.style.background='var(--secondary-10)'">
+          </div>
+        </div>
+        <div style="width:100%;">
+          <div style="font-size:var(--fs-stat);font-weight:var(--fw-display);color:var(--text-primary);">{{c2Name}}</div>
+          <div style="font-size:var(--fs-heading);font-weight:var(--fw-display);color:var(--text-tertiary);opacity:0.3;letter-spacing:3px;margin-top:4px;">SALES</div>
+        </div>
+        <div>
+          <div style="font-size:var(--fs-caption);font-weight:var(--fw-heading);color:var(--secondary);letter-spacing:1px;margin-bottom:var(--sp-xs);">CAREER</div>
+          <div style="font-size:var(--fs-body);color:var(--text-secondary);line-height:1.95;">{{c2Career}}</div>
+        </div>
+      </div>
+
+      <div style="background:var(--secondary-15);justify-self:stretch;"></div>
+
+      <!-- CEO (중앙) -->
+      <div style="display:flex;flex-direction:column;gap:var(--sp-md);padding:0 var(--sp-sm);max-width:440px;align-items:center;text-align:center;">
+        <div style="height:190px;display:flex;align-items:center;position:relative;">
+          <div style="width:220px;height:165px;border-radius:8px;overflow:hidden;position:absolute;left:calc(50% - 214px);top:calc(50% - 75px);box-shadow:0 4px 16px rgba(0,0,0,0.3);z-index:1;">
+            <img src="{{c1PhotoA}}" style="width:100%;height:100%;object-fit:cover;" onerror="this.parentElement.style.background='var(--secondary-10)'">
+          </div>
+          <div style="width:220px;height:165px;border-radius:8px;overflow:hidden;position:absolute;left:calc(50% - 5px);top:calc(50% - 83px);box-shadow:0 4px 16px rgba(0,0,0,0.3);">
+            <img src="{{c1PhotoB}}" style="width:100%;height:100%;object-fit:cover;" onerror="this.parentElement.style.background='var(--secondary-10)'">
+          </div>
+        </div>
+        <div style="width:100%;">
+          <div style="font-size:var(--fs-stat);font-weight:var(--fw-display);color:var(--text-primary);">{{c1Name}}</div>
+          <div style="font-size:var(--fs-heading);font-weight:var(--fw-display);color:var(--text-tertiary);opacity:0.3;letter-spacing:3px;margin-top:4px;">STRATEGY</div>
+        </div>
+        <div>
+          <div style="font-size:var(--fs-caption);font-weight:var(--fw-heading);color:var(--secondary);letter-spacing:1px;margin-bottom:var(--sp-xs);">CAREER</div>
+          <div style="font-size:var(--fs-body);color:var(--text-secondary);line-height:1.95;">{{c1Career}}</div>
+        </div>
+      </div>
+
+      <div style="background:var(--secondary-15);justify-self:stretch;"></div>
+
+      <!-- CTO (우) -->
+      <div style="display:flex;flex-direction:column;gap:var(--sp-md);padding:0 var(--sp-sm);max-width:440px;align-items:center;text-align:center;">
+        <div style="height:190px;display:flex;align-items:center;position:relative;">
+          <div style="width:220px;height:165px;border-radius:8px;overflow:hidden;position:absolute;left:calc(50% - 214px);top:calc(50% - 75px);box-shadow:0 4px 16px rgba(0,0,0,0.3);z-index:1;">
+            <img src="{{c3PhotoA}}" style="width:100%;height:100%;object-fit:cover;" onerror="this.parentElement.style.background='var(--secondary-10)'">
+          </div>
+          <div style="width:220px;height:165px;border-radius:8px;overflow:hidden;position:absolute;left:calc(50% - 5px);top:calc(50% - 83px);box-shadow:0 4px 16px rgba(0,0,0,0.3);">
+            <img src="{{c3PhotoB}}" style="width:100%;height:100%;object-fit:cover;" onerror="this.parentElement.style.background='var(--secondary-10)'">
+          </div>
+        </div>
+        <div style="width:100%;">
+          <div style="font-size:var(--fs-stat);font-weight:var(--fw-display);color:var(--text-primary);">{{c3Name}}</div>
+          <div style="font-size:var(--fs-heading);font-weight:var(--fw-display);color:var(--text-tertiary);opacity:0.3;letter-spacing:3px;margin-top:4px;">TECH</div>
+        </div>
+        <div>
+          <div style="font-size:var(--fs-caption);font-weight:var(--fw-heading);color:var(--secondary);letter-spacing:1px;margin-bottom:var(--sp-xs);">CAREER</div>
+          <div style="font-size:var(--fs-body);color:var(--text-secondary);line-height:1.95;">{{c3Career}}</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 자문단 (5명 한 줄) -->
+    <div style="display:flex;flex-direction:column;gap:var(--sp-sm);">
+      <div style="font-size:var(--fs-caption);font-weight:var(--fw-heading);color:var(--text-tertiary);letter-spacing:2px;text-align:center;">ADVISORS</div>
+
+      <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:var(--sp-sm);padding:0 var(--sp-md);">
+
+        <!-- 홍수민 -->
+        <div class="card" style="display:flex;padding:var(--sp-sm);">
+          <div style="position:relative;z-index:1;display:flex;gap:var(--sp-sm);align-items:center;width:100%;">
+            <div style="width:64px;height:64px;border-radius:50%;background:var(--secondary-10);overflow:hidden;flex-shrink:0;display:flex;align-items:center;justify-content:center;">
+              <img src="{{a3Photo}}" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'">
+            </div>
+            <div style="display:flex;flex-direction:column;gap:2px;min-width:0;">
+              <div style="display:flex;align-items:baseline;gap:var(--sp-xs);flex-wrap:wrap;">
+                <div style="font-size:var(--fs-body);font-weight:var(--fw-heading);color:var(--text-primary);">{{a3Name}}</div>
+                <div style="font-size:var(--fs-caption);font-weight:var(--fw-heading);color:var(--secondary);">{{a3Role}}</div>
+              </div>
+              <div style="font-size:var(--fs-caption);color:var(--text-tertiary);line-height:1.5;">{{a3Line1}}<br>{{a3Line2}}</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 김대한 -->
+        <div class="card" style="display:flex;padding:var(--sp-sm);">
+          <div style="position:relative;z-index:1;display:flex;gap:var(--sp-sm);align-items:center;width:100%;">
+            <div style="width:64px;height:64px;border-radius:50%;background:var(--secondary-10);overflow:hidden;flex-shrink:0;display:flex;align-items:center;justify-content:center;">
+              <img src="{{a1Photo}}" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'">
+            </div>
+            <div style="display:flex;flex-direction:column;gap:2px;min-width:0;">
+              <div style="display:flex;align-items:baseline;gap:var(--sp-xs);flex-wrap:wrap;">
+                <div style="font-size:var(--fs-body);font-weight:var(--fw-heading);color:var(--text-primary);">{{a1Name}}</div>
+                <div style="font-size:var(--fs-caption);font-weight:var(--fw-heading);color:var(--secondary);">{{a1Role}}</div>
+              </div>
+              <div style="font-size:var(--fs-caption);color:var(--text-tertiary);line-height:1.5;">{{a1Line1}}<br>{{a1Line2}}</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 강신우 -->
+        <div class="card" style="display:flex;padding:var(--sp-sm);">
+          <div style="position:relative;z-index:1;display:flex;gap:var(--sp-sm);align-items:center;width:100%;">
+            <div style="width:64px;height:64px;border-radius:50%;background:var(--secondary-10);overflow:hidden;flex-shrink:0;display:flex;align-items:center;justify-content:center;">
+              <img src="{{a2Photo}}" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'">
+            </div>
+            <div style="display:flex;flex-direction:column;gap:2px;min-width:0;">
+              <div style="display:flex;align-items:baseline;gap:var(--sp-xs);flex-wrap:wrap;">
+                <div style="font-size:var(--fs-body);font-weight:var(--fw-heading);color:var(--text-primary);">{{a2Name}}</div>
+                <div style="font-size:var(--fs-caption);font-weight:var(--fw-heading);color:var(--secondary);">{{a2Role}}</div>
+              </div>
+              <div style="font-size:var(--fs-caption);color:var(--text-tertiary);line-height:1.5;">{{a2Line1}}<br>{{a2Line2}}</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 권동현 (KOC 로고) -->
+        <div class="card" style="display:flex;padding:var(--sp-sm);">
+          <div style="position:relative;z-index:1;display:flex;gap:var(--sp-sm);align-items:center;width:100%;">
+            <div style="width:64px;height:64px;border-radius:50%;background:#fff;overflow:hidden;flex-shrink:0;display:flex;align-items:center;justify-content:center;padding:6px;">
+              <img src="/assets/clients/koc.png" alt="대한체육회" style="width:100%;height:100%;object-fit:contain;">
+            </div>
+            <div style="display:flex;flex-direction:column;gap:2px;min-width:0;">
+              <div style="display:flex;align-items:baseline;gap:var(--sp-xs);flex-wrap:wrap;">
+                <div style="font-size:var(--fs-body);font-weight:var(--fw-heading);color:var(--text-primary);">{{a4Name}}</div>
+                <div style="font-size:var(--fs-caption);font-weight:var(--fw-heading);color:var(--secondary);">{{a4Role}}</div>
+              </div>
+              <div style="font-size:var(--fs-caption);color:var(--text-tertiary);line-height:1.5;">{{a4Line1}}</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 이종태 (KOC 로고) -->
+        <div class="card" style="display:flex;padding:var(--sp-sm);">
+          <div style="position:relative;z-index:1;display:flex;gap:var(--sp-sm);align-items:center;width:100%;">
+            <div style="width:64px;height:64px;border-radius:50%;background:#fff;overflow:hidden;flex-shrink:0;display:flex;align-items:center;justify-content:center;padding:6px;">
+              <img src="/assets/clients/koc.png" alt="대한체육회" style="width:100%;height:100%;object-fit:contain;">
+            </div>
+            <div style="display:flex;flex-direction:column;gap:2px;min-width:0;">
+              <div style="display:flex;align-items:baseline;gap:var(--sp-xs);flex-wrap:wrap;">
+                <div style="font-size:var(--fs-body);font-weight:var(--fw-heading);color:var(--text-primary);">{{a5Name}}</div>
+                <div style="font-size:var(--fs-caption);font-weight:var(--fw-heading);color:var(--secondary);">{{a5Role}}</div>
+              </div>
+              <div style="font-size:var(--fs-caption);color:var(--text-tertiary);line-height:1.5;">{{a5Line1}}</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>

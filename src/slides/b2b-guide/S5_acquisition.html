@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>S5. 가치 2 - 학부모 홍보</title>
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1280px; height: 768px; }
+  body {
+    font-family: 'Pretendard Variable', Pretendard, -apple-system, sans-serif;
+    background: #2a2a2a;
+    overflow: hidden;
+  }
+  .slide {
+    width: 1280px; height: 768px;
+    background: #FAFAFA;
+    position: relative;
+    overflow: hidden;
+    color: #1D1D1F;
+  }
+
+  .page-label {
+    position: absolute;
+    top: 38px; left: 70px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .page-label .dot { width: 5px; height: 5px; background: #00C7BE; border-radius: 50%; }
+  .page-label .num { font-size: 11px; font-weight: 800; color: #00A399; letter-spacing: 3px; }
+  .page-label .text { font-size: 11px; font-weight: 600; color: #8E8E93; letter-spacing: 2px; }
+
+  .value-tag {
+    position: absolute;
+    top: 35px; right: 70px;
+    background: #F59E0B;
+    color: #fff;
+    font-size: 10px;
+    font-weight: 800;
+    padding: 5px 12px;
+    border-radius: 12px;
+    letter-spacing: 1.5px;
+  }
+
+  .headline {
+    position: absolute;
+    top: 55px; left: 70px; right: 70px;
+    font-size: 36px;
+    font-weight: 900;
+    color: #1D1D1F;
+    letter-spacing: -1.5px;
+    line-height: 1.2;
+  }
+  .headline .accent { color: #00A399; }
+
+  .subhead {
+    position: absolute;
+    top: 158px; left: 70px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #8E8E93;
+    letter-spacing: 0.2px;
+  }
+  .subhead strong { color: #00A399; font-weight: 700; }
+
+  /* 좌우 그리드 */
+  .grid {
+    position: absolute;
+    top: 200px; left: 70px; right: 70px;
+    bottom: 40px;
+    display: grid;
+    grid-template-columns: 290px 1fr;
+    gap: 22px;
+    align-items: stretch;
+  }
+
+  /* 좌측 - 인스타 모형 */
+  .phone-mock {
+    background: #fff;
+    border-radius: 28px;
+    padding: 14px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08), 0 1px 4px rgba(0,0,0,0.04);
+    border: 1px solid #E5E5EA;
+  }
+  .ig-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 6px 12px;
+    border-bottom: 1px solid #F0F0F2;
+  }
+  .ig-avatar {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    padding: 2px;
+  }
+  .ig-avatar-inner {
+    width: 100%; height: 100%;
+    background: #fff;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px;
+    color: #1D1D1F;
+    font-weight: 800;
+  }
+  .ig-user {
+    flex: 1;
+  }
+  .ig-name {
+    font-size: 12px;
+    font-weight: 800;
+    color: #1D1D1F;
+  }
+  .ig-loc {
+    font-size: 10px;
+    color: #8E8E93;
+    margin-top: 1px;
+  }
+  .ig-dots {
+    color: #1D1D1F;
+    font-size: 16px;
+    font-weight: 900;
+  }
+
+  /* 영상 영역 */
+  .ig-video {
+    height: 180px;
+    background: 
+      radial-gradient(ellipse at center, rgba(0,199,190,0.1), transparent 70%),
+      linear-gradient(135deg, #1C1C1E, #2A2A2C);
+    border-radius: 0;
+    margin: 0 -14px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .ig-video .play {
+    width: 64px; height: 64px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 50%;
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: #fff;
+  }
+  .ig-video .label {
+    position: absolute;
+    bottom: 14px;
+    left: 14px;
+    font-size: 10px;
+    color: rgba(255,255,255,0.7);
+    font-weight: 500;
+  }
+  /* 워터마크 */
+  .watermark {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: rgba(0,0,0,0.5);
+    backdrop-filter: blur(8px);
+    color: #fff;
+    font-size: 9px;
+    font-weight: 700;
+    padding: 5px 10px;
+    border-radius: 12px;
+    letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .watermark .wm-dot {
+    width: 5px; height: 5px;
+    background: #00C7BE;
+    border-radius: 50%;
+  }
+
+  /* 액션 + 캡션 */
+  .ig-actions {
+    display: flex;
+    gap: 14px;
+    padding: 10px 6px 6px;
+    font-size: 18px;
+  }
+  .ig-actions .a-right { margin-left: auto; }
+  .ig-likes {
+    font-size: 11px;
+    font-weight: 800;
+    color: #1D1D1F;
+    padding: 0 6px;
+    margin-bottom: 4px;
+  }
+  .ig-caption {
+    font-size: 11px;
+    color: #1D1D1F;
+    padding: 0 6px 6px;
+    line-height: 1.4;
+  }
+  .ig-caption .user { font-weight: 800; }
+  .ig-caption .tag { color: #00A399; font-weight: 600; }
+
+  /* 화살표 (모형 → 효과) */
+  .arrow-zone {
+    position: absolute;
+    top: 380px;
+    left: 380px;
+    z-index: 3;
+    display: flex; align-items: center;
+    gap: 6px;
+  }
+  .arrow-zone .pulse {
+    width: 10px; height: 10px;
+    background: #00C7BE;
+    border-radius: 50%;
+    box-shadow: 0 0 0 6px rgba(0,199,190,0.15);
+  }
+  .arrow-zone .text {
+    font-size: 11px;
+    font-weight: 800;
+    color: #00A399;
+    letter-spacing: 1px;
+  }
+
+  /* 우측 - 효과 3개 */
+  .effects {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    height: 100%;
+  }
+  .eff-card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 22px 36px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    border: 1px solid #F0F0F2;
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    flex: 1;
+    margin: 0 60px;
+  }
+  .eff-num {
+    width: 60px; height: 60px;
+    border-radius: 14px;
+    background: linear-gradient(165deg, #00C7BE, #00A399);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    font-weight: 900;
+    flex-shrink: 0;
+    box-shadow: 0 2px 8px rgba(0,163,153,0.2);
+  }
+  .eff-body { flex: 1; }
+  .eff-title {
+    font-size: 21px;
+    font-weight: 800;
+    color: #1D1D1F;
+    letter-spacing: -0.4px;
+    margin-bottom: 8px;
+    line-height: 1.25;
+  }
+  .eff-title strong { color: #00A399; }
+  .eff-desc {
+    font-size: 15px;
+    font-weight: 500;
+    color: #6B7280;
+    line-height: 1.4;
+  }
+  .eff-desc strong { color: #1D1D1F; font-weight: 700; }
+
+  /* 우측 우측 — 큰 강조 박스 (CCO 자산) */
+  .cco-highlight {
+    background: linear-gradient(165deg, #1C1C1E, #141414);
+    border-radius: 14px;
+    padding: 22px 36px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    position: relative;
+    overflow: hidden;
+    flex: 1;
+    margin: 0 60px;
+  }
+  .cco-highlight::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; height: 40%;
+    background: linear-gradient(180deg, rgba(0,199,190,0.1), transparent);
+  }
+  .cco-highlight > * { position: relative; z-index: 2; }
+  .cco-stat-icon {
+    width: 60px; height: 60px;
+    border-radius: 14px;
+    background: rgba(0,199,190,0.18);
+    color: #00C7BE;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 30px;
+    flex-shrink: 0;
+  }
+  .cco-body { flex: 1; }
+  .cco-name {
+    font-size: 20px;
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: -0.4px;
+    margin-bottom: 8px;
+    line-height: 1.25;
+  }
+  .cco-desc {
+    font-size: 15px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.45;
+  }
+  .cco-desc strong { color: #00C7BE; font-weight: 800; }
+  .cco-stat {
+    text-align: center;
+    flex-shrink: 0;
+    padding-left: 20px;
+    border-left: 1px solid rgba(255,255,255,0.12);
+  }
+  .cco-stat .big {
+    font-size: 42px;
+    font-weight: 900;
+    color: #00C7BE;
+    letter-spacing: -1.5px;
+    line-height: 1;
+  }
+  .cco-stat .sm {
+    font-size: 12px;
+    color: rgba(255,255,255,0.55);
+    font-weight: 600;
+    margin-top: 2px;
+  }
+
+  /* ROI 박스 */
+  .roi-box {
+    position: absolute;
+    bottom: 40px; left: 70px; right: 70px;
+    background: rgba(245,158,11,0.1);
+    border-left: 4px solid #F59E0B;
+    border-radius: 4px 12px 12px 4px;
+    padding: 16px 22px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .roi-tag {
+    background: #F59E0B;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 5px 11px;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    flex-shrink: 0;
+  }
+  .roi-text {
+    font-size: 14px;
+    font-weight: 700;
+    color: #1D1D1F;
+    line-height: 1.45;
+  }
+  .roi-text strong { color: #B45309; font-weight: 800; }
+
+  .footer {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 28px;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 60px;
+    border-top: 1px solid #F0F0F2;
+  }
+  .footer .brand { font-size: 11px; font-weight: 800; color: #1D1D1F; letter-spacing: 0.5px; }
+  .footer .brand .accent { color: #00A399; }
+  .footer .info { font-size: 10px; color: #8E8E93; font-weight: 500; }
+</style>
+</head>
+<body>
+<div class="slide">
+
+  <div class="headline">
+    광고비를 쓰지 않고도,<br>
+    <span class="accent">학부모가 시설을 인스타에 올립니다</span>
+  </div>
+
+  <div class="subhead">
+    학부모 1명이 인스타에 올리면 = <strong>친구 200명에게 시설 광고</strong>
+  </div>
+
+  <div class="grid">
+
+    <!-- 좌측 인스타 모형 (실제 스크린샷 첨부 예정) -->
+    <div class="phone-mock"></div>
+
+    <!-- 우측 효과 3개 -->
+    <div class="effects">
+
+      <div class="eff-card">
+        <div class="eff-num">1</div>
+        <div class="eff-body">
+          <div class="eff-title">학부모 1명 → <strong>평균 친구 200명</strong> 노출</div>
+          <div class="eff-desc">인스타 평균 팔로워 200명 기준 · <strong>시설명 워터마크 자동</strong> · 출처가 항상 시설로</div>
+        </div>
+      </div>
+
+      <div class="eff-card">
+        <div class="eff-num">2</div>
+        <div class="eff-body">
+          <div class="eff-title">시설 자체 인스타 운영 자산화</div>
+          <div class="eff-desc">학부모 영상 = <strong>그대로 시설 콘텐츠</strong> · 코치 야근 0, 마케팅 외주 비용 0</div>
+        </div>
+      </div>
+
+      <div class="cco-highlight">
+        <div class="cco-stat-icon">📈</div>
+        <div class="cco-body">
+          <div class="cco-name">신규 학부모는 인스타로 학원을 찾습니다.</div>
+          <div class="cco-desc">전체 소비자 <strong>83%</strong>가 인스타에서 새 브랜드·서비스·제품 탐색</div>
+        </div>
+        <div class="cco-stat">
+          <div class="big">83<span style="font-size:24px;">%</span></div>
+          <div class="sm">인스타 발견율</div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- ROI는 별도 슬라이드로 분리 (S5B) -->
+
+</div>
+</body>
+</html>

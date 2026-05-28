@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>S6. Before/After</title>
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1024px; height: 768px; }
+  body {
+    font-family: 'Pretendard Variable', Pretendard, -apple-system, sans-serif;
+    background: #2a2a2a;
+    overflow: hidden;
+  }
+  .slide {
+    width: 1024px; height: 768px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* 분할 배경 */
+  .bg-left {
+    position: absolute;
+    top: 0; left: 0; width: 50%; height: 100%;
+    background: #0A0A0A;
+  }
+  .bg-right {
+    position: absolute;
+    top: 0; right: 0; width: 50%; height: 100%;
+    background: #FAFAFA;
+  }
+  .bg-right::before {
+    content: '';
+    position: absolute;
+    top: -150px; right: -150px;
+    width: 350px; height: 350px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0,199,190,0.08), transparent 70%);
+  }
+
+  /* 상단 페이지 라벨 (가운데) */
+  .page-bar {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    z-index: 10;
+  }
+  .page-bar .left-label {
+    width: 50%;
+    padding-left: 50px;
+    color: rgba(255,255,255,0.5);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+  }
+  .page-bar .left-label .pg-num { color: #FF6B6B; font-weight: 800; margin-right: 8px; }
+  .page-bar .right-label {
+    width: 50%;
+    padding-left: 50px;
+    color: #8E8E93;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+  }
+  .page-bar .right-label .pg-num { color: #00A399; font-weight: 800; margin-right: 8px; }
+
+  /* 상단 헤드라인 (전체 너비, 두 줄) */
+  .headline-bar {
+    position: absolute;
+    top: 60px; left: 0; right: 0;
+    height: 115px;
+    display: flex;
+    z-index: 10;
+  }
+  .headline-left {
+    width: 50%;
+    padding: 0 50px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  .headline-right {
+    width: 50%;
+    padding: 0 50px;
+    color: #1D1D1F;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  .h-textgroup { flex: 1; min-width: 0; }
+  .h-tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 4px;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+  }
+  .headline-left .h-tag { background: rgba(255,107,107,0.15); color: #FF6B6B; }
+  .headline-right .h-tag { background: rgba(0,163,153,0.12); color: #00A399; }
+  .h-title {
+    font-size: 26px;
+    font-weight: 900;
+    letter-spacing: -0.8px;
+    line-height: 1.2;
+  }
+  .h-symbol {
+    font-size: 76px;
+    font-weight: 900;
+    line-height: 1;
+    flex-shrink: 0;
+    letter-spacing: -2px;
+  }
+  .h-x { color: #FF6B6B; }
+  .h-o { color: #00A399; }
+  .headline-left .h-title { color: #fff; }
+  .headline-right .h-title { color: #1D1D1F; }
+  .h-title .red { color: #FF6B6B; }
+  .h-title .accent { color: #00A399; }
+
+  /* 비교 테이블 */
+  .compare-zone {
+    position: absolute;
+    top: 195px; left: 0; right: 0; bottom: 30px;
+    display: flex;
+    z-index: 5;
+  }
+  .col {
+    width: 50%;
+    padding: 0 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .col-left { color: #fff; }
+  .col-right { color: #1D1D1F; }
+
+  /* 비교 행 */
+  .row {
+    background: rgba(255,255,255,0.03);
+    border-radius: 10px;
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex: 1;
+    min-height: 64px;
+  }
+  .col-right .row {
+    background: #fff;
+    border: 1px solid #F0F0F2;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+  }
+
+  .row-icon {
+    width: 36px; height: 36px;
+    border-radius: 9px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+    font-weight: 900;
+    flex-shrink: 0;
+  }
+  .col-left .row-icon { background: rgba(255,107,107,0.15); color: #FF6B6B; }
+  .col-right .row-icon { background: rgba(0,163,153,0.12); color: #00A399; }
+
+  .row-body { flex: 1; }
+  .row-label {
+    font-size: 12.5px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+  }
+  .col-left .row-label { color: rgba(255,255,255,0.4); }
+  .col-right .row-label { color: #8E8E93; }
+
+  .row-text {
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.3;
+    letter-spacing: -0.2px;
+  }
+  .col-left .row-text { color: #fff; }
+  .col-right .row-text { color: #1D1D1F; }
+  .col-left .row-text strong { color: #FF6B6B; }
+  .col-right .row-text strong { color: #00A399; }
+
+  /* 핵심 차이 강조 행 */
+  .row-highlight.col-left {
+    background: linear-gradient(165deg, #1F0808, #1A0606);
+    border: 1px solid rgba(255,107,107,0.3);
+  }
+  .row-highlight.col-right {
+    background: linear-gradient(165deg, #E6FAF8, #D4F5F2);
+    border: 1px solid rgba(0,199,190,0.4);
+  }
+
+  /* 만족도 큰 숫자 */
+  .score-row {
+    background: rgba(255,255,255,0.04);
+    border-radius: 12px;
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-height: 64px;
+  }
+  .col-right .score-row {
+    background: linear-gradient(165deg, #00C7BE, #00A399);
+    color: #fff;
+    box-shadow: 0 4px 16px rgba(0,163,153,0.2);
+  }
+  .score-icon {
+    font-size: 22px;
+  }
+  .score-body { flex: 1; }
+  .score-label {
+    font-size: 9.5px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    margin-bottom: 2px;
+  }
+  .col-left .score-label { color: rgba(255,255,255,0.5); }
+  .col-right .score-label { color: rgba(0,0,0,0.5); }
+  .score-num {
+    font-size: 26px;
+    font-weight: 900;
+    letter-spacing: -1px;
+    line-height: 1;
+  }
+  .score-num .unit { font-size: 14px; margin-left: 2px; opacity: 0.7; }
+  .col-left .score-num { color: #FF6B6B; }
+  .col-right .score-num { color: #fff; }
+
+  /* 가운데 VS */
+  .vs-badge {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 20;
+    width: 60px; height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(165deg, #00C7BE, #00A399);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    box-shadow: 0 8px 24px rgba(0,163,153,0.4), 0 0 0 4px rgba(255,255,255,0.5);
+  }
+
+  /* 푸터 */
+  .footer-zone {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 80px;
+    display: flex;
+    z-index: 10;
+  }
+  .footer-left {
+    width: 50%;
+    background: #0A0A0A;
+    padding: 14px 50px;
+    color: rgba(255,255,255,0.4);
+    font-size: 10px;
+    line-height: 1.5;
+    display: flex; align-items: center;
+  }
+  .footer-left strong { color: #fff; }
+  .footer-right {
+    width: 50%;
+    background: #FAFAFA;
+    padding: 14px 50px;
+    color: #8E8E93;
+    font-size: 10px;
+    line-height: 1.5;
+    display: flex; align-items: center;
+    border-top: 1px solid #F0F0F2;
+  }
+  .footer-right strong { color: #00A399; }
+</style>
+</head>
+<body>
+<div class="slide">
+
+  <div class="bg-left"></div>
+  <div class="bg-right"></div>
+
+  <!-- 상단 라벨 -->
+  <div class="page-bar">
+    <div class="left-label"><span class="pg-num">06</span>CORE COMPARISON</div>
+    <div class="right-label"><span class="pg-num">06</span>운영자가 가져갈 한 장</div>
+  </div>
+
+  <!-- 헤드라인 -->
+  <div class="headline-bar">
+    <div class="headline-left">
+      <div class="h-textgroup">
+        <span class="h-tag">캡픽 없는 구장</span>
+        <div class="h-title">"왜 우리 시설은<br><span class="red">학부모가 떠날까?</span>"</div>
+      </div>
+      <div class="h-symbol h-x">✕</div>
+    </div>
+    <div class="headline-right">
+      <div class="h-textgroup">
+        <span class="h-tag">캡픽 있는 구장</span>
+        <div class="h-title">"왜 우리 시설은<br><span class="accent">학부모가 자랑할까?"</span></div>
+      </div>
+      <div class="h-symbol h-o">○</div>
+    </div>
+  </div>
+
+  <!-- VS 뱃지 -->
+  <div class="vs-badge">VS</div>
+
+  <!-- 비교 8행 -->
+  <div class="compare-zone">
+
+    <!-- LEFT -->
+    <div class="col col-left">
+      <div class="row">
+        <div class="row-icon">!</div>
+        <div class="row-body">
+          <div class="row-label">학부모 영상 수령</div>
+          <div class="row-text">코치 카톡 요청 후 <strong>5~7일</strong> 소요</div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="row-icon">!</div>
+        <div class="row-body">
+          <div class="row-label">개인별 영상</div>
+          <div class="row-text"><strong>단체 영상</strong> · 우리 아이는 화면 구석</div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="row-icon">!</div>
+        <div class="row-body">
+          <div class="row-label">코치 영상 업무</div>
+          <div class="row-text">주당 <strong>5~10시간</strong> 편집·응대</div>
+        </div>
+      </div>
+      <div class="row row-highlight col-left">
+        <div class="row-icon">✕</div>
+        <div class="row-body">
+          <div class="row-label">신규 모집 채널</div>
+          <div class="row-text">광고비 의존 · <strong>인스타 광고비 상승</strong></div>
+        </div>
+      </div>
+      <div class="row row-highlight col-left">
+        <div class="row-icon">✕</div>
+        <div class="row-body">
+          <div class="row-label">학부모 이탈 사유 1위</div>
+          <div class="row-text">"성장이 안 보인다"</div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="row-icon">!</div>
+        <div class="row-body">
+          <div class="row-label">인근 시설 대비 차별화</div>
+          <div class="row-text">시설·시간·가격 <strong>가격 경쟁</strong></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="col col-right">
+      <div class="row">
+        <div class="row-icon">✓</div>
+        <div class="row-body">
+          <div class="row-label">학부모 영상 수령</div>
+          <div class="row-text">수업 종료 후 <strong>2시간 이내 자동</strong></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="row-icon">✓</div>
+        <div class="row-body">
+          <div class="row-label">개인별 영상</div>
+          <div class="row-text">AI 추적 · <strong>개인별 하이라이트 10개+</strong></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="row-icon">✓</div>
+        <div class="row-body">
+          <div class="row-label">코치 영상 업무</div>
+          <div class="row-text"><strong>0분</strong> · 본업인 훈련과 선수 지도에만 집중</div>
+        </div>
+      </div>
+      <div class="row row-highlight col-right">
+        <div class="row-icon">★</div>
+        <div class="row-body">
+          <div class="row-label">신규 모집 채널</div>
+          <div class="row-text">학부모의 SNS 공유로 인한 <strong>자발적 시설 홍보 효과</strong></div>
+        </div>
+      </div>
+      <div class="row row-highlight col-right">
+        <div class="row-icon">★</div>
+        <div class="row-body">
+          <div class="row-label">학부모 락인 효과</div>
+          <div class="row-text"><strong>매주 성장 기록과 행복한 추억</strong> 전달</div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="row-icon">✓</div>
+        <div class="row-body">
+          <div class="row-label">인근 시설 대비 차별화</div>
+          <div class="row-text">"우리 시설만 <strong>매주 영상이 옵니다</strong>"</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+</div>
+</body>
+</html>

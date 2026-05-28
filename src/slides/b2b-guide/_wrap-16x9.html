@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>16:9 Wrapper</title>
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1920px; height: 1080px; overflow: hidden; }
+  body {
+    background: #FAFAFA;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  body.bg-split {
+    background: linear-gradient(to right, #0A0A0A 50%, #FAFAFA 50%);
+  }
+  iframe {
+    border: 0;
+    display: block;
+    background: transparent;
+    transform-origin: center center;
+  }
+</style>
+</head>
+<body>
+<iframe id="f"></iframe>
+<script>
+  const p = new URLSearchParams(location.search);
+  const src = p.get('src');
+  const w = parseInt(p.get('w') || '1280', 10);
+  const h = parseInt(p.get('h') || '768', 10);
+  const bg = p.get('bg');
+  if (bg) document.body.classList.add('bg-' + bg);
+  const f = document.getElementById('f');
+  f.style.width = w + 'px';
+  f.style.height = h + 'px';
+  const scale = Math.min(1920 / w, 1080 / h);
+  f.style.transform = 'scale(' + scale + ')';
+  if (src) f.src = src;
+</script>
+</body>
+</html>

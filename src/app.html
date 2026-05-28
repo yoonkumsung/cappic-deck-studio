@@ -612,7 +612,9 @@
       if (!slide) return;
 
       const iframe = document.getElementById('previewIframe');
-      const url = `preview.html?slide=${slide.id}&theme=${currentTheme}&ratio=${encodeURIComponent(currentRatio)}`;
+      const url = slide.external
+        ? slide.external
+        : `preview.html?slide=${slide.id}&theme=${currentTheme}&ratio=${encodeURIComponent(currentRatio)}`;
       iframe.src = url;
 
       // Wait for iframe load then rescale
@@ -627,8 +629,18 @@
       const RATIOS = {
         '16:9': { w: 1920, h: 1080 },
         '3:2':  { w: 1620, h: 1080 },
+        '4:3':  { w: 1024, h: 768 },
       };
-      const dim = RATIOS[currentRatio] || RATIOS['16:9'];
+      const currentSlide = filteredSlides[currentSlideIndex];
+      function parseExternalSize(s) {
+        if (!s) return { w: 1024, h: 768 };
+        if (RATIOS[s]) return RATIOS[s];
+        const m = s.match(/^(\d+)x(\d+)$/);
+        return m ? { w: +m[1], h: +m[2] } : { w: 1024, h: 768 };
+      }
+      const dim = currentSlide && currentSlide.external
+        ? parseExternalSize(currentSlide.externalSize)
+        : (RATIOS[currentRatio] || RATIOS['16:9']);
 
       iframe.style.width = dim.w + 'px';
       iframe.style.height = dim.h + 'px';

@@ -15,7 +15,16 @@ if (!fs.existsSync(versionsDir)) fs.mkdirSync(versionsDir, { recursive: true });
 const VIEWPORTS = {
   '16:9': { width: 1920, height: 1080 },
   '3:2':  { width: 1620, height: 1080 },
+  '4:3':  { width: 1024, height: 768 },
 };
+
+// Parse externalSize string ("16:9", "4:3", "WxH") → viewport
+function parseExternalSize(s) {
+  if (!s) return { width: 1024, height: 768 };
+  if (VIEWPORTS[s]) return VIEWPORTS[s];
+  const m = s.match(/^(\d+)x(\d+)$/);
+  return m ? { width: +m[1], height: +m[2] } : { width: 1024, height: 768 };
+}
 
 function readJSON(filePath) {
   if (!fs.existsSync(filePath)) return null;
@@ -206,20 +215,33 @@ const server = http.createServer(async (req, res) => {
     // Validate parameters
     const VALID_THEMES = ['dark', 'light'];
     const safeTheme = VALID_THEMES.includes(theme) ? theme : 'dark';
-    const safeRatio = VIEWPORTS[ratio] ? ratio : '16:9';
-    const viewport = VIEWPORTS[safeRatio];
+    const safeRatio = VIEWPORTS[ratio] && ratio !== '4:3' ? ratio : '16:9';
     const safeSlideId = slideId.replace(/[^a-zA-Z0-9_-]/g, '');
+
+    // External 슬라이드(b2b 가이드 등)는 slides.json 메타에서 경로/사이즈 조회
+    const slidesRegistry = readJSON(path.join(srcDir, 'data', 'slides.json'));
+    const slideMeta = slidesRegistry && slidesRegistry.slides
+      ? slidesRegistry.slides.find(s => s.id === safeSlideId)
+      : null;
+
+    let captureUrl, captureViewport;
+    if (slideMeta && slideMeta.external) {
+      captureUrl = `http://127.0.0.1:3000/${slideMeta.external}`;
+      captureViewport = parseExternalSize(slideMeta.externalSize);
+    } else {
+      captureUrl = `http://127.0.0.1:3000/preview.html?slide=${safeSlideId}&theme=${safeTheme}&ratio=${encodeURIComponent(safeRatio)}`;
+      captureViewport = VIEWPORTS[safeRatio];
+    }
 
     let browser = null;
     try {
-      browser = await chromium.launch();
+      browser = await chromium.launch({ channel: 'chrome' });
       const page = await browser.newPage({
-        viewport,
+        viewport: captureViewport,
         deviceScaleFactor: 4
       });
 
-      const previewUrl = `http://127.0.0.1:3000/preview.html?slide=${safeSlideId}&theme=${safeTheme}&ratio=${encodeURIComponent(safeRatio)}`;
-      await page.goto(previewUrl, { waitUntil: 'networkidle', timeout: 15000 });
+      await page.goto(captureUrl, { waitUntil: 'networkidle', timeout: 15000 });
       await page.waitForTimeout(2000);
 
       const ratioTag = safeRatio.replace(':', 'x');
@@ -274,12 +296,19 @@ const server = http.createServer(async (req, res) => {
     // Validate parameters
     const VALID_THEMES = ['dark', 'light'];
     const safeTheme = VALID_THEMES.includes(theme) ? theme : 'dark';
-    const safeRatio = VIEWPORTS[ratio] ? ratio : '16:9';
+    const safeRatio = VIEWPORTS[ratio] && ratio !== '4:3' ? ratio : '16:9';
     const viewport = VIEWPORTS[safeRatio];
+
+    // External 슬라이드 메타 조회
+    const slidesRegistry = readJSON(path.join(srcDir, 'data', 'slides.json'));
+    const slidesById = {};
+    if (slidesRegistry && slidesRegistry.slides) {
+      slidesRegistry.slides.forEach(s => { slidesById[s.id] = s; });
+    }
 
     let browser = null;
     try {
-      browser = await chromium.launch();
+      browser = await chromium.launch({ channel: 'chrome' });
       const ratioTag = safeRatio.replace(':', 'x');
       const exportSubDir = path.join(outputDir, `${safeId}_${ratioTag}_${safeTheme}`);
       if (!fs.existsSync(exportSubDir)) fs.mkdirSync(exportSubDir, { recursive: true });
@@ -287,11 +316,17 @@ const server = http.createServer(async (req, res) => {
       const results = [];
       for (let i = 0; i < vData.config.selected.length; i++) {
         const slideId = vData.config.selected[i].replace(/[^a-zA-Z0-9_-]/g, '');
-        const page = await browser.newPage({ viewport, deviceScaleFactor: 4 });
+        const slideMeta = slidesById[slideId];
+        const pageViewport = slideMeta && slideMeta.external
+          ? parseExternalSize(slideMeta.externalSize)
+          : viewport;
+        const page = await browser.newPage({ viewport: pageViewport, deviceScaleFactor: 4 });
 
         try {
-          const previewUrl = `http://127.0.0.1:3000/preview.html?slide=${slideId}&theme=${safeTheme}&ratio=${encodeURIComponent(safeRatio)}`;
-          await page.goto(previewUrl, { waitUntil: 'networkidle', timeout: 15000 });
+          const captureUrl = slideMeta && slideMeta.external
+            ? `http://127.0.0.1:3000/${slideMeta.external}`
+            : `http://127.0.0.1:3000/preview.html?slide=${slideId}&theme=${safeTheme}&ratio=${encodeURIComponent(safeRatio)}`;
+          await page.goto(captureUrl, { waitUntil: 'networkidle', timeout: 15000 });
           await page.waitForTimeout(2000);
 
           const num = String(i + 1).padStart(2, '0');
