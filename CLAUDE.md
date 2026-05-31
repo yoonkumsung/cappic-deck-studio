@@ -244,6 +244,9 @@ reference/
 
 ## 1. 로컬 서버에서 작업
 - `npm run dev`로 로컬 서버(localhost:3000) 실행 후 작업
+- **로컬 서버를 띄울 때는 PNG 추출 서버(`npm run export`)도 반드시 함께 실행한다**
+  - 두 서버는 별도 터미널/백그라운드로 동시 실행
+  - PNG 내보내기 기능(Playwright 기반)이 추출 서버에 의존하므로 누락 시 내보내기가 동작하지 않음
 - 브라우저에서 변경사항 확인 완료 후에만 git commit/push
 - **작업 중간에 git push 하지 않는다. 완성된 작업만 푸시한다**
 
@@ -275,3 +278,19 @@ reference/
 - **Simplicity First**: 가능한 가장 단순하게. 최소한의 코드만 변경
 - **No Laziness**: 근본 원인 찾기. 임시 수정 금지. 시니어 개발자 기준
 - **Minimal Impact**: 필요한 것만 수정. 버그 유입 방지
+
+---
+
+## 하네스: CAPP!C Deck Studio
+
+**목표:** 5명의 전문 에이전트 팀(slide-architect, content-curator, design-auditor, visual-qa, a4-syncer)으로 슬라이드 작성·검증·A4 동기화를 자동 조율한다.
+
+**트리거:** 슬라이드 작성/수정/검증/QA/A4 동기화 관련 작업 요청 시 `cappic-slide-orchestrator` 스킬을 사용하라. 단순 질문(예: "토큰이 뭐야?")은 직접 응답 가능.
+
+**실행 모드:** 에이전트 팀 (`CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1` 필요). 미설정 시 서브 에이전트 모드로 자동 fallback.
+
+**변경 이력:**
+| 날짜 | 변경 내용 | 대상 | 사유 |
+|------|----------|------|------|
+| 2026-05-31 | 초기 구성 (Producer-Reviewer 패턴, 에이전트 5명 + 스킬 5개) | 전체 | 슬라이드 작성/검증/A4 동기화 자동화 |
+
