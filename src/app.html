@@ -834,8 +834,8 @@
     }
 
     function checkUnlocked() {
-      // 로컬 환경에서는 비밀번호 스킵
-      if (location.hostname === 'localhost' || location.hostname === '127.0.0.1') return true;
+      // 로컬 환경에서는 비밀번호 스킵 (tailnet 사설 접속 포함 — HTTP라 crypto.subtle 불가)
+      if (location.hostname === 'localhost' || location.hostname === '127.0.0.1' || location.hostname === '100.74.178.68') return true;
       return false;
     }
 

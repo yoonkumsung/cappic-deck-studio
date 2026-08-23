@@ -1,42 +1,214 @@
 {
   "fields": [
-    { "key": "title", "label": "타이틀", "type": "text", "value": "Financial Plan 2026" },
-
-    { "key": "legendInflow", "label": "범례: 유입", "type": "text", "value": "유입 (조달+매출)" },
-    { "key": "legendOutflow", "label": "범례: 유출", "type": "text", "value": "유출 (생산+운영)" },
-
-    { "key": "tl3Title", "label": "3월 마일스톤", "type": "text", "value": "자본금 출자" },
-    { "key": "tl3Desc", "label": "3월 설명", "type": "text", "value": "3,000만원" },
-    { "key": "tl4Title", "label": "4월 마일스톤", "type": "text", "value": "청창사 16기 입교" },
-    { "key": "tl4Desc", "label": "4월 설명", "type": "text", "value": "제품화 착수" },
-    { "key": "tl5Title", "label": "5월 마일스톤", "type": "text", "value": "울산 U시리즈 선정" },
-    { "key": "tl5Desc", "label": "5월 설명", "type": "text", "value": "B2B 정식 계약 10대" },
-    { "key": "tl6Title", "label": "6월 마일스톤", "type": "text", "value": "중진공 청년 자금" },
-    { "key": "tl6Desc", "label": "6월 설명", "type": "text", "value": "프리오더 50대 판매" },
-    { "key": "tl7Title", "label": "7월 마일스톤", "type": "text", "value": "기보 보증 + 펀딩 300대" },
-    { "key": "tl7Desc", "label": "7월 설명", "type": "text", "value": "금형 발주 및 마케팅" },
-    { "key": "tl8Title", "label": "8월 마일스톤", "type": "text", "value": "양산 500대" },
-    { "key": "tl8Desc", "label": "8월 설명", "type": "text", "value": "생산+출하" },
-    { "key": "tl9Title", "label": "9월 마일스톤", "type": "text", "value": "자사몰 판매" },
-    { "key": "tl9Desc", "label": "9월 설명", "type": "text", "value": "B2B 확대" },
-    { "key": "tl10Title", "label": "10월 마일스톤", "type": "text", "value": "자사몰 판매" },
-    { "key": "tl10Desc", "label": "10월 설명", "type": "text", "value": "전국 영업" },
-    { "key": "tl11Title", "label": "11월 마일스톤", "type": "text", "value": "종목 확장" },
-    { "key": "tl11Desc", "label": "11월 설명", "type": "text", "value": "농구/클라이밍/테니스 등" },
-    { "key": "tl12Title", "label": "12월 마일스톤", "type": "text", "value": "글로벌 시장 진출" },
-    { "key": "tl12Desc", "label": "12월 설명", "type": "text", "value": "일본 마쿠아케 펀딩" },
-
-    { "key": "sum1Label", "label": "요약1 라벨", "type": "text", "value": "연간 유입" },
-    { "key": "sum1Value", "label": "요약1 값", "type": "text", "value": "8.86억원" },
-    { "key": "sum1Desc", "label": "요약1 설명", "type": "text", "value": "조달 3.4억 + 매출 5.46억" },
-    { "key": "sum2Label", "label": "요약2 라벨", "type": "text", "value": "연간 유출" },
-    { "key": "sum2Value", "label": "요약2 값", "type": "text", "value": "5.38억원" },
-    { "key": "sum2Desc", "label": "요약2 설명", "type": "text", "value": "생산 4.83억 + 운영 0.54억" },
-    { "key": "sum3Label", "label": "요약3 라벨", "type": "text", "value": "연말 현금" },
-    { "key": "sum3Value", "label": "요약3 값", "type": "text", "value": "3.48억원" },
-    { "key": "sum3Desc", "label": "요약3 설명", "type": "text", "value": "대출 2.5억 포함" },
-    { "key": "sum4Label", "label": "요약4 라벨", "type": "text", "value": "연매출" },
-    { "key": "sum4Value", "label": "요약4 값", "type": "text", "value": "5.46억원" },
-    { "key": "sum4Desc", "label": "요약4 설명", "type": "text", "value": "HW 520대 판매" }
+    {
+      "key": "title",
+      "label": "타이틀",
+      "type": "text",
+      "value": "Financial Plan 2026"
+    },
+    {
+      "key": "legendInflow",
+      "label": "범례: 유입",
+      "type": "text",
+      "value": "유입 (조달+매출)"
+    },
+    {
+      "key": "legendOutflow",
+      "label": "범례: 유출",
+      "type": "text",
+      "value": "유출 (생산+운영)"
+    },
+    {
+      "key": "tl3Title",
+      "label": "3월 마일스톤",
+      "type": "text",
+      "value": "자본금 출자"
+    },
+    {
+      "key": "tl3Desc",
+      "label": "3월 설명",
+      "type": "text",
+      "value": "3,000만원"
+    },
+    {
+      "key": "tl4Title",
+      "label": "4월 마일스톤",
+      "type": "text",
+      "value": "청창사 16기 입교"
+    },
+    {
+      "key": "tl4Desc",
+      "label": "4월 설명",
+      "type": "text",
+      "value": "제품화 착수"
+    },
+    {
+      "key": "tl5Title",
+      "label": "5월 마일스톤",
+      "type": "text",
+      "value": "울산 U시리즈 선정"
+    },
+    {
+      "key": "tl5Desc",
+      "label": "5월 설명",
+      "type": "text",
+      "value": "2,000만원 지원"
+    },
+    {
+      "key": "tl6Title",
+      "label": "6월 마일스톤",
+      "type": "text",
+      "value": "중진공 청년 자금"
+    },
+    {
+      "key": "tl6Desc",
+      "label": "6월 설명",
+      "type": "text",
+      "value": "1억 5,000만원 대출"
+    },
+    {
+      "key": "tl7Title",
+      "label": "7월 마일스톤",
+      "type": "text",
+      "value": "기보 1억원 보증"
+    },
+    {
+      "key": "tl7Desc",
+      "label": "7월 설명",
+      "type": "text",
+      "value": "B2B 정식 계약 3건"
+    },
+    {
+      "key": "tl8Title",
+      "label": "8월 마일스톤",
+      "type": "text",
+      "value": "EVT 진행"
+    },
+    {
+      "key": "tl8Desc",
+      "label": "8월 설명",
+      "type": "text",
+      "value": "프리오더 50건 달성"
+    },
+    {
+      "key": "tl9Title",
+      "label": "9월 마일스톤",
+      "type": "text",
+      "value": "DVT 진행"
+    },
+    {
+      "key": "tl9Desc",
+      "label": "9월 설명",
+      "type": "text",
+      "value": "시제품 50대 제작"
+    },
+    {
+      "key": "tl10Title",
+      "label": "10월 마일스톤",
+      "type": "text",
+      "value": "PVT 진행"
+    },
+    {
+      "key": "tl10Desc",
+      "label": "10월 설명",
+      "type": "text",
+      "value": "펀딩 300대 시작"
+    },
+    {
+      "key": "tl11Title",
+      "label": "11월 마일스톤",
+      "type": "text",
+      "value": "정식 제품 양산"
+    },
+    {
+      "key": "tl11Desc",
+      "label": "11월 설명",
+      "type": "text",
+      "value": "양산 및 출하"
+    },
+    {
+      "key": "tl12Title",
+      "label": "12월 마일스톤",
+      "type": "text",
+      "value": "자사몰 오픈"
+    },
+    {
+      "key": "tl12Desc",
+      "label": "12월 설명",
+      "type": "text",
+      "value": "종목 확장"
+    },
+    {
+      "key": "sum1Label",
+      "label": "요약1 라벨",
+      "type": "text",
+      "value": "연간 유입"
+    },
+    {
+      "key": "sum1Value",
+      "label": "요약1 값",
+      "type": "text",
+      "value": "7.18억원"
+    },
+    {
+      "key": "sum1Desc",
+      "label": "요약1 설명",
+      "type": "text",
+      "value": "조달 3.5억 + 매출 3.68억"
+    },
+    {
+      "key": "sum2Label",
+      "label": "요약2 라벨",
+      "type": "text",
+      "value": "연간 유출"
+    },
+    {
+      "key": "sum2Value",
+      "label": "요약2 값",
+      "type": "text",
+      "value": "4.51억원"
+    },
+    {
+      "key": "sum2Desc",
+      "label": "요약2 설명",
+      "type": "text",
+      "value": "생산 3.5억 + 운영·개발 1.0억"
+    },
+    {
+      "key": "sum3Label",
+      "label": "요약3 라벨",
+      "type": "text",
+      "value": "연말 현금"
+    },
+    {
+      "key": "sum3Value",
+      "label": "요약3 값",
+      "type": "text",
+      "value": "2.67억원"
+    },
+    {
+      "key": "sum3Desc",
+      "label": "요약3 설명",
+      "type": "text",
+      "value": "대출 2.5억 포함"
+    },
+    {
+      "key": "sum4Label",
+      "label": "요약4 라벨",
+      "type": "text",
+      "value": "연매출"
+    },
+    {
+      "key": "sum4Value",
+      "label": "요약4 값",
+      "type": "text",
+      "value": "3.68억원"
+    },
+    {
+      "key": "sum4Desc",
+      "label": "요약4 설명",
+      "type": "text",
+      "value": "HW 350대 판매"
+    }
   ]
 }
